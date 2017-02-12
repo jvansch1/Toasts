@@ -58,47 +58,44 @@
         -display user_image, username, beername, breweryname, rating, comment, image
 
 ##BreweryShow
-  **Basically the same as Beer Show. BeerInfo Container will be replaced with BreweryInfoContainer**
+    **Basically the same as Beer Show. BeerInfo Container will be replaced with BreweryInfoContainer**
 
 ##CheckInForm
-  **pop-up box which will display over beer show page**
+    **pop-up box which will display over beer show page**
 
-  -asks user for rating, description, optional image
+    -asks user for rating, description, optional image
 
 ##CheckInShow
-  -show user who checked-in
-  -check-in info
-    -rating, description, etc,
-  -if user is a friend, can comment or toast
+    -show user who checked-in
+    -check-in info
+      -rating, description, etc,
+    -if user is a friend, can comment or toast
 
 ##Feed
-  -Global Feed of all users
+    -Global Feed of all users
 
-  -CheckInIndex
-    -will render as <ul> recent check-ins across all users
+    -CheckInIndex
+      -will render as <ul> recent check-ins across all users
 
-    -CheckInIndexItem
-      -will render each check-in as a li
+      -CheckInIndexItem
+        -will render each check-in as a li
 
-  -TopBeer
-    -<ul> of top beers
+    -TopBeer
+      -<ul> of top beers
 
 ##userShow
 
-  -UserInfoContainer
-    -renders user picture, check-in count, unique check ins
+    -UserInfoContainer
+      -renders user picture, check-in count, unique check ins
 
-  -UserCheckInPictures
-    -<ul> list of all recent pictures taken by user
+    -UserCheckInPictures
+      -<ul> list of all recent pictures taken by user
 
-  -CheckInIndex
-    <ul> of all check-ins by user
+    -CheckInIndex
+      <ul> of all check-ins by user
 
-    -CheckInIndexItem
-      -renders each check-in as a list item
+      -CheckInIndexItem
+        -renders each check-in as a list item
 
-  -TopBeers
-    -<ul> of top beers for user
-
-
- 
+    -TopBeers
+      -<ul> of top beers for user
