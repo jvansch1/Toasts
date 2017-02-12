@@ -28,29 +28,42 @@ UNTAPPD is a web application built using Ruby on Rails for the backend and React
 
 ###Phase 1: 2 days
   -Backend user and Session setup/Auth
+
   -front end Auth
 
-  Objective: Allow users to signup, sign-in, sign-out
+####Objective: Allow users to signup, sign-in, sign-out
 
 ###Phase 2: 1 day
   -Basic beer and brewery CRUD
+
   -show page for beer and brewery showing their activity
 
-  Objective: user should be able to create new beer and breweries
+####Objective: user should be able to create new beer and breweries
 
 ###Phase 3: 2 days
   -Check-ins
+
   -allow user to check-in to beer
+
+####Objective: User should be able to create a check-in
 
 ###Phase 4: 2 days
   -user show page. Show users check-ins, top beers, top breweries
 
-###Phase 5: Search
+####Objective: user show page should show all relevant user stats and activity
+
+###Phase 5: 1 day
   -users can search for Beer or Brewery and be linked to show page
+
+####Objective: user should be able to use searchbar in order to find what they are looking for
 
 ###Phase 6: Toasts, 1 day **need to write**
   -allow users to like other users check-ins
 
+####Objective: User can toast another users check-in
+
+
+##Implementation Details
 
     Phase 1: Backend setup and front end Auth:
       -Backend:
