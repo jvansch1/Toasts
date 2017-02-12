@@ -7,12 +7,12 @@ Trello: https://trello.com/b/esj73wnM/untappd
 
 UNTAPPD is a web application built using Ruby on Rails for the backend and React/Redux for client-side rendering. By the end of week 9, this app will include at minimum the following criteria.
 
-  -Hosted on Heroku
-  -New Account creation/login
-  -Ability to create new beer and brewery data
-  -Check-in to beer to show others users what you are drinking
-  -Ability to visit your own profile page, see your stats and friend activity
-  -Toast other users check-ins to show that you approve of their taste
+  1.Hosted on Heroku
+  2.New Account creation/login
+  3.Ability to create new beer and brewery data
+  4.Check-in to beer to show others users what you are drinking
+  5.Ability to visit your own profile page, see your stats and friend activity
+  6.Toast other users check-ins to show that you approve of their taste
 
   * [View Wireframes][wireframes]
   * [React Components][components]
