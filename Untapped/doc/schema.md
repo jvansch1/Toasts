@@ -12,6 +12,12 @@ Tables:
 
     -has_many: check-ins
 
+| username | password_digest        | session           | email           | image_url |
+|----------|------------------------|-------------------|-----------------|-----------|
+| jvs      | HDS82834834U$%*%HKJHGD | G782364HDPLKSD93R | jvs@example.com |           |
+|          |                        |                   |                 |           |
+|          |                        |                   |                 |           |
+
   Beer:
     name: string
     style: string
