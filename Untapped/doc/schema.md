@@ -2,71 +2,65 @@
 
 Tables:
 
-  Users:
-    username: string
-    email: string
-    password_digest: string
-    session_token: string
-    image_url: string **display default image if none provided**
-    timestamps
+    Users:
+      username: string
+      email: string
+      password_digest: string
+      session_token: string
+      image_url: string **display default image if none provided**
+      timestamps
 
-    -has_many: check-ins
+      -has_many: check-ins
 
 | username | password_digest        | session           | email           | image_url        |
 |----------|------------------------|-------------------|-----------------|------------------|
 | jvs      | HDS82834834U$%*%HKJHGD | G782364HDPLKSD93R | jvs@example.com | assets/image.png |
 
 
-  Beer:
-    name: string
-    style: string
-    brewery_id: integer
+    Beer:
+      name: string
+      style: string
+      brewery_id: integer
 
-    -belongs_to: brewery
-    -has_many: check-ins
+      -belongs_to: brewery
+      -has_many: check-ins
 
 | name      | style | brewery_id |
 |-----------|-------|------------|
 | Budweiser | Lager | 2          |
-|           |       |            |
-|           |       |            |
-|           |       |            |
-|           |       |            |
 
 
-  Breweries:
-    name: string
-    city: string
-    state: string
-    country: string
 
-    -has_many: beers
-    -has_many: check-ins, through: beers
+    Breweries:
+      name: string
+      city: string
+      state: string
+      country: string
+
+      -has_many: beers
+      -has_many: check-ins, through: beers
 
   | name    | city | state | country |
   |---------|------|-------|---------|
   | Brewery | NYC  | NY    | USA     |
-  |         |      |       |         |
-  |         |      |       |         |
-  |         |      |       |         |
-  |         |      |       |         |
 
 
-  Check-ins:
-    user_id: integer
-    beer_id: integer
-    image_url: string
-    description: string
-    rating: integer **out of 5. intervals of .25
 
-    **no need to include brewery_id
-    **can get it from the beer**
+    Check-ins:
+      user_id: integer
+      beer_id: integer
+      image_url: string
+      description: string
+      rating: integer **out of 5. intervals of .25
 
-  Comments:
-    user_id: integer
-    check_in_id: integer
-    content: string
-    timestamps
+      **no need to include brewery_id
+      **can get it from the beer**
+
+    Comments:
+      user_id: integer
+      check_in_id: integer
+      content: string
+      timestamps
 
     -belongs_to: user
     -belongs_to: check-in
