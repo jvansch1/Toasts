@@ -1,3 +1,7 @@
+Heroku: N/A
+
+Trello: https://trello.com/b/esj73wnM/untappd
+
 
 ##Minimum Viable Product
 
