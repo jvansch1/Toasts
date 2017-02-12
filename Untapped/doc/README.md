@@ -85,6 +85,9 @@ Phase 6: search **need to write**
           -have on enter hooks to redirect to "/signup" or "/signin" if not logged in
 
 
+[wireframes]: /wireframes/Signup
+
+
 
 
 

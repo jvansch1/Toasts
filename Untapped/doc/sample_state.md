@@ -21,7 +21,7 @@
       },
       breweries: {
         1: {
-          name: "anheuser busch",
+          name: "anheuser-busch",
           city: "St Louis",
           state: "Missouri",
           country: "USA"
@@ -40,7 +40,16 @@
           user: 2
         }
       }
+    },
+    userProfile: {
+      user_id: 100,
+      check-ins(ids): [34,6,21,564],
+      badges(ids): [3,7,1,13],
+      friends(ids): [3,23,34,5]
     }
 
-**nesting toasts under check-ins rather than having a top-level-slice for them**</br>
-    **think about use geolocater rather than manually passing in location as string**
+**current user slice is used when you visit a user show page, will have all of their information**
+
+**nesting toasts under check-ins rather than having a top-level-slice for them**
+
+**think about use geolocater rather than manually passing in location as string**
