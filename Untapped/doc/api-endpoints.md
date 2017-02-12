@@ -3,8 +3,8 @@
 HTML API
 
     Root
-      - GET /
-          - loads React Web App
+      -GET /
+        -loads React Web App
 
 JSON API
 
@@ -41,5 +41,24 @@ JSON API
         - updates brewery
 
     Check-in(Post)
-      **checking in is the equivalent of making a post
-      **requires a beerId to ensure user is checking in to valid 
+      -POST /api/check-ins
+        -creates a check-in for current user
+      -DELETE /api/check-ins/:id
+        -allows current user to delete their check in
+
+        **checking in is the equivalent of making a post
+        **requires a beerId to ensure user is checking in to valid**
+
+    Toasts
+      -POST /api/toasts
+        -allows current user to 'like' a check-in
+      -DELETE /api/toasts/:id
+        -allows current user to 'unlike' post
+
+
+    Friends
+      **Join table between requesting friend and requested friend**
+      -POST /api/friends
+        -Allows a new friend request
+      -DELETE /api/friend/:request_id
+        -allows friend request to be delete upon rejection
