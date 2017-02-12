@@ -40,9 +40,9 @@ Tables:
       -has_many: beers
       -has_many: check-ins, through: beers
 
-  | name    | city | state | country |
-  |---------|------|-------|---------|
-  | Brewery | NYC  | NY    | USA     |
+| name    | city | state | country |
+|---------|------|-------|---------|
+| Brewery | NYC  | NY    | USA     |
 
 
 
@@ -62,47 +62,37 @@ Tables:
       content: string
       timestamps
 
-    -belongs_to: user
-    -belongs_to: check-in
+      -belongs_to: user
+      -belongs_to: check-in
 
 | user_id | check_in_id | content              |
 |---------|-------------|----------------------|
 | 5       | 2           | "Glad you liked it!" |
-|         |             |                      |
-|         |             |                      |
-|         |             |                      |
-|         |             |                      |
 
 
-  Toasts:
-    user_id: integer
-    check_in_id: integer
-    timestamp
+
+    Toasts:
+      user_id: integer
+      check_in_id: integer
+      timestamp
 
 | user_id | check_in_id |
 |---------|-------------|
 | 5       | 2           |
-|         |             |
-|         |             |
-|         |             |
-|         |             |
 
 
-  Friends:
-    **Was thinking of having three columns:
-      -requesting_user_id:
-      -requested_user_id:
-      -accepted: false**
 
-    -Will be unique and scoped to ids, so a user can only request to be friends with a user once
-    -if user accepts, accepted will be changed to true
-    -if rejected, this entire row will be deleted from table, this will allow user to request again the future if they desire
+    Friends:
+      **Was thinking of having three columns:
+        -requesting_user_id:
+        -requested_user_id:
+        -accepted: false**
+
+      -Will be unique and scoped to ids, so a user can only request to be friends with a user once
+      -if user accepts, accepted will be changed to true
+      -if rejected, this entire row will be deleted from table, this will allow user to request again the future if they desire
 
 
 | requesting_user_id | requested_user_id | accepted |
 |--------------------|-------------------|----------|
 | 5                  | 2                 | false    |
-|                    |                   |          |
-|                    |                   |          |
-|                    |                   |          |
-|                    |                   |          |
