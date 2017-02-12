@@ -1,37 +1,56 @@
 
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+##Minimum Viable Product
 
-[wireframes]: wireframes
-[components]: component-hierarchy.md
-[sample-state]: sample-state.md
-[api-endpoints]: api-endpoints.md
-[schema]: schema.md
+UNTAPPD is a web application built using Ruby on Rails for the backend and React/Redux for client-side rendering. By the end of week 9, this app will include at minimum the following criteria.
+
+  -Hosted on Heroku
+  -New Account creation/login
+  -Ability to create new beer and brewery data
+  -Check-in to beer to show others users what you are drinking
+  -Ability to visit your own profile page, see your stats and friend activity
+  -Toast other users check-ins to show that you approve of their taste
+
+  * [View Wireframes][wireframes]
+  * [React Components][components]
+  * [API endpoints][api-endpoints]
+  * [DB schema][schema]
+  * [Sample State][sample-state]
+
+  [wireframes]: wireframes
+  [components]: component-hierarchy.md
+  [sample-state]: sample-state.md
+  [api-endpoints]: api-endpoints.md
+  [schema]: schema.md
 
 
 
+##Implementation timeline:
 
+###Phase 1: 2 days
+  -Backend user and Session setup/Auth
+  -front end Auth
 
+  Objective: Allow users to signup, sign-in, sign-out
 
+###Phase 2: 1 day
+  -Basic beer and brewery CRUD
+  -show page for beer and brewery showing their activity
 
+  Objective: user should be able to create new beer and breweries
 
+###Phase 3: 2 days
+  -Check-ins
+  -allow user to check-in to beer
 
-Implementation timeline:
+###Phase 4: 2 days
+  -user show page. Show users check-ins, top beers, top breweries
 
-Phase 1: 2 days
+###Phase 5: Search
+  -users can search for Beer or Brewery and be linked to show page
 
-Phase 2: 1 day
+###Phase 6: Toasts, 1 day **need to write**
+  -allow users to like other users check-ins
 
-Phase 3: 2 days
-
-Phase 4: 2 days **need to write**
-
-Phase 5: Toasts, 1 day **need to write**
-
-Phase 6: search **need to write**
 
     Phase 1: Backend setup and front end Auth:
       -Backend:
@@ -236,8 +255,15 @@ Phase 6: search **need to write**
             -have on enter hook on "/" route. If the user is logged in it will direct to profile. This page will current users stats as well as friend feed.
 
 
+      Phase 5: Search
+        **Not much required on back-end. This will be mostly a front end feature**
 
-      Phase 5: Toasts
+        -have an onChange event handler that will search beer and breweries slices of state and return items whos name matches the string enetered
+        -each result will be a link to beer show page
+
+
+
+      Phase 6: Toasts
         **the equivalent of a like. Can Toast other users check-ins**
 
         -Backend:
