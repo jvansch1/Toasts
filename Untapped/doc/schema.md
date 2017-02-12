@@ -12,11 +12,10 @@ Tables:
 
     -has_many: check-ins
 
-| username | password_digest        | session           | email           | image_url |
-|----------|------------------------|-------------------|-----------------|-----------|
-| jvs      | HDS82834834U$%*%HKJHGD | G782364HDPLKSD93R | jvs@example.com |           |
-|          |                        |                   |                 |           |
-|          |                        |                   |                 |           |
+| username | password_digest        | session           | email           | image_url        |
+|----------|------------------------|-------------------|-----------------|------------------|
+| jvs      | HDS82834834U$%*%HKJHGD | G782364HDPLKSD93R | jvs@example.com | assets/image.png |
+
 
   Beer:
     name: string
@@ -25,6 +24,14 @@ Tables:
 
     -belongs_to: brewery
     -has_many: check-ins
+
+| name      | style | brewery_id |
+|-----------|-------|------------|
+| Budweiser | Lager | 2          |
+|           |       |            |
+|           |       |            |
+|           |       |            |
+|           |       |            |
 
 
   Breweries:
@@ -35,6 +42,14 @@ Tables:
 
     -has_many: beers
     -has_many: check-ins, through: beers
+
+  | name    | city | state | country |
+  |---------|------|-------|---------|
+  | Brewery | NYC  | NY    | USA     |
+  |         |      |       |         |
+  |         |      |       |         |
+  |         |      |       |         |
+  |         |      |       |         |
 
 
   Check-ins:
@@ -56,11 +71,27 @@ Tables:
     -belongs_to: user
     -belongs_to: check-in
 
+| user_id | check_in_id | content              |
+|---------|-------------|----------------------|
+| 5       | 2           | "Glad you liked it!" |
+|         |             |                      |
+|         |             |                      |
+|         |             |                      |
+|         |             |                      |
+
 
   Toasts:
     user_id: integer
     check_in_id: integer
     timestamp
+
+| user_id | check_in_id |
+|---------|-------------|
+| 5       | 2           |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
 
 
   Friends:
@@ -72,3 +103,12 @@ Tables:
     -Will be unique and scoped to ids, so a user can only request to be friends with a user once
     -if user accepts, accepted will be changed to true
     -if rejected, this entire row will be deleted from table, this will allow user to request again the future if they desire
+
+
+| requesting_user_id | requested_user_id | accepted |
+|--------------------|-------------------|----------|
+| 5                  | 2                 | false    |
+|                    |                   |          |
+|                    |                   |          |
+|                    |                   |          |
+|                    |                   |          |
