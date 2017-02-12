@@ -101,19 +101,4 @@
     -<ul> of top beers for user
 
 
-    | Route                 | Component   |
-    |-----------------------|-------------|
-    | /sign_up              | AuthForm    |
-    | /sign-in              | AuthForm    |
-    | /                     | Home        |
-    | /beer/:id             | BeerShow    |
-    | /beer/:beerId/checkin | CheckInForm |
-    | /checkin/:CheckInId   | CheckInShow |
-    | /brewery/:id          | BreweryShow |
-    | /feed                 | Feed        |
-    | /user/:userId         | userShow    |
-    |                       |             |
-    |                       |             |
-    |                       |             |
-    |                       |             |
-    |                       |             |
+ 
