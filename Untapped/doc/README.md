@@ -2,10 +2,15 @@
 Implementation timeline:
 
 Phase 1: 2 days
+
 Phase 2: 1 day
+
 Phase 3: 2 days
+
 Phase 4: 2 days **need to write**
+
 Phase 5: Toasts, 1 day **need to write**
+
 Phase 6: search **need to write**
 
     Phase 1: Backend setup and front end Auth:
