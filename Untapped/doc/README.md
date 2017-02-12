@@ -1,4 +1,24 @@
 
+* [View Wireframes][wireframes]
+* [React Components][components]
+* [API endpoints][api-endpoints]
+* [DB schema][schema]
+* [Sample State][sample-state]
+
+[wireframes]: wireframes
+[components]: component-hierarchy.md
+[sample-state]: sample-state.md
+[api-endpoints]: api-endpoints.md
+[schema]: schema.md
+
+
+
+
+
+
+
+
+
 Implementation timeline:
 
 Phase 1: 2 days
@@ -83,11 +103,6 @@ Phase 6: search **need to write**
         -Router
           -homepage "/" will be friendFeed page which shows current_user information as well as their friends information
           -have on enter hooks to redirect to "/signup" or "/signin" if not logged in
-
-
-[wireframes]: /wireframes/Signup
-
-
 
 
 
