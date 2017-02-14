@@ -1,5 +1,5 @@
-import React from 'React';
-import {hashHistory} from 'react-router'
+import React from 'react';
+import {hashHistory} from 'react-router';
 
 class Home extends React.Component {
   constructor(props) {
