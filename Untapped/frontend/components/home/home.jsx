@@ -15,7 +15,7 @@ class Home extends React.Component {
   handleLogout(e) {
     e.preventDefault();
     this.props.logout();
-    hashHistory.push('/login');
+    hashHistory.push('/');
   }
 
 

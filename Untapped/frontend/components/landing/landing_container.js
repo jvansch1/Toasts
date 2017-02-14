@@ -3,7 +3,8 @@ import Landing from './landing';
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.session
+    currentUser: state.session,
+    errors: state.session.errors
   };
 };
 

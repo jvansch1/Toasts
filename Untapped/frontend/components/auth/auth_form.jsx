@@ -18,10 +18,15 @@ class AuthForm extends React.Component {
     };
   }
 
+  redirectIfLoggedIn() {
+    if (this.props.loggedIn) {
+      this.props.router.push('/');
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
-    hashHistory.push('/home');
+    this.props.action(this.state).then(() => hashHistory.push('/home'));
   }
 
   render() {
