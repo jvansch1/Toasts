@@ -5,6 +5,7 @@ import App from './app'
 import Landing from './landing/landing'
 import HomeContainer from './home/home_container'
 import AuthFormContainer from './auth/auth_form_container'
+import BeerFormContainer from './beers/beer_form_container'
 
 const Root = ({store}) => {
 
@@ -31,6 +32,7 @@ const Root = ({store}) => {
           <Route path='login' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='signup' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='home' component={HomeContainer} onEnter={_ensureLoggedIn}/>
+          <Route path='newBeer' component={BeerFormContainer} />
         </Route>
       </Router>
     </Provider>

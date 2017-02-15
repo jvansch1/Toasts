@@ -109,3 +109,10 @@ span {
 #root {
   height: 100%;
 }
+
+.container {
+  background-color: lightgrey;
+  height: 1100px;
+  width: 750px;
+  margin: 0 auto;
+}

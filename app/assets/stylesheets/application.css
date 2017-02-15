@@ -64,14 +64,45 @@ html,body {
 }
 
 .navbar {
-  background-color: #FFCC00;
-  align-items: center;
+  background-color: #ffc600;
 }
 
 .navbar ul {
+  display: flex;
+
 }
 
-.navbar-links li {
+.link {
   float: left;
-  display: inline;
+  padding-top: 19px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.link a {
+  text-decoration: none;
+  color: white;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.username {
+  float: right;
+  position:relative;
+  bottom: 40px;
+  right: 20px;
+  color: white;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 20px;
 }
