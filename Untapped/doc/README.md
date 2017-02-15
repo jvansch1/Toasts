@@ -1,4 +1,4 @@
-Heroku: N/A
+Heroku: https://untapped-clone.herokuapp.com/
 
 Trello: https://trello.com/b/esj73wnM/untappd
 
