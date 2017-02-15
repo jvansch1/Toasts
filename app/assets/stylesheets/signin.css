@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: green;
+  background-color: #F5F2E8;
 }
 
 #nav {
@@ -117,17 +117,16 @@ span {
 }
 
 .container {
-  background-color: lightgrey;
+  background-color: white;
   height: 1100px;
   width: 1000px;
   margin: 0 auto;
+  padding-top: 10px;
 }
 
 .beer-index-item {
-  border: 1px solid black;
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -138,10 +137,14 @@ span {
 .beer-index-list {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid green;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
 }
 
 .beer-list-index-item {
   flex-direction: row;
+  border-left: 1px solid green;
+  border-right: 1px solid green;
+  background-color: green;
 
 }
