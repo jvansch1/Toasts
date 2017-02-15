@@ -67,7 +67,7 @@ body {
 }
 
 #form-background {
-  position: aboslute;
+  position: absolute;
   left: 500px;
   background-color: white;
   height: 1000px;
@@ -119,7 +119,6 @@ span {
   margin-top: 10px;
   margin: 0 auto;
   padding-top: 90px;
-  position:
 }
 
 .beer-index-item {
@@ -147,6 +146,8 @@ span {
 }
 
 .form-container {
+  position: absolute;
+  top: 100px;
   background: green;
   height: 100%
 }
