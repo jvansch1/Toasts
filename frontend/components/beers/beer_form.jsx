@@ -35,27 +35,30 @@ class BeerForm extends React.Component {
     return (
       <div>
         <HeaderContainer />
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          Beer Name
-          <input onChange={this.update('name')}type="text" />
-          Style
-          <select onChange={this.update('style')}>
-            <option disabled selected>Pick a style</option>
-            {
-              window.styles.styles.map((style, idx) => {
-                return <option value={style} key={idx}>{style}</option>;
-              })
-            }
-          </select>
-          Brewery
-          <input onChange={this.update('brewery_id')}type="text" />
 
-          ABV
-          <input onChange={this.update('ABV')} type='text'/>
-          IBU
-          <input onChange={this.update('IBU')} type='number'/>
-          <input type="submit" value="Add Beer" />
-    </form>
+        <div className='form-container'>
+          <form onSubmit={this.handleSubmit.bind(this)}>
+            Beer Name
+            <input onChange={this.update('name')}type="text" />
+            Style
+            <select onChange={this.update('style')}>
+              <option disabled selected>Pick a style</option>
+              {
+                window.styles.styles.map((style, idx) => {
+                  return <option value={style} key={idx}>{style}</option>;
+                  })
+                }
+              </select>
+              Brewery
+              <input onChange={this.update('brewery_id')}type="text" />
+
+              ABV
+              <input onChange={this.update('ABV')} type='text'/>
+              IBU
+              <input onChange={this.update('IBU')} type='number'/>
+              <input type="submit" value="Add Beer" />
+            </form>
+        </div>
 
 
       </div>

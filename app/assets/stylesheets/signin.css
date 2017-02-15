@@ -7,10 +7,6 @@ body {
   background-color: #F5F2E8;
 }
 
-#nav {
-  background-color: yellow;
-}
-
 #login-box {
   position: absolute;
   left: 40%;
@@ -118,10 +114,12 @@ span {
 
 .container {
   background-color: white;
-  height: 1100px;
+  height: 100%;
   width: 1000px;
+  margin-top: 10px;
   margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 90px;
+  position:
 }
 
 .beer-index-item {
@@ -141,10 +139,14 @@ span {
   border-bottom: 1px solid lightgrey;
 }
 
-.beer-list-index-item {
+.beer-index-list-item {
   flex-direction: row;
-  border-left: 1px solid green;
-  border-right: 1px solid green;
-  background-color: green;
+  border-left: 1px solid lightgrey;
+  padding: 0 30px 0 30px;
 
+}
+
+.form-container {
+  background: green;
+  height: 100%
 }
