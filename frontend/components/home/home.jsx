@@ -1,5 +1,5 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
+import {hashHistory, Link} from 'react-router';
 
 class Home extends React.Component {
   constructor(props) {
@@ -22,7 +22,13 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>Home Page!</h1>
+        <div className="navbar">
+          <ul className='navbar-link'>
+            <li><img src={window.images.logoWhite} id="navbar-logo"/></li>
+            <li>Create Beer</li>
+            <li>Create Brewery</li>
+          </ul>
+        </div>
         {this.displayName()}
         <button onClick={this.handleLogout.bind(this)}>Logout</button>
       </div>

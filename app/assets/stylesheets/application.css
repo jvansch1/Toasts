@@ -62,3 +62,16 @@ html,body {
   font-family: ProximaNova, Helvetica Neue,Helvetica;
   height: 100%;
 }
+
+.navbar {
+  background-color: #FFCC00;
+  align-items: center;
+}
+
+.navbar ul {
+}
+
+.navbar-links li {
+  float: left;
+  display: inline;
+}
