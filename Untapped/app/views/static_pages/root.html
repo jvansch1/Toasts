@@ -1,7 +1,10 @@
 <main id='root'>
     <script type="text/javascript">
-    <% if logged_in? %>
-      window.currentUser = <%= (render 'api/users/user.json.jbuilder', user: current_user).html_safe %>
-    <% end %>
+      <% if logged_in? %>
+        window.currentUser = <%= (render 'api/users/user.json.jbuilder', user: current_user).html_safe %>
+      <% end %>
+      window.images = {
+        logo: "<%= image_path("Logomakr_0nAUYb.png") %>"
+      }
     </script>
 </main>

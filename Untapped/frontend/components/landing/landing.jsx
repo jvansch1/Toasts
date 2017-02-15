@@ -19,11 +19,13 @@ const Landing = (props) => {
 
   return (
     <div>
-    <h1>Landing Page</h1>
+      <img src={window.images.logo} id="landing-logo"/>
+      <section id="login-box">
+        <button id='signup-button'><Link to='signup' id="signup-link">Sign Up</Link></button>
+          <p id='login-link'>Already a member? <Link to='login'>Sign in!</Link></p>
+      </section>
         {renderErrors()}
         {props.children}
-        <Link to='login'>Login</Link><br />
-        <Link to='signup'>Sign Up</Link>
     </div>
   );
 
