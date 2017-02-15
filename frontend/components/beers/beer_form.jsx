@@ -7,7 +7,9 @@ class BeerForm extends React.Component {
     this.state = {
       name: "",
       style: "",
-      brewery_id: null
+      brewery_id: null,
+      ABV: "",
+      IBU: null
     };
   }
 
@@ -21,6 +23,13 @@ class BeerForm extends React.Component {
       this.setState({[property]: e.target.value});
     };
   }
+
+  // updateABV(e) {
+  //   debugger
+  //   let number = e.target.value;
+  //   let ABV = parseFloat(number.match(/[\d\.]+/))
+  //   this.setState({ABV});
+  // }
 
   render() {
     return (
@@ -41,6 +50,10 @@ class BeerForm extends React.Component {
           Brewery
           <input onChange={this.update('brewery_id')}type="text" />
 
+          ABV
+          <input onChange={this.update('ABV')} type='text'/>
+          IBU
+          <input onChange={this.update('IBU')} type='number'/>
           <input type="submit" value="Add Beer" />
     </form>
 

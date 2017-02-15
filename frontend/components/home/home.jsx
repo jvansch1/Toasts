@@ -1,6 +1,7 @@
 import React from 'react';
 import {hashHistory, Link} from 'react-router';
 import HeaderContainer from '../header/header_container';
+import BeerIndexContainer from '../beers/beer_index_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class Home extends React.Component {
       <div>
         <HeaderContainer />
         <div className="container">
+          <BeerIndexContainer />
           <br />
           <br />
           <br />

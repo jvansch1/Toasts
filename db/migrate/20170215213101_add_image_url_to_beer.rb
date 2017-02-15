@@ -1,0 +1,5 @@
+class AddImageUrlToBeer < ActiveRecord::Migration
+  def change
+    add_column :beers, :image_url, :string
+  end
+end

@@ -3,6 +3,10 @@
   height: 100%;
 }
 
+body {
+  background-color: green;
+}
+
 #nav {
   background-color: yellow;
 }
@@ -91,6 +95,10 @@ span {
   top: 13%;
 }
 
+#landing-logo a {
+  padding-bottom: 0px;
+}
+
 .text-input {
   border-radius: 5px;
   border: 1px solid lightgrey;
@@ -98,9 +106,7 @@ span {
   height: 30px;
 }
 
-.navbar {
-  background-color: yellow;
-}
+
 
 #app-root {
   height: 100%;
@@ -113,6 +119,29 @@ span {
 .container {
   background-color: lightgrey;
   height: 1100px;
-  width: 750px;
+  width: 1000px;
   margin: 0 auto;
+}
+
+.beer-index-item {
+  border: 1px solid black;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.beername {
+  font-size: 20px;
+}
+
+.beer-index-list {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid green;
+}
+
+.beer-list-index-item {
+  flex-direction: row;
+
 }

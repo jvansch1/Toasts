@@ -65,15 +65,18 @@ html,body {
 
 .navbar {
   background-color: #ffc600;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .navbar ul {
   display: flex;
+  flex-direction: row;
 
 }
 
 .link {
-  float: left;
   padding-top: 19px;
   padding-left: 12px;
   padding-right: 12px;
@@ -92,16 +95,15 @@ html,body {
   text-decoration: underline;
 }
 
-.clearfix {
+/*.clearfix {
   overflow: auto;
-}
+  clear: both;
+}*/
 
 .username {
-  float: right;
-  position:relative;
-  bottom: 40px;
-  right: 20px;
-  color: white;
+  margin-right: 20px;
+  margin-top: 25px;
+  color:  white;
   font-family: inherit;
   font-weight: bold;
   font-size: 20px;
