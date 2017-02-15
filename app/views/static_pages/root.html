@@ -4,7 +4,8 @@
         window.currentUser = <%= (render 'api/users/user.json.jbuilder', user: current_user).html_safe %>
       <% end %>
       window.images = {
-        logo: "<%= image_path("Logomakr_0nAUYb.png") %>"
+        logo: "<%= image_path("Logomakr_0nAUYb.png") %>",
+        logoWhite: "<%= image_path("logo-white.png") %>"
       }
     </script>
 </main>

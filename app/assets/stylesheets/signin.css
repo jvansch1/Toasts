@@ -1,5 +1,6 @@
-body {
+#landing-background {
   background-image: url('http://pineislandbeer.com/wp-content/uploads/2015/07/craft-beers.jpg');
+  height: 100%;
 }
 
 #nav {
@@ -95,4 +96,16 @@ span {
   border: 1px solid lightgrey;
   width: 175px;
   height: 30px;
+}
+
+.navbar {
+  background-color: yellow;
+}
+
+#app-root {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
 }

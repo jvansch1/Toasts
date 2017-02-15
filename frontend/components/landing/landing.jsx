@@ -18,7 +18,7 @@ const Landing = (props) => {
 
 
   return (
-    <div>
+    <div id='landing-background'>
       <img src={window.images.logo} id="landing-logo"/>
       <section id="login-box">
         <button id='signup-button'><Link to='signup' id="signup-link">Sign Up</Link></button>
