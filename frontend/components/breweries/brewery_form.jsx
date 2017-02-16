@@ -48,7 +48,7 @@ class BreweryForm extends React.Component {
 
 
             Country
-            <input onChange={this.update('country')} type='number'/>
+            <input onChange={this.update('country')} type='text' />
 
               <input type="submit" value="Add Brewery" />
             </form>

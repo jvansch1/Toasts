@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchBreweries: () => dispatch(fetchBreweries()),
-    createBreweries: () => dispatch(createBreweries())
+    createBrewery: (brewery) => dispatch(createBrewery(brewery))
   };
 };
 

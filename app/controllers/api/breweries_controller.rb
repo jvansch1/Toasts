@@ -4,6 +4,7 @@ class Api::BreweriesController < ApplicationController
   end
 
   def create
+    debugger
     @brewery = Brewery.new(brewery_params)
 
     if @brewery.save
