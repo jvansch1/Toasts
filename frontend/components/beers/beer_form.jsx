@@ -38,9 +38,15 @@ class BeerForm extends React.Component {
 
         <div className='form-container'>
           <form onSubmit={this.handleSubmit.bind(this)}>
-            Beer Name
-            <input onChange={this.update('name')}type="text" />
+
+
+              Beer Name
+              <input onChange={this.update('name')}type="text" className='beer-form-input'/>
+
             <br />
+
+
+
             Style
             <select onChange={this.update('style')}>
               <option disabled selected>Pick a style</option>
@@ -50,18 +56,23 @@ class BeerForm extends React.Component {
                   })
                 }
               </select>
-              Brewery
-              <input onChange={this.update('brewery_id')}type="text" />
 
-              ABV
-              <input onChange={this.update('ABV')} type='text'/>
-              IBU
-              <input onChange={this.update('IBU')} type='number'/>
+
+
+            Brewery
+            <input onChange={this.update('brewery_id')}type="text" />
+
+
+            ABV
+            <input onChange={this.update('ABV')} type='text'/>
+
+
+            IBU
+            <input onChange={this.update('IBU')} type='number'/>
+
               <input type="submit" value="Add Beer" />
             </form>
         </div>
-
-
       </div>
     );
   }

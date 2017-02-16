@@ -153,10 +153,20 @@ span {
 }
 
 .form-container {
-  position: absolute;
+  /*position: absolute;*/
   top: 100px;
-  background: green;
-  height: 100%;
-  margin-left: 15%;
-  margin-right: 15%;
+  background: white;
+  height: 1000px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.form-container form {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.beer-form-input {
+  background-color: green;
 }
