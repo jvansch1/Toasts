@@ -198,7 +198,3 @@ span {
   display: flex;
   flex-direction: column;
 }
-
-.beer-form-input {
-  background-color: green;
-}

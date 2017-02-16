@@ -1,12 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import App from './app'
-import Landing from './landing/landing'
-import HomeContainer from './home/home_container'
-import AuthFormContainer from './auth/auth_form_container'
-import BeerFormContainer from './beers/beer_form_container'
-import BreweryFormContainer from './breweries/brewery_form_container'
+import App from './app';
+import LandingContainer from './landing/landing_container';
+import HomeContainer from './home/home_container';
+import AuthFormContainer from './auth/auth_form_container';
+import BeerFormContainer from './beers/beer_form_container';
+import BreweryFormContainer from './breweries/brewery_form_container';
+import BeerIndexContainer from './beers/beer_index_container';
 
 const Root = ({store}) => {
 
@@ -29,7 +30,7 @@ const Root = ({store}) => {
     <Provider store={store}>
       <Router  history={hashHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={Landing} />
+          <IndexRoute component={LandingContainer} />
           <Route path='login' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='signup' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='home' component={HomeContainer} onEnter={_ensureLoggedIn}/>

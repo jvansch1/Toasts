@@ -1,6 +1,6 @@
 import React from 'react';
 import AuthForm from '../auth/auth_form';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 
 
@@ -15,6 +15,9 @@ const Landing = (props) => {
     }
   };
 
+  const logInGuest = (e) => {
+    props.login({username: 'Guest', password: 'password'}).then(() => hashHistory.push('home'))
+}
 
 
   return (
@@ -22,6 +25,7 @@ const Landing = (props) => {
       <img src={window.images.logo} id="landing-logo"/>
       <section id="login-box">
         <button id='signup-button'><Link to='signup' id="signup-link">Sign Up</Link></button>
+        <button id='signup-button' onClick={logInGuest}><span id='signup-link'>Guest</span></button>
           <p id='login-link'>Already a member? <Link to='login'>Sign in!</Link></p>
       </section>
         {renderErrors()}

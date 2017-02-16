@@ -4,7 +4,7 @@ import BeerIndex from './beer_index';
 
 const mapStateToProps = (state) => {
   return {
-    beers: Object.keys(state.beers).map(key => state.beers[key])
+    beers: Object.keys(state.beers).map(key => state.beers[key]),
   };
 };
 

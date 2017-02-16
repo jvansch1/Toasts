@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
+import { hashHistory } from 'react-router'
 
 class BeerForm extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class BeerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createBeer(this.state);
+    this.props.createBeer(this.state).then(() => hashHistory.push('/home'));
   }
 
   update(property) {
@@ -23,13 +24,6 @@ class BeerForm extends React.Component {
       this.setState({[property]: e.target.value});
     };
   }
-
-  // updateABV(e) {
-  //   debugger
-  //   let number = e.target.value;
-  //   let ABV = parseFloat(number.match(/[\d\.]+/))
-  //   this.setState({ABV});
-  // }
 
   render() {
     return (
@@ -60,7 +54,14 @@ class BeerForm extends React.Component {
 
 
             Brewery
-            <input onChange={this.update('brewery_id')}type="text" />
+            <select onChange={this.update('brewery_id')}>
+              <option disabled selected>Pick a Brewery</option>
+              {
+                window.breweries.breweries.map((brewery, idx) => {
+                  return <option value={brewery.id} key={idx}>{brewery.name}</option>;
+                })
+              }
+            </select>
 
 
             ABV

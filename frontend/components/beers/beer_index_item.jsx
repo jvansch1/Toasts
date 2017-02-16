@@ -6,7 +6,7 @@ const BeerIndexItem = (props) => {
       <img src={props.beer.image_url} />
       <span className='beername'>{props.beer.name}</span>
         <br />
-      <span className='breweryname'>{props.beer.brewery_id}</span>
+      <span className='breweryname'>{props.beer.brewery.name}</span>
         <br />
       <span className='stylename'>{props.beer.style}</span>
         <br />

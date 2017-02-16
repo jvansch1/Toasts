@@ -43,12 +43,6 @@ class AuthForm extends React.Component {
               <input className='text-input' type="text" onChange={this.update('username')}/>
             <br />
 
-            <span>
-              email
-              <br />
-            </span>
-              <input className='text-input' type="text" onChange={this.update('email')}/>
-              <br />
 
             <span>
               password

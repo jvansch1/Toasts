@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
     let currentUser = state.session.currentUser.username;
   }
   return {
-    currentUser
+    currentUser: state.session.currentUser
   };
 };
 
