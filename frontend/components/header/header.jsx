@@ -9,7 +9,7 @@ const Header = (props) => (
       <li><Link to='/home'><img src={window.images.logoWhite} id="navbar-logo"/></Link></li>
       <li className='link'><Link to='/newBeer/'>Create Beer</Link></li>
       <li className='link'><Link to="/newBrewery">Create Brewery</Link></li>
-      <li className='link'><Link to="/beers">Beers</Link></li>
+      <li className='link'><Link to="/home">Beers</Link></li>
       <li className='link'><Link to="/">Breweries</Link></li>
     </ul>
     <p className='username'>
