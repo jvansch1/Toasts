@@ -8,6 +8,8 @@ import AuthFormContainer from './auth/auth_form_container';
 import BeerFormContainer from './beers/beer_form_container';
 import BreweryFormContainer from './breweries/brewery_form_container';
 import BeerIndexContainer from './beers/beer_index_container';
+import BreweryIndexContainer from './breweries/brewery_index_container';
+import BreweryShowContainer from './breweries/brewery_show_container';
 
 const Root = ({store}) => {
 
@@ -34,8 +36,10 @@ const Root = ({store}) => {
           <Route path='login' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='signup' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='home' component={HomeContainer} onEnter={_ensureLoggedIn}/>
+          <Route path='breweries' component={BreweryIndexContainer} />
           <Route path='newBeer' component={BeerFormContainer} />
           <Route path='newBrewery' component={BreweryFormContainer} />
+          <Route path='brewery/:breweryId' component={BreweryShowContainer} />
         </Route>
       </Router>
     </Provider>

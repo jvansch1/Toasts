@@ -10,7 +10,7 @@ const Header = (props) => (
       <li className='link'><Link to='/newBeer/'>Create Beer</Link></li>
       <li className='link'><Link to="/newBrewery">Create Brewery</Link></li>
       <li className='link'><Link to="/home">Beers</Link></li>
-      <li className='link'><Link to="/">Breweries</Link></li>
+      <li className='link'><Link to="/breweries">Breweries</Link></li>
     </ul>
     <p className='username'>
       Hello, {props.currentUser.username}!
