@@ -40,6 +40,7 @@ class BeerForm extends React.Component {
           <form onSubmit={this.handleSubmit.bind(this)}>
             Beer Name
             <input onChange={this.update('name')}type="text" />
+            <br />
             Style
             <select onChange={this.update('style')}>
               <option disabled selected>Pick a style</option>

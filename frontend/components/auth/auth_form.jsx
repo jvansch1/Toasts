@@ -32,7 +32,7 @@ class AuthForm extends React.Component {
   render() {
     const title = this.props.formType === "login" ? "Log In" : "Sign up";
     return (
-      <div>
+      <div id='auth-background'>
         <section id='form-background'>
           <img src={window.images.logo} id="logo"/>
           <form onSubmit={this.handleSubmit} id='user-form'>
