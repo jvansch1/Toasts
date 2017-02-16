@@ -132,11 +132,42 @@ span {
 .beer-index-item {
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.beer-index-item img {
+  border: 1px solid lightgrey;
+  height: 70px;
+  widht: 70px;
 }
 
 .beername {
-  font-size: 20px;
+  position: absolute;
+  font-size: 24px;
+  padding-left: 20px;
+  color: #c60;
+}
+
+.breweryname {
+  position: relative;
+  bottom: 52px;
+  left: 92px;
+  padding-top: 5px;
+  color: #c60;
+}
+
+.beername:hover {
+  color: #f93;
+}
+
+.breweryname:hover {
+  color: #f93;
+}
+
+.stylename {
+  position: relative;
+  bottom: 51px;
+  left: 92px;
 }
 
 .beer-index-list {

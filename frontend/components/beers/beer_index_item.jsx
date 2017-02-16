@@ -3,11 +3,13 @@ import React from 'react';
 const BeerIndexItem = (props) => {
   return (
     <li className='beer-index-item'>
+      <img src={props.beer.image_url} />
       <span className='beername'>{props.beer.name}</span>
         <br />
-      {props.beer.brewery_id}
+      <span className='breweryname'>{props.beer.brewery_id}</span>
         <br />
-      {props.beer.style}
+      <span className='stylename'>{props.beer.style}</span>
+        <br />
         <ul className='beer-index-list'>
           <li className='beer-index-list-item'>
             ABV - {props.beer.ABV}
