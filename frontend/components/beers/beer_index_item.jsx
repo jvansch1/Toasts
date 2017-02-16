@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router'
 
 const BeerIndexItem = (props) => {
   return (
@@ -6,7 +7,7 @@ const BeerIndexItem = (props) => {
       <img src={props.beer.image_url} />
       <span className='beername'>{props.beer.name}</span>
         <br />
-      <span className='breweryname'>{props.beer.brewery.name}</span>
+      <span className='breweryname'><Link to={`brewery/${props.beer.brewery.id}`}>{props.beer.brewery.name}</Link></span>
         <br />
       <span className='stylename'>{props.beer.style}</span>
         <br />
