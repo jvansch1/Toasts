@@ -4,6 +4,9 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { fetchBeers, createBeer } from './actions/beer_actions';
 import { fetchBreweries, createBrewery } from './actions/brewery_actions';
+import { receiveErrors } from './actions/session_actions';
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;

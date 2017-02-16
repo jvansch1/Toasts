@@ -28,7 +28,9 @@ const Landing = (props) => {
         <button id='signup-button' onClick={logInGuest}><span id='signup-link'>Guest</span></button>
           <p id='login-link'>Already a member? <Link to='login'>Sign in!</Link></p>
       </section>
+      <ul>
         {renderErrors()}
+      </ul>
         {props.children}
     </div>
   );

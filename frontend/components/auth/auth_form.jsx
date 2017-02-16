@@ -9,6 +9,7 @@ class AuthForm extends React.Component {
       password: '',
       email: ''
     };
+    this.errors = props.errors
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -16,6 +17,10 @@ class AuthForm extends React.Component {
     return e => {
       this.setState({[field]: e.target.value});
     };
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.errors = newProps.errors
   }
 
   redirectIfLoggedIn() {
@@ -27,6 +32,12 @@ class AuthForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.action(this.state).then(() => hashHistory.push('/home'));
+  }
+
+  renderErrors() {
+    return this.errors.map((err, idx) => {
+      return <li key={idx}>{err}</li>;
+    })
   }
 
   render() {
@@ -52,6 +63,9 @@ class AuthForm extends React.Component {
               <br />
             <input id='submit-button' type="submit" value={title} />
           </form>
+          <ul className='errors'>
+            {this.renderErrors()}
+          </ul>
         </section>
       </div>
     );

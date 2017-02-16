@@ -198,3 +198,16 @@ span {
   display: flex;
   flex-direction: column;
 }
+
+.errors {
+  z-index: 1000;
+  margin: 0 auto;
+  list-style-type: circle;
+  padding-top: 20px;
+  width: 150px;
+}
+
+.errors li {
+  text-align: center;
+  font-weight: bold;
+}
