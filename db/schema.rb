@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217144247) do
+ActiveRecord::Schema.define(version: 20170217163828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20170217144247) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "description"
-    t.integer  "rating",      null: false
+    t.float    "rating",      null: false
   end
 
   add_index "checkins", ["beer_id"], name: "index_checkins_on_beer_id", using: :btree

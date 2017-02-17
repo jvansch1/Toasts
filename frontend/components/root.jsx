@@ -11,6 +11,8 @@ import BeerIndexContainer from './beers/beer_index_container';
 import BreweryIndexContainer from './breweries/brewery_index_container';
 import BreweryShowContainer from './breweries/brewery_show_container';
 import BeerShowContainer from './beers/beer_show_container';
+import CheckinContainer from './checkins/checkin_container';
+
 
 const Root = ({store}) => {
 
@@ -42,7 +44,7 @@ const Root = ({store}) => {
           <Route path='newBrewery' component={BreweryFormContainer} />
           <Route path='breweries/:breweryId' component={BreweryShowContainer} />
           <Route path='beers/:beerId' component={BeerShowContainer}>
-            <Route path='checkin' />
+            <Route path='checkin' component={CheckinContainer}/>
           </Route>
         </Route>
       </Router>
