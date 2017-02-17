@@ -13,16 +13,18 @@ class BreweryIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='big'>
 
         <HeaderContainer />
-        <ul>
-          {
-            this.props.breweries.map((brewery,idx) => {
-              return <BreweryIndexItem brewery={brewery} key={idx} />;
-            })
-          }
-        </ul>
+        <div id='brewery-index-container'>
+          <ul id='brewery-index-list'>
+            {
+              this.props.breweries.map((brewery,idx) => {
+                return <BreweryIndexItem brewery={brewery} key={idx} />;
+              })
+            }
+          </ul>
+        </div>
       </div>
     );
   }

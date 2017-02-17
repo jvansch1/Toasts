@@ -7,25 +7,16 @@ class BreweryIndexItem extends React.Component {
 
   render() {
     return (
-      <li className='beer-index-item'>
-
-        <span className='beername'>Brewery Name</span>
-          <br />
-        <span className='breweryname'>City</span>
-          <br />
-        <span className='stylename'>State</span>
-          <br />
-          <ul className='beer-index-list'>
-            <li className='beer-index-list-item'>
-              ABV
-            </li>
-            <li className='beer-index-list-item'>
-              IBU
-            </li>
-            <li className='beer-index-list-item'>
-              Date Added 
-            </li>
-          </ul>
+      <li id="list-container">
+        <img id='brewery-list-image' src={this.props.brewery.image_url} />
+        <ul className='name-city'>
+          <li>
+            {this.props.brewery.name}
+          </li>
+          <li>
+            {this.props.brewery.city}, {this.props.brewery.state}
+          </li>
+        </ul>
       </li>
     );
   }
