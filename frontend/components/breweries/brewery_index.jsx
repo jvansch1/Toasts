@@ -13,8 +13,7 @@ class BreweryIndex extends React.Component {
 
   render() {
     return (
-      <div className='big'>
-
+      <div height='100%' width='100%'>
         <HeaderContainer />
         <div id='brewery-index-container'>
           <ul id='brewery-index-list'>
@@ -25,7 +24,9 @@ class BreweryIndex extends React.Component {
             }
           </ul>
         </div>
+
       </div>
+
     );
   }
 }

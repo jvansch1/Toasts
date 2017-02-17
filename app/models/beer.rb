@@ -9,6 +9,7 @@ class Beer < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :brewery
+  has_many :checkins
 
   def self.beer_styles
     BEER_STYLES

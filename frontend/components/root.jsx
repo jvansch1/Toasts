@@ -41,7 +41,9 @@ const Root = ({store}) => {
           <Route path='newBeer' component={BeerFormContainer} />
           <Route path='newBrewery' component={BreweryFormContainer} />
           <Route path='breweries/:breweryId' component={BreweryShowContainer} />
-          <Route path='beers/:beerId' component={BeerShowContainer} />
+          <Route path='beers/:beerId' component={BeerShowContainer}>
+            <Route path='checkin' />
+          </Route>
         </Route>
       </Router>
     </Provider>

@@ -265,17 +265,16 @@ span {
 .breweryShow ul {
   display: flex;
   padding-top: 20px;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 #brewery-index-container {
-  position: absolute;
+  position: relative;
   width: 1000px;
   background: white;
-  margin-left: 10.95%;
-  margin-right: 11%;
+  margin: 0 auto;
   top: 63px;
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 }
@@ -344,5 +343,38 @@ span {
 }
 
 #beer-container {
-  background-color: green;
+  position: relative;
+  top: 100px;
+  background-color: white;
+  width: 700px;
+  margin: 0 auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#beer-container-container {
+  height: 100%;
+}
+
+#beer-show-image {
+  height: 70px;
+  width: 70px;
+  border: 1px solid lightgrey;
+  position: absolute;
+  right: 610px;
+  top: 15px;
+}
+
+#beer-show-name {
+  position: relative;
+  font-size: 2em;
+
+}
+
+#beer-container ul {
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-around;
+  padding-left: 20px;
+  padding-right: 20px;
 }

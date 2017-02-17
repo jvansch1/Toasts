@@ -4,7 +4,6 @@ import { fetchBeer } from '../../actions/beer_actions'
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     beer: state.beers[ownProps.params.beerId]
   }
