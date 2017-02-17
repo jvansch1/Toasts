@@ -300,7 +300,6 @@ span {
   /*padding-top: 10px;
   padding-left: 10px;*/
   margin-top: 10px;
-  margin-left: 10px;
   height: 70px;
   width: 70px;
   border: 1px solid lightgrey;
@@ -310,6 +309,8 @@ span {
   padding-bottom: 20px;
   display: flex;
   justify-content: left;
+  margin-right: 20px;
+  margin-left: 10px;
 }
 
 #big {
