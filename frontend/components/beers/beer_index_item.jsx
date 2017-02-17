@@ -5,7 +5,10 @@ const BeerIndexItem = (props) => {
   return (
     <li className='beer-index-item'>
       <img src={props.beer.image_url} />
-      <span className='beername'>{props.beer.name}</span>
+      <Link to={`beers/${props.beer.id}`}>
+        <span className='beername'>{props.beer.name}</span>
+
+      </Link>
         <br />
       <span className='breweryname'><Link to={`brewery/${props.beer.brewery.id}`}>{props.beer.brewery.name}</Link></span>
         <br />
