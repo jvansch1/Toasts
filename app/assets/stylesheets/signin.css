@@ -288,7 +288,7 @@ span {
 }
 
 .name-city li {
-  widht: 100%
+  /*widht: 100%*/
 }
 
 #brewery-index-list {
@@ -316,4 +316,29 @@ span {
 #big {
   width: 1000px;
   height: 100%
+}
+
+.brewery-index-name {
+  color: #c60;
+  text-decoration: none;
+}
+
+#name {
+  font-size: 24px;
+
+}
+
+.brewery-index-name:hover {
+  color: #f93;
+  text-decoration: none;
+}
+
+.brewery-index-name a {
+  color: #c60;
+  text-decoration: none;
+}
+
+.brewery-index-name:hover a:hover {
+  color: #f93;
+  text-decoration: none;
 }
