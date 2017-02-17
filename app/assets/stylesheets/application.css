@@ -108,3 +108,21 @@ html,body {
   font-weight: bold;
   font-size: 20px;
 }
+
+#logout-button {
+  background-color: #ffc600;
+  color: white;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  padding-left: 30px;
+}
+
+#logout-button:focus {
+  outline: 0;
+}
+
+#logout-button:hover {
+  text-decoration: underline;
+}
