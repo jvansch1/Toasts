@@ -431,3 +431,64 @@ span {
   top: 10px;
   right: 20px;
 }
+
+.checkin-list-item {
+  /*border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;*/
+  text-align: center;
+  background-color: white;
+  display: flex;
+}
+
+.checkin-list-item img {
+  border: 1px solid lightgrey;
+  height: 70px;
+  width: 70px;
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.checkin-list-item section {
+
+  margin-left: 20px;
+  margin-top: 15px;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.checkin-list-item section span {
+  color: #c60;
+}
+
+.checkin-list-item section span:hover {
+  color: #f93;
+}
+
+.checkin-list-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 700px;
+  margin: 0 auto;
+}
+
+#checkin-list-wrapper {
+  position: relative;
+  width: 100%;
+  top: 150px;
+}
+
+.date-list {
+  display: flex;
+  vertical-align: bottom;
+  background-color: white;
+  /*border-left: 1px solid black;
+  border-right: 1px solid black;*/
+}
+.date-list li {
+  padding-left: 20px;
+  padding-bottom: 15px;
+  font-size: 0.6em
+}

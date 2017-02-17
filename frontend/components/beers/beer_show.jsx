@@ -49,13 +49,15 @@ class BeerShow extends React.Component {
             <button onClick={this.openCheckin.bind(this)} id='open-checkin-button'>Check In</button>
             </div>
           </div>
-          <ul>
-            {
-              this.props.beer.checkins.map(checkin => {
-                return <CheckinListItem checkin={checkin}/>
-              })
-            }
-          </ul>
+          <div id='checkin-list-wrapper'>
+            <ul className='checkin-list-container'>
+              {
+                this.props.beer.checkins.map((checkin, idx) => {
+                  return <CheckinListItem checkin={checkin} beer={this.props.beer} key={idx}/>
+                })
+              }
+            </ul>
+          </div>
           {this.props.children}
         </div>
     )

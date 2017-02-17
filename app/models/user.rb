@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
 
+  has_attached_file :image, default_url: "default_beer_Image.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   has_many :checkins
 
