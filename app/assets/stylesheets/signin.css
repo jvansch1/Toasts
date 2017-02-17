@@ -475,9 +475,9 @@ span {
 }
 
 #checkin-list-wrapper {
-  position: relative;
+  position: absolute;
   width: 100%;
-  top: 150px;
+  top: 275px;
 }
 
 .date-list {
