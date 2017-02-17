@@ -1,8 +1,14 @@
 
 #landing-background {
-  background-image: url('http://pineislandbeer.com/wp-content/uploads/2015/07/craft-beers.jpg');
   height: 100%;
+  background-image: url('http://pineislandbeer.com/wp-content/uploads/2015/07/craft-beers.jpg');
 }
+
+#transparent {
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5)
+}
+
 
 #auth-background {
   height: 100%;
@@ -19,7 +25,7 @@ body {
   top: 30%;
   text-align: center;
   vertical-align: middle;
-
+  z-index: 1000;
 }
 
 #signup-button {
@@ -27,6 +33,8 @@ body {
   border-radius: 6px;
   height: 50px;
   border-style: none;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 #signup-link {
@@ -42,13 +50,13 @@ body {
 #login-link {
   font-size: 1.6em;
   font-family: inherit;
-  color: black;
+  color: white;
 }
 
 #login-link a{
   font-weight: bold;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 #page-title {
@@ -96,6 +104,7 @@ span {
   position: absolute;
   left: 42%;
   top: 13%;
+  z-index: 1000
 }
 
 #landing-logo a {
@@ -127,6 +136,7 @@ span {
   margin-top: 10px;
   margin: 0 auto;
   padding-top: 90px;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 }
 
 .beer-index-item {

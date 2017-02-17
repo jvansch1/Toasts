@@ -21,6 +21,7 @@ const Landing = (props) => {
 
 
   return (
+
     <div id='landing-background'>
       <img src={window.images.logo} id="landing-logo"/>
       <section id="login-box">
@@ -28,6 +29,7 @@ const Landing = (props) => {
         <button id='signup-button' onClick={logInGuest}><span id='signup-link'>Guest</span></button>
           <p id='login-link'>Already a member? <Link to='login'>Sign in!</Link></p>
       </section>
+      <div id="transparent"></div>
       <ul>
         {renderErrors()}
       </ul>
