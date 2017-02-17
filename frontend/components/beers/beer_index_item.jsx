@@ -10,7 +10,7 @@ const BeerIndexItem = (props) => {
 
       </Link>
         <br />
-      <span className='breweryname'><Link to={`brewery/${props.beer.brewery.id}`}>{props.beer.brewery.name}</Link></span>
+      <span className='breweryname'><Link to={`breweries/${props.beer.brewery.id}`}>{props.beer.brewery.name}</Link></span>
         <br />
       <span className='stylename'>{props.beer.style}</span>
         <br />

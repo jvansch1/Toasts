@@ -405,13 +405,15 @@ span {
   font-size: 1.1em;
 }
 
-#checkin-button {
+.checkin-button {
   background-color: #f4b800;
   color: white;
   border-radius: 4px;
   font-weight: 400;
   font-size: 18px;
   font-family: ProximaNova, Helvetica Neue,Helvetica;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #transparent-background {
@@ -422,4 +424,10 @@ span {
   background-color: black;
   opacity: 0.4;
 
+}
+
+#open-checkin-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
 }

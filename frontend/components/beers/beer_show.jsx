@@ -1,5 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container'
+import CheckinListItem from '../checkins/checkin_list_item'
+import { Link, hashHistory } from 'react-router';
 
 class BeerShow extends React.Component {
   constructor(props) {
@@ -17,6 +19,12 @@ class BeerShow extends React.Component {
 
   componentWillReceiveProps(newProps) {
     this.state = newProps.beer
+  }
+
+  openCheckin(e) {
+    e.preventDefault();
+    hashHistory.push(`/beers/${this.props.beer.id}/checkin`)
+
   }
 
   render() {
@@ -38,10 +46,16 @@ class BeerShow extends React.Component {
                 <li>Date Added - {this.props.beer.created_at}</li>
                 <li></li>
               </ul>
-
+            <button onClick={this.openCheckin.bind(this)} id='open-checkin-button'>Check In</button>
             </div>
-
           </div>
+          <ul>
+            {
+              this.props.beer.checkins.map(checkin => {
+                return <CheckinListItem checkin={checkin}/>
+              })
+            }
+          </ul>
           {this.props.children}
         </div>
     )
