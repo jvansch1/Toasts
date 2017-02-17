@@ -342,3 +342,7 @@ span {
   color: #f93;
   text-decoration: none;
 }
+
+#beer-container {
+  background-color: green;
+}
