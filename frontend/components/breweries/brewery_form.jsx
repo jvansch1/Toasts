@@ -1,6 +1,7 @@
 
 import React from 'react'
 import HeaderContainer from '../header/header_container'
+import { hashHistory } from 'react-router'
 
 class BreweryForm extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class BreweryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createBrewery(this.state)
+    this.props.createBrewery(this.state).then(() => hashHistory.push('breweries'))
   }
 
   render() {
