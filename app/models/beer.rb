@@ -5,7 +5,7 @@ class Beer < ActiveRecord::Base
 
   validates :name, :brewery, :ABV, :IBU, presence: true
   validates :style, inclusion: { in: BEER_STYLES }
-  has_attached_file :image, styles: { thumb: '100x100#'}, default_url: 'default_beer_Image.png'
+  has_attached_file :image, styles: { thumb: "70x70!"}, default_url: 'default_beer_Image.png'
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :brewery
