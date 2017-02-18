@@ -14,10 +14,12 @@ export const logout = () => {
   });
 };
 
-export const signup = (user) => {
+export const signup = (formData) => {
   return $.ajax({
     type: 'POST',
     url: 'api/users',
-    data: { user }
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };

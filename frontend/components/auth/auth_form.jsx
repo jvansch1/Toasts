@@ -7,7 +7,9 @@ class AuthForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      email: ''
+      email: '',
+      imageFile: '',
+      imageUrl: null,
     };
     this.errors = props.errors
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,15 +31,42 @@ class AuthForm extends React.Component {
     }
   }
 
+  addFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      this.setState({ imageFile: file, imageUrl: fileReader.result })
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => hashHistory.push('/home'));
+    const formData = new FormData();
+    formData.append("user[username]", this.state.username)
+    formData.append("user[password]", this.state.password)
+    formData.append("user[image]", this.state.imageFile)
+    if (this.props.formType !== "login") {
+      this.props.action(formData).then(() => hashHistory.push('/home'));
+    }
+    else {
+      this.props.action(this.state).then(() => hashHistory.push('/home'));
+    }
   }
 
   renderErrors() {
     return this.errors.map((err, idx) => {
       return <li key={idx}>{err}</li>;
     })
+  }
+
+  renderImgInput() {
+    if (this.props.formType !== "login") {
+      return <input type='file' onChange={this.addFile.bind(this)}/>
+    }
   }
 
   render() {
@@ -61,6 +90,15 @@ class AuthForm extends React.Component {
             </span>
               <input className='text-input' type="text" onChange={this.update('password')}/>
               <br />
+              <ul className='img-input'>
+                <span>
+                  <div>
+                    {this.renderImgInput()}
+                  </div>
+                </span>
+                <img src={this.state.imageUrl} />
+              </ul>
+            <br />
             <input id='submit-button' type="submit" value={title} />
           </form>
           <ul className='errors'>

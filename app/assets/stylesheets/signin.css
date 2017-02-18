@@ -492,3 +492,23 @@ span {
   padding-bottom: 15px;
   font-size: 0.6em
 }
+
+.img-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-input img {
+  width: 70px;
+  height: 70px;
+  border-color: white;
+  margin: 0 auto;
+}
+
+.img-input span {
+  margin: 0 auto;
+}
+
+.img-input img:not([src]) {
+  visibility: hidden;
+}
