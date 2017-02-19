@@ -133,7 +133,7 @@ span {
 .container {
   background-color: white;
   height: 100%;
-  width: 1000px;
+  width: 900px;
   margin-top: 10px;
   margin: 0 auto;
   padding-top: 90px;
@@ -141,8 +141,8 @@ span {
 }
 
 .beer-index-item {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
   margin-bottom: 20px;
 }
 
@@ -275,7 +275,7 @@ span {
 
 #brewery-index-container {
   position: relative;
-  width: 1000px;
+  width: 900px;
   background: white;
   margin: 0 auto;
   top: 63px;
@@ -311,8 +311,8 @@ span {
   padding-bottom: 20px;
   display: flex;
   justify-content: left;
-  margin-right: 20px;
-  margin-left: 10px;
+  margin-right: 40px;
+  margin-left: 30px;
 }
 
 #big {
@@ -378,13 +378,21 @@ span {
 }
 
 #beer-show-name {
-  position: relative;
+
   font-size: 1.3em;
   left: 100px;
 }
 
+#beer-name-flex {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-left: 100px;
+  padding-top: 10px;
+}
+
 #beer-show-name-brewery {
-  position: relative;
+
   left: 100px;
 }
 
@@ -395,12 +403,14 @@ span {
   border-top: 1px solid lightgrey;
   margin-left: 20px;
   margin-top: 31px;
+  margin-right: 20px;
+  font-size: 10px;
 }
 
 #beer-container ul li {
   border-right: 1px solid lightgrey;
   text-align: center;
-  padding: 10px 53px 10px 30px;
+  padding: 10px 70px 10px 30px;
 }
 
 #checkin-form-container {
@@ -498,7 +508,7 @@ span {
 
 .checkin-list-item section {
 
-  margin-left: 20px;
+  margin-left: 15px;
   margin-top: 15px;
   font-size: 1.1em;
   font-weight: 600;

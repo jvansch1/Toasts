@@ -41,9 +41,11 @@ class BeerShow extends React.Component {
 
             <div id="beer-background">
               <img id='beer-show-image' src={this.props.beer.image_url} />
-              <span id='beer-show-name'>{this.props.beer.name}</span>
-              <br />
-              <span id='beer-show-name-brewery'>{this.props.beer.brewery.name}</span>
+              <div id='beer-name-flex'>
+                <span id='beer-show-name'>{this.props.beer.name}</span>
+                <span id='beer-show-name-brewery'>{this.props.beer.brewery.name}</span>
+
+              </div>
 
 
                 <i onClick={this.openCheckin.bind(this)} className="fa fa-plus-square" aria-hidden="true"></i>
@@ -64,7 +66,6 @@ class BeerShow extends React.Component {
                 <li>ABV - {this.props.beer.ABV}</li>
                 <li>IBU - {this.props.beer.IBU}</li>
                 <li>Date Added - {this.props.beer.created_at}</li>
-                <li></li>
               </ul>
             </div>
           </div>
