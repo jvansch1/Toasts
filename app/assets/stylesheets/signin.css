@@ -733,3 +733,88 @@ span {
   position: relative;
   top: 143px;
 }
+
+.checkin-show-container {
+  height: 200px;
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkin-show-left {
+  background: white;
+  height: 200px;
+  width: 450px;
+}
+
+#checkin-full-pic {
+  width: 500px;
+  length: 500px;
+}
+
+.checkin-left-top {
+  height: 200px;
+  width: 450px;
+}
+
+.checkin-left-top img {
+  height: 50px;
+  width: 50px;
+  border: 1px solid lightgrey;
+  margin-left: 10px;
+  margin-top: 10px;
+
+}
+
+.checkin-left-bottom {
+  height: 200px;
+  width: 450px;
+  margin-top: 20px;
+}
+
+.user-bar {
+  border-bottom: 1px solid lightgrey;
+  position: relative;
+}
+
+
+.name {
+  position: absolute;
+  top: 20px;
+  left: 70px;
+}
+
+.date {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+
+.checkin-detail {
+  display: flex;
+}
+
+.beer-and-brewery {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 180px;
+  left: 210px;
+  width: 300px;
+}
+
+.rating-and-description {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 250px;
+  left: 150px;
+}
+
+.checkin-show-right {
+  background-color: white;
+  width: 500px;
+  height: 500px;
+}

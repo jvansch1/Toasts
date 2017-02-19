@@ -23,7 +23,7 @@ export const removeCheckin = (checkin) => ({
 export const fetchCheckin = (id) => {
   return dispatch => {
     return CheckinApiUtil.fetchCheckin(id)
-      .then(checkin => dispatch(receiveCheckin(id)))
+      .then(checkin => dispatch(receiveCheckin(checkin)))
   }
 }
 
