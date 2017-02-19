@@ -69,11 +69,13 @@ class CheckinForm extends React.Component {
             <i onClick={this.cancelSubmit.bind(this)} className="fa fa-times" aria-hidden="true"></i>
           </section>
           <form id='checkin-form' onSubmit={this.handleSubmit.bind(this)}>
-            Description
-            <input onChange={this.update('description')}type='text'></input>
+          <p>Description: </p>
+            <input className='checkin-input' placeholder='What did you think?' onChange={this.update('description')}type='text'></input>
             <br />
-            Rating
-          <select onChange={this.update('rating')}>
+            <p>
+              Rating
+            </p>
+          <select className='checkin-input' onChange={this.update('rating')}>
               {
                 RATING_SCALE.map(rating => {
                   return <option  value={rating} key={rating}>{rating}</option>
@@ -81,7 +83,6 @@ class CheckinForm extends React.Component {
               }
             </select>
             <br />
-            <i onClick={this.renderImgInput} className="fa fa-plus-square" aria-hidden="true"></i>
             <input onChange={this.addFile.bind(this)} type='file'/>
             <input onSubmit={this.handleSubmit.bind(this)} className='checkin-button' type='submit' value="Confirm"/>
         </form>

@@ -11,6 +11,11 @@ class BeerShow extends React.Component {
     }
   }
 
+  countCheckins() {
+    return this.props.beer.checkins.length
+  }
+
+
   componentDidMount() {
     if (this.props.params) {
       this.props.fetchBeer(this.props.params.beerId)
@@ -40,13 +45,27 @@ class BeerShow extends React.Component {
               <br />
               <span id='beer-show-name-brewery'>{this.props.beer.brewery.name}</span>
 
-              <ul>
+
+                <i onClick={this.openCheckin.bind(this)} className="fa fa-plus-square" aria-hidden="true"></i>
+
+
+              <div className='checkin-count-container'>
+                <span className='checkin-count'>
+                  <p className='first'>
+                    Checkins: {this.countCheckins()}
+                  </p>
+                  <p className='second'>
+                    &nbsp;Unique: {this.countCheckins()}
+                  </p>
+                </span>
+              </div>
+
+              <ul className='stat-list'>
                 <li>ABV - {this.props.beer.ABV}</li>
                 <li>IBU - {this.props.beer.IBU}</li>
                 <li>Date Added - {this.props.beer.created_at}</li>
                 <li></li>
               </ul>
-            <button onClick={this.openCheckin.bind(this)} id='open-checkin-button'>Check In</button>
             </div>
           </div>
           <div id='checkin-list-wrapper'>
