@@ -15,6 +15,8 @@
          <li>{props.checkin.created_at}</li>
          <li>View Detailed Check-in</li>
        </ul>
+
+       <img src={props.checkin.image_url} width='100px' height='100px'/>
      </div>
 
 

@@ -13,11 +13,13 @@ export const fetchCheckins = () => {
   })
 }
 
-export const createCheckin = (checkin) => {
+export const createCheckin = (formData) => {
   return $.ajax({
     type: 'POST',
     url: 'api/checkins',
-    data: { checkin }
+    data: formData,
+    contentType: false,
+    processData: false
   })
 }
 

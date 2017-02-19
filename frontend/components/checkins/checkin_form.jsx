@@ -8,14 +8,21 @@ class CheckinForm extends React.Component {
     super(props)
     this.state = {
       description: "",
-      rating: null,
-      beer_id: props.beer.id
+      rating: '0',
+      beer_id: props.beer.id,
+      imageFile: '',
+      imageUrl: ''
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createCheckin(this.state).then(() => hashHistory.push(`beers/${this.props.beer.id}`));
+    const formData = new FormData();
+    formData.append("checkin[description]", this.state.description)
+    formData.append("checkin[rating]", this.state.rating)
+    formData.append("checkin[image]", this.state.imageFile)
+    formData.append("checkin[beer_id]", this.state.beer_id)
+    this.props.createCheckin(formData).then(() => hashHistory.push(`beers/${this.props.beer.id}`));
   }
 
   cancelSubmit(e) {
@@ -30,6 +37,25 @@ class CheckinForm extends React.Component {
     }
   }
 
+  addFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      this.setState({ imageFile: file, imageUrl: fileReader.result })
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
+
+  resetSliderValue(e) {
+    debugger
+    e.preventDefault()
+    this.setState({rating: e.target.value})
+  }
+
   render() {
     return (
       <div height='100%' width='100%'>
@@ -37,14 +63,17 @@ class CheckinForm extends React.Component {
         </div>
         <div id='checkin-form-container'>
           <section id='checkin-title'>
-            <span>Check-in</span>
+            <span>
+              Check-in
+            </span>
+            <i onClick={this.cancelSubmit.bind(this)} className="fa fa-times" aria-hidden="true"></i>
           </section>
           <form id='checkin-form' onSubmit={this.handleSubmit.bind(this)}>
             Description
             <input onChange={this.update('description')}type='text'></input>
             <br />
             Rating
-            <select onChange={this.update('rating')}>
+          <select onChange={this.update('rating')}>
               {
                 RATING_SCALE.map(rating => {
                   return <option  value={rating} key={rating}>{rating}</option>
@@ -52,9 +81,10 @@ class CheckinForm extends React.Component {
               }
             </select>
             <br />
+            <i onClick={this.renderImgInput} className="fa fa-plus-square" aria-hidden="true"></i>
+            <input onChange={this.addFile.bind(this)} type='file'/>
             <input onSubmit={this.handleSubmit.bind(this)} className='checkin-button' type='submit' value="Confirm"/>
-            <input onClick={this.cancelSubmit.bind(this)} className='checkin-button' type='submit' value="Cancel"/>
-          </form>
+        </form>
         </div>
       </div>
     )

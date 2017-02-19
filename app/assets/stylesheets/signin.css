@@ -37,6 +37,7 @@ body {
   margin-left: 5px;
 }
 
+
 #signup-link {
   text-decoration: none;
   color: white;
@@ -224,12 +225,14 @@ span {
   margin: 0 auto;
   list-style-type: circle;
   padding-top: 20px;
-  width: 150px;
+  width: 500px;
+  list-style: none;
 }
 
 .errors li {
   text-align: center;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .breweryShow {
@@ -397,12 +400,19 @@ span {
 #checkin-title {
   background: black;
   color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
 #checkin-title span {
   padding-left: 20px;
   font-weight: 600;
   font-size: 1.1em;
+}
+
+#checkin-title i {
+  padding-right: 10px;
+  padding-top: 5px;
 }
 
 .checkin-button {
@@ -511,4 +521,20 @@ span {
 
 .img-input img:not([src]) {
   visibility: hidden;
+}
+
+#redirect {
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+}
+
+#redirect a {
+  text-decoration: underline;
+  color: black;
+}
+
+#redirect a:hover {
+  font-weight: 800;
+  color: grey;
 }

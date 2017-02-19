@@ -25,6 +25,10 @@ class BeerForm extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.fetchBreweries();
+  }
+
   render() {
     return (
       <div>
@@ -57,7 +61,7 @@ class BeerForm extends React.Component {
             <select onChange={this.update('brewery_id')}>
               <option disabled selected>Pick a Brewery</option>
               {
-                window.breweries.breweries.map((brewery, idx) => {
+                this.props.breweries.map((brewery, idx) => {
                   return <option value={brewery.id} key={idx}>{brewery.name}</option>;
                 })
               }

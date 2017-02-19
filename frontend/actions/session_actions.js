@@ -13,6 +13,7 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
+
 export const login = (user) => {
   return dispatch => {
     return sessionApiUtil.login(user)

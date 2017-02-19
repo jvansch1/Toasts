@@ -1,5 +1,5 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -14,6 +14,8 @@ class AuthForm extends React.Component {
     this.errors = props.errors
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+
 
   update(field) {
     return e => {
@@ -58,6 +60,7 @@ class AuthForm extends React.Component {
   }
 
   renderErrors() {
+    debugger
     return this.errors.map((err, idx) => {
       return <li key={idx}>{err}</li>;
     })
@@ -69,12 +72,21 @@ class AuthForm extends React.Component {
     }
   }
 
+  redirectToLanding(e) {
+    e.preventDefault();
+    hashHistory.push('/')
+  }
+
   render() {
     const title = this.props.formType === "login" ? "Log In" : "Sign up";
+    const redirect = this.props.formType === "login" ? <p>Not a member? <Link to='/signup'>Sign up!</Link></p> : <p>Already a member? <Link to='/login'>Sign In!</Link></p>
     return (
       <div id='auth-background'>
         <section id='form-background'>
-          <img src={window.images.logo} id="logo"/>
+          <img onClick={this.redirectToLanding} src={window.images.logo} id="logo"/>
+          <ul className='errors'>
+            {this.renderErrors()}
+          </ul>
           <form onSubmit={this.handleSubmit} id='user-form'>
             <span>
               Username
@@ -88,7 +100,7 @@ class AuthForm extends React.Component {
               password
               <br />
             </span>
-              <input className='text-input' type="text" onChange={this.update('password')}/>
+              <input className='text-input' type="password" onChange={this.update('password')}/>
               <br />
               <ul className='img-input'>
                 <span>
@@ -100,10 +112,10 @@ class AuthForm extends React.Component {
               </ul>
             <br />
             <input id='submit-button' type="submit" value={title} />
+            <span id='redirect'>
+              {redirect}
+            </span>
           </form>
-          <ul className='errors'>
-            {this.renderErrors()}
-          </ul>
         </section>
       </div>
     );
