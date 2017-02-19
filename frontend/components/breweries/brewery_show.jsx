@@ -27,19 +27,31 @@ class BreweryShow extends React.Component {
           <HeaderContainer />
 
           <section className='breweryShow'>
-            <img className='brewery-image' src={this.props.brewery.image_url} />
-            <span className='brewery-show-name'>
+            <div id='brewery-name-flex'>
+              <img className='brewery-image' src={this.props.brewery.image_url} />
+              <span className='brewery-show-name'>
 
-              {this.props.brewery.name}
+                {this.props.brewery.name}
 
-            </span>
-            <br/ >
-              <span className='brewery-show-location'>
-
-                {this.props.brewery.city}, {this.props.brewery.state}
               </span>
+                <span className='brewery-show-location'>
 
-            <ul>
+                  {this.props.brewery.city}, {this.props.brewery.state}
+                </span>
+            </div>
+
+            <div className='brewery-checkin-stats'>
+              <span className='checkin-count'>
+                <p className='first'>
+                  Checkins: 100
+                </p>
+                <p className='second'>
+                  &nbsp;Unique: 100
+                </p>
+              </span>
+            </div>
+
+            <ul id='brewery-stats'>
               <li>Rating</li>
               <li>10000 ratings</li>
               <li>80 beers</li>
