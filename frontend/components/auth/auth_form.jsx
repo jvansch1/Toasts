@@ -60,7 +60,6 @@ class AuthForm extends React.Component {
   }
 
   renderErrors() {
-    debugger
     return this.errors.map((err, idx) => {
       return <li key={idx}>{err}</li>;
     })

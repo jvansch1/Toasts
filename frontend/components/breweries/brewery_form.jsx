@@ -31,27 +31,34 @@ class BreweryForm extends React.Component {
         <HeaderContainer />
 
         <div className='form-container'>
-          <form onSubmit={this.handleSubmit.bind(this)}>
-
-
-              Name
-              <input onChange={this.update('name')}type="text" className='beer-form-input'/>
-
+          <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
+            <span id='beer-form-title'>
+              Add A Brewery
+            </span>
             <br />
+              <p>
+                Name
+              </p>
+              <input className='beer-input' onChange={this.update('name')}type="text"/>
+
+            <p>
+              City
+            </p>
+            <input className='beer-input' onChange={this.update('city')}type="text" />
 
 
-            City
-            <input onChange={this.update('city')}type="text" />
+            <p>
+              State
+            </p>
+            <input className='beer-input' onChange={this.update('state')} type='text'/>
 
 
-            State
-            <input onChange={this.update('state')} type='text'/>
+            <p>
+              Country
+            </p>
+            <input className='beer-input' onChange={this.update('country')} type='text' />
 
-
-            Country
-            <input onChange={this.update('country')} type='text' />
-
-              <input type="submit" value="Add Brewery" />
+              <input id='beer-form-button' type="submit" value="Add Brewery" />
             </form>
         </div>
       </div>

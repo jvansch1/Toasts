@@ -4,7 +4,6 @@ import { createBeer } from '../../actions/beer_actions';
 import { fetchBreweries } from '../../actions/brewery_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     breweries: Object.keys(state.breweries).map(key => state.breweries[key])
   }

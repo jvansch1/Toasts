@@ -35,18 +35,20 @@ class BeerForm extends React.Component {
         <HeaderContainer />
 
         <div className='form-container'>
-          <form onSubmit={this.handleSubmit.bind(this)}>
-
-
-              Beer Name
-              <input onChange={this.update('name')}type="text" className='beer-form-input'/>
-
+          <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
+            <span id='beer-form-title'>
+              Add A Beer
+            </span>
             <br />
+              <p>
+                Beer Name
+              </p>
+              <input className='beer-input' placeholder='Beer Name' onChange={this.update('name')}type="text"/>
 
-
-
-            Style
-            <select onChange={this.update('style')}>
+            <p>
+              Style
+            </p>
+            <select className='beer-input' onChange={this.update('style')}>
               <option disabled selected>Pick a style</option>
               {
                 window.styles.styles.map((style, idx) => {
@@ -57,8 +59,10 @@ class BeerForm extends React.Component {
 
 
 
-            Brewery
-            <select onChange={this.update('brewery_id')}>
+            <p>
+              Brewery
+            </p>
+            <select className='beer-input' onChange={this.update('brewery_id')}>
               <option disabled selected>Pick a Brewery</option>
               {
                 this.props.breweries.map((brewery, idx) => {
@@ -68,14 +72,19 @@ class BeerForm extends React.Component {
             </select>
 
 
-            ABV
-            <input onChange={this.update('ABV')} type='text'/>
+            <p>
+              ABV
+            </p>
+            <input className='beer-input' placeholder='ABV'onChange={this.update('ABV')} type='text'/>
 
 
-            IBU
-            <input onChange={this.update('IBU')} type='number'/>
 
-              <input type="submit" value="Add Beer" />
+            <p>
+              IBU
+            </p>
+            <input className='beer-input' placeholder='IBU' onChange={this.update('IBU')} type='number'/>
+
+              <input id='beer-form-button' type="submit" value="Add New Beer" />
             </form>
         </div>
       </div>
