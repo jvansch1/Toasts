@@ -242,6 +242,7 @@ span {
   background-color: white;
   margin: 0 auto;
   text-align: center;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 }
 
 .brewery-image {
@@ -551,6 +552,11 @@ span {
   color: #c60;
 }
 
+.checkin-list-item section span a{
+  color: #c60;
+  text-decoration: none;
+}
+
 .checkin-list-item section span:hover {
   color: #f93;
 }
@@ -580,8 +586,9 @@ span {
   border-right: 1px solid black;*/
 }
 .date-list li {
-  margin-left: 20px;
-  font-size: 0.6em
+  margin-right: 20px;
+  font-size: 0.6em;
+  color: grey;
 }
 
 .img-input {
@@ -714,4 +721,15 @@ span {
 
 .second {
   border-bottom: 1px solid lightgrey;
+}
+
+#brewey-check-list-item-container {
+  position: absolute;
+}
+
+#brewery-checkin-list-wrapper {
+  width: 700px;
+  margin: 0 auto;
+  position: relative;
+  top: 143px;
 }

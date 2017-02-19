@@ -73,7 +73,7 @@ class BeerShow extends React.Component {
             <ul className='checkin-list-container'>
               {
                 this.props.beer.checkins.map((checkin, idx) => {
-                  return <CheckinListItem checkin={checkin} beer={this.props.beer} key={idx}/>
+                  return <CheckinListItem checkin={checkin} beer={this.props.beer} brewery={this.props.brewery} key={idx}/>
                 })
               }
             </ul>
