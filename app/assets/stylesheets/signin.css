@@ -591,6 +591,11 @@ span {
   color: grey;
 }
 
+.date-list li a{
+  text-decoration: none;
+  color: #c60;
+}
+
 .img-input {
   display: flex;
   flex-direction: column;

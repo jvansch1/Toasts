@@ -42,7 +42,7 @@
 
          <ul className='date-list'>
            <li>{props.checkin.created_at}</li>
-           <li>View Detailed Check-in</li>
+           <li><Link to={`checkins/${props.checkin.id}`}>View Detailed Check-in</Link></li>
          </ul>
      </div>
 
