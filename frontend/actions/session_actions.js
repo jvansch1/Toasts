@@ -16,9 +16,8 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
-export const clearErrors = (errors) => ({
-  type: CLEAR_ERRORS,
-  errors
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
 })
 
 
@@ -29,6 +28,14 @@ export const login = (user) => {
         err => dispatch(receiveErrors(err.responseJSON)));
   };
 };
+
+// export const clearErrors = (arr = []) => {
+//   return dispatch => {
+//     return sessionApiUtil.logout()
+//       .then(user => dispatch(receiveCurrentUser(null))),
+//         err => dispatch(receiveErrors(arr))
+//   }
+// }
 
 export const logout = () => {
   return dispatch => {

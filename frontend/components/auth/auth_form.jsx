@@ -24,7 +24,12 @@ class AuthForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.errors = newProps.errors
+    if (this.props.formType !== newProps.formType) {
+      this.props.clearErrors();
+    }
+    else {
+      this.errors = newProps.errors
+    }
   }
 
   redirectIfLoggedIn() {
@@ -86,7 +91,7 @@ class AuthForm extends React.Component {
           <ul className='errors'>
             {this.renderErrors()}
           </ul>
-          <form onSubmit={this.handleSubmit} id='user-form'>
+          <form onSubmit={this.handleSubmit.bind(this)} id='user-form'>
             <span>
               Username
               <br />
