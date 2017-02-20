@@ -13,11 +13,13 @@ export const fetchBrewery = (id) => {
   })
 }
 
-export const createBrewery = (brewery) => {
+export const createBrewery = (formData) => {
   return $.ajax({
     type: 'POST',
     url: `api/breweries`,
-    data: { brewery }
+    data: formData,
+    contentType: false,
+    processData: false
   })
 }
 

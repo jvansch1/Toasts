@@ -28,6 +28,6 @@
   private
 
   def beer_params
-    params.require(:beer).permit(:name, :style, :brewery_id, :ABV, :IBU)
+    params.require(:beer).permit(:name, :style, :brewery_id, :ABV, :IBU, :image)
   end
 end

@@ -40,7 +40,7 @@ class CheckinShow extends React.Component {
                 </div>
 
                 <div className='checkin-detail'>
-                  <img src={this.props.checkin.beer.image_url} />
+                  <img src={this.props.checkin.image_url} />
 
                   <div className='beer-and-brewery'>
                     <p>

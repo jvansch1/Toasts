@@ -735,7 +735,7 @@ span {
 }
 
 .checkin-show-container {
-  height: 200px;
+  height: 220px;
   width: 1000px;
   margin: 0 auto;
   padding-top: 100px;
@@ -745,7 +745,7 @@ span {
 
 .checkin-show-left {
   background: white;
-  height: 200px;
+  height: 220px;
   width: 450px;
 }
 
@@ -784,12 +784,17 @@ span {
   position: absolute;
   top: 20px;
   left: 70px;
+  font-family: sans-serif;
+  font-weight: bold;
 }
 
 .date {
   position: absolute;
   right: 10px;
   top: 20px;
+  font-size: 12px;
+  color: lightgrey;
+  font-family: sans-serif;
 }
 
 .checkin-detail {
@@ -811,10 +816,32 @@ span {
   position: absolute;
   top: 250px;
   left: 150px;
+  padding-left: 10px;
+  margin-bottom: 10px;
 }
 
 .checkin-show-right {
   background-color: white;
   width: 500px;
   height: 500px;
+}
+
+#brewery-picture-input {
+  padding-bottom: 20px;
+}
+
+#pending-beer-image {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  left: 10px;
+  bottom: 25px;
+  text-indent: -999px;
+
+}
+
+
+
+#beer-image-field {
+  display: flex;
 }

@@ -14,11 +14,13 @@ export const fetchBeer = (id) => {
 };
 
 
-export const createBeer = (beer) => {
+export const createBeer = (formData) => {
   return $.ajax({
     type: 'POST',
     url: 'api/beers',
-    data: {beer}
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };
 

@@ -10,7 +10,9 @@ class BreweryForm extends React.Component {
       name: "",
       city: "",
       state: "",
-      country: ""
+      country: "",
+      imageUrl: '',
+      imageFile: ''
     }
   }
 
@@ -22,7 +24,25 @@ class BreweryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createBrewery(this.state).then(() => hashHistory.push('breweries'))
+    const formData = new FormData();
+    formData.append("brewery[name]", this.state.name)
+    formData.append("brewery[city]", this.state.city)
+    formData.append("brewery[state]", this.state.state)
+    formData.append("brewery[country]", this.state.country)
+    formData.append("brewery[image]", this.state.imageFile)
+    this.props.createBrewery(formData).then(() => hashHistory.push('breweries'))
+  }
+
+  addFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      this.setState({ imageFile: file, imageUrl: fileReader.result })
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   render() {
@@ -58,6 +78,14 @@ class BreweryForm extends React.Component {
             </p>
             <input className='beer-input' onChange={this.update('country')} type='text' />
 
+
+            <p>
+              Upload Picture
+            </p>
+              <div id='beer-image-field'>
+                <input type='file' id='brewery-picture-input' onChange={this.addFile.bind(this)}/>
+                <img src={this.state.imageUrl} id='pending-beer-image'/>
+              </div>
               <input id='beer-form-button' type="submit" value="Add Brewery" />
             </form>
         </div>
