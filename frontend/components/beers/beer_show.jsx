@@ -57,7 +57,7 @@ class BeerShow extends React.Component {
                     Checkins: {this.countCheckins()}
                   </p>
                   <p className='second'>
-                    &nbsp;Unique: {this.countCheckins()}
+                    &nbsp;Unique: {this.props.beer.unique_checkins}
                   </p>
                 </span>
               </div>

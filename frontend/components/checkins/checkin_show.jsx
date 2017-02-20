@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container'
+import {Link} from 'react-router'
 
 class CheckinShow extends React.Component {
   constructor(props) {
@@ -21,6 +22,8 @@ class CheckinShow extends React.Component {
       return null;
     }
     else {
+      debugger
+      const rating = `${this.props.checkin.rating}px`
       return (
         <div>
           <HeaderContainer />
@@ -40,25 +43,43 @@ class CheckinShow extends React.Component {
                 </div>
 
                 <div className='checkin-detail'>
-                  <img src={this.props.checkin.image_url} />
+                  <img src={this.props.checkin.beer_image_url} />
 
                   <div className='beer-and-brewery'>
-                    <p>
-                      {this.props.checkin.beer.name}
 
-                    </p>
-                    <p>
-                      {this.props.checkin.brewery.name}
-                    </p>
+                    <Link to={`beers/${this.props.checkin.beer.id}`}>
+                      <p className='checkin-show-beer-name'>
+                        {this.props.checkin.beer.name}
+                      </p>
+                    </Link>
+
+                    <Link to={`breweries/${this.props.checkin.brewery.id}`}>
+                      <p className='checkin-show-brewery-name'>
+                        {this.props.checkin.brewery.name}
+                      </p>
+                    </Link>
+
+                    <div className='rating-and-description'>
+                      <p className='checkin-description'>
+                        {this.props.checkin.description}
+                      </p>
+
+                        <div className='brewery-star-ratings-css'>
+
+                         <div className='brewery-star-ratings-css-top' style={{width: rating}} >
+                           <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                         </div>
+
+                         <div className='brewery-star-ratings-css-bottom'>
+                           <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                         </div>
+                        </div>
+
+
+                    </div>
                   </div>
 
 
-                  <div className='rating-and-description'>
-                    <p>
-                      {this.props.checkin.description}
-                    </p>
-                    <p>{this.props.checkin.rating} / 5</p>
-                  </div>
                 </div>
               </div>
 

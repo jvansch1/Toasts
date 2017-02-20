@@ -14,7 +14,7 @@
   end
 
   def show
-    @beer = Beer.find(params[:id])
+    @beer = Beer.where(id: params[:id]).includes(brewery: [:checkins], checkins: [:user]).first
   end
 
   def update

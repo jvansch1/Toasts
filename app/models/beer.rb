@@ -14,4 +14,8 @@ class Beer < ActiveRecord::Base
   def self.beer_styles
     BEER_STYLES
   end
+
+  def unique_checkins
+    self.checkins.select(:user_id).distinct
+  end
 end

@@ -22,7 +22,7 @@ class BreweryShow extends React.Component {
 
 
   render() {
-    if (this.props.brewery === undefined) return null;
+    if (this.props.brewery === undefined || this.props.brewery.checkins === undefined) return null;
       return (
         <div>
           <HeaderContainer />

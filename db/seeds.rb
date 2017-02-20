@@ -21,13 +21,13 @@ user = User.create(username: 'Guest', password: 'password')
 end
 
 
-an = Brewery.create!(name: 'Anheuser-Busch', city: 'St. Loius', state: 'MO', country: 'USA')
-tr = Brewery.create!(name: 'Treehouse', city: 'Monson', state: 'MA', country: 'USA')
-miller = Brewery.create(name: "Miller Brewing Company", city: "Milwaukee", state: "WI", country: 'USA')
-goose_island = Brewery.create!(name: "Goose Island", city: "Chicago", state: "Illinois", country: "USA")
-cigar_city = Brewery.create!(name: "Cigar City Brewing", city: 'Tampa', state: 'FL', country: 'USA')
-bottle_logic = Brewery.create!(name: "Bottle Logic Brewing", city: "Anaheim", state: "CA", country: "USA")
-founders = Brewery.create!(name: "Founders Brewing Co.", city: "Grand Rapids", state: "MI", country: "USA")
+an = Brewery.create!(name: 'Anheuser-Busch', city: 'St. Loius', state: 'MO', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/anheuser.jpeg')
+tr = Brewery.create!(name: 'Treehouse', city: 'Monson', state: 'MA', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/treehouse.jpeg')
+miller = Brewery.create(name: "Miller Brewing Company", city: "Milwaukee", state: "WI", country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-millerBrewing.jpg')
+goose_island = Brewery.create!(name: "Goose Island", city: "Chicago", state: "Illinois", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/goose_island.jpeg')
+cigar_city = Brewery.create!(name: "Cigar City Brewing", city: 'Tampa', state: 'FL', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-379_e6ae7.jpeg')
+bottle_logic = Brewery.create!(name: "Bottle Logic Brewing", city: "Anaheim", state: "CA", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/bottle_logic.jpeg')
+founders = Brewery.create!(name: "Founders Brewing Co.", city: "Grand Rapids", state: "MI", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-foundersbrewingcompany_549.jpeg')
 
 Beer.create!(name: 'Budweiser', brewery_id: an.id, style: "Light ale", ABV: 5.0, IBU: 12, image: 'https://s3.amazonaws.com/untappd-dev/beers/budweiser.jpeg')
 Beer.create!(name: 'Bud Light', brewery_id: an.id, style: "Light ale", ABV: 4.2, IBU: 27, image: 'https://s3.amazonaws.com/untappd-dev/beers/budlight.jpeg')
@@ -52,6 +52,6 @@ users = User.all
 beers = Beer.all
 ratings = [0,0.25,0.50,0.75,1,1.25,1.50,1.75,2, 2.25,2.50, 2.75, 3, 3.25, 3.50, 3.75, 4, 4.25, 4.5, 4.75, 5]
 
-100.times do
+500.times do
   Checkin.create(user_id: users.sample.id, beer_id: beers.sample.id, rating: ratings.sample, description: Faker::Hipster.sentence)
 end
