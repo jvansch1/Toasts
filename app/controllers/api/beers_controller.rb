@@ -1,6 +1,6 @@
  class Api::BeersController < ApplicationController
   def index
-    @beers = Beer.all.includes(:brewery, :checkins)
+    @beers = Beer.all.includes(:brewery)
   end
 
   def create

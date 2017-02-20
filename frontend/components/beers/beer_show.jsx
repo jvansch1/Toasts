@@ -33,7 +33,7 @@ class BeerShow extends React.Component {
   }
 
   render() {
-    if (this.props.beer === undefined) return null;
+    if (this.props.beer === undefined || this.props.beer.checkins === undefined) return null;
       return (
         <div id='beer-container-container'>
           <HeaderContainer />
