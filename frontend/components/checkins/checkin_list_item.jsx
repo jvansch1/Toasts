@@ -2,6 +2,7 @@
  import { Link } from 'react-router';
 
  const CheckinListItem = (props) => {
+   const rating = `${25 * props.checkin.rating}px`
    return (
      <div id='checkin-list-item-container'>
 
@@ -15,7 +16,22 @@
 
          <ul className='rating-list'>
            <ul className='inner-rating-list'>
-             <li>Rating: {props.checkin.rating} / 5</li>
+             <li>
+               <span className='rating-header'>
+                 Rating: {props.checkin.rating} / 5
+               </span>
+               <div className='star-ratings-css'>
+
+                <div className='star-ratings-css-top' style={{width: rating}} >
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+
+                <div className='star-ratings-css-bottom'>
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+               </div>
+
+             </li>
              <li id='review'>{props.checkin.description}</li>
            </ul>
            <li>
