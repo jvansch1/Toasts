@@ -758,14 +758,15 @@ span {
 }
 
 #checkin-full-pic {
-  width: 500px;
-  length: 500px;
+  min-width: 500px;
+  height: auto;
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 }
 
 .checkin-left-top {
   height: 200px;
   width: 450px;
+  margin-bottom: 120px;
 }
 
 .checkin-left-top img {
@@ -779,9 +780,21 @@ span {
 }
 
 .checkin-left-bottom {
-  height: 200px;
+  height: 50px;
   width: 450px;
-  margin-top: 20px;
+  background: white;
+  display: flex;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+}
+
+.checkin-left-bottom span{
+  padding-top: 7px;
+  text-align: center;
+  margin: 0 auto;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5em;
+
 }
 
 .user-bar {
@@ -828,9 +841,9 @@ span {
 }
 
 .checkin-show-right {
-  background-color: white;
   width: 500px;
   height: 500px;
+  overflow: hidden;
 }
 
 #brewery-picture-input {
@@ -950,4 +963,16 @@ span {
 .checkin-show-container a {
   text-decoration: none;
   color: black;
+}
+
+.toast-button {
+  background: #ffc600;
+  border: 1px solid lightgrey;
+  display: flex;
+}
+
+.toast-button p {
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+  color: white;
 }

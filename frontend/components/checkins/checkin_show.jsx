@@ -5,16 +5,33 @@ import {Link} from 'react-router'
 class CheckinShow extends React.Component {
   constructor(props) {
     super(props)
+    if (props.checkin) {
+        // numLikes = this.props.checkin.likes.length
+
+    }
   }
 
   componentDidMount() {
     if (this.props.params) {
       this.props.fetchCheckin(this.props.params.checkinId)
+      // this.props.fetchLikes()
     }
   }
 
   componentWillReceiveProps(newProps) {
     this.state = newProps.checkin
+    if (newProps.checkin) {
+      this.numLikes = newProps.checkin.likes.length
+    }
+  }
+
+  createLike(e) {
+    const like = {
+      user_id: window.currentUser.id,
+      checkin_id: this.props.checkin.id
+    }
+    e.preventDefault();
+    this.props.createLike(like)
   }
 
   render() {
@@ -22,7 +39,7 @@ class CheckinShow extends React.Component {
       return null;
     }
     else {
-      debugger
+
       const rating = `${this.props.checkin.rating}px`
       return (
         <div>
@@ -75,12 +92,24 @@ class CheckinShow extends React.Component {
                          </div>
                         </div>
 
-
                     </div>
                   </div>
 
 
                 </div>
+              </div>
+
+              <div className='checkin-left-bottom'>
+                <div className='toast-button'>
+                  <p onClick={this.createLike.bind(this)}>
+                    Toast!
+                  </p>
+
+
+                </div>
+                <span>
+                  {this.numLikes} Toasts! Nice!
+                </span>
               </div>
 
             </div>

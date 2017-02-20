@@ -13,11 +13,37 @@ I18n.reload!
 Beer.destroy_all
 Brewery.destroy_all
 User.destroy_all
+Checkin.destroy_all
+Like.destroy_all
+
 
 user = User.create(username: 'Guest', password: 'password')
+user_images = [
+  'https://s3.amazonaws.com/untappd-dev/users/guy1.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy10.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy11.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy12.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy13.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy14.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy15.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy16.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy17.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy18.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy19.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy2.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy3.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy4.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy5.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy6.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy7.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy8.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/guy9.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/users/woman1.jpeg'
+]
 
-20.times do
-  User.create!(username: Faker::Internet.user_name, password: 'password')
+
+20.times do |i|
+  User.create!(username: Faker::Internet.user_name, password: 'password', image: user_images[i])
 end
 
 
@@ -50,8 +76,13 @@ Beer.create!(name: 'Canadian Breakfast Stout', brewery_id: founders.id, style: "
 
 users = User.all
 beers = Beer.all
+checkins = Checkin.all
 ratings = [0,0.25,0.50,0.75,1,1.25,1.50,1.75,2, 2.25,2.50, 2.75, 3, 3.25, 3.50, 3.75, 4, 4.25, 4.5, 4.75, 5]
 
-500.times do
-  Checkin.create(user_id: users.sample.id, beer_id: beers.sample.id, rating: ratings.sample, description: Faker::Hipster.sentence)
+100.times do
+  Checkin.create(user_id: users.sample.id, beer_id: beers.sample.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: user_images.sample)
+end
+
+1000.times do
+  Like.create(user_id: users.sample.id, checkin_id: checkins.sample.id)
 end

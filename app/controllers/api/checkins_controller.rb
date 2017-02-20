@@ -4,7 +4,7 @@ class Api::CheckinsController < ApplicationController
   end
 
   def show
-    @checkin = Checkin.find(params[:id])
+    @checkin = Checkin.where(id: params[:id]).includes(:likes).first
   end
 
   def create

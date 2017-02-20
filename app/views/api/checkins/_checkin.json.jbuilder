@@ -1,5 +1,6 @@
 json.user_id checkin.user_id
 json.beer_id checkin.beer_id
+json.likes checkin.likes
 json.id checkin.id
 json.beer checkin.beer
 json.beer_image_url asset_path(checkin.beer.image.url(:thumb))

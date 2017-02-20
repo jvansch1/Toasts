@@ -11,6 +11,7 @@ const CheckinReducer = (state = {}, action) => {
       let dupedState = merge({}, state)
       delete dupedState[action.checkin.id]
       return dupedState;
+    
     default:
       return state;
   }
