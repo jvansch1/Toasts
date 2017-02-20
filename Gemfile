@@ -33,7 +33,7 @@ gem 'aws-sdk', '>= 2.0'
 
 group :development, :test do
   gem 'byebug'
-  gem 'faker', github: 'stympy/faker.git'
+  gem 'faker'
 end
 
 group :production do
