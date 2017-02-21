@@ -5,23 +5,24 @@ import {Link} from 'react-router'
 class CheckinShow extends React.Component {
   constructor(props) {
     super(props)
-    if (props.checkin) {
-        // numLikes = this.props.checkin.likes.length
-
+    if (props.checkins) {
+      this.state = {
+        likes: props.checkin
+      }
     }
   }
 
   componentDidMount() {
     if (this.props.params) {
       this.props.fetchCheckin(this.props.params.checkinId)
-      // this.props.fetchLikes()
     }
+    this.props.fetchLikes()
   }
 
   componentWillReceiveProps(newProps) {
     this.state = newProps.checkin
     if (newProps.checkin) {
-      this.numLikes = newProps.checkin.likes.length
+      this.setState(newProps.checkin)
     }
   }
 
@@ -32,6 +33,7 @@ class CheckinShow extends React.Component {
     }
     e.preventDefault();
     this.props.createLike(like)
+    this.props.fetchCheckin(this.props.checkin.id)
   }
 
   render() {
@@ -108,7 +110,7 @@ class CheckinShow extends React.Component {
 
                 </div>
                 <span>
-                  {this.numLikes} Toasts! Nice!
+                  {this.props.checkin.likes.length} Toasts! Nice!
                 </span>
               </div>
 
