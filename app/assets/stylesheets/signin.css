@@ -1082,6 +1082,12 @@ span {
 .brewery-checkin-index-name {
   font-size: 20px;
   font-weight: bold;
+}
 
-
+.result-container {
+  width: 900px;
+  background: white;
+  margin: 0 auto;
+  position: relative;
+  top: 150px;
 }

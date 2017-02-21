@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :breweries, only: [:index, :create, :destroy, :show]
     resources :checkins, only: [:index, :show, :create, :destroy, :update]
     resources :likes, only: [:index, :create, :destroy, :show]
+    resources :searches, only: [:index]
   end
 
 

@@ -13,7 +13,8 @@ import BreweryShowContainer from './breweries/brewery_show_container';
 import BeerShowContainer from './beers/beer_show_container';
 import CheckinContainer from './checkins/checkin_container';
 import CheckinShowContainer from './checkins/checkin_show_container'
-
+import SearchBarContainer from './search/search_bar_container'
+import SearchResultsContainer from './search/search_result_container'
 
 const Root = ({store}) => {
 
@@ -36,12 +37,13 @@ const Root = ({store}) => {
     <Provider store={store}>
       <Router  history={hashHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={LandingContainer} />
+          <IndexRoute component={LandingContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='login' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='signup' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='home' component={HomeContainer} onEnter={_ensureLoggedIn}/>
           <Route path='breweries' component={BreweryIndexContainer} />
           <Route path='newBeer' component={BeerFormContainer} />
+          <Route path='results' component={SearchResultsContainer} />
           <Route path='newBrewery' component={BreweryFormContainer} />
           <Route path='breweries/:breweryId' component={BreweryShowContainer} />
           <Route path='checkins/:checkinId' component={CheckinShowContainer} />

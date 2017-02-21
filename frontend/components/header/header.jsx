@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import SearchBarContainer from '../search/search_bar_container'
 
 class Header extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class Header extends React.Component {
           <li className='link'><Link to="/newBrewery">Create Brewery</Link></li>
           <li className='link'><Link to="/home">Beers</Link></li>
           <li className='link'><Link to="/breweries">Breweries</Link></li>
+          <li className='link'><SearchBarContainer /></li>
         </ul>
         <ul className='username'>
           <li>
