@@ -18,11 +18,21 @@ class BreweryShow extends React.Component {
     this.state = newProps.brewery
   }
 
+  averageRating() {
+    let sum = 0;
+    this.props.brewery.checkins.forEach(checkin => {
+      sum += checkin.rating;
+    })
+    let average = sum / this.props.brewery.checkins.length;
+    return average
+  }
+
 
 
 
   render() {
     if (this.props.brewery === undefined || this.props.brewery.checkins === undefined) return null;
+    const ratingLength = `${this.averageRating() * 25}px`
       return (
         <div>
           <HeaderContainer />
@@ -41,15 +51,25 @@ class BreweryShow extends React.Component {
                 </span>
             </div>
 
+            <div className='beer-show-star-ratings-css'>
+
+             <div className='beer-show-star-ratings-css-top' style={{width: ratingLength}} >
+               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+             </div>
+
+             <div className='beer-show-star-ratings-css-bottom'>
+               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+             </div>
+            </div>
 
 
             <div className='brewery-checkin-stats'>
               <span className='checkin-count'>
                 <p className='first'>
-                  Checkins: 100
+                  Checkins: {this.props.brewery.checkins.length}
                 </p>
                 <p className='second'>
-                  &nbsp;Unique: 100
+                  &nbsp;Unique: {this.props.brewery.unique_checkins}
                 </p>
               </span>
             </div>
@@ -57,9 +77,8 @@ class BreweryShow extends React.Component {
 
 
             <ul id='brewery-stats'>
-              <li>Rating</li>
-              <li>10000 ratings</li>
-              <li>80 beers</li>
+              <li>{this.props.brewery.checkins.length} Ratings</li>
+              <li>{this.props.brewery.beers} beers</li>
               <li>Added on 07/03/2012</li>
             </ul>
           </section>

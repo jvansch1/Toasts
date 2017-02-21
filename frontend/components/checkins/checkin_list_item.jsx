@@ -19,17 +19,17 @@
              <li>
                <span className='rating-header'>
                  Rating: {props.checkin.rating} / 5
+                 <div className='star-ratings-css'>
+
+                   <div className='star-ratings-css-top' style={{width: rating}} >
+                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                   </div>
+
+                   <div className='star-ratings-css-bottom'>
+                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                   </div>
+                 </div>
                </span>
-               <div className='star-ratings-css'>
-
-                <div className='star-ratings-css-top' style={{width: rating}} >
-                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                </div>
-
-                <div className='star-ratings-css-bottom'>
-                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                </div>
-               </div>
 
              </li>
              <li id='review'>{props.checkin.description}</li>

@@ -26,6 +26,15 @@ class BeerShow extends React.Component {
     this.state = newProps.beer
   }
 
+  averageRating() {
+    let sum = 0
+    this.props.beer.checkins.forEach(checkin => {
+      sum += checkin.rating
+    })
+    const average = sum / this.props.beer.checkins.length
+    return average
+  }
+
   openCheckin(e) {
     e.preventDefault();
     hashHistory.push(`/beers/${this.props.beer.id}/checkin`)
@@ -34,6 +43,7 @@ class BeerShow extends React.Component {
 
   render() {
     if (this.props.beer === undefined || this.props.beer.checkins === undefined) return null;
+    const ratingLength = `${this.averageRating() * 25}px`
       return (
         <div id='beer-container-container'>
           <HeaderContainer />
@@ -62,9 +72,21 @@ class BeerShow extends React.Component {
                 </span>
               </div>
 
+              <div className='brewery-show-star-ratings-css'>
+
+               <div className='brewery-show-star-ratings-css-top' style={{width: ratingLength}} >
+                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+               </div>
+
+               <div className='brewery-show-star-ratings-css-bottom'>
+                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+               </div>
+              </div>
+
               <ul className='stat-list'>
                 <li>ABV - {this.props.beer.ABV}</li>
                 <li>IBU - {this.props.beer.IBU}</li>
+                <li>{this.props.beer.checkins.length} Ratings</li>
                 <li>Date Added - {this.props.beer.created_at}</li>
               </ul>
             </div>

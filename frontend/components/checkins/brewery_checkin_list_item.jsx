@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+
+
+
 const BreweryCheckinListItem = (props) => {
+
+  const ratingLength = `${props.checkin.rating * 25}px`
+
   return (
     <div id='brewery-checkin-list-item-container'>
 
@@ -13,9 +19,20 @@ const BreweryCheckinListItem = (props) => {
           </section>
         </li>
 
+
         <ul className='rating-list'>
           <ul className='inner-rating-list'>
-            <li>Rating: {props.checkin.rating} / 5</li>
+            <li className='brewery-checkin-index-name'>Rating: {props.checkin.rating} / 5</li>
+            <div className='brewery-index-item-star-ratings-css'>
+
+              <div className='brewery-index-item-star-ratings-css-top' style={{width: ratingLength}} >
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+
+              <div className='brewery-index-item-star-ratings-css-bottom'>
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
             <li id='review'>{props.checkin.description}</li>
           </ul>
           <li>
@@ -26,7 +43,11 @@ const BreweryCheckinListItem = (props) => {
 
         <ul className='date-list'>
           <li>{props.checkin.created_at}</li>
-          <li>View Detailed Check-in</li>
+          <li><Link to={`checkins/${props.checkin.id}`}>
+            View Detailed Check-in
+          </Link>
+          </li>
+
         </ul>
     </div>
 

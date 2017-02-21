@@ -8,4 +8,8 @@ class Brewery < ActiveRecord::Base
   has_many :checkins, through: :beers
 
   BREWERIES = Brewery.all
+
+  def unique_checkins
+    self.checkins.select(:user_id).distinct
+  end
 end

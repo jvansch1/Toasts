@@ -274,7 +274,11 @@ span {
 #brewery-stats li {
   border-right: 1px solid lightgrey;
   text-align: center;
-  padding: 10px 53px 10px 30px;
+  padding: 10px 75px 10px 30px;
+}
+
+#brewery-stats li:last-child {
+  border-right: none;
 }
 
 .brewery-show-location {
@@ -442,7 +446,10 @@ span {
 #beer-container ul li {
   border-right: 1px solid lightgrey;
   text-align: center;
-  padding: 10px 70px 10px 30px;
+  padding: 10px 50px 10px 30px;
+}
+#beer-container ul li:last-child{
+  border-right: none;
 }
 
 #checkin-form-container {
@@ -898,6 +905,102 @@ span {
     z-index: 0;
   }
 
+.brewery-index-item-star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 25px;
+  height: 25px;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+  bottom: 10px;
+  right: 150px;
+  text-shadow: 0px 1px 0 #a2a2a2;
+  z-index: 20;
+
+}
+
+.brewery-index-item-star-ratings-css-top {
+    color: #e7711b;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.brewery-index-item-star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+
+.beer-show-star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 25px;
+  height: 25px;
+  width: 100px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 60px;
+  right: 95px;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+
+}
+
+.beer-show-star-ratings-css-top {
+    color: #e7711b;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.beer-show-star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+
+.brewery-show-star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 25px;
+  height: 25px;
+  width: 100px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 50px;
+  right: 150px;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+
+}
+
+.brewery-show-star-ratings-css-top {
+    color: #e7711b;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.brewery-show-star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+
 .brewery-star-ratings-css {
   unicode-bidi: bidi-override;
   color: #c5c5c5;
@@ -975,4 +1078,10 @@ span {
   font-weight: bold;
   padding: 10px 20px 10px 20px;
   color: white;
+}
+.brewery-checkin-index-name {
+  font-size: 20px;
+  font-weight: bold;
+
+
 }
