@@ -7,7 +7,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      render 'api/comment/show'
+      render 'api/comments/show'
     else
       render json: @comment.errors, status: 422
     end
@@ -24,6 +24,8 @@ class Api::CommentsController < ApplicationController
   def update
 
   end
+
+  
 
   private
 

@@ -115,7 +115,7 @@ class CheckinShow extends React.Component {
                 </span>
               </div>
 
-              <CommentIndexContainer />
+              <CommentIndexContainer checkin={this.props.checkin}/>
 
             </div>
 

@@ -4,6 +4,7 @@ json.beer_id checkin.beer_id
 json.likes checkin.likes
 json.id checkin.id
 json.beer checkin.beer
+json.comments checkin.comments, partial: 'api/comments/comment', as: :comment
 json.beer_image_url asset_path(checkin.beer.image.url(:thumb))
 json.brewery checkin.beer.brewery
 json.description checkin.description

@@ -13,3 +13,10 @@
 .fa-plus-square:hover::after {
 
 }
+
+.fa-search {
+  position: relative;
+  bottom: 29px;
+  color: black;
+  left: 115px;
+}

@@ -39,7 +39,7 @@ class Header extends React.Component {
           <li className='link'><Link to="/newBrewery">Create Brewery</Link></li>
           <li className='link'><Link to="/home">Beers</Link></li>
           <li className='link'><Link to="/breweries">Breweries</Link></li>
-          <li className='link'><SearchBarContainer /></li>
+          <li className='link'><SearchBarContainer /><i className="fa fa-search" aria-hidden="true"></i></li>
         </ul>
         <ul className='username'>
           <li>
