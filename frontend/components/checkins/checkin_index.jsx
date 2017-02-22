@@ -11,9 +11,7 @@ class CheckinIndex extends React.Component {
     this.props.fetchCheckins();
   }
 
-  uniqueCheckins() {
-    this.store
-  }
+  
 
   shouldComponentUpdate() {
     if (!store.getState().session.currentUser) {
@@ -35,7 +33,7 @@ class CheckinIndex extends React.Component {
               <ul>
                 {
                   this.props.checkins.map(checkin => {
-                    return <CheckinIndexItem checkin={checkin}/>
+                    return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike}/>
                   })
                 }
               </ul>

@@ -1,6 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container'
 import {Link} from 'react-router'
+import CommentIndexContainer from '../comments/comment_index_container'
 
 class CheckinShow extends React.Component {
   constructor(props) {
@@ -113,6 +114,8 @@ class CheckinShow extends React.Component {
                   {this.props.checkin.likes.length} Toasts! Nice!
                 </span>
               </div>
+
+              <CommentIndexContainer />
 
             </div>
 

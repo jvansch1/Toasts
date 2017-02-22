@@ -6,6 +6,19 @@
      super(props)
    }
 
+   handleLike(e) {
+     e.preventDefault();
+     let like = { user_id: store.getState().session.currentUser.id, checkin_id: this.props.checkin.id }
+     this.props.createLike(like);
+   }
+
+   shouldComponentUpdate() {
+     if (!store.getState().session.currentUser) {
+       return false;
+     }
+     return true;
+   }
+
    render() {
      const ratingLength = `${this.props.checkin.rating * 25}px`
      return (
@@ -37,8 +50,8 @@
                <p>
                  <span>Comment</span>
                </p>
-               <p>
-                 <span>Toast</span>
+               <p onClick={this.handleLike.bind(this)}>
+                 <span >Toast</span>
                </p>
              </div>
              <div id='checkin-index-stats'>

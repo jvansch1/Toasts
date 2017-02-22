@@ -5,6 +5,7 @@ import BreweryReducer from './brewery_reducer';
 import CheckinReducer from './checkin_reducer';
 import LikeReducer from './like_reducer';
 import SearchReducer from './search_reducer';
+import CommentReducer from './comment_reducer';
 
 
 export default combineReducers({
@@ -13,5 +14,6 @@ export default combineReducers({
   breweries: BreweryReducer,
   checkins: CheckinReducer,
   likes: LikeReducer,
-  search: SearchReducer
+  search: SearchReducer,
+  comments: CommentReducer
 });

@@ -2,6 +2,7 @@
 import { connect } from 'react-redux'
 import CheckinIndex from './checkin_index'
 import { fetchCheckins } from '../../actions/checkin_actions'
+import { createLike } from '../../actions/like_actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -10,7 +11,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchCheckins: () => dispatch(fetchCheckins())
+    fetchCheckins: () => dispatch(fetchCheckins()),
+    createLike: (like) => dispatch(createLike(like))
   }
 }
 
