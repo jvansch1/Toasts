@@ -4,7 +4,6 @@ import CheckinIndex from './checkin_index'
 import { fetchCheckins } from '../../actions/checkin_actions'
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     checkins: Object.keys(state.checkins).map(key => state.checkins[key])
   }

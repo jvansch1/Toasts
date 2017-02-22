@@ -6,7 +6,6 @@ const BeerReducer = (state = {}, action) => {
     case RECEIVE_ALL_BEERS:
       return action.beers;
     case RECEIVE_BEER:
-    debugger
       return merge({}, state, { [action.beer.id]: action.beer });
     case REMOVE_BEER:
       let dupedState = merge({}, state);

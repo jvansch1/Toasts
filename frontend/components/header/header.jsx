@@ -12,11 +12,21 @@ class Header extends React.Component {
     }
   }
 
+  shouldComponentUpdate() {
+    if (!store.getState().session.currentUser) {
+      return false;
+    }
+    return true;
+  }
+
 
   handleLogout(e) {
     e.preventDefault();
-    this.props.logout()
-    hashHistory.push('/');
+    this.props.logout().then(function() {
+      debugger
+      hashHistory.push('/');
+    })
+
   }
 
 

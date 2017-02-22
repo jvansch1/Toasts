@@ -1176,22 +1176,24 @@ font-weight: normal;
 #checkin-index-container {
   width: 1025px;
   margin: 0 auto;
-  height: 1000px;
+  height: auto;
   padding-top: 115px;
   display: flex;
 }
 
 #checkin-index-left {
   width: 700px;
-  height: 1000px;
+  height: auto;
   background: white;
   margin-right: 30px;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 }
 
 #checkin-index-right {
   width: 300px;
   height: 200px;
-  background: green;
+  background: white;
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 }
 
 #feed-header {
@@ -1209,12 +1211,6 @@ font-weight: normal;
   border-radius: 50%;
 }
 
-#checkin-index-item img {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
 
 #checkin-index-item {
   display: flex;
@@ -1243,6 +1239,7 @@ font-weight: normal;
   padding-left: 10px;
   padding-top: 15px;
   padding-right: 10px;
+  margin-top: 10px;
 }
 
 #checkin-content {
@@ -1252,10 +1249,6 @@ font-weight: normal;
   padding-left: 10px;
 }
 
-#index-beer-image {
-  border-radius: 0px;
-  padding-left: 15px;
-}
 
 #checkin-buttons {
   display: flex;
@@ -1266,9 +1259,11 @@ font-weight: normal;
   width: 250px;
   background: #868787;
   text-align: center;
+  vertical-align: center;
   color: white;
   font-weight: 600;
   border-radius: 4px;
+  height: 40px;
 
 
 }
@@ -1281,7 +1276,6 @@ font-weight: normal;
 }
 
 #checkin-buttons p:first-child {
-  width: 250px;
   margin-right: 15px;
 }
 
@@ -1295,5 +1289,102 @@ font-weight: normal;
 
 #link a {
   color: #c60;
+  text-decoration: none;
+}
+
+#user-home-image {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin-top: 15px;
+  margin-left: 15px;
+  border: 1px solid #e5e5e5;
+}
+
+#checkin-user-header {
+  display: flex;
+}
+
+#user-home-name {
+  margin-top: 25px;
+  margin-left: 10px;
+  font-size: 1.4em;
+  font-weight: 600;
+  line-height: 1.125em;
+}
+
+#user-stats {
+  background: blue;
+  height: 100px;
+}
+
+#user-stat-list {
+  margin: 0 auto;
+  display: flex;
+  padding-left: 55px;
+  padding-top: 20px;
+}
+
+.individual-stat {
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.individual-stat:hover {
+  background-color: #e5e5e5;
+}
+
+.individual-stat:first-child {
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+}
+
+.individual-stat span{
+  margin: 0 auto;
+}
+
+.individual-stat:last-child {
+  border-left: 1px solid #e5e5e5;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.individual-stat:last-child:hover {
+  background-color: #e5e5e5;
+}
+
+#index-beer-image {
+  border-radius: 0%;
+  padding-left: 15px;
+  height: 42px;
+  width: 42px;
+}
+
+.checkin-index-user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%
+}
+
+#checkin-index-checkin-image {
+  margin: 10px 0 10px 0;
+  border: 1px solid #e5e5e5;
+}
+
+.number {
+  font-size: 1.2em;
+}
+
+.title {
+  font-size: 0.6em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#checkin-content a {
+  color: #c90;
   text-decoration: none;
 }

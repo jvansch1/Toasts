@@ -8,7 +8,6 @@
 
    render() {
      const ratingLength = `${this.props.checkin.rating * 25}px`
-     debugger
      return (
        <li id='checkin-index-item'>
          <div id='user-info'>
@@ -18,7 +17,7 @@
 
            <div id='checkin-content'>
              <p>
-               {this.props.checkin.user.username} is drinking a {this.props.checkin.beer.name} by {this.props.checkin.brewery.name}
+                 {this.props.checkin.user.username} is drinking a <Link to={`beers/${this.props.checkin.beer.id}`}>{this.props.checkin.beer.name}</Link> by <Link to={`breweries/${this.props.checkin.brewery.id}`}>{this.props.checkin.brewery.name}</Link>
              </p>
              <div id='r-and-d'>
                <p>{this.props.checkin.description}</p>
@@ -33,7 +32,7 @@
                   </div>
                 </div>
              </div>
-             <img src={this.props.checkin.image_url} />
+             <img id='checkin-index-checkin-image' src={this.props.checkin.image_url} />
              <div id='checkin-buttons'>
                <p>
                  <span>Comment</span>
