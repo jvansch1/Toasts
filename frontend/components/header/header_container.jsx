@@ -6,10 +6,10 @@ import { logout } from '../../actions/session_actions'
 const mapStateToProps = (state) => {
   if (state.session.currentUser) {
     let currentUser = state.session.currentUser.username;
+    return {
+      currentUser: state.session.currentUser
+    };
   }
-  return {
-    currentUser: state.session.currentUser
-  };
 };
 
 const mapDispatchToProps = (dispatch) => {

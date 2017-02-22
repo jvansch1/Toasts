@@ -2,6 +2,7 @@
  import { Link } from 'react-router';
 
  const CheckinListItem = (props) => {
+   if (!props.checkin.user) return null;
    const rating = `${25 * props.checkin.rating}px`
    return (
      <div id='checkin-list-item-container'>

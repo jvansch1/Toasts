@@ -1,10 +1,10 @@
-
 json.name beer.name
 json.id beer.id
 json.style beer.style
 json.brewery_id beer.brewery_id
-json.checkins beer.checkins
-json.brewery beer.brewery, partial: 'api/breweries/beer_index_helper', as: :brewery
+json.brewery_name beer.brewery.name
+json.checkins beer.checkins.length
+json.unique_checkins beer.unique_checkins.length
 json.ABV beer.ABV
 json.IBU beer.IBU
 json.created_at time_ago_in_words(beer.created_at)

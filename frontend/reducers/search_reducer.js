@@ -1,10 +1,12 @@
-import {SEARCH} from '../actions/search_actions'
+import {RECEIVE_SEARCH_RESULTS, EMPTY_RESULTS} from '../actions/search_actions'
 
 
 const SearchReducer = (state = [], action) => {
   switch (action.type) {
-    case SEARCH:
+    case RECEIVE_SEARCH_RESULTS:
       return action.results
+    case EMPTY_RESULTS:
+      return [];
     default:
       return state;
   }

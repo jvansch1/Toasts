@@ -6,7 +6,7 @@ import { Link, hashHistory } from 'react-router';
 
 
 const Landing = (props) => {
-
+  debugger
   const renderErrors = () => {
     if (props.errors) {
       props.errors.map((error,i) => {

@@ -1,6 +1,7 @@
  class Api::BeersController < ApplicationController
   def index
     @beers = Beer.all.includes(:brewery)
+
   end
 
   def create
@@ -14,6 +15,7 @@
   end
 
   def show
+
     @beer = Beer.where(id: params[:id]).includes(brewery: [:checkins], checkins: [:user]).first
   end
 
@@ -25,9 +27,17 @@
 
   end
 
+  def search
+    if params[:query].present?
+     @beers = Beer.where("lower(name) ~ lower(?)", params[:query])
+   else
+     @beers = Beer.none
+   end
+  end
+
   private
 
   def beer_params
-    params.require(:beer).permit(:name, :style, :brewery_id, :ABV, :IBU, :image)
+    params.require(:beer).permit(:name, :style, :brewery_id, :ABV, :IBU, :image, :query)
   end
 end

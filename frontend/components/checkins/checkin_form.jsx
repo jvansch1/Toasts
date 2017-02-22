@@ -51,7 +51,6 @@ class CheckinForm extends React.Component {
 
 
   resetSliderValue(e) {
-    debugger
     e.preventDefault()
     this.setState({rating: e.target.value})
   }

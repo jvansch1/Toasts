@@ -13,7 +13,6 @@ const CheckinReducer = (state = {}, action) => {
       delete dupedState[action.checkin.id]
       return dupedState;
     case RECEIVE_LIKE:
-    debugger
       return merge({}, state, { [action.like.id]: action.like })
     default:
       return state;

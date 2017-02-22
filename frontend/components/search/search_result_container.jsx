@@ -3,7 +3,7 @@ import SearchResults from './search_results';
 import { search } from '../../actions/search_actions'
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     results: state.search
   }

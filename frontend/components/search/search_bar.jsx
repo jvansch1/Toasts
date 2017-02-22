@@ -13,31 +13,66 @@ class SearchBar extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.props.fetchBeers()
-  }
+  // componentDidMount() {
+  //   this.props.fetchBeers()
+  // }
+
+
 
   submitSearch(e) {
     e.preventDefault();
-    const filtered = this.props.beers.filter(beer => {
-      return beer.name.toLowerCase().includes(this.state.value.toLowerCase());
-    })
-    store.dispatch(this.props.search(filtered))
-    hashHistory.push('/results')
+    // this.props.fetchResults(this.state.value)
   }
 
   updateValue(e) {
     e.preventDefault();
-    this.setState({value: e.target.value})
+    this.setState({value: e.target.value}, () => this.props.fetchResults(this.state.value))
+
   }
+
+  redirect(id) {
+  return e => {
+    this.setState({value: ''}, () => this.props.fetchResults(this.state.value))
+    this.props.deleteResults()
+    hashHistory.push(`beers/${id}`)
+  }
+}
+
+
+  renderDropdown() {
+    if (this.props.search) {
+      return(
+        <ul id='dropdown'>
+          {
+            this.props.search.map(searchResult => {
+              return (
+                <li id='search-result' onClick={this.redirect(searchResult.id)}>
+                  <img id='result-img' src={searchResult.image_url} />
+                  <div id='result-beer-and-brewery'>
+                    <h3>{searchResult.name}</h3>
+                    <h4>{searchResult.brewery_name}</h4>
+                  </div>
+                </li>
+              )
+            })
+          }
+        </ul>
+      )
+    }
+  }
+
+
 
 
   render() {
     return (
-      <form onSubmit={this.submitSearch.bind(this)}>
-        <input onChange={this.updateValue.bind(this)} type='text' placeholder='Search'/>
-        <input type='submit' hidden/>
-      </form>
+      <div>
+        <form onSubmit={this.submitSearch.bind(this)}>
+          <input id='search-bar' onChange={this.updateValue.bind(this)} type='text' placeholder='Search'/>
+          <input type='submit' hidden/>
+        </form>
+        {this.renderDropdown()}
+      </div>
     )
   }
 }
