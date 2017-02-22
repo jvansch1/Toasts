@@ -6,6 +6,10 @@ export const fetchLikes = () => {
   })
 }
 
+export const findLike = (user_id, checkin_id) => {
+
+}
+
 
 export const createLike = (like) => {
   return $.ajax({

@@ -2,6 +2,7 @@
 json.user_id checkin.user_id
 json.beer_id checkin.beer_id
 json.likes checkin.likes
+json.liked_by_current_user
 json.id checkin.id
 json.beer checkin.beer
 json.comments checkin.comments, partial: 'api/comments/comment', as: :comment

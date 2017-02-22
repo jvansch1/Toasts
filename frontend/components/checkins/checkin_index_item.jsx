@@ -1,5 +1,5 @@
  import React from 'react';
- import { Link } from 'react-router'
+ import { Link, hashHistory } from 'react-router'
 
  class CheckinIndexItem extends React.Component {
    constructor(props) {
@@ -9,7 +9,11 @@
    handleLike(e) {
      e.preventDefault();
      let like = { user_id: store.getState().session.currentUser.id, checkin_id: this.props.checkin.id }
-     this.props.createLike(like);
+     this.props.createLike(like)
+   }
+
+   componentDidMount() {
+
    }
 
    shouldComponentUpdate() {
@@ -20,6 +24,7 @@
    }
 
    render() {
+     if (!this.props.checkin.user) return null;
      const ratingLength = `${this.props.checkin.rating * 25}px`
      return (
        <li id='checkin-index-item'>

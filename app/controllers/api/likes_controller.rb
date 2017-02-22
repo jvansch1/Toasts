@@ -17,6 +17,12 @@ class Api::LikesController < ApplicationController
     @like = Like.find(params[:id])
   end
 
+  def find
+    if params[:user_id].present?
+      Like.find_by(user_id: params[:user_id], checkin_id: params[:checkin_id])
+    end
+  end
+
   private
 
   def like_params

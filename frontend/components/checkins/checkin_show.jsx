@@ -37,13 +37,20 @@ class CheckinShow extends React.Component {
     this.props.fetchCheckin(this.props.checkin.id)
   }
 
+  renderButton() {
+    this.props.checkin.likes.every(like => {
+      store.getState().session.currentUser.id === like.user_id
+    })
+  }
+
   render() {
+    debugger
     if (this.props.checkin === undefined) {
       return null;
     }
     else {
-
       const rating = `${this.props.checkin.rating}px`
+      const button = this.renderButton() ? "Untoast" : "Toast"
       return (
         <div>
           <HeaderContainer />
@@ -105,7 +112,7 @@ class CheckinShow extends React.Component {
               <div className='checkin-left-bottom'>
                 <div className='toast-button'>
                   <p onClick={this.createLike.bind(this)}>
-                    Toast!
+                    {button}
                   </p>
 
 

@@ -17,14 +17,14 @@ class BeerShow extends React.Component {
 
 
   componentDidMount() {
-    
+
     if (this.props.params) {
       this.props.fetchBeer(this.props.params.beerId)
     }
   }
 
   componentWillReceiveProps(newProps) {
-    
+
     if (this.props.params.beerId !== newProps.params.beerId) {
       this.props.fetchBeer(newProps.params.beerId);
     }
@@ -46,7 +46,7 @@ class BeerShow extends React.Component {
   }
 
   render() {
-    
+
     if (this.props.beer === undefined || this.props.beer.checkins === undefined) return null;
     const ratingLength = `${this.averageRating() * 25}px`
       return (
