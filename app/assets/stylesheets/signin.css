@@ -1506,3 +1506,8 @@ font-weight: normal;
   font-size: 1.2em;
   width: 100px;
 }
+
+button:focus {
+  outline: none;
+  !important;
+}

@@ -49,7 +49,7 @@ class CheckinShow extends React.Component {
       return null;
     }
     else {
-      const rating = `${this.props.checkin.rating}px`
+      const rating = `${this.props.checkin.rating * 25}px`
       const button = this.renderButton() ? "Untoast" : "Toast"
       return (
         <div>
