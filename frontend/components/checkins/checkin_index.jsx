@@ -5,13 +5,17 @@ import CheckinIndexItem from './checkin_index_item';
 class CheckinIndex extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      limit: 10,
+      offset: 0
+    }
   }
 
   componentDidMount() {
-    this.props.fetchCheckins();
+    this.props.fetchCheckins(this.state.limit, this.state.offset);
   }
 
-  
+
 
   shouldComponentUpdate() {
     if (!store.getState().session.currentUser) {
@@ -20,11 +24,27 @@ class CheckinIndex extends React.Component {
     return true;
   }
 
+  getNextCheckins() {
+    this.setState({offset: this.state.offset + 10}, () => this.props.fetchCheckins(this.state.limit, this.state.offset) )
+
+  }
+
+  getPrevCheckins() {
+    if (this.state.offset - 10 < 0) {
+      this.setState({offset: 0}, () => this.props.fetchCheckins(this.state.limit, this.state.offset))
+    }
+    else {
+      this.setState({offset: this.state.offset - 10}, () => this.props.fetchCheckins(this.state.limit, this.state.offset))
+    }
+
+  }
+
 
   render() {
     return (
         <div>
           <HeaderContainer />
+
           <div id='checkin-index-container'>
             <div id='checkin-index-left'>
               <h2 id='feed-header'>
@@ -61,6 +81,8 @@ class CheckinIndex extends React.Component {
                   <p className='title' >Unique</p>
                 </p>
               </div>
+              <button onClick={this.getNextCheckins.bind(this)}>More</button>
+              <button onClick={this.getPrevCheckins.bind(this)}>Previous</button>
             </div>
           </div>
         </div>

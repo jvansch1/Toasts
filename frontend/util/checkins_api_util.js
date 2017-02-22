@@ -6,12 +6,21 @@ export const fetchCheckin = (id) => {
   })
 }
 
-export const fetchCheckins = () => {
+export const fetchCheckins = (limit, offset) => {
   return $.ajax({
     type: 'GET',
-    url: 'api/checkins'
+    url: 'api/checkins',
+    data: { limit, offset }
   })
 }
+
+// export const fetchSomeCheckins = (limit, offset) => {
+//   $.ajax({
+//     type: 'GET',
+//     url: 'api/checkins',
+//     data: { limit, offset }
+//   })
+// }
 
 export const createCheckin = (formData) => {
   return $.ajax({

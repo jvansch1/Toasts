@@ -1,6 +1,6 @@
 class Api::CheckinsController < ApplicationController
   def index
-    @checkins = Checkin.all.includes(:beer, :user)
+    @checkins = Checkin.limit(params[:limit]).offset(params[:offset])
   end
 
   def show
@@ -29,6 +29,6 @@ class Api::CheckinsController < ApplicationController
   private
 
   def checkin_params
-    params.require(:checkin).permit(:beer_id,:rating, :description, :image)
+    params.require(:checkin).permit(:beer_id,:rating, :description, :image, :limit, :offset)
   end
 end

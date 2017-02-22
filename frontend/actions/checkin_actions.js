@@ -27,9 +27,16 @@ export const fetchCheckin = (id) => {
   }
 }
 
-export const fetchCheckins = () => {
+export const fetchSomeCheckins = (limit, offset) => {
   return dispatch => {
-    return CheckinApiUtil.fetchCheckins()
+    return CheckinApiUtil.fetchSomeCheckins(limit, offset)
+      .then(checkins => dispatch(receiveAllCheckins(checkins)))
+  }
+}
+
+export const fetchCheckins = (limit, offset) => {
+  return dispatch => {
+    return CheckinApiUtil.fetchCheckins(limit, offset)
       .then(checkins => dispatch(receiveAllCheckins(checkins)));
   }
 }

@@ -24,6 +24,11 @@
    }
 
    render() {
+
+
+
+
+
      if (!this.props.checkin.user) return null;
      const ratingLength = `${this.props.checkin.rating * 25}px`
      return (
