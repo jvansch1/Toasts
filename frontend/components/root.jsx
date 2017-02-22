@@ -15,12 +15,13 @@ import CheckinContainer from './checkins/checkin_container';
 import CheckinShowContainer from './checkins/checkin_show_container'
 import SearchBarContainer from './search/search_bar_container'
 import SearchResultsContainer from './search/search_result_container'
+import CheckinIndexContainer from './checkins/checkin_index_container'
+
 
 const Root = ({store}) => {
 
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
-    debugger
     if (currentUser) {
       replace('/home')
     }
@@ -40,7 +41,7 @@ const Root = ({store}) => {
           <IndexRoute component={LandingContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='login' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='signup' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
-          <Route path='home' component={HomeContainer} onEnter={_ensureLoggedIn}/>
+          <Route path='home' component={CheckinIndexContainer} onEnter={_ensureLoggedIn}/>
           <Route path='breweries' component={BreweryIndexContainer} />
           <Route path='newBeer' component={BeerFormContainer} />
           <Route path='results' component={SearchResultsContainer} />

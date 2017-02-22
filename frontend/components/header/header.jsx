@@ -14,15 +14,13 @@ class Header extends React.Component {
 
 
   handleLogout(e) {
-    debugger
     e.preventDefault();
-    this.props.logout();
+    this.props.logout()
     hashHistory.push('/');
   }
 
 
   render() {
-
     return (
       <div className="navbar clearfix">
         <ul className='navbar-link'>

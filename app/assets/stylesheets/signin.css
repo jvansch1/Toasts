@@ -905,6 +905,38 @@ span {
     z-index: 0;
   }
 
+.checkin-index-star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 25px;
+  height: 25px;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+  bottom: 20px;
+  right: 190px;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+
+}
+
+.checkin-index-star-ratings-css-top {
+    color: #e7711b;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.checkin-index-star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+
 .brewery-index-item-star-ratings-css {
   unicode-bidi: bidi-override;
   color: #c5c5c5;
@@ -1107,6 +1139,7 @@ span {
   border: 1px solid lightgrey;
 }
 
+
 #dropdown li {
 padding-left: 5px;
 padding-right: 5px;
@@ -1138,4 +1171,129 @@ font-weight: normal;
 
 #search-result {
   display: flex;
+}
+
+#checkin-index-container {
+  width: 1025px;
+  margin: 0 auto;
+  height: 1000px;
+  padding-top: 115px;
+  display: flex;
+}
+
+#checkin-index-left {
+  width: 700px;
+  height: 1000px;
+  background: white;
+  margin-right: 30px;
+}
+
+#checkin-index-right {
+  width: 300px;
+  height: 200px;
+  background: green;
+}
+
+#feed-header {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-left: 25px;
+  margin-top: 25px;
+  margin-right: 25px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#image-container {
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+}
+
+#checkin-index-item img {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+#checkin-index-item {
+  display: flex;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+
+#user-info p {
+  width: 480px;
+  font-size: 1.125em;
+  line-height: 1.2em;
+  margin-bottom: 16px;
+}
+
+#user-info {
+  display: flex;
+}
+
+
+#r-and-d {
+  border: 1px solid lightgrey;
+  padding-left: 10px;
+  padding-top: 15px;
+  padding-right: 10px;
+}
+
+#checkin-content {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding-left: 10px;
+}
+
+#index-beer-image {
+  border-radius: 0px;
+  padding-left: 15px;
+}
+
+#checkin-buttons {
+  display: flex;
+
+}
+
+#checkin-buttons p {
+  width: 250px;
+  background: #868787;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+
+
+}
+
+#checkin-buttons p span{
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+#checkin-buttons p:first-child {
+  width: 250px;
+  margin-right: 15px;
+}
+
+#checkin-index-stats span {
+  font-size: 0.8em;
+}
+
+#checkin-index-stats span:last-child {
+  margin-left: 20px;
+}
+
+#link a {
+  color: #c60;
+  text-decoration: none;
 }

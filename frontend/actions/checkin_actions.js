@@ -30,7 +30,7 @@ export const fetchCheckin = (id) => {
 export const fetchCheckins = () => {
   return dispatch => {
     return CheckinApiUtil.fetchCheckins()
-      .then(checkins => dispatch(receiveAllCheckins()));
+      .then(checkins => dispatch(receiveAllCheckins(checkins)));
   }
 }
 

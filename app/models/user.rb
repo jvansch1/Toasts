@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   validates :username, uniqueness: true
 
-  has_attached_file :image, default_url: "default_beer_Image.png", allow_nil: true
+  has_attached_file :image, styles: { thumb: "70x70!"}, default_url: "default_beer_Image.png", allow_nil: true
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   has_many :checkins
