@@ -16,7 +16,7 @@ class CommentIndex extends React.Component {
       content: this.state.content,
       checkin_id: this.props.checkin.id
     }
-    this.props.createComment(comment)
+    this.props.createComment(comment).then(() => this.setState({content: ''}));
   }
 
   updateContent(e) {
@@ -24,8 +24,11 @@ class CommentIndex extends React.Component {
     this.setState({content: e.target.value})
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
   render() {
-    debugger
     return (
       <div >
 
@@ -39,8 +42,8 @@ class CommentIndex extends React.Component {
           </ul>
         </div>
         <div id='comment-form-container'>
-          <form >
-            <input onChange={this.updateContent.bind(this)}id='text-input' type='text' placeholder='Add A Comment' />
+          <form onSubmit={this.handleSubmit}>
+            <input onChange={this.updateContent.bind(this)}id='text-input' type='text' placeholder='Add A Comment' value={this.state.content}/>
             <ul className='character-count-and-button'>
               <li>
                 0/140

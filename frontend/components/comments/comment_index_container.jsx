@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import CommentIndex from './comment_index'
 import { createComment } from '../../actions/comment_actions'
+import { fetchCheckin } from '../../actions/checkin_actions'
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -11,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createComment: (comment) => dispatch(createComment(comment))
+    createComment: (comment) => dispatch(createComment(comment)),
+    fetchCheckin: (id) => dispatch(fetchCheckin(id))
   }
 }
 

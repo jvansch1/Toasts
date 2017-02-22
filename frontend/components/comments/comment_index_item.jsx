@@ -1,7 +1,6 @@
 import React from 'react';
 
 const CommentIndexItem = (props) => {
-  debugger
   return (
     <li id='comment-index-item'>
       <img id='comment-user-image' src={props.comment.user_image_url} />

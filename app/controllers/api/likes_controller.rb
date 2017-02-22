@@ -6,7 +6,6 @@ class Api::LikesController < ApplicationController
 
   def create
     @like = Like.new(like_params)
-    debugger
     if @like.save
       render 'api/likes/show'
     else

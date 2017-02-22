@@ -1,5 +1,6 @@
 import { RECEIVE_ALL_CHECKINS, RECEIVE_CHECKIN, REMOVE_CHECKIN } from '../actions/checkin_actions'
 import { RECEIVE_LIKE } from '../actions/like_actions'
+import { RECEIVE_COMMENT } from '../actions/comment_actions'
 import merge from 'lodash/merge'
 
 const CheckinReducer = (state = {}, action) => {
@@ -14,6 +15,12 @@ const CheckinReducer = (state = {}, action) => {
       return dupedState;
     case RECEIVE_LIKE:
       return merge({}, state, { [action.like.id]: action.like })
+      case RECEIVE_COMMENT:
+        debugger
+        let newState = merge({}, state)
+        let checkin = newState[action.comment.checkin_id]
+        checkin.comments.push(action.comment)
+        return newState
     default:
       return state;
   }

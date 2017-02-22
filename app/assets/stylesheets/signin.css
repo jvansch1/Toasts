@@ -1392,6 +1392,11 @@ font-weight: normal;
 }
 
 #checkin-content a {
+  color: #c60;
+  text-decoration: none;
+}
+
+#checkin-content a:hover {
   color: #c90;
   text-decoration: none;
 }

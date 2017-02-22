@@ -1,6 +1,6 @@
 class Api::CheckinsController < ApplicationController
   def index
-    @checkins = Checkin.all
+    @checkins = Checkin.all.includes(:beer, :user)
   end
 
   def show
