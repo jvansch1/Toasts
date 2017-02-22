@@ -81,8 +81,10 @@ class CheckinIndex extends React.Component {
                   <p className='title' >Unique</p>
                 </p>
               </div>
-              <button onClick={this.getNextCheckins.bind(this)}>More</button>
-              <button onClick={this.getPrevCheckins.bind(this)}>Previous</button>
+              <div id='pagination-buttons'>
+                <button onClick={this.getPrevCheckins.bind(this)}>Previous</button>
+                <button onClick={this.getNextCheckins.bind(this)}>More</button>
+              </div>
             </div>
           </div>
         </div>

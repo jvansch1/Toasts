@@ -1488,3 +1488,21 @@ font-weight: normal;
 #comment-username:hover {
   color: #c90;
 }
+
+#pagination-buttons {
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+#pagination-buttons button {
+  background-color: #FFC600;
+  border-style: none;
+  margin: 0 auto;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  font-size: 1.2em;
+  width: 100px;
+}
