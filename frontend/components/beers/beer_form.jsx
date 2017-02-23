@@ -12,7 +12,7 @@ class BeerForm extends React.Component {
       ABV: "",
       IBU: null,
       imageUrl: '',
-      imageFIle:''
+      imageFile:''
     };
   }
 

@@ -103,9 +103,12 @@ class CheckinIndex extends React.Component {
                 <button onClick={this.getPrevCheckins.bind(this)}>Previous</button>
                 <button onClick={this.getNextCheckins.bind(this)}>More</button>
               </div>
-              <ul id='top-beer-list'>
-                {this.topBeers()}
-              </ul>
+              <div id='beer-list-container'>
+                <h1 id='beer-list-header'>Top Beers</h1>
+                <ul id='top-beer-list'>
+                  {this.topBeers()}
+                </ul>
+              </div>
             </div>
           </div>
           <ul>

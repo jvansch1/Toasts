@@ -46,6 +46,7 @@ class BeerShow extends React.Component {
   }
 
   render() {
+    debugger
 
     if (this.props.beer === undefined || this.props.beer.checkins === undefined) return null;
     const ratingLength = `${this.averageRating() * 25}px`
@@ -96,6 +97,27 @@ class BeerShow extends React.Component {
               </ul>
             </div>
           </div>
+          <span id='beer-show-top-beers-header'>
+            Top Beers
+          </span>
+          <ul id='beer-show-top-beer-list'>
+            {
+              window.top_beers.top_beers.map(beerArray => {
+                return (
+                  <Link to={`beers/${beerArray[0].id}`}>
+                    <li className='top-beer-index-item'>
+                      <img className='top-beer-image' src={beerArray[1]} />
+                      <ul>
+                        <li >
+                          {beerArray[0].name}
+                        </li>
+                      </ul>
+                    </li>
+                  </Link>
+                  )
+              })
+            }
+          </ul>
           <div id='checkin-list-wrapper'>
             <ul className='checkin-list-container'>
               {

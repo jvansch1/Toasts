@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_BEERS, RECEIVE_BEER, REMOVE_BEER } from '../actions/beer_actions';
+import { RECEIVE_CHECKIN } from '../actions/checkin_actions';
 import merge from 'lodash/merge';
 
 const BeerReducer = (state = {}, action) => {
@@ -11,6 +12,11 @@ const BeerReducer = (state = {}, action) => {
       let dupedState = merge({}, state);
       delete dupedState[action.beer.id];
       return dupedState;
+    case RECEIVE_CHECKIN:
+    debugger
+      let newState = merge({}, state)
+      newState[action.checkin.beer_id].checkins.push(action.checkin)
+      return newState
     default:
       return state;
   }
