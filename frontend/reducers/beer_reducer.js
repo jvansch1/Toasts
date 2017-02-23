@@ -15,7 +15,9 @@ const BeerReducer = (state = {}, action) => {
     case RECEIVE_CHECKIN:
     debugger
       let newState = merge({}, state)
-      newState[action.checkin.beer_id].checkins.push(action.checkin)
+      if (newState[action.checkin.beer_id]) {
+        newState[action.checkin.beer_id].checkins.push(action.checkin)
+      }
       return newState
     default:
       return state;

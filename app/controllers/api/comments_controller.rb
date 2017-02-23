@@ -1,6 +1,6 @@
 class Api::CommentsController < ApplicationController
   def index
-    @index = Comment.all
+    @index = Comment.all(order: "created_at DESC")
   end
 
   def create
@@ -25,7 +25,7 @@ class Api::CommentsController < ApplicationController
 
   end
 
-  
+
 
   private
 

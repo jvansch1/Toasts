@@ -1557,6 +1557,9 @@ button:focus {
   display: flex;
   flex-direction: column;
 }
+#beer-show-top-beer-list a {
+  text-decoration: none;
+}
 
 #beer-show-top-beer-list li {
   padding-left: 10px;

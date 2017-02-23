@@ -23,6 +23,10 @@
      return true;
    }
 
+   redirectToShow() {
+     hashHistory.push(`checkins/${this.props.checkin.id}`)
+   }
+
    render() {
 
 
@@ -58,7 +62,7 @@
              <img id='checkin-index-checkin-image' src={this.props.checkin.image_url} />
              <div id='checkin-buttons'>
                <p>
-                 <span>Comment</span>
+                 <span onClick={this.redirectToShow.bind(this)}>Comment</span>
                </p>
                <p onClick={this.handleLike.bind(this)}>
                  <span >Toast</span>
