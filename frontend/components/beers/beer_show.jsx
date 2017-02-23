@@ -137,8 +137,11 @@ class BeerShow extends React.Component {
                       <li className='top-beer-index-item'>
                         <img className='top-beer-image' src={this.renderDefault(beerArray[1])} />
                         <ul>
-                          <li>
+                          <li id='top-beer-beer-name'>
                             {beerArray[0].name}
+                          </li>
+                          <li id='top-beer-brewery-name'>
+                            {beerArray[2].name}
                           </li>
                         </ul>
                       </li>

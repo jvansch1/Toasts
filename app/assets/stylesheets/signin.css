@@ -1009,7 +1009,7 @@ span {
   margin: 0 auto;
   position: absolute;
   top: 60px;
-  right: 690px;
+  right: 500px;
   padding: 0;
   text-shadow: 0px 1px 0 #a2a2a2;
 
@@ -1513,7 +1513,6 @@ font-weight: normal;
 
 button:focus {
   outline: none;
-  !important;
 }
 
 #top-beer-list {
@@ -1561,7 +1560,6 @@ button:focus {
 #beer-show-top-beer-list li {
   padding-left: 10px;
   margin-right: 10px;
-  color: #c60;
 }
 
 #beer-show-top-beer-list li:hover {
@@ -1569,6 +1567,7 @@ button:focus {
 }
 
 #beer-list-container {
+  height: 500px;
   background: white;
 }
 
@@ -1590,7 +1589,7 @@ button:focus {
 
 #beer-show-holder {
   margin: 0 auto;
-  width: 1200px;
+  width: 1000px;
   display: flex;
   position: relative;
   top: 100px;
@@ -1606,4 +1605,13 @@ button:focus {
 
 #beer-list-container {
   background: white;
+}
+
+#top-beer-brewery-name {
+  color: black;
+  font-size: 0.8em
+}
+
+#top-beer-beer-name {
+  color: #c60;
 }
