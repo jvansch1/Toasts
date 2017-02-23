@@ -12,4 +12,13 @@ class Brewery < ActiveRecord::Base
   def unique_checkins
     self.checkins.select(:user_id).distinct
   end
+
+  def brewery_beers
+    beers = self.beers
+    beer_array = []
+    beers.each do |beer|
+      beer_array.push([beer, beer.image.url])
+    end
+    beer_array
+  end
 end
