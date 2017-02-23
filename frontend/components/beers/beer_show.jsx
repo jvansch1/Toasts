@@ -45,6 +45,13 @@ class BeerShow extends React.Component {
 
   }
 
+  renderDefault(url) {
+    if (url === "default_beer_Image.png") {
+      return "/assets/default_beer_Image-d8dd9df1ee45f3e09adcebba7e936cc54c9ad5cfc3981630a80143bb7f1b9ba4.png"
+    }
+    return url
+  }
+
   render() {
     debugger
 
@@ -124,12 +131,13 @@ class BeerShow extends React.Component {
             <ul id='beer-show-top-beer-list'>
               {
                 window.top_beers.top_beers.map(beerArray => {
+                  debugger
                   return (
                     <Link to={`beers/${beerArray[0].id}`}>
                       <li className='top-beer-index-item'>
-                        <img className='top-beer-image' src={beerArray[1]} />
+                        <img className='top-beer-image' src={this.renderDefault(beerArray[1])} />
                         <ul>
-                          <li >
+                          <li>
                             {beerArray[0].name}
                           </li>
                         </ul>

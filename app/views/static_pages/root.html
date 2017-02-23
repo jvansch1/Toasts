@@ -5,7 +5,8 @@
       <% end %>
       window.images = {
         logo: "<%= image_path("Logomakr_0nAUYb.png") %>",
-        logoWhite: "<%= image_path("logo-white.png") %>"
+        logoWhite: "<%= image_path("logo-white.png") %>",
+        default: "<%= image_path("default_beer_Image.png") %>"
       };
       window.styles = {
          styles: <%= (Beer::BEER_STYLES.to_json).html_safe %>
