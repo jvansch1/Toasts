@@ -389,11 +389,10 @@ span {
 }*/
 
 #beer-container {
-  position: relative;
+
   top: 100px;
   background-color: white;
   width: 700px;
-  margin-left: 10%;
   vertical-align: middle;
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 }
@@ -405,15 +404,14 @@ span {
 #beer-show-image {
   height: 70px;
   width: 70px;
+  margin-top: 10px;
+  margin-left: 10px;
   border: 1px solid lightgrey;
-  position: absolute;
-  right: 610px;
-  top: 15px;
-  margin-bottom: 100px;
+
 }
 
 #beer-show-name {
-
+  position: absolute;
   font-size: 1.3em;
   left: 100px;
 }
@@ -427,7 +425,8 @@ span {
 }
 
 #beer-show-name-brewery {
-
+  position: absolute;
+  top: 33px;
   left: 100px;
 
 }
@@ -573,13 +572,10 @@ span {
   justify-content: center;
   flex-direction: column;
   width: 700px;
-  margin-left: 10%;
 }
 
 #checkin-list-wrapper {
-  position: absolute;
-  width: 100%;
-  top: 275px;
+
 }
 
 .date-list {
@@ -683,6 +679,7 @@ span {
 #checkin-list-item-container {
   display: flex;
   flex-direction: column;
+  margin-top: 15px;
 }
 
 .rating-list {
@@ -716,6 +713,9 @@ span {
 
 .checkin-count {
   display: flex;
+  position: absolute;
+  top: 20px;
+  left: 400px;
 }
 
 .checkin-count p {
@@ -724,9 +724,7 @@ span {
 }
 
 .checkin-count-container {
-  position: absolute;
-  top: 20px;
-  left: 420px;
+
 }
 
 .first {
@@ -1010,8 +1008,8 @@ span {
   width: 100px;
   margin: 0 auto;
   position: absolute;
-  bottom: 50px;
-  right: 150px;
+  top: 60px;
+  right: 690px;
   padding: 0;
   text-shadow: 0px 1px 0 #a2a2a2;
 
@@ -1551,8 +1549,6 @@ button:focus {
 
 #beer-show-top-beer-list {
   background: white;
-  position: absolute;
-  right: 100px;
   top: 125px;
   display: flex;
   flex-direction: column;
@@ -1573,7 +1569,6 @@ button:focus {
 
 #beer-list-container {
   background: white;
-  margin-top: 20px;
 }
 
 #beer-list-header  {
@@ -1584,12 +1579,30 @@ button:focus {
 }
 
 #beer-show-top-beers-header {
-  position: absolute;
-  width: 322px;
-  top: 102px;
-  right: 100px;
+  width: 328px;
   font-weight: 600;
   background: white;
-  padding-left: 4px;
-  margin-bottom: 1px solid #e5e5e5;
+  padding-left: 8px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+#beer-show-holder {
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+  position: relative;
+  top: 100px;
+}
+
+#beer-header-flex {
+  display: flex;
+}
+
+#beer-show-left {
+  margin-right: 15px;
+}
+
+#beer-list-container {
+  background: white;
 }

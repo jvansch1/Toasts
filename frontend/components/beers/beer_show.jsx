@@ -53,79 +53,94 @@ class BeerShow extends React.Component {
       return (
         <div id='beer-container-container'>
           <HeaderContainer />
-          <div id='beer-container'>
+          <div id='beer-show-holder'>
 
-            <div id="beer-background">
-              <img id='beer-show-image' src={this.props.beer.image_url} />
-              <div id='beer-name-flex'>
-                <span id='beer-show-name'>{this.props.beer.name}</span>
-                <span id='beer-show-name-brewery'>{this.props.beer.brewery.name}</span>
+
+            <div id='beer-show-left'>
+              <div id='beer-container'>
+
+                <div id="beer-background">
+                  <div id='beer-header-flex'>
+                    <img id='beer-show-image' src={this.props.beer.image_url} />
+                    <div id='beer-name-flex'>
+                      <span id='beer-show-name'>{this.props.beer.name}</span>
+                      <span id='beer-show-name-brewery'>{this.props.beer.brewery.name}</span>
+
+                    </div>
+                    <i onClick={this.openCheckin.bind(this)} className="fa fa-plus-square" aria-hidden="true"></i>
+                  </div>
+
+
+
+
+                  <div className='checkin-count-container'>
+                    <span className='checkin-count'>
+                      <p className='first'>
+                        Checkins: {this.countCheckins()}
+                      </p>
+                      <p className='second'>
+                        &nbsp;Unique: {this.props.beer.unique_checkins}
+                      </p>
+                    </span>
+                  </div>
+
+                  <div className='brewery-show-star-ratings-css'>
+
+                    <div className='brewery-show-star-ratings-css-top' style={{width: ratingLength}} >
+                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+
+                    <div className='brewery-show-star-ratings-css-bottom'>
+                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                  </div>
+
+                  <ul className='stat-list'>
+                    <li>ABV - {this.props.beer.ABV}</li>
+                    <li>IBU - {this.props.beer.IBU}</li>
+                    <li>{this.props.beer.checkins.length} Ratings</li>
+                    <li>Date Added - {this.props.beer.created_at}</li>
+                  </ul>
+                </div>
+
+
 
               </div>
-
-
-                <i onClick={this.openCheckin.bind(this)} className="fa fa-plus-square" aria-hidden="true"></i>
-
-
-              <div className='checkin-count-container'>
-                <span className='checkin-count'>
-                  <p className='first'>
-                    Checkins: {this.countCheckins()}
-                  </p>
-                  <p className='second'>
-                    &nbsp;Unique: {this.props.beer.unique_checkins}
-                  </p>
-                </span>
+              <div id='checkin-list-wrapper'>
+                <ul className='checkin-list-container'>
+                  {
+                    this.props.beer.checkins.reverse().map((checkin, idx) => {
+                      return <CheckinListItem checkin={checkin} beer={this.props.beer} brewery={this.props.brewery} key={idx}/>
+                    })
+                  }
+                </ul>
               </div>
 
-              <div className='brewery-show-star-ratings-css'>
-
-               <div className='brewery-show-star-ratings-css-top' style={{width: ratingLength}} >
-                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-               </div>
-
-               <div className='brewery-show-star-ratings-css-bottom'>
-                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-               </div>
-              </div>
-
-              <ul className='stat-list'>
-                <li>ABV - {this.props.beer.ABV}</li>
-                <li>IBU - {this.props.beer.IBU}</li>
-                <li>{this.props.beer.checkins.length} Ratings</li>
-                <li>Date Added - {this.props.beer.created_at}</li>
-              </ul>
             </div>
-          </div>
-          <span id='beer-show-top-beers-header'>
-            Top Beers
-          </span>
-          <ul id='beer-show-top-beer-list'>
-            {
-              window.top_beers.top_beers.map(beerArray => {
-                return (
-                  <Link to={`beers/${beerArray[0].id}`}>
-                    <li className='top-beer-index-item'>
-                      <img className='top-beer-image' src={beerArray[1]} />
-                      <ul>
-                        <li >
-                          {beerArray[0].name}
-                        </li>
-                      </ul>
-                    </li>
-                  </Link>
-                  )
-              })
-            }
-          </ul>
-          <div id='checkin-list-wrapper'>
-            <ul className='checkin-list-container'>
+            <div id='beer-list-container' background-color='white'>
+              <span id='beer-show-top-beers-header'>
+                Top Beers
+              </span>
+            <ul id='beer-show-top-beer-list'>
               {
-                this.props.beer.checkins.reverse().map((checkin, idx) => {
-                  return <CheckinListItem checkin={checkin} beer={this.props.beer} brewery={this.props.brewery} key={idx}/>
+                window.top_beers.top_beers.map(beerArray => {
+                  return (
+                    <Link to={`beers/${beerArray[0].id}`}>
+                      <li className='top-beer-index-item'>
+                        <img className='top-beer-image' src={beerArray[1]} />
+                        <ul>
+                          <li >
+                            {beerArray[0].name}
+                          </li>
+                        </ul>
+                      </li>
+                    </Link>
+                  )
                 })
               }
             </ul>
+          </div>
+
           </div>
           {this.props.children}
         </div>
