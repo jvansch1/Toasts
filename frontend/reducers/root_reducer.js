@@ -6,7 +6,7 @@ import CheckinReducer from './checkin_reducer';
 import LikeReducer from './like_reducer';
 import SearchReducer from './search_reducer';
 import CommentReducer from './comment_reducer';
-
+import QueryReducer from './query_reducer';
 
 export default combineReducers({
   session: SessionReducer,
@@ -15,5 +15,6 @@ export default combineReducers({
   checkins: CheckinReducer,
   likes: LikeReducer,
   search: SearchReducer,
-  comments: CommentReducer
+  comments: CommentReducer,
+  query: QueryReducer
 });

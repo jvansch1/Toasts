@@ -1,6 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
 import CheckinIndexItem from './checkin_index_item';
+import { Link } from 'react-router';
 
 class CheckinIndex extends React.Component {
   constructor(props) {
@@ -15,6 +16,22 @@ class CheckinIndex extends React.Component {
     this.props.fetchCheckins(this.state.limit, this.state.offset);
   }
 
+  topBeers() {
+    return window.top_beers.top_beers.map(beerArray => {
+      return (
+        <Link to={`beers/${beerArray[0].id}`}>
+          <li className='top-beer-index-item'>
+            <img className='top-beer-image' src={beerArray[1]} />
+            <ul className='top-beer-name'>
+              <li>
+                <h2>{beerArray[0].name}</h2>
+              </li>
+            </ul>
+          </li>
+        </Link>
+      )
+    })
+  }
 
 
   shouldComponentUpdate() {
@@ -41,6 +58,7 @@ class CheckinIndex extends React.Component {
 
 
   render() {
+    debugger
     return (
         <div>
           <HeaderContainer />
@@ -85,8 +103,13 @@ class CheckinIndex extends React.Component {
                 <button onClick={this.getPrevCheckins.bind(this)}>Previous</button>
                 <button onClick={this.getNextCheckins.bind(this)}>More</button>
               </div>
+              <ul id='top-beer-list'>
+                {this.topBeers()}
+              </ul>
             </div>
           </div>
+          <ul>
+          </ul>
         </div>
       )
   }

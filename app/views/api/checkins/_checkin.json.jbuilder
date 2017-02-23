@@ -12,6 +12,7 @@ json.description checkin.description
 json.rating checkin.rating
 json.image_url asset_path(checkin.image.url);
 json.created_at time_ago_in_words(checkin.created_at)
+json.top_beers Beer.top_beers
 json.user do
   json.partial! 'api/users/user', user: checkin.user
 end

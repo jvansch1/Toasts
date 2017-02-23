@@ -15,6 +15,15 @@ class Beer < ActiveRecord::Base
     BEER_STYLES
   end
 
+  def self.top_beers
+    top_beers = Beer.joins(:checkins).group("beers.id").limit(10).order("COUNT (checkins.id)").count("checkins.id")
+    beer_array = []
+    top_beers.each do |k,v|
+      beer_array.push([Beer.find(k), Beer.find(k).image.url])
+    end
+    beer_array
+  end
+
   def unique_checkins
     self.checkins.select(:user_id).distinct
   end

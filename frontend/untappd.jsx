@@ -6,6 +6,7 @@ import { fetchBeers, createBeer } from './actions/beer_actions';
 import { fetchBreweries, createBrewery } from './actions/brewery_actions';
 import { receiveErrors } from './actions/session_actions';
 import { fetchResults } from './actions/search_actions'
+import { topBeers } from './actions/query_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchBreweries = fetchBreweries;
   window.createBrewery = createBrewery;
   window.fetchResults = fetchResults;
+  window.topBeers = topBeers;
   window.store = store;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
