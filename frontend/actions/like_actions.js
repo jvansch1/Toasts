@@ -1,4 +1,5 @@
 import * as LikeApiUtil from '../util/like_api_util';
+import { receiveCheckin } from './checkin_actions';
 
 
 export const RECEIVE_ALL_LIKES = 'RECEIVE_ALL_LIKES';
@@ -30,6 +31,14 @@ export const fetchLikes = () => {
 export const createLike = (like) => {
   return dispatch => {
     return LikeApiUtil.createLike(like)
-      .then(like => dispatch(receiveLike(like)))
+      .then(checkin => dispatch(receiveCheckin(checkin)))
+  }
+}
+
+export const deleteLike = (like) => {
+  debugger
+  return dispatch => {
+    return LikeApiUtil.deleteLike(like)
+      .then(checkin => dispatch(receiveCheckin(checkin)))
   }
 }

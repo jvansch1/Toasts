@@ -13,11 +13,11 @@ const BeerReducer = (state = {}, action) => {
       delete dupedState[action.beer.id];
       return dupedState;
     case RECEIVE_CHECKIN:
-    debugger
       let newState = merge({}, state)
-      if (newState[action.checkin.beer_id]) {
+      if (newState[action.checkin] && !newState[action.checkin.beer_id].checkins.includes(action.checkin)) {
         newState[action.checkin.beer_id].checkins.push(action.checkin)
       }
+      debugger
       return newState
     default:
       return state;

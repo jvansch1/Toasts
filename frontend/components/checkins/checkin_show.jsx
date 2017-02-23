@@ -27,19 +27,37 @@ class CheckinShow extends React.Component {
     }
   }
 
-  createLike(e) {
+  handleLike(e) {
+    debugger
+    if (!this.renderButton()) {
+      this.createLike()
+    }
+    else {
+      this.deleteLike()
+    }
+  }
+
+  createLike() {
     const like = {
       user_id: window.currentUser.id,
       checkin_id: this.props.checkin.id
     }
-    e.preventDefault();
     this.props.createLike(like)
     this.props.fetchCheckin(this.props.checkin.id)
   }
 
+  deleteLike() {
+    const like = this.props.checkin.likes.filter(like => like.user_id === this.props.currentUser.id)
+    debugger
+    this.props.deleteLike(like[0])
+    this.props.fetchCheckin(this.props.checkin.id)
+  }
+
+
   renderButton() {
-    this.props.checkin.likes.every(like => {
-      store.getState().session.currentUser.id === like.user_id
+    const currentUser = this.props.currentUser
+    return this.props.checkin.likes.some(like => {
+      return like.user_id === currentUser.id
     })
   }
 
@@ -50,7 +68,7 @@ class CheckinShow extends React.Component {
     }
     else {
       const rating = `${this.props.checkin.rating * 25}px`
-      const button = this.renderButton() ? "Untoast" : "Toast"
+      const button = this.renderButton() === true ? "Untoast" : "Toast"
       return (
         <div>
           <HeaderContainer />
@@ -111,7 +129,7 @@ class CheckinShow extends React.Component {
 
               <div className='checkin-left-bottom'>
                 <div className='toast-button'>
-                  <p onClick={this.createLike.bind(this)}>
+                  <p onClick={this.handleLike.bind(this)}>
                     {button}
                   </p>
 

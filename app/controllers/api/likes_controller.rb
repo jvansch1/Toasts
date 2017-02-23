@@ -7,7 +7,8 @@ class Api::LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
     if @like.save
-      render 'api/likes/show'
+      @checkin = @like.checkin
+      render '/api/checkins/show'
     else
       render json: @like.errors, status: 422
     end
@@ -21,6 +22,13 @@ class Api::LikesController < ApplicationController
     if params[:user_id].present?
       Like.find_by(user_id: params[:user_id], checkin_id: params[:checkin_id])
     end
+  end
+
+  def destroy
+    @like = Like.find_by(id: params[:id])
+    @like.destroy!
+    @checkin = @like.checkin
+    render '/api/checkins/show'
   end
 
   private

@@ -53,7 +53,6 @@ class BeerShow extends React.Component {
   }
 
   render() {
-    debugger
 
     if (this.props.beer === undefined || this.props.beer.checkins === undefined) return null;
     const ratingLength = `${this.averageRating() * 25}px`
@@ -116,7 +115,7 @@ class BeerShow extends React.Component {
               <div id='checkin-list-wrapper'>
                 <ul className='checkin-list-container'>
                   {
-                    this.props.beer.checkins.reverse().map((checkin, idx) => {
+                    this.props.beer.checkins.map((checkin, idx) => {
                       return <CheckinListItem checkin={checkin} beer={this.props.beer} brewery={this.props.brewery} key={idx}/>
                     })
                   }
@@ -131,7 +130,6 @@ class BeerShow extends React.Component {
             <ul id='beer-show-top-beer-list'>
               {
                 window.top_beers.top_beers.map(beerArray => {
-                  debugger
                   return (
                     <Link to={`beers/${beerArray[0].id}`}>
                       <li className='top-beer-index-item'>
@@ -152,6 +150,11 @@ class BeerShow extends React.Component {
             </ul>
           </div>
 
+          </div>
+
+          <div className="speech-bubble">
+            <div className="arrow bottom right"></div>
+            Thinking....
           </div>
           {this.props.children}
         </div>

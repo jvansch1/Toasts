@@ -1,5 +1,5 @@
 import * as CheckinApiUtil from '../util/checkins_api_util';
-
+import { receiveBeer } from './beer_actions'
 
 export const RECEIVE_ALL_CHECKINS = "RECEIVE_ALL_CHECKINS";
 export const RECEIVE_CHECKIN = "RECEIVE_CHECKIN";
@@ -44,7 +44,7 @@ export const fetchCheckins = (limit, offset) => {
 export const createCheckin = (checkin) => {
   return dispatch => {
     return CheckinApiUtil.createCheckin(checkin)
-      .then(checkin => dispatch(receiveCheckin(checkin)))
+      .then(beer => dispatch(receiveBeer(beer)))
   }
 }
 
