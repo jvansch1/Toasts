@@ -80,7 +80,7 @@ class BeerShow extends React.Component {
 
 
 
-                  <div className='checkin-count-container-a'>
+                  <div className='checkin-count-container'>
                     <span className='checkin-count'>
                       <p className='first'>
                         Checkins: {this.countCheckins()}
