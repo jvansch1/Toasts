@@ -26,6 +26,9 @@ class CheckinIndex extends React.Component {
               <li>
                 <h2>{beerArray[0].name}</h2>
               </li>
+              <li id='top-beer-brewery-name'>
+                <h4>{beerArray[2].name}</h4>
+              </li>
             </ul>
           </li>
         </Link>

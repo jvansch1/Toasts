@@ -1622,7 +1622,7 @@ button:focus {
 }
 
 #beer-list-container {
-  height: 500px;
+  height: 100%;
   background: white;
 }
 

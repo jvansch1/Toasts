@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 
 const BreweryCheckinListItem = (props) => {
-
+  debugger
   const ratingLength = `${props.checkin.rating * 25}px`
 
   return (
@@ -15,7 +15,7 @@ const BreweryCheckinListItem = (props) => {
           <img src={props.checkin.user.image_url} />
 
           <section>
-            <span>{props.checkin.user.username}</span> is drinking a <span>{props.checkin.beer.name}</span> by <span><Link to={`breweries/${props.brewery.id}`}>{props.brewery.name}</Link></span>
+            <span>{props.checkin.user.username}</span> is drinking a <span><Link to={`beers/${props.checkin.beer.id}`}>{props.checkin.beer.name}</Link></span> by <span><Link to={`breweries/${props.brewery.id}`}>{props.brewery.name}</Link></span>
           </section>
         </li>
 
@@ -36,7 +36,7 @@ const BreweryCheckinListItem = (props) => {
                   </div>
                 </div>
                 <li id='review'>{props.checkin.description}</li>
-                
+
               </span>
 
             </li>

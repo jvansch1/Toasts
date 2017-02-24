@@ -83,8 +83,8 @@ ratings = [0,0.25,0.50,0.75,1,1.25,1.50,1.75,2, 2.25,2.50, 2.75, 3, 3.25, 3.50, 
 #   Checkin.create(user_id: users.sample.id, beer_id: beers.sample.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: user_images.sample)
 # end
 budlight_images = [
-  'https://s3.amazonaws.com/untappd-dev/checkins/0caef4eb563732735b0777b5fd0b8411_640x640.jpeg',
-  'https://s3.amazonaws.com/untappd-dev/checkins/2fca081006fefcef14761cc032600e75_640x640.jpg'
+  'https://s3.amazonaws.com/untappd-dev/checkins/bud_light/3f71fac0df9c77897e4490ac95fb2a39_640x640.jpg',
+  'https://s3.amazonaws.com/untappd-dev/checkins/bud_light/701cb709ec6587f93583b8f253122dfd_640x640.jpeg'
 ]
 
 green_images = [
