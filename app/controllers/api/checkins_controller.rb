@@ -1,6 +1,6 @@
 class Api::CheckinsController < ApplicationController
   def index
-    @checkins = Checkin.order("created_at ASC").limit(params[:limit]).offset(params[:offset])
+    @checkins = Checkin.order("created_at DESC").limit(params[:limit]).offset(params[:offset])
   end
 
   def show
