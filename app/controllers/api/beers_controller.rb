@@ -8,7 +8,7 @@
     @beer = Beer.new(beer_params)
 
     if @beer.save
-      render 'api/beers/beer_show'
+      render '/api/beers/show'
     else
       render json: @beer.errors, status: 422
     end

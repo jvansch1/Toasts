@@ -53,10 +53,10 @@ tr = Brewery.create!(name: 'Treehouse', city: 'Monson', state: 'MA', country: 'U
 goose_island = Brewery.create!(name: "Goose Island", city: "Chicago", state: "Illinois", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/goose_island.jpeg')
 # cigar_city = Brewery.create!(name: "Cigar City Brewing", city: 'Tampa', state: 'FL', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-379_e6ae7.jpeg')
 # bottle_logic = Brewery.create!(name: "Bottle Logic Brewing", city: "Anaheim", state: "CA", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/bottle_logic.jpeg')
-# founders = Brewery.create!(name: "Founders Brewing Co.", city: "Grand Rapids", state: "MI", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-foundersbrewingcompany_549.jpeg')
+founders = Brewery.create!(name: "Founders Brewing Co.", city: "Grand Rapids", state: "MI", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-foundersbrewingcompany_549.jpeg')
 #
-Beer.create!(name: 'Budweiser', brewery_id: an.id, style: "Light ale", ABV: 5.0, IBU: 12, image: 'https://s3.amazonaws.com/untappd-dev/beers/budweiser.jpeg')
-# Beer.create!(name: 'Bud Light', brewery_id: an.id, style: "Light ale", ABV: 4.2, IBU: 27, image: 'https://s3.amazonaws.com/untappd-dev/beers/budlight.jpeg')
+bud = Beer.create!(name: 'Budweiser', brewery_id: an.id, style: "Light ale", ABV: 5.0, IBU: 12, image: 'https://s3.amazonaws.com/untappd-dev/beers/budweiser.jpeg')
+bud_light = Beer.create!(name: 'Bud Light', brewery_id: an.id, style: "Light ale", ABV: 4.2, IBU: 27, image: 'https://s3.amazonaws.com/untappd-dev/beers/budlight.jpeg')
 # Beer.create!(name: 'Miller High Life', brewery_id: miller.id, style: "Light ale", ABV: 4.6, IBU: 0, image: 'https://s3.amazonaws.com/untappd-dev/beers/miller_high_life.jpeg')
 # Beer.create!(name: 'Julius', brewery_id: tr.id, style: "India pale ale", ABV: 6.8, IBU: 72, image: 'https://s3.amazonaws.com/untappd-dev/beers/julius.jpeg')
 # Beer.create!(name: 'King JJJuliusss', brewery_id: tr.id, style: "India pale ale", ABV: 8.4, IBU: 0, image: 'https://s3.amazonaws.com/untappd-dev/beers/king_jjjuliusss.jpeg')
@@ -72,7 +72,7 @@ rare_2015 = Beer.create!(name: 'Bourbon County Rare 2015', brewery_id: goose_isl
 # Beer.create!(name: 'Bourbon County Vanilla Rye 2014', brewery_id: goose_island.id, style: "Stout", ABV: 13.6, IBU: 35, image: 'https://s3.amazonaws.com/untappd-dev/beers/vailla_rye.jpeg')
 # Beer.create!(name: 'Double Barrel Hunahpus', brewery_id: cigar_city.id, style: "Stout", ABV: 11.5, IBU: 0, image: 'https://s3.amazonaws.com/untappd-dev/beers/dbh.jpeg')
 # Beer.create!(name: 'Fundamental Observation', brewery_id: bottle_logic.id, style: "Stout", ABV: 14.1, IBU: 0, image: 'https://s3.amazonaws.com/untappd-dev/beers/fundamental_observation.jpeg')
-# Beer.create!(name: 'Canadian Breakfast Stout', brewery_id: founders.id, style: "Stout", ABV: 10.6, IBU: 0, image: 'https://s3.amazonaws.com/untappd-dev/beers/cbs.jpeg')
+cbs = Beer.create!(name: 'Canadian Breakfast Stout', brewery_id: founders.id, style: "Stout", ABV: 10.6, IBU: 0, image: 'https://s3.amazonaws.com/untappd-dev/beers/cbs.jpeg')
 
 users = User.all
 beers = Beer.all
@@ -82,6 +82,10 @@ ratings = [0,0.25,0.50,0.75,1,1.25,1.50,1.75,2, 2.25,2.50, 2.75, 3, 3.25, 3.50, 
 # 100.times do
 #   Checkin.create(user_id: users.sample.id, beer_id: beers.sample.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: user_images.sample)
 # end
+budlight_images = [
+  'https://s3.amazonaws.com/untappd-dev/checkins/0caef4eb563732735b0777b5fd0b8411_640x640.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/checkins/2fca081006fefcef14761cc032600e75_640x640.jpg'
+]
 
 green_images = [
   'https://s3.amazonaws.com/untappd-dev/checkins/green/0ca43a50d562c2655cbf0c3ba8128558_640x640.jpg',
@@ -96,6 +100,22 @@ rare_2015_images = [
   'https://s3.amazonaws.com/untappd-dev/checkins/rare_2015/cfc8beddede978c2213a4816cef63c15_640x640.jpeg'
 ]
 
+king_julius_images = [
+  'https://s3.amazonaws.com/untappd-dev/checkins/king_julius/42530b95d347624a089612133d8c9a46_640x640.jpg',
+  'https://s3.amazonaws.com/untappd-dev/checkins/king_julius/42530b95d347624a089612133d8c9a46_640x640.jpg'
+]
+
+
+budweiser_images = [
+  'https://s3.amazonaws.com/untappd-dev/checkins/budwieser/0caef4eb563732735b0777b5fd0b8411_640x640.jpeg',
+  'https://s3.amazonaws.com/untappd-dev/checkins/budwieser/2fca081006fefcef14761cc032600e75_640x640.jpg'
+]
+
+cbs_images = [
+  'https://s3.amazonaws.com/untappd-dev/checkins/cbs/002ba57afffb86686133029d2361f81e_640x640.jpg',
+  'https://s3.amazonaws.com/untappd-dev/checkins/cbs/002ba57afffb86686133029d2361f81e_640x640.jpg'
+]
+
 green_images.each_with_index do |url, index|
   Checkin.create(user_id: users.sample.id, beer_id: green.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: green_images[index])
 end
@@ -103,6 +123,23 @@ end
 rare_2015_images.each_with_index do |url, index|
   Checkin.create(user_id: users.sample.id, beer_id: rare_2015.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: rare_2015_images[index])
 end
+
+king_julius_images.each_with_index do |url, index|
+  Checkin.create(user_id: users.sample.id, beer_id: kj.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: king_julius_images[index])
+end
+
+budweiser_images.each_with_index do |url, index|
+  Checkin.create(user_id: users.sample.id, beer_id: bud.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: budweiser_images[index])
+end
+
+budlight_images.each_with_index do |url, index|
+  Checkin.create(user_id: users.sample.id, beer_id: bud_light.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: budlight_images[index])
+end
+
+cbs_images.each_with_index do |url, index|
+  Checkin.create(user_id: users.sample.id, beer_id: cbs.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: cbs_images[index])
+end
+
 #
 # 100.times do
 #   Like.create(user_id: users.sample.id, checkin_id: checkins.sample.id)

@@ -68,7 +68,7 @@ class SearchBar extends React.Component {
     return (
       <div>
         <form onSubmit={this.submitSearch.bind(this)}>
-          <input id='search-bar' onChange={this.updateValue.bind(this)} type='text' placeholder='Search'/>
+          <input id='search-bar' autoComplete='off' onChange={this.updateValue.bind(this)} type='text' placeholder='Search'/>
           <input type='submit' hidden/>
         </form>
         {this.renderDropdown()}

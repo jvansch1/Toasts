@@ -22,22 +22,30 @@ const BreweryCheckinListItem = (props) => {
 
         <ul className='rating-list'>
           <ul className='inner-rating-list'>
-            <li className='brewery-checkin-index-name'>Rating: {props.checkin.rating} / 5</li>
-            <div className='brewery-index-item-star-ratings-css'>
+            <li>
+              <span className='rating-header-brewery'>
+                Rating: {props.checkin.rating} / 5
+                <div className='brewery-index-item-star-ratings-css'>
 
-              <div className='brewery-index-item-star-ratings-css-top' style={{width: ratingLength}} >
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
+                  <div className='brewery-index-item-star-ratings-css-top' style={{width: ratingLength}} >
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
 
-              <div className='brewery-index-item-star-ratings-css-bottom'>
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  <div className='brewery-index-item-star-ratings-css-bottom'>
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  </div>
+                </div>
+                <li id='review'>{props.checkin.description}</li>
+                
+              </span>
+
+            </li>
+            <li>
+              <div id='thing'>
+                <img id='checkin-image' src={props.checkin.image_url}/>
               </div>
-            </div>
-            <li id='review'>{props.checkin.description}</li>
+            </li>
           </ul>
-          <li>
-            <img id='checkin-image' src={props.checkin.image_url} width='100px' height='100px'/>
-          </li>
         </ul>
 
 
