@@ -759,7 +759,7 @@ span {
   width: 700px;
   margin: 0 auto;
   position: relative;
-  top: 143px;
+  top: 115px;
 }
 
 .checkin-show-container {
@@ -1679,7 +1679,7 @@ button:focus {
 
 #brewery-show-right {
   background: white;
-  height: 500px;
+  height: 100%;
   position: relative;
   top: 100px;
   margin-left: 20px;

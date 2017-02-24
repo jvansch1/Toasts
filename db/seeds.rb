@@ -114,7 +114,7 @@ budweiser_images = [
 
 cbs_images = [
   'https://s3.amazonaws.com/untappd-dev/checkins/cbs/002ba57afffb86686133029d2361f81e_640x640.jpg',
-  'https://s3.amazonaws.com/untappd-dev/checkins/cbs/002ba57afffb86686133029d2361f81e_640x640.jpg'
+  'https://s3.amazonaws.com/untappd-dev/checkins/cbs/3fb3d2fad4633dadcd2a1d452b27b11a_640x640.jpg'
 ]
 
 very_hazy_images = [
