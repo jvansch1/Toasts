@@ -6,4 +6,4 @@ Beers are stored in a database table called beers with columns id, style, ABV, I
 
 On the front end, beer is rendered in the BeerShow component.
 
-![alt beer](/wireframes/BeerShow.png)
+![beer](wireframes/BeerShow.png)
