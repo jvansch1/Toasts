@@ -1753,3 +1753,8 @@ button:focus {
 #likes {
   margin-left: 20px;
 }
+
+#comment-content {
+  padding-right: 10px;
+  margin-right: 10px;
+}

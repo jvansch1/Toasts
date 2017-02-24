@@ -10,9 +10,18 @@
   color: #FFCC00;
 }
 
-.fa-plus-square:hover::after {
-
-}
+/*.fa-plus-square:hover::after {
+  content: 'checkin';
+  position: absolute;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  top: 60px;
+  right: 0px;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 4px;
+}*/
 
 .fa-search {
   position: relative;

@@ -5,7 +5,7 @@ const CommentIndexItem = (props) => {
     <li id='comment-index-item'>
       <img id='comment-user-image' src={props.comment.user_image_url} />
       <ul id='content-and-time'>
-        <p>
+        <p id='comment-content'>
           <span id='comment-username'>{props.comment.user.username}</span>: {props.comment.content}
 
         </p>
