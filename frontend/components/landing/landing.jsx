@@ -22,12 +22,16 @@ const Landing = (props) => {
   return (
 
     <div id='landing-background'>
-      <img src={window.images.logo} id="landing-logo"/>
-      <section id="login-box">
-        <button id='signup-button'><Link to='signup' id="signup-link">Sign Up</Link></button>
-        <button id='signup-button' onClick={logInGuest}><span id='signup-link'>Guest</span></button>
+      <div id='login-content'>
+        <span>
+          <img src={window.images.logo} id="landing-logo"/>
+        </span>
+        <section id="login-box">
+          <button id='signup-button'><Link to='signup' id="signup-link">Sign Up</Link></button>
+          <button id='signup-button' onClick={logInGuest}><span id='signup-link'>Guest</span></button>
           <p id='login-link'>Already a member? <Link to='login'>Sign in!</Link></p>
-      </section>
+        </section>
+      </div>
       <div id="transparent"></div>
       <ul>
         {renderErrors()}

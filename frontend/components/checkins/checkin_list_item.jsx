@@ -1,7 +1,10 @@
  import React from 'react';
  import { Link } from 'react-router';
+ import { createLike, deleteLike} from '../../actions/like_actions'
 
  const CheckinListItem = (props) => {
+
+
    if (!props.checkin.user) return null;
    const rating = `${25 * props.checkin.rating}px`
    return (

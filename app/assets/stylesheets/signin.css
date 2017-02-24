@@ -6,7 +6,19 @@
 
 #transparent {
   height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
   background-color: rgba(0, 0, 0, .5)
+}
+
+#login-content {
+  position: relative;
+  top: 100px;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1000000000
 }
 
 
@@ -20,9 +32,6 @@ body {
 }
 
 #login-box {
-  position: absolute;
-  left: 40%;
-  top: 30%;
   text-align: center;
   vertical-align: middle;
   z-index: 1000;
@@ -82,13 +91,12 @@ body {
 }
 
 #form-background {
-  position: absolute;
   /*left: 500px;*/
   background-color: white;
   height: 1000px;
   width: 600px;
-  margin-left: 33%;
-  margin-right: 33%
+  margin: 0 auto;
+  text-align: center;
 }
 
 span {
@@ -97,15 +105,13 @@ span {
 }
 
 #logo {
-  position: relative;
+  /*position: relative;*/
   left: 28%;
 }
 
 #landing-logo {
-  position: absolute;
-  left: 42%;
-  top: 13%;
-  z-index: 1000
+  z-index: 1000;
+  margin: 0 auto;
 }
 
 #landing-logo a {
@@ -773,7 +779,7 @@ span {
 }
 
 #checkin-full-pic {
-  min-width: 500px;
+  width: 500px;
   height: auto;
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 }
@@ -1309,6 +1315,7 @@ font-weight: normal;
   vertical-align: middle;
 
 }
+
 
 #checkin-buttons p:first-child {
   margin-right: 15px;
