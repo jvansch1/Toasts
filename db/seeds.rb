@@ -15,9 +15,10 @@ Brewery.destroy_all
 User.destroy_all
 Checkin.destroy_all
 Like.destroy_all
+Comment.destroy_all
 
 
-user = User.create(username: 'Guest', password: 'password')
+user = User.create(username: 'Guest', password: 'password', image: 'https://s3.amazonaws.com/untappd-dev/users/download.jpeg')
 user_images = [
   'https://s3.amazonaws.com/untappd-dev/users/guy1.jpeg',
   'https://s3.amazonaws.com/untappd-dev/users/guy10.jpeg',
@@ -62,7 +63,7 @@ bud_light = Beer.create!(name: 'Bud Light', brewery_id: an.id, style: "Light ale
 # Beer.create!(name: 'King JJJuliusss', brewery_id: tr.id, style: "India pale ale", ABV: 8.4, IBU: 0, image: 'https://s3.amazonaws.com/untappd-dev/beers/king_jjjuliusss.jpeg')
 kj = Beer.create!(name: 'King Julius', brewery_id: tr.id, style: "India pale ale", ABV: 8.2, IBU: 85, image: 'https://s3.amazonaws.com/untappd-dev/beers/king_julius.jpeg')
 green = Beer.create!(name: 'Very Green', brewery_id: tr.id, style: "India pale ale", ABV: 8.2, IBU: 0, image: 'https://s3.amazonaws.com/untappd-dev/beers/+very_green.jpeg')
-# Beer.create!(name: 'Very Hazy', brewery_id: tr.id, style: "India pale ale", ABV: 8.6, IBU: 80, image: 'https://s3.amazonaws.com/untappd-dev/beers/+very_hazy.jpeg')
+vh = Beer.create!(name: 'Very Hazy', brewery_id: tr.id, style: "India pale ale", ABV: 8.6, IBU: 80, image: 'https://s3.amazonaws.com/untappd-dev/beers/+very_hazy.jpeg')
 # Beer.create!(name: 'Bright', brewery_id: tr.id, style: "India pale ale", ABV: 7.8, IBU: 75, image: 'https://s3.amazonaws.com/untappd-dev/beers/bright.jpeg')
 # Beer.create!(name: 'Good Morning', brewery_id: tr.id, style: "Stout", ABV: 8.4, IBU: 65, image: 'https://s3.amazonaws.com/untappd-dev/beers/good_morning.jpeg')
 # Beer.create!(name: 'Bourbon County Rare 2010', brewery_id: goose_island.id, style: "Stout", ABV: 13, IBU: 60, image: 'https://s3.amazonaws.com/untappd-dev/beers/rare_2010.jpeg')
@@ -116,6 +117,11 @@ cbs_images = [
   'https://s3.amazonaws.com/untappd-dev/checkins/cbs/002ba57afffb86686133029d2361f81e_640x640.jpg'
 ]
 
+very_hazy_images = [
+  'https://s3.amazonaws.com/untappd-dev/checkins/very_hazy/418f1eda1258f1cc5a7ef96c54f3fd1b_640x640.jpg',
+  'https://s3.amazonaws.com/untappd-dev/checkins/very_hazy/bf962e1e850f052bf2984f7a9fc6aeee_640x640.jpg'
+]
+
 green_images.each_with_index do |url, index|
   Checkin.create(user_id: users.sample.id, beer_id: green.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: green_images[index])
 end
@@ -140,7 +146,16 @@ cbs_images.each_with_index do |url, index|
   Checkin.create(user_id: users.sample.id, beer_id: cbs.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: cbs_images[index])
 end
 
+very_hazy_images.each_with_index do |url, index|
+  Checkin.create(user_id: users.sample.id, beer_id: vh.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: very_hazy_images[index])
+end
+
 #
-# 100.times do
-#   Like.create(user_id: users.sample.id, checkin_id: checkins.sample.id)
-# end
+50.times do
+  Like.create(user_id: users.sample.id, checkin_id: checkins.sample.id)
+end
+
+
+50.times do
+  Comment.create(user_id: users.sample.id, checkin_id: checkins.sample.id, content: Faker::Hipster.sentence)
+end
