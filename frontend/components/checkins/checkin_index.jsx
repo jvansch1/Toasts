@@ -100,8 +100,8 @@ class CheckinIndex extends React.Component {
                 </p>
               </div>
               <div id='pagination-buttons'>
-                <button onClick={this.getPrevCheckins.bind(this)}>Previous</button>
-                <button onClick={this.getNextCheckins.bind(this)}>More</button>
+                <button onClick={this.getPrevCheckins.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
+                <button onClick={this.getNextCheckins.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
               </div>
               <div id='beer-list-container'>
                 <h1 id='beer-list-header'>Top Beers</h1>
