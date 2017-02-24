@@ -7,8 +7,10 @@ import { topBeers } from '../../actions/query_actions'
 
 
 const mapStateToProps = (state) => {
+  debugger
   return {
-    checkins: Object.keys(state.checkins).map(key => state.checkins[key])
+    checkins: Object.keys(state.checkins).map(key => state.checkins[key]),
+    currentUser: state.session.currentUser
   }
 }
 const mapDispatchToProps = (dispatch) => {

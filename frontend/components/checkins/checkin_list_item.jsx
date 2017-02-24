@@ -16,7 +16,7 @@
          </li>
 
          <ul className='rating-list'>
-           <ul className='inner-rating-list'>
+           <ul className='inner-rating-list' >
              <li>
                <span className='rating-header'>
                  Rating: {props.checkin.rating} / 5
@@ -30,14 +30,16 @@
                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                    </div>
                  </div>
+                 <li id='review'>{props.checkin.description}</li>
                </span>
 
              </li>
-             <li id='review'>{props.checkin.description}</li>
+             <li>
+               <div id='thing'>
+                 <img id='checkin-image' src={props.checkin.image_url}/>
+               </div>
+             </li>
            </ul>
-           <li>
-             <img id='checkin-image' src={props.checkin.image_url} width='100px' height='100px'/>
-           </li>
          </ul>
 
 

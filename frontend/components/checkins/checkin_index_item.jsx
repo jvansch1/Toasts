@@ -1,5 +1,7 @@
  import React from 'react';
  import { Link, hashHistory } from 'react-router'
+ import { createLike, deleteLike } from '../../actions/like_actions';
+
 
  class CheckinIndexItem extends React.Component {
    constructor(props) {
@@ -8,8 +10,23 @@
 
    handleLike(e) {
      e.preventDefault();
+     if (!this.renderButton()) {
+       this.like()
+     }
+     else {
+       this.unlike()
+     }
+   }
+
+   like() {
      let like = { user_id: store.getState().session.currentUser.id, checkin_id: this.props.checkin.id }
-     this.props.createLike(like)
+     store.dispatch(createLike(like))
+   }
+
+   unlike() {
+     let like = this.props.checkin.likes.filter(like => like.user_id === store.getState().session.currentUser.id)
+     debugger
+     store.dispatch(deleteLike(like[0]))
    }
 
    componentDidMount() {
@@ -27,14 +44,19 @@
      hashHistory.push(`checkins/${this.props.checkin.id}`)
    }
 
+   renderButton() {
+     if (this.props.checkin) {
+       debugger
+       return this.props.checkin.likes.some(like => {
+         return like.user_id === store.getState().session.currentUser.id
+       })
+     }
+   }
+
    render() {
-
-
-
-
-
      if (!this.props.checkin.user) return null;
      const ratingLength = `${this.props.checkin.rating * 25}px`
+     const button = this.renderButton() ? "Untoast" : "Toast"
      return (
        <li id='checkin-index-item'>
          <div id='user-info'>
@@ -59,18 +81,25 @@
                   </div>
                 </div>
              </div>
-             <img id='checkin-index-checkin-image' src={this.props.checkin.image_url} />
+             <div id='checkin-image-container'>
+               <img id='checkin-index-checkin-image' src={this.props.checkin.image_url} />
+             </div>
              <div id='checkin-buttons'>
-               <p>
+               <div>
+                 <i className="fa fa-comments" aria-hidden="true"></i>
                  <span onClick={this.redirectToShow.bind(this)}>Comment</span>
-               </p>
-               <p onClick={this.handleLike.bind(this)}>
-                 <span >Toast</span>
-               </p>
+               </div>
+               <div onClick={this.handleLike.bind(this)}>
+                 <i className="fa fa-beer" aria-hidden="true"></i>
+                 <span >{button}</span>
+               </div>
              </div>
              <div id='checkin-index-stats'>
                <span>
                  {this.props.checkin.created_at}
+               </span>
+               <span id='likes'>
+                 {this.props.checkin.likes.length} Likes
                </span>
                <span id='link'>
                  <Link to={`checkins/${this.props.checkin.id}`}>View Detailed Checkin</Link>

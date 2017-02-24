@@ -55,6 +55,7 @@ class BeerShow extends React.Component {
   render() {
 
     if (this.props.beer === undefined || this.props.beer.checkins === undefined) return null;
+    const button = this.renderButton() ? "Untoast" : "Toast"
     const ratingLength = `${this.averageRating() * 25}px`
       return (
         <div id='beer-container-container'>
@@ -152,10 +153,6 @@ class BeerShow extends React.Component {
 
           </div>
 
-          <div className="speech-bubble">
-            <div className="arrow bottom right"></div>
-            Thinking....
-          </div>
           {this.props.children}
         </div>
     )

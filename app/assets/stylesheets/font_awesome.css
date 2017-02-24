@@ -20,3 +20,13 @@
   color: black;
   left: 115px;
 }
+
+.fa-beer {
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
+
+.fa-comments {
+  margin-right: 5px;
+}

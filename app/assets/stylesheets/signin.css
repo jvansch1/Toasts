@@ -668,15 +668,18 @@ span {
   font-family: ProximaNova, Helvetica Neue,Helvetica;
 }
 
+
+
+
 #checkin-image {
-  height: 150px;
-  width: 150px;
-  margin-right: 15px;
-  border: 1px solid black;
-  position: relative;
+  height: 500px;
+  width: 500px;
+  margin-right: 0px;
   bottom: 38px;
+  margin-top: 10px;
 }
-#checkin-list-item-container {
+
+#checkin-list-item-container:first-child {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
@@ -685,8 +688,9 @@ span {
 .rating-list {
   display: flex;
   background: white;
-  justify-content: space-around;
   padding-left: 110px;
+  border-radius: 5px;
+
 }
 
 .inner-rating-list {
@@ -707,8 +711,13 @@ span {
 }
 
 #review {
-  border: 1px solid lightgrey;
-  padding: 5px;
+  font-weight: normal;
+  font-size: 0.9em;
+  border-top: 1px solid lightgrey;
+  margin-top: 10px;
+  width: 495px;
+  padding-top: 5px;
+  color: grey;
 }
 
 .checkin-count {
@@ -850,6 +859,7 @@ span {
   width: 500px;
   height: 500px;
   overflow: hidden;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 }
 
 #brewery-picture-input {
@@ -881,7 +891,7 @@ span {
   margin: 0 auto;
   position: relative;
   bottom: 10px;
-  right: 140px;
+  right: 200px;
   padding: 0;
   text-shadow: 0px 1px 0 #a2a2a2;
 
@@ -1067,11 +1077,15 @@ span {
   font-weight: bold;
   font-family: sans-serif;
   font-size: 20px;
+  border: 1px solid lightgrey;
+  width: 494px;
+  padding-left: 5px;
 }
 
 .checkin-description {
   font-family: sans-serif;
   color: grey;
+
 }
 
 .checkin-show-beer-name {
@@ -1265,23 +1279,34 @@ font-weight: normal;
 
 }
 
-#checkin-buttons p {
+#checkin-buttons div {
   width: 250px;
-  background: #868787;
+  background: #FFC600;
   text-align: center;
-  vertical-align: center;
+  vertical-align: middle;
   color: white;
   font-weight: 600;
   border-radius: 4px;
-  height: 40px;
-
-
+  height: auto;
 }
 
-#checkin-buttons p span{
+#checkin-buttons div:last-child {
+  width: 250px;
+  background: #FFC600;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  height: 30px;
+  margin-left: 15px;
+}
 
-  margin-top: 10px;
-  margin-bottom: 10px;
+#checkin-buttons div span{
+
+  /*margin-top: 10px;
+  margin-bottom: 10px;*/
+  vertical-align: middle;
 
 }
 
@@ -1380,8 +1405,19 @@ font-weight: normal;
   border-radius: 50%
 }
 
+#checkin-index-container {
+
+}
+
+#checkin-image-container {
+  text-align: center;
+  overflow: hidden;
+  height: 400px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
 #checkin-index-checkin-image {
-  margin: 10px 0 10px 0;
   border: 1px solid #e5e5e5;
 }
 
@@ -1434,7 +1470,7 @@ font-weight: normal;
 
 .character-count-and-button li:last-child {
   color: white;
-  background-color: #a7a7a7;
+  background-color: #FFC600;
   height: 35px;
   vertical-align: center;
   width: 115px;
@@ -1442,6 +1478,7 @@ font-weight: normal;
   margin-bottom: 10px;
   text-align: center;
   border-radius: 4px;
+  font-weight: bold;
 }
 
 .character-count-and-button li {
@@ -1687,4 +1724,15 @@ button:focus {
     border-color: #c8c8c8 transparent transparent transparent;
     border-width: 8px 8px 0px 8px;
     bottom: -8px;
+}
+
+#thing {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+#likes {
+  margin-left: 20px;
 }

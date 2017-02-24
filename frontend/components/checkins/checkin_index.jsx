@@ -7,7 +7,7 @@ class CheckinIndex extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      limit: 10,
+      limit: 4,
       offset: 0
     }
   }
@@ -42,16 +42,16 @@ class CheckinIndex extends React.Component {
   }
 
   getNextCheckins() {
-    this.setState({offset: this.state.offset + 10}, () => this.props.fetchCheckins(this.state.limit, this.state.offset) )
+    this.setState({offset: this.state.offset + 4}, () => this.props.fetchCheckins(this.state.limit, this.state.offset) )
 
   }
 
   getPrevCheckins() {
-    if (this.state.offset - 10 < 0) {
+    if (this.state.offset - 4 < 0) {
       this.setState({offset: 0}, () => this.props.fetchCheckins(this.state.limit, this.state.offset))
     }
     else {
-      this.setState({offset: this.state.offset - 10}, () => this.props.fetchCheckins(this.state.limit, this.state.offset))
+      this.setState({offset: this.state.offset - 4}, () => this.props.fetchCheckins(this.state.limit, this.state.offset))
     }
 
   }
