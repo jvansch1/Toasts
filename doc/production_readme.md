@@ -6,6 +6,8 @@ Beers are stored in a database table called beers with columns id, style, ABV, I
 
 On the front end, beer is rendered in the BeerShow component.
 
+Beer show will also load all checkins associated with that beer.
+
 ![beer](wireframes/BeerShow.png)
 
 
@@ -15,7 +17,17 @@ Breweries follow a pattern similar to beers. They exist in a brewery table with 
 
 On the front end, when a beer show page is accessed an API call will be made that will retrieve that brewery object. This object will persist in the state until a new beer is requested. A brewery will be rendered in the BreweryShow container.
 
+Brewery show page will also load all checkins associated with that brewery.
+
 ![beer](wireframes/BreweryShow.png)
+
+##Checkins
+
+A checkin is an event created by a user in which they can publicly post that they are drinking a certain beer, as well as give it rating and optional description. A checkin will be stored in the checkins table which will have the columns user_id, beer_id, rating, and description.
+
+When an individual checkin is accessed, it will be rendered through the CheckinShow component. This checkin will be stored in state until a new checkin is accessed.
+
+![beer](wireframes/CheckinShow.png)
 
 
 
