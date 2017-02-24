@@ -151,7 +151,7 @@ very_hazy_images.each_with_index do |url, index|
 end
 
 #
-50.times do
+100.times do
   Like.create(user_id: users.sample.id, checkin_id: checkins.sample.id)
 end
 

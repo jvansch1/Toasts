@@ -43,10 +43,10 @@ class CommentIndex extends React.Component {
         </div>
         <div id='comment-form-container'>
           <form onSubmit={this.handleSubmit}>
-            <input autoComplete='off' onChange={this.updateContent.bind(this)}id='text-input' type='text' placeholder='Add A Comment' value={this.state.content}/>
+            <input autoComplete='off' maxlength='140' onChange={this.updateContent.bind(this)}id='text-input' type='text' placeholder='Add A Comment' value={this.state.content}/>
             <ul className='character-count-and-button'>
               <li>
-                0/140
+                {this.state.content.length}/140
               </li>
               <li>
                 <p onClick={this.submitComment.bind(this)}>Post</p>
