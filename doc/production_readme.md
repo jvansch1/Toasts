@@ -66,6 +66,24 @@ When an individual checkin is accessed, it will be rendered through the CheckinS
 ![beer](wireframes/CheckInShow.png)
 
 
+## Site layout
+
+Upon sign-in, the user will be directed to a home page which lists recent checkins for all users globally. When friends are implemented, this page will be replaced by activity limited to only friends.
+
+![home](screenshots/Home.png)
+
+The user can also see more specific checkins by visiting a beer or brewery show page. These pages will contain checkins specific only that item. These can either be accessed by clicking a link found in a checkin, the list of top beers or the search feature.
+
+![BeerShow](screenshots/BeerShow.png)
+
+Users can checkin to a beer by visiting the show page and clicking the checkin button. The user can provide a rating as well as a short description of the beer to let other users know what they think.
+
+![CheckinForm](screenshots/CheckinForm.png)
+
+Users can visit a show page for each individual checkin to leave likes and comments.
+
+![CheckinShow](screenshots/CheckinShow.png)
+
 ##Features to be implemented
 
 ###Friends
