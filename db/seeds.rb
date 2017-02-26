@@ -161,7 +161,30 @@ very_hazy_images = [
   Like.create(user_id: users.sample.id, checkin_id: checkins.sample.id)
 end
 
+comment_content = [
+  'One of my favorites!',
+  'I love this beer!',
+  "So good!",
+  "Not a huge fan of this one.",
+  "Its ok but I like #{Beer.all.sample.name}",
+  "If you like this you should try some of #{Brewery.all.sample.name}'s beers",
+  "I agree!",
+  "I disagree but I respect your opinion",
+  "You really know your beer!",
+  "One of the best beers I've had",
+  "Phenomenal!",
+  "Im blown away!",
+  "I dont know why anyone would like this beer.",
+  "This one is gross!",
+  "Not great but not terrible",
+  "Nothing to write home about",
+  "Great taste, we should grab a beer sometime!",
+  "Its so-so",
+  "Fantastic",
+  "Reminds me why I love beer. Incredible!"
+]
+
 
 50.times do
-  Comment.create(user_id: users.sample.id, checkin_id: checkins.sample.id, content: Faker::Hipster.sentence)
+  Comment.create(user_id: users.sample.id, checkin_id: checkins.sample.id, content: comment_content.sample)
 end
