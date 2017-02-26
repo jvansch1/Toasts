@@ -10,6 +10,22 @@
   color: #FFCC00;
 }
 
+.fa-plus-square:hover {
+  cursor: pointer;
+}
+.fa-plus-square:hover:after {
+  content: 'checkin';
+  position: absolute;
+  font-size: 14px;
+  color: white;
+  background: black;
+  top: 60px;
+  right: -5px;
+  font-weight: 600;
+  padding: 5px 10px 5px 10px;
+  border-radius: 4px;
+}
+
 /*.fa-plus-square:hover::after {
   content: 'checkin';
   position: absolute;

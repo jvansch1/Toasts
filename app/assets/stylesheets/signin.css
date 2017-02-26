@@ -1292,7 +1292,6 @@ font-weight: normal;
 
 #checkin-buttons {
   display: flex;
-
 }
 
 #checkin-buttons div {
@@ -1304,6 +1303,10 @@ font-weight: normal;
   font-weight: 600;
   border-radius: 4px;
   height: auto;
+}
+
+#checkin-buttons:hover {
+  cursor: pointer;
 }
 
 #checkin-buttons div:last-child {
@@ -1564,6 +1567,10 @@ font-weight: normal;
   color: white;
   font-size: 1.2em;
   width: 100px;
+}
+
+#pagination-buttons button:hover {
+  cursor: pointer;
 }
 
 button:focus {

@@ -122,33 +122,39 @@ very_hazy_images = [
   'https://s3.amazonaws.com/untappd-dev/checkins/very_hazy/bf962e1e850f052bf2984f7a9fc6aeee_640x640.jpg'
 ]
 
-green_images.each_with_index do |url, index|
-  Checkin.create(user_id: users.sample.id, beer_id: green.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: green_images[index])
-end
 
-rare_2015_images.each_with_index do |url, index|
-  Checkin.create(user_id: users.sample.id, beer_id: rare_2015.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: rare_2015_images[index])
-end
+  Checkin.create(user_id: users.sample.id, beer_id: green.id, rating: 4.5, description: "Delicious! Great tropical fruit notes", image: green_images[0])
+  Checkin.create(user_id: users.sample.id, beer_id: green.id, rating: 5, description: "Amazing", image: green_images[1])
+  Checkin.create(user_id: users.sample.id, beer_id: green.id, rating: 4.5, description: "Really good!", image: green_images[2])
+  Checkin.create(user_id: users.sample.id, beer_id: green.id, rating: 4, description: "Great", image: green_images[3])
 
-king_julius_images.each_with_index do |url, index|
-  Checkin.create(user_id: users.sample.id, beer_id: kj.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: king_julius_images[index])
-end
 
-budweiser_images.each_with_index do |url, index|
-  Checkin.create(user_id: users.sample.id, beer_id: bud.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: budweiser_images[index])
-end
+  Checkin.create(user_id: users.sample.id, beer_id: rare_2015.id, rating: 5, description: "One of my favorites", image: rare_2015_images[0])
+  Checkin.create(user_id: users.sample.id, beer_id: rare_2015.id, rating: 5, description: "Nothing else like it. If you can get your hands on it you need to try it!", image: rare_2015_images[1])
+  Checkin.create(user_id: users.sample.id, beer_id: rare_2015.id, rating: 5, description: "Love it", image: rare_2015_images[2])
 
-budlight_images.each_with_index do |url, index|
-  Checkin.create(user_id: users.sample.id, beer_id: bud_light.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: budlight_images[index])
-end
 
-cbs_images.each_with_index do |url, index|
-  Checkin.create(user_id: users.sample.id, beer_id: cbs.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: cbs_images[index])
-end
 
-very_hazy_images.each_with_index do |url, index|
-  Checkin.create(user_id: users.sample.id, beer_id: vh.id, rating: ratings.sample, description: Faker::Hipster.sentence, image: very_hazy_images[index])
-end
+  Checkin.create(user_id: users.sample.id, beer_id: kj.id, rating: 5, description: "Treehouse has done it again. Delicious", image: king_julius_images[0])
+  Checkin.create(user_id: users.sample.id, beer_id: kj.id, rating: 5, description: "Complex fruit flavors tha you cannot get anywhere else", image: king_julius_images[1])
+
+
+
+  Checkin.create(user_id: users.sample.id, beer_id: bud.id, rating: 3.5, description: "Great for a summer BBQ", image: budweiser_images[0])
+  Checkin.create(user_id: users.sample.id, beer_id: bud.id, rating: 3.5, description: "The King of Beers. Nothing else needs to be said", image: budweiser_images[1])
+
+
+
+  Checkin.create(user_id: users.sample.id, beer_id: bud_light.id, rating: 2, description: "Doesnt taste as good as it did back in college", image: budlight_images[0])
+  Checkin.create(user_id: users.sample.id, beer_id: bud_light.id, rating: 3, description: "Decent for the price", image: budlight_images[1])
+
+
+  Checkin.create(user_id: users.sample.id, beer_id: cbs.id, rating: 4.5, description: "One of the best stouts I've had", image: cbs_images[0])
+  Checkin.create(user_id: users.sample.id, beer_id: cbs.id, rating: 5, description: "Phenomenal!", image: cbs_images[1])
+
+
+  Checkin.create(user_id: users.sample.id, beer_id: vh.id, rating: 5, description: "Explosion of flavor! Fantastic", image: very_hazy_images[0])
+  Checkin.create(user_id: users.sample.id, beer_id: vh.id, rating: 5, description: "Complexities...so good", image: very_hazy_images[1])
 
 #
 100.times do
