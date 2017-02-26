@@ -132,6 +132,7 @@ html,body {
   position: fixed;
   bottom: 0px;
   left: 0px;
+  margin-top: 5px;
   background: white;
   border-top: 1px solid #e5e5e5;
   width: 100%;
@@ -145,7 +146,7 @@ html,body {
 }
 
 .footer-list li {
-  padding: 5px 5px 0 5px;
+  padding: 2px 5px 0 5px;
   color: grey;
 }
 .footer-list li a {
@@ -157,6 +158,6 @@ html,body {
 }
 
 .footer-name {
-padding: 5px 10px 5px 10px;
+padding: 2px 10px 2px 10px;
 color: grey;
 }

@@ -50,10 +50,10 @@ end
 
 an = Brewery.create!(name: 'Anheuser-Busch', city: 'St. Loius', state: 'MO', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/anheuser.jpeg')
 tr = Brewery.create!(name: 'Treehouse', city: 'Monson', state: 'MA', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/treehouse.jpeg')
-# miller = Brewery.create(name: "Miller Brewing Company", city: "Milwaukee", state: "WI", country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-millerBrewing.jpg')
+miller = Brewery.create(name: "Miller Brewing Company", city: "Milwaukee", state: "WI", country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-millerBrewing.jpg')
 goose_island = Brewery.create!(name: "Goose Island", city: "Chicago", state: "Illinois", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/goose_island.jpeg')
-# cigar_city = Brewery.create!(name: "Cigar City Brewing", city: 'Tampa', state: 'FL', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-379_e6ae7.jpeg')
-# bottle_logic = Brewery.create!(name: "Bottle Logic Brewing", city: "Anaheim", state: "CA", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/bottle_logic.jpeg')
+cigar_city = Brewery.create!(name: "Cigar City Brewing", city: 'Tampa', state: 'FL', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-379_e6ae7.jpeg')
+bottle_logic = Brewery.create!(name: "Bottle Logic Brewing", city: "Anaheim", state: "CA", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/bottle_logic.jpeg')
 founders = Brewery.create!(name: "Founders Brewing Co.", city: "Grand Rapids", state: "MI", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-foundersbrewingcompany_549.jpeg')
 #
 bud = Beer.create!(name: 'Budweiser', brewery_id: an.id, style: "Light ale", ABV: 5.0, IBU: 12, image: 'https://s3.amazonaws.com/untappd-dev/beers/budweiser.jpeg')
@@ -166,7 +166,7 @@ comment_content = [
   'I love this beer!',
   "So good!",
   "Not a huge fan of this one.",
-  "Its ok but I like #{Beer.all.sample.name}",
+  "Its ok but I like #{Beer.all.sample.name} more",
   "If you like this you should try some of #{Brewery.all.sample.name}'s beers",
   "I agree!",
   "I disagree but I respect your opinion",
