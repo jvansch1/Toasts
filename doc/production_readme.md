@@ -29,8 +29,8 @@
 
 To view the code behind Toasts in more detail, please visit the following folders:
 
-[Models](app/models)
-[Controllers](app/controllers)
+[Models](../app/models)
+[Controllers](../app/controllers)
 
 
 
