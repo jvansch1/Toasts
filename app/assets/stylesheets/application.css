@@ -41,7 +41,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
-  line-height: 1.5; 
+  line-height: 1.5;
 }
 ol, ul {
   list-style: none;
@@ -126,4 +126,37 @@ html,body {
 
 #logout-button:hover {
   text-decoration: underline;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  background: white;
+  border-top: 1px solid #e5e5e5;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-list {
+  display: flex;
+  margin-right: 5px;
+}
+
+.footer-list li {
+  padding: 5px 5px 0 5px;
+  color: grey;
+}
+.footer-list li a {
+  color: grey;
+  text-decoration: none;
+}
+.footer-list li a:hover {
+  text-decoration: underline;
+}
+
+.footer-name {
+padding: 5px 10px 5px 10px;
+color: grey;
 }
