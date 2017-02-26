@@ -17,7 +17,16 @@
   * figaro
   * jbuilder
 
+## Features
 
+* Session authentication on backend
+* Creation of beers and breweries.
+* Checkin to beers
+  * Provide rating and short review
+* Like and comment on users checkins
+* See all checkins associated with a particular beer / brewery as well as average score
+
+# Major Components
 
 ##Beers
 
@@ -46,7 +55,7 @@ A checkin is an event created by a user in which they can publicly post that the
 
 When an individual checkin is accessed, it will be rendered through the CheckinShow component. This checkin will be stored in state until a new checkin is accessed.
 
-![beer](wireframes/CheckinShow.png)
+![beer](wireframes/CheckInShow.png)
 
 
 ##Features to be implemented
