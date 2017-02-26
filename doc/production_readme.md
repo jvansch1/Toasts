@@ -29,8 +29,16 @@
 
 To view the code behind Toasts in more detail, please visit the following folders:
 
-[Models](../app/models)
-[Controllers](../app/controllers)
+[Models](https://github.com/jvansch1/full-stack-proposal/tree/master/app/models)
+
+[Controllers](https://github.com/jvansch1/full-stack-proposal/tree/master/app/controllers)
+
+[Components](https://github.com/jvansch1/full-stack-proposal/tree/master/frontend/components)
+
+[Schema](https://github.com/jvansch1/full-stack-proposal/blob/master/db/schema.rb)
+
+[ApiUtil](https://github.com/jvansch1/full-stack-proposal/tree/master/frontend/util)
+
 
 
 
