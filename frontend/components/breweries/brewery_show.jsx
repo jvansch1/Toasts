@@ -36,7 +36,6 @@ class BreweryShow extends React.Component {
   }
 
   render() {
-    debugger
     if (this.props.brewery === undefined || this.props.brewery.checkins === undefined) return null;
     const ratingLength = `${this.averageRating() * 25}px`
       return (
@@ -104,7 +103,6 @@ class BreweryShow extends React.Component {
             <ul>
               {
                 this.props.brewery.top_beers.map(beerArray => {
-                  debugger
                 return (
                   <Link to={`beers/${beerArray[0].id}`}>
                     <li id='brewery-show-top-beer-item'>

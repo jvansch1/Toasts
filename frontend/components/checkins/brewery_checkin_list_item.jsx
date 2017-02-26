@@ -5,7 +5,6 @@ import { Link } from 'react-router';
 
 
 const BreweryCheckinListItem = (props) => {
-  debugger
   const ratingLength = `${props.checkin.rating * 25}px`
 
   return (

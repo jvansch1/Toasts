@@ -25,7 +25,6 @@
 
    unlike() {
      let like = this.props.checkin.likes.filter(like => like.user_id === store.getState().session.currentUser.id)
-     debugger
      store.dispatch(deleteLike(like[0]))
    }
 
@@ -46,7 +45,6 @@
 
    renderButton() {
      if (this.props.checkin) {
-       debugger
        return this.props.checkin.likes.some(like => {
          return like.user_id === store.getState().session.currentUser.id
        })

@@ -17,7 +17,6 @@ const BeerReducer = (state = {}, action) => {
       if (newState[action.checkin] && !newState[action.checkin.beer_id].checkins.includes(action.checkin)) {
         newState[action.checkin.beer_id].checkins.push(action.checkin)
       }
-      debugger
       return newState
     default:
       return state;

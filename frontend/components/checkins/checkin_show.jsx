@@ -28,7 +28,6 @@ class CheckinShow extends React.Component {
   }
 
   handleLike(e) {
-    debugger
     if (!this.renderButton()) {
       this.createLike()
     }
@@ -48,7 +47,6 @@ class CheckinShow extends React.Component {
 
   deleteLike() {
     const like = this.props.checkin.likes.filter(like => like.user_id === this.props.currentUser.id)
-    debugger
     this.props.deleteLike(like[0])
     this.props.fetchCheckin(this.props.checkin.id)
   }
@@ -62,7 +60,6 @@ class CheckinShow extends React.Component {
   }
 
   render() {
-    debugger
     if (this.props.checkin === undefined) {
       return null;
     }

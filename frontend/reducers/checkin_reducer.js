@@ -15,14 +15,6 @@ const CheckinReducer = (state = {}, action) => {
       let dupedState = merge({}, state)
       delete dupedState[action.checkin.id]
       return dupedState;
-    // case RECEIVE_LIKE:
-    //   return merge({}, state, { [action.like.id]: action.like })
-    // case REMOVE_LIKE:
-    // debugger
-    //   let diffState = merge({}, state)
-    //   // debugger
-    //   delete diffState[action.like.id]
-    //   return diffState
     case RECEIVE_COMMENT:
       let newState = merge({}, state)
       let checkin = newState[action.comment.checkin_id]

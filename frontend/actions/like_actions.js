@@ -36,7 +36,6 @@ export const createLike = (like) => {
 }
 
 export const deleteLike = (like) => {
-  debugger
   return dispatch => {
     return LikeApiUtil.deleteLike(like)
       .then(checkin => dispatch(receiveCheckin(checkin)))

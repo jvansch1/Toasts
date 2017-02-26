@@ -1,5 +1,24 @@
 [Toasts live](https://untapped-clone.herokuapp.com/)
 
+#Toasts
+
+##Technologies used
+
+* Ruby
+* Rails
+* Javascript
+* React
+* Redux
+* PostgreSQL
+* Amazon Web Services
+* Gems/supplemental
+  * paperclip
+  * Bcrypt
+  * figaro
+  * jbuilder
+
+
+
 ##Beers
 
 Beers are stored in a database table called beers with columns id, style, ABV, IBU, brewery_id and name. An API call is made whenever a beer show page is accessed that will retrieve all information for that beer. This beer object will be held in the state of the front end until a new beer is requested. A beer belongs_to a brewery and also has_many checkins.
@@ -28,8 +47,6 @@ A checkin is an event created by a user in which they can publicly post that the
 When an individual checkin is accessed, it will be rendered through the CheckinShow component. This checkin will be stored in state until a new checkin is accessed.
 
 ![beer](wireframes/CheckinShow.png)
-
-
 
 
 ##Features to be implemented

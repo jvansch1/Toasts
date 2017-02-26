@@ -61,7 +61,6 @@ class CheckinIndex extends React.Component {
 
 
   render() {
-    debugger
     return (
         <div>
           <HeaderContainer />
