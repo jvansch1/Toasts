@@ -29,7 +29,8 @@
 
 To view the code behind Toasts in more detail, please visit the following folders:
 
-[Models](/full-stack-proposal/app/models)
+[Models](app/models)
+[Controllers](app/controllers)
 
 
 
