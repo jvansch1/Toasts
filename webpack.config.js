@@ -1,5 +1,11 @@
 var path = require('path');
 
+new webpack.DefinePlugin({
+  "process.env": {
+     NODE_ENV: JSON.stringify("production")
+   }
+})
+
 module.exports = {
   entry: './frontend/untappd.jsx',
   output: {
