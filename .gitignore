@@ -19,9 +19,9 @@ bundle.js.map
 DS_Store
 DS-Store0
 npm-debug.log
-doc/DS_Store
-app/views/DS_Store
-assets/DS_Store
+doc/.DS_Store
+app/views/.DS_Store
+assets/.DS_Store
 
 # Ignore application configuration
 /config/application.yml
