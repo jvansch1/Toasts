@@ -19,8 +19,8 @@ class CheckinIndex extends React.Component {
   topBeers() {
     return window.top_beers.top_beers.map(beerArray => {
       return (
-        <Link to={`beers/${beerArray[0].id}`}>
-          <li className='top-beer-index-item'>
+        <Link to={`beers/${beerArray[0].id}`} key={beerArray[0].id}>
+          <li className='top-beer-index-item' key={beerArray[0].id}>
             <img className='top-beer-image' src={beerArray[1]} />
             <ul className='top-beer-name'>
               <li>
@@ -73,7 +73,7 @@ class CheckinIndex extends React.Component {
               <ul>
                 {
                   this.props.checkins.map(checkin => {
-                    return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike}/>
+                    return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike} key={checkin.id}/>
                   })
                 }
               </ul>
@@ -88,18 +88,18 @@ class CheckinIndex extends React.Component {
               </div>
 
               <div id='user-stat-list'>
-                <p className='individual-stat'>
+                <section className='individual-stat'>
                   <span className='number'>
                     {store.getState().session.currentUser.checkins.length}
                   </span>
                   <p className='title' >Total</p>
-                </p>
-                <p className='individual-stat'>
+                </section>
+                <section className='individual-stat'>
                   <span className='number'>
                     {store.getState().session.currentUser.unique_checkins}
                   </span>
                   <p className='title' >Unique</p>
-                </p>
+                </section>
               </div>
               <div id='pagination-buttons'>
                 <button onClick={this.getPrevCheckins.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
