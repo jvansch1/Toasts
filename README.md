@@ -1,5 +1,7 @@
 #Toasts
 
+Toasts is a social media platform for craft-beer enthusiasts. It allows users to checkin to beers that thy are drinking, provide a rating and short review, and track the activity of other users.
+
 [Toasts live](https://untapped-clone.herokuapp.com/)
 
 ##Technologies used
@@ -49,12 +51,22 @@ To view the code behind Toasts in more detail, please visit the following folder
 
 Beers are stored in a database table called beers with columns id, style, ABV, IBU, brewery_id and name. An API call is made whenever a beer show page is accessed that will retrieve all information for that beer. This beer object will be held in the state of the front end until a new beer is requested. A beer belongs_to a brewery and also has_many checkins.
 
+The Beer model implements a top beers method. This method uses a custom ActiveRecord query which continually provides a list of the most popular beers that is rendered on the front end
+
+```
+  def self.top_beers
+    top_beers = Beer.joins(:checkins).group("beers.id").limit(10).order("COUNT (checkins.id) DESC").count("checkins.id")
+    beer_array = []
+    top_beers.each do |k,v|
+      beer_array.push([Beer.find(k), Beer.find(k).image.url, Beer.find(k).brewery])
+    end
+    beer_array
+  end
+```
+
 On the front end, beer is rendered in the BeerShow component.
 
 Beer show will also load all checkins associated with that beer.
-
-![beer](doc/wireframes/BeerShow.png)
-
 
 ###Brewery
 
@@ -64,15 +76,12 @@ On the front end, when a beer show page is accessed an API call will be made tha
 
 Brewery show page will also load all checkins associated with that brewery.
 
-![beer](doc/wireframes/BreweryShow.png)
 
 ###Checkins
 
 A checkin is an event created by a user in which they can publicly post that they are drinking a certain beer, as well as give it rating and optional description. A checkin will be stored in the checkins table which will have the columns user_id, beer_id, rating, and description.
 
 When an individual checkin is accessed, it will be rendered through the CheckinShow component. This checkin will be stored in state until a new checkin is accessed.
-
-![beer](doc/wireframes/CheckInShow.png)
 
 
 ## Site layout
