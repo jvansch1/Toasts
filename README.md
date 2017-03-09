@@ -1,6 +1,6 @@
 #Toasts
 
-Toasts is a social media platform for craft-beer enthusiasts. It allows users to checkin to beers that thy are drinking, provide a rating and short review, and track the activity of other users.
+Toasts is a social media platform for craft-beer enthusiasts. It allows users to checkin to beers that thy are drinking, provide a rating and short review, and track the activity of other users. It is built using Ruby on Rails, Jbuilder, and a PostgreSQL database on the backend. The Front is handled by React.js and Redux(Flux).
 
 [Toasts live](https://untapped-clone.herokuapp.com/)
 
