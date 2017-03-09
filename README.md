@@ -83,6 +83,41 @@ A checkin is an event created by a user in which they can publicly post that the
 
 When an individual checkin is accessed, it will be rendered through the CheckinShow component. This checkin will be stored in state until a new checkin is accessed.
 
+##Custom Pagination
+
+I implemented using a custom pagination feature using ActiveRecord and data sent from the front end. In the checkinIndex component I am keeping track of a limit and offset which I can use to modify my active record query.
+
+```
+class CheckinIndex extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      limit: 4,
+      offset: 0
+    }
+  }
+```
+
+Upon hitting the next or previous button, this offset is adjusted and the database is queried for new checkins.
+
+
+```
+def index
+  @checkins = Checkin.order("created_at DESC").limit(params[:limit]).offset(params[:offset])
+end
+```
+
+```
+export const fetchCheckins = (limit, offset) => {
+  return $.ajax({
+    type: 'GET',
+    url: 'api/checkins',
+    data: { limit, offset }
+  })
+}
+```
+
+Since not all checkins are being loaded at one time, this increases performance and enhances the user experience
 
 ## Site layout
 
