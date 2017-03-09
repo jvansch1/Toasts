@@ -25,7 +25,15 @@ class BeerForm extends React.Component {
     formData.append("beer[ABV]", this.state.ABV)
     formData.append("beer[IBU]", this.state.IBU)
     formData.append("beer[image]", this.state.imageFile)
-    this.props.createBeer(formData).then(() => hashHistory.push('/home'));
+    this.props.createBeer(formData).then(() => {
+      $('.success-popup').attr("hidden", false)
+      const hideDiv = function() {
+        $('.success-popup').attr("hidden", true)
+        hashHistory.push('/home')
+      }
+      setTimeout(hideDiv, 750)
+      return null;
+    });
   }
 
   update(property) {
@@ -56,6 +64,9 @@ class BeerForm extends React.Component {
         <HeaderContainer />
 
         <div className='form-container'>
+          <div className='success-popup' hidden='true'>
+            Successfully created!
+          </div>
           <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
             <span id='beer-form-title'>
               Add A Beer

@@ -30,7 +30,15 @@ class BreweryForm extends React.Component {
     formData.append("brewery[state]", this.state.state)
     formData.append("brewery[country]", this.state.country)
     formData.append("brewery[image]", this.state.imageFile)
-    this.props.createBrewery(formData).then(() => hashHistory.push('breweries'))
+    this.props.createBrewery(formData).then(() => {
+      $('.success-popup').attr("hidden", false)
+      const hideDiv = function() {
+        $('.success-popup').attr("hidden", true)
+        hashHistory.push('/home')
+      }
+      setTimeout(hideDiv, 750)
+      return null;
+    });
   }
 
   addFile(e) {
@@ -52,6 +60,7 @@ class BreweryForm extends React.Component {
 
         <div className='form-container'>
           <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
+            <div className='success-popup' hidden='true'>Successfully created Brewery!</div>
             <span id='beer-form-title'>
               Add A Brewery
             </span>

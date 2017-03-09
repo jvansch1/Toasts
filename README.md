@@ -55,7 +55,10 @@ The Beer model implements a top beers method. This method uses a custom ActiveRe
 
 ```
   def self.top_beers
-    top_beers = Beer.joins(:checkins).group("beers.id").limit(10).order("COUNT (checkins.id) DESC").count("checkins.id")
+    top_beers = Beer.joins(:checkins)
+      .group("beers.id").limit(10)
+      .order("COUNT (checkins.id) DESC")
+      .count("checkins.id")
     beer_array = []
     top_beers.each do |k,v|
       beer_array.push([Beer.find(k), Beer.find(k).image.url, Beer.find(k).brewery])
