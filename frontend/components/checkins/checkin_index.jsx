@@ -45,6 +45,11 @@ class CheckinIndex extends React.Component {
   }
 
   getNextCheckins() {
+    debugger
+    if (this.state.offset + 4 >= window.checkin_count.checkins) {
+      debugger
+      return null;// this.setState({offset: this.state.offset}, () => this.props.fetchCheckins(this.state.limit, this.state.offset));
+    }
     this.setState({offset: this.state.offset + 4}, () => this.props.fetchCheckins(this.state.limit, this.state.offset) )
 
   }

@@ -725,6 +725,7 @@ span {
   width: 495px;
   padding-top: 5px;
   color: grey;
+  word-wrap: break-word;
 }
 
 .checkin-count {
@@ -1281,6 +1282,9 @@ font-weight: normal;
   padding-top: 15px;
   padding-right: 10px;
   margin-top: 10px;
+}
+#r-and-d p {
+  word-wrap: break-word;
 }
 
 #checkin-content {
