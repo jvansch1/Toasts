@@ -36,14 +36,14 @@ class CommentIndex extends React.Component {
           <ul>
             {
               this.props.checkin.comments.map(comment => {
-                return <CommentIndexItem comment={comment} />
+                return <CommentIndexItem comment={comment} key={comment.id}/>
               })
             }
           </ul>
         </div>
         <div id='comment-form-container'>
           <form onSubmit={this.handleSubmit}>
-            <input autoComplete='off' maxlength='140' onChange={this.updateContent.bind(this)}id='text-input' type='text' placeholder='Add A Comment' value={this.state.content}/>
+            <input autoComplete='off' maxLength='140' onChange={this.updateContent.bind(this)}id='text-input' type='text' placeholder='Add A Comment' value={this.state.content}/>
             <ul className='character-count-and-button'>
               <li>
                 {this.state.content.length}/140
