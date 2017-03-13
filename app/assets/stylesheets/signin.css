@@ -1794,3 +1794,7 @@ button:focus {
 .grey {
   opacity: 0.4;
 }
+
+#logout-button {
+  cursor: pointer;
+}

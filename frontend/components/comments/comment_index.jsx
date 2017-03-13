@@ -35,8 +35,8 @@ class CommentIndex extends React.Component {
         <div id='comment-list'>
           <ul>
             {
-              this.props.checkin.comments.map(comment => {
-                return <CommentIndexItem comment={comment} key={comment.id}/>
+              this.props.checkin.comments.map((comment, idx) => {
+                return <CommentIndexItem comment={comment} key={idx}/>
               })
             }
           </ul>
