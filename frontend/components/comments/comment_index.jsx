@@ -49,7 +49,7 @@ class CommentIndex extends React.Component {
                 {this.state.content.length}/140
               </li>
               <li>
-                <p onClick={this.submitComment.bind(this)}>Post</p>
+                <p id='post-button' onClick={this.submitComment.bind(this)}>Post</p>
               </li>
             </ul>
         </form>

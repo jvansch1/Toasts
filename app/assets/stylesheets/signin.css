@@ -1142,6 +1142,10 @@ span {
   padding: 10px 20px 10px 20px;
   color: white;
 }
+
+.toast-button p:hover {
+  cursor: pointer;
+}
 .brewery-checkin-index-name {
   font-size: 20px;
   font-weight: bold;
@@ -1158,6 +1162,10 @@ span {
 .search-result-item {
   margin-left: 15px;
   padding-top: 15px;
+}
+
+#post-button {
+  cursor: pointer;
 }
 
 #dropdown {
@@ -1469,7 +1477,8 @@ font-weight: normal;
 #comment-form-container {
   background: white;
   width: 450px;
-  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1)
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
 }
 
 #text-input {
