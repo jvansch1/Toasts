@@ -13,6 +13,7 @@ class CheckinIndex extends React.Component {
   }
 
   componentDidMount() {
+    $('#previous-button').addClass('grey');
     this.props.fetchCheckins(this.state.limit, this.state.offset);
   }
 
@@ -44,24 +45,34 @@ class CheckinIndex extends React.Component {
     return true;
   }
 
-  getNextCheckins() {
-    debugger
+  getNextCheckins(e) {
+    if (window.checkin_count.checkins - this.state.offset <= 7) {
+      $(e.currentTarget).addClass('grey')
+    }
     if (this.state.offset + 4 >= window.checkin_count.checkins) {
-      debugger
       return null;// this.setState({offset: this.state.offset}, () => this.props.fetchCheckins(this.state.limit, this.state.offset));
     }
-    this.setState({offset: this.state.offset + 4}, () => this.props.fetchCheckins(this.state.limit, this.state.offset) )
-
+    else {
+      this.setState({offset: this.state.offset + 4}, () => {
+        $('#previous-button').removeClass('grey');
+        this.props.fetchCheckins(this.state.limit, this.state.offset)
+    });
   }
+}
 
-  getPrevCheckins() {
-    if (this.state.offset - 4 < 0) {
+  getPrevCheckins(e) {
+    console.log(this.state.offset);
+    if (this.state.offset <= 4) {
+      $('#previous-button').addClass('grey');
       this.setState({offset: 0}, () => this.props.fetchCheckins(this.state.limit, this.state.offset))
     }
     else {
+      if ($('#next-button').attr('class') !== undefined) {
+        $('#next-button').removeClass('grey');
+      }
       this.setState({offset: this.state.offset - 4}, () => this.props.fetchCheckins(this.state.limit, this.state.offset))
     }
-
+    console.log(checkins)
   }
 
 
@@ -107,8 +118,8 @@ class CheckinIndex extends React.Component {
                 </section>
               </div>
               <div id='pagination-buttons'>
-                <button onClick={this.getPrevCheckins.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
-                <button onClick={this.getNextCheckins.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
+                <button id='previous-button' onClick={this.getPrevCheckins.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
+                <button id='next-button' onClick={this.getNextCheckins.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
               </div>
               <div id='beer-list-container'>
                 <h1 id='beer-list-header'>Top Beers</h1>

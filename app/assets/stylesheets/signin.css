@@ -1790,3 +1790,7 @@ button:focus {
   margin: 0 auto;
   text-align: center;
 }
+
+.grey {
+  opacity: 0.4;
+}
