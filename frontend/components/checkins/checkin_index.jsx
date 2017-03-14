@@ -50,7 +50,7 @@ class CheckinIndex extends React.Component {
       $(e.currentTarget).addClass('grey')
     }
     if (this.state.offset + 4 >= window.checkin_count.checkins) {
-      return null;// this.setState({offset: this.state.offset}, () => this.props.fetchCheckins(this.state.limit, this.state.offset));
+      return;// this.setState({offset: this.state.offset}, () => this.props.fetchCheckins(this.state.limit, this.state.offset));
     }
     else {
       this.setState({offset: this.state.offset + 4}, () => {

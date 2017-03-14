@@ -3,6 +3,7 @@ import { fetchBreweries } from '../../actions/brewery_actions'
 import BreweryIndex from './brewery_index'
 
 const mapStateToProps = (state) => {
+  console.log(state.breweries)
   return {
     breweries: Object.keys(state.breweries).map(key => state.breweries[key])
   }

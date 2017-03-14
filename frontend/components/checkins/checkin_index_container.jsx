@@ -7,6 +7,8 @@ import { topBeers } from '../../actions/query_actions'
 
 
 const mapStateToProps = (state) => {
+  console.log(state.checkins)
+  console.log(state.session.currentUser)
   return {
     checkins: Object.keys(state.checkins).map(key => state.checkins[key]).reverse(),
     currentUser: state.session.currentUser
