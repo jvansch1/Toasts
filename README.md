@@ -1,10 +1,10 @@
-#Toasts
+# Toasts
 
 Toasts is a social media platform for craft-beer enthusiasts. It allows users to checkin to beers that thy are drinking, provide a rating and short review, and track the activity of other users. It is built using Ruby on Rails, Jbuilder, and a PostgreSQL database on the backend. The Front is handled by React.js and Redux(Flux).
 
 [Toasts live](https://untapped-clone.herokuapp.com/)
 
-##Technologies used
+## Technologies used
 
 * Ruby
 * Rails
@@ -47,7 +47,7 @@ To view the code behind Toasts in more detail, please visit the following folder
 
 ## Major Components
 
-###Beers
+### Beers
 
 Beers are stored in a database table called beers with columns id, style, ABV, IBU, brewery_id and name. An API call is made whenever a beer show page is accessed that will retrieve all information for that beer. This beer object will be held in the state of the front end until a new beer is requested. A beer belongs_to a brewery and also has_many checkins.
 
@@ -71,7 +71,7 @@ On the front end, beer is rendered in the BeerShow component.
 
 Beer show will also load all checkins associated with that beer.
 
-###Brewery
+### Brewery
 
 Breweries follow a pattern similar to beers. They exist in a brewery table with the columns name, city, state, and country. A brewery has a has_many association with beers. There is also a has_many_through association with checkins through beers.
 
@@ -80,13 +80,13 @@ On the front end, when a beer show page is accessed an API call will be made tha
 Brewery show page will also load all checkins associated with that brewery.
 
 
-###Checkins
+### Checkins
 
 A checkin is an event created by a user in which they can publicly post that they are drinking a certain beer, as well as give it rating and optional description. A checkin will be stored in the checkins table which will have the columns user_id, beer_id, rating, and description.
 
 When an individual checkin is accessed, it will be rendered through the CheckinShow component. This checkin will be stored in state until a new checkin is accessed.
 
-##Custom Pagination
+## Custom Pagination
 
 I implemented using a custom pagination feature using ActiveRecord and data sent from the front end. In the checkinIndex component I am keeping track of a limit and offset which I can use to modify my active record query.
 
@@ -140,8 +140,8 @@ Users can visit a show page for each individual checkin to leave likes and comme
 
 ![CheckinShow](doc/screenshots/CheckinShow.png)
 
-##Features to be implemented
+## Features to be implemented
 
-###Friends
+### Friends
 
 I plan to implement friends with a join table on the back end with the columns requested_id, requester_id, accepted. The front end will have access to the id of each of the current users friends in order to determine wether or not another user can be requested or if certain actions are forbidden.
