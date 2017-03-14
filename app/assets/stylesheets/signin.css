@@ -248,7 +248,7 @@ span {
   background-color: white;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 .brewery-image {
@@ -398,7 +398,7 @@ span {
   background-color: white;
   width: 700px;
   vertical-align: middle;
-  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 #beer-container-container {
@@ -690,6 +690,11 @@ span {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
+}
+
+#checkin-list-item-container {
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 .rating-list {
@@ -722,7 +727,7 @@ span {
   font-size: 0.9em;
   border-top: 1px solid lightgrey;
   margin-top: 10px;
-  width: 495px;
+  width: 490px;
   padding-top: 5px;
   color: grey;
   word-wrap: break-word;
@@ -762,6 +767,7 @@ span {
   margin: 0 auto;
   position: relative;
   top: 115px;
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 .checkin-show-container {
@@ -884,8 +890,6 @@ span {
 
 }
 
-
-
 #beer-image-field {
   display: flex;
 }
@@ -994,8 +998,8 @@ span {
   width: 100px;
   margin: 0 auto;
   position: absolute;
-  bottom: 55px;
-  right: 195px;
+  bottom: 50px;
+  right: 200px;
   padding: 0;
   text-shadow: 0px 1px 0 #a2a2a2;
 
@@ -1095,9 +1099,8 @@ span {
   font-family: sans-serif;
   font-size: 20px;
   border: 1px solid lightgrey;
-  width: 490px;
+  width: 493px;
   padding-left: 5px;
-  width: 500px
 }
 
 .checkin-description {
@@ -1236,14 +1239,14 @@ font-weight: normal;
   height: auto;
   background: white;
   margin-right: 30px;
-  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 #checkin-index-right {
   width: 300px;
   height: 200px;
   background: white;
-    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 #feed-header {
@@ -1593,7 +1596,7 @@ button:focus {
 
 #top-beer-list {
   background: white;
-  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 #top-beer-list a {
@@ -1645,6 +1648,11 @@ button:focus {
 #beer-list-container {
   height: 100%;
   background: white;
+  /*box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);*/
+}
+
+.beer-beer-list-container {
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 #beer-list-header  {
@@ -1705,6 +1713,7 @@ button:focus {
   top: 100px;
   margin-left: 20px;
   width: 285px;
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 #brewery-show-right a{

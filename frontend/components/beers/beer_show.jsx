@@ -123,7 +123,7 @@ class BeerShow extends React.Component {
               </div>
 
             </div>
-            <div id='beer-list-container'>
+            <div id='beer-list-container' className='beer-beer-list-container'>
               <span id='beer-show-top-beers-header'>
                 Top Beers
               </span>
