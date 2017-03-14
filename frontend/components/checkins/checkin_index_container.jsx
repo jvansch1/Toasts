@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
     currentUser: state.session.currentUser
   }
 }
+
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchCheckins: (limit, offset) => dispatch(fetchCheckins(limit, offset)),

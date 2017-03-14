@@ -61,7 +61,6 @@ class CheckinIndex extends React.Component {
 }
 
   getPrevCheckins(e) {
-    //
     if (this.state.offset <= 4) {
       $('#previous-button').addClass('grey');
       this.setState({offset: 0}, () => this.props.fetchCheckins(this.state.limit, this.state.offset))

@@ -24,6 +24,7 @@ class Header extends React.Component {
     debugger
     e.preventDefault();
     this.props.logout().then(function() {
+      debugger
       hashHistory.push('/');
     })
 
