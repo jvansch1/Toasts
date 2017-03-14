@@ -21,7 +21,6 @@ class Header extends React.Component {
 
 
   handleLogout(e) {
-    debugger
     e.preventDefault();
     this.props.logout().then(function() {
       hashHistory.push('/');
