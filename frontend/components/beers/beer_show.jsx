@@ -123,15 +123,15 @@ class BeerShow extends React.Component {
               </div>
 
             </div>
-            <div id='beer-list-container' background-color='white'>
+            <div id='beer-list-container'>
               <span id='beer-show-top-beers-header'>
                 Top Beers
               </span>
             <ul id='beer-show-top-beer-list'>
               {
-                window.top_beers.top_beers.map(beerArray => {
+                window.top_beers.top_beers.map((beerArray,idx) => {
                   return (
-                    <Link to={`beers/${beerArray[0].id}`}>
+                    <Link to={`beers/${beerArray[0].id}`} key={idx}>
                       <li className='top-beer-index-item'>
                         <img className='top-beer-image' src={this.renderDefault(beerArray[1])} />
                         <ul>
