@@ -22,7 +22,8 @@ export const clearErrors = () => ({
 })
 
 export const Logout = () => ({
-  type: LOGOUT
+  type: LOGOUT,
+  currentUser: null
 })
 
 
@@ -45,8 +46,9 @@ export const login = (user) => {
 export const logout = () => {
   return dispatch => {
     return sessionApiUtil.logout()
-      .then(user => dispatch(Logout()),
-        err => dispatch(receiveErrors(err.responseJSON)));
+      .then(user => {
+        return dispatch(receiveCurrentUser(null))
+      }, err => dispatch(receiveErrors(err.responseJSON)));
   };
 };
 

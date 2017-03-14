@@ -4,7 +4,6 @@ import SearchBarContainer from '../search/search_bar_container'
 
 class Header extends React.Component {
   constructor(props) {
-
     super(props)
     this.state = {
       hidden: true,

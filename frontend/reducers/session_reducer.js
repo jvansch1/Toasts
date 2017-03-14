@@ -10,9 +10,11 @@ const SessionReducer = (state = _default_state, action) => {
   debugger
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      let newState = merge({}, _default_state, { currentUser: action.currentUser} );
+      let newState = merge({}, _default_state, { currentUser: action.currentUser});
+      console.log(newState)
       return newState;
     case LOGOUT:
+      console.log(merge({}, _default_state))
       return merge({},_default_state)
     case RECEIVE_ERRORS:
       return merge({}, _default_state, {  errors: action.errors });
@@ -20,7 +22,6 @@ const SessionReducer = (state = _default_state, action) => {
       return merge({}, _default_state)
     default:
       return state;
-
   }
 };
 
