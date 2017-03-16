@@ -50,6 +50,7 @@ end
 
 an = Brewery.create!(name: 'Anheuser-Busch', city: 'St. Loius', state: 'MO', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/anheuser.jpeg')
 tr = Brewery.create!(name: 'Treehouse', city: 'Monson', state: 'MA', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/treehouse.jpeg')
+trillium = Brewery.create!(name: 'Trillium', city: 'Boston', state: 'MA', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-trillium_23038.jpeg')
 miller = Brewery.create(name: "Miller Brewing Company", city: "Milwaukee", state: "WI", country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-millerBrewing.jpg')
 goose_island = Brewery.create!(name: "Goose Island", city: "Chicago", state: "Illinois", country: "USA", image: 'https://s3.amazonaws.com/untappd-dev/breweries/goose_island.jpeg')
 cigar_city = Brewery.create!(name: "Cigar City Brewing", city: 'Tampa', state: 'FL', country: 'USA', image: 'https://s3.amazonaws.com/untappd-dev/breweries/brewery-379_e6ae7.jpeg')
