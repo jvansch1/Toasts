@@ -14,7 +14,7 @@
            <img src={props.checkin.user.image_url} />
 
            <section>
-             <span>{props.checkin.user.username}</span> is drinking a <span>{props.beer.name}</span> by <span><Link to={`breweries/${props.beer.brewery.id}`}>{props.beer.brewery.name}</Link></span>
+             <span>{props.checkin.user.username}</span> is drinking a <span>{props.beer.name}</span> by <span><Link to={`breweries/${props.beer.brewery.id}`} id='brewery-link'>{props.beer.brewery.name}</Link></span>
            </section>
          </li>
 
