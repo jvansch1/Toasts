@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 
 class BreweryShow extends React.Component {
   constructor(props) {
-    debugger
+    console.log(props)
     super(props)
     this.state = {
       name: ""
@@ -88,7 +88,7 @@ class BreweryShow extends React.Component {
                 <ul id='brewery-stats'>
                   <li>{this.props.brewery.checkins.length} Ratings</li>
                   <li>{this.props.brewery.beers} beers</li>
-                  <li>{this.props.brewery.created_at} ago</li>
+                  <li>Date Added - {this.props.brewery.created_at} ago</li>
                 </ul>
               </section>
 

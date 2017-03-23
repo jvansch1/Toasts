@@ -3,6 +3,7 @@ json.name brewery.name
 json.city brewery.city
 json.state brewery.state
 json.country brewery.country
+json.created_at time_ago_in_words(brewery.created_at)
 json.id brewery.id
 json.top_beers brewery.brewery_beers
 json.checkins brewery.checkins, partial: 'api/checkins/brewery_show_helper', as: :checkin
