@@ -1184,6 +1184,10 @@ span {
   padding-top: 15px;
 }
 
+#search-result:hover {
+  cursor: pointer;
+}
+
 #post-button {
   cursor: pointer;
 }
