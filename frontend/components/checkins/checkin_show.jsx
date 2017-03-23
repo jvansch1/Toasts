@@ -80,7 +80,7 @@ class CheckinShow extends React.Component {
                     {this.props.checkin.user.username}
                   </span>
                   <span className='date'>
-                    {this.props.checkin.created_at}
+                    {this.props.checkin.created_at} ago
                   </span>
                 </div>
 

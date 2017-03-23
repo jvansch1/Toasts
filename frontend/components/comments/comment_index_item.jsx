@@ -10,8 +10,7 @@ const CommentIndexItem = (props) => {
 
         </p>
         <p className='comment-time'>
-          {props.comment.created_at}
-
+          {props.comment.created_at} ago
         </p>
       </ul>
     </li>
