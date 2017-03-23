@@ -22,6 +22,10 @@ const Landing = (props) => {
   return (
 
     <div id='landing-background'>
+      <video autoPlay='true'>
+        <source src='https://s3.amazonaws.com/untappd-dev/video.webm' type='video/webm'/>
+        <source src='https://s3.amazonaws.com/untappd-dev/343637909.mp4' type='video/mp4'/>
+      </video>
       <div id='login-content'>
         <span>
           <img src={window.images.logo} id="landing-logo"/>
