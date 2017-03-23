@@ -552,6 +552,10 @@ span {
   display: flex;
 }
 
+#brewery-checkin-list-item-wrapper {
+  margin-bottom: 20px;
+}
+
 .checkin-list-item img {
   /*border: 1px solid lightgrey;*/
   border-radius: 50%;
@@ -593,7 +597,7 @@ span {
 }
 
 #checkin-list-wrapper {
-
+  margin-bottom: 20px;
 }
 
 .date-list {
@@ -777,6 +781,7 @@ span {
 #brewery-checkin-list-wrapper {
   width: 700px;
   margin: 0 auto;
+  margin-bottom: 20px;
   position: relative;
   top: 115px;
   box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
