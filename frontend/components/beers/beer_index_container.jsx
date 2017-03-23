@@ -3,7 +3,6 @@ import { fetchBeers } from '../../actions/beer_actions';
 import BeerIndex from './beer_index';
 
 const mapStateToProps = (state) => {
-  console.log(state.beers)
   return {
     beers: Object.keys(state.beers).map(key => state.beers[key]),
   };

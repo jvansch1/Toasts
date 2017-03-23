@@ -4,8 +4,6 @@ import { fetchBeers } from '../../actions/beer_actions';
 import { fetchResults, search, deleteResults } from '../../actions/search_actions'
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state.beers)
-  console.log(state.search)
   return {
     beers: Object.keys(state.beers).map(key => state.beers[key]),
     search: state.search
