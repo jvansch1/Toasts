@@ -547,16 +547,14 @@ span {
 
 
 .checkin-list-item {
-  /*border-top: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;*/
   text-align: center;
   background-color: white;
   display: flex;
 }
 
 .checkin-list-item img {
-  border: 1px solid lightgrey;
+  /*border: 1px solid lightgrey;*/
+  border-radius: 50%;
   height: 70px;
   width: 70px;
   margin-left: 20px;
