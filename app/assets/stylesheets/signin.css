@@ -652,6 +652,11 @@ span {
   color: black;
 }
 
+#checkin-user-image {
+  border-radius: 50%;
+  border: none;
+}
+
 #redirect a:hover {
   font-weight: 800;
   color: grey;

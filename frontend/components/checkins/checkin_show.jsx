@@ -75,7 +75,7 @@ class CheckinShow extends React.Component {
 
               <div className='checkin-left-top'>
                 <div className='user-bar'>
-                  <img src={this.props.checkin.user.image_url} />
+                  <img id='checkin-user-image' src={this.props.checkin.user.image_url} />
                   <span className='name'>
                     {this.props.checkin.user.username}
                   </span>
