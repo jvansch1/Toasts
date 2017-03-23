@@ -105,7 +105,7 @@ class BeerShow extends React.Component {
                     <li>ABV - {this.props.beer.ABV}</li>
                     <li>IBU - {this.props.beer.IBU}</li>
                     <li>{this.props.beer.checkins.length} Ratings</li>
-                    <li>Date Added - {this.props.beer.created_at}</li>
+                    <li>Date Added - {this.props.beer.created_at} ago</li>
                   </ul>
                 </div>
 
