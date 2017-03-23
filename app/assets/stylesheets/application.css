@@ -66,6 +66,7 @@ html,body {
 
 .navbar {
   z-index: 1000;
+  height: 70px;
   background-color: #ffc600;
   display: flex;
   flex-direction: row;
