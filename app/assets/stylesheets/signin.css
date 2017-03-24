@@ -93,7 +93,7 @@ body {
 }
 
 #submit-button {
-
+  cursor: pointer;
   margin: 0 auto;
   margin-top: 10px;
   background-color: #ffdd00;
