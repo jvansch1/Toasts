@@ -3,9 +3,7 @@ import HeaderContainer from '../header/header_container';
 import SearchResultItem from './search_result_item';
 
 const searchResults = props => {
-
-
-
+  debugger
   return (
     <div>
       <div>

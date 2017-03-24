@@ -21,7 +21,6 @@ class SearchBar extends React.Component {
 
   submitSearch(e) {
     e.preventDefault();
-    // this.props.fetchResults(this.state.value)
   }
 
   updateValue(e) {
@@ -40,7 +39,19 @@ class SearchBar extends React.Component {
 
 
   renderDropdown() {
-    if (this.props.search) {
+    debugger
+    if (this.state.value.length !== 0 && this.props.search.length === 0) {
+      return (
+      <ul id='dropdown'>
+        <li id='no-search-result'>
+          <div id='result-beer-and-brewery'>
+            <h3>No Results</h3>
+          </div>
+        </li>
+      </ul>
+    )
+  }
+      else {
       return(
         <ul id='dropdown'>
           {
