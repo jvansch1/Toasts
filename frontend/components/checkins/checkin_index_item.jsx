@@ -80,7 +80,7 @@
                 </div>
              </div>
              <div id='checkin-image-container'>
-               <img id='checkin-index-checkin-image' src={this.props.checkin.image_url} />
+               <img width='500px' id='checkin-index-checkin-image' src={this.props.checkin.image_url} />
              </div>
              <div id='checkin-buttons'>
                <div>

@@ -809,7 +809,8 @@ span {
   background: white;
   /*height: 220px;*/
   width: 450px;
-  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+  /*box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);*/
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 #checkin-full-pic {
@@ -839,7 +840,8 @@ span {
   width: 450px;
   background: white;
   display: flex;
-  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
+  /*box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);*/
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 .checkin-left-bottom span{
@@ -1554,6 +1556,7 @@ font-weight: normal;
 
 #comment-list {
   margin-top: 20px;
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
 #comment-user-image {
