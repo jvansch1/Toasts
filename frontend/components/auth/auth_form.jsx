@@ -86,6 +86,10 @@ class AuthForm extends React.Component {
     const redirect = this.props.formType === "login" ? <p>Not a member? <Link to='/signup'>Sign up!</Link></p> : <p>Already a member? <Link to='/login'>Sign In!</Link></p>
     return (
       <div id='auth-background'>
+        <video autoPlay='true' loop>
+          <source src='https://s3.amazonaws.com/untappd-dev/video.webm' type='video/webm'/>
+          <source src='https://s3.amazonaws.com/untappd-dev/343637909.mp4' type='video/mp4'/>
+        </video>
         <section id='form-background'>
           <img onClick={this.redirectToLanding} src={window.images.logo} id="logo"/>
           <ul className='errors'>

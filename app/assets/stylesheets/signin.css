@@ -28,10 +28,10 @@ video {
 }
 
 
-#auth-background {
+/*#auth-background {
   height: 100%;
   background-image: url('http://pineislandbeer.com/wp-content/uploads/2015/07/craft-beers.jpg');
-}
+}*/
 
 body {
   background-color: #F5F2E8;
@@ -110,7 +110,7 @@ body {
 #form-background {
   /*left: 500px;*/
   background-color: white;
-  height: 1000px;
+  height: 663.84px;
   width: 600px;
   margin: 0 auto;
   text-align: center;
@@ -124,6 +124,7 @@ span {
 #logo {
   /*position: relative;*/
   left: 28%;
+  cursor: pointer;
 }
 
 #landing-logo {
