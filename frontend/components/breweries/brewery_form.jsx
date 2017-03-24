@@ -30,11 +30,11 @@ class BreweryForm extends React.Component {
     formData.append("brewery[state]", this.state.state)
     formData.append("brewery[country]", this.state.country)
     formData.append("brewery[image]", this.state.imageFile)
-    this.props.createBrewery(formData).then(() => {
+    this.props.createBrewery(formData).then((brewery) => {
       $('.success-popup').attr("hidden", false)
       const hideDiv = function() {
         $('.success-popup').attr("hidden", true)
-        hashHistory.push('/home')
+        hashHistory.push(`breweries/${brewery.brewery.id}`)
       }
       setTimeout(hideDiv, 750)
       return null;

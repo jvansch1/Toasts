@@ -8,16 +8,9 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: '',
-      returnedItems: []
+      value: ''
     }
   }
-
-  // componentDidMount() {
-  //   this.props.fetchBeers()
-  // }
-
-
 
   submitSearch(e) {
     e.preventDefault();
@@ -40,24 +33,13 @@ class SearchBar extends React.Component {
 
   renderDropdown() {
     debugger
-    if (this.state.value.length !== 0 && this.props.search.length === 0) {
-      return (
-      <ul id='dropdown'>
-        <li id='no-search-result'>
-          <div id='result-beer-and-brewery'>
-            <h3>No Results</h3>
-          </div>
-        </li>
-      </ul>
-    )
-  }
-      else {
+      if(this.state.value.length > 0 && this.props.search.length > 0) {
       return(
         <ul id='dropdown'>
           {
             this.props.search.map(searchResult => {
               return (
-                <li id='search-result' onClick={this.redirect(searchResult.id)}>
+                <li id='search-result' onClick={this.redirect(searchResult.id)} key={searchResult.id}>
                   <img id='result-img' src={searchResult.image_url} />
                   <div id='result-beer-and-brewery'>
                     <h3>{searchResult.name}</h3>
@@ -70,10 +52,18 @@ class SearchBar extends React.Component {
         </ul>
       )
     }
+    else if (this.state.value.length !== 0 && this.props.search.length === 0) {
+      return (
+      <ul id='dropdown'>
+        <li id='no-search-result'>
+          <div id='result-beer-and-brewery'>
+            <h3>No Results</h3>
+          </div>
+        </li>
+      </ul>
+      )
+    }
   }
-
-
-
 
   render() {
     return (
