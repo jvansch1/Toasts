@@ -525,6 +525,7 @@ span {
   border-style: none;
   padding-top: 5px;
   padding-bottom: 5px;
+  cursor: pointer;
 }
 
 .checkin-input {
