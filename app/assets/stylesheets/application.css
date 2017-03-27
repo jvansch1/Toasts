@@ -168,3 +168,6 @@ color: grey;
   text-decoration: none;
   color: grey;
 }
+.footer-name a:hover {
+  text-decoration: underline;
+}
