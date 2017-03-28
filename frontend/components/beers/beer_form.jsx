@@ -95,7 +95,7 @@ class BeerForm extends React.Component {
               Brewery
             </p>
             <select className='beer-input' onChange={this.update('brewery_id')}>
-              <option disabled selected>Pick a Brewery</option>
+              <option disabled>Pick a Brewery</option>
               {
                 this.props.breweries.map((brewery, idx) => {
                   return <option value={brewery.id} key={idx}>{brewery.name}</option>;

@@ -33,7 +33,6 @@ class SearchBar extends React.Component {
 
 
   renderDropdown() {
-    debugger
       if(this.state.value.length > 0 && this.props.search.length > 0) {
       return(
         <ul id='dropdown'>
