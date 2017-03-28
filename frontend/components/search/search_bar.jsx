@@ -44,7 +44,7 @@ class SearchBar extends React.Component {
                   <img id='result-img' src={searchResult.image_url} />
                   <div id='result-beer-and-brewery'>
                     <h3>{searchResult.name}</h3>
-                    <h4>{searchResult.brewery_name}</h4>
+                    <h4 className='search-brewery'>{searchResult.brewery_name}</h4>
                   </div>
                 </li>
               )

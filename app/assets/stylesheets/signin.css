@@ -124,7 +124,7 @@ span {
 #logo {
   /*position: relative;*/
   left: 28%;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 #landing-logo {
@@ -1239,8 +1239,12 @@ border-bottom: 1px solid lightgrey;
 }
 
 #dropdown li h4 {
-font-size: 0.9em;
+font-size: 0.7em;
 font-weight: normal;
+}
+
+#dropdown li h3 {
+  margin-right: 10px;
 }
 
 #result-beer-and-brewery {
@@ -1846,4 +1850,10 @@ button:focus {
 
 #logout-button {
   cursor: pointer;
+}
+
+.search-brewery {
+  position: relative;
+  bottom: 7px;
+  color: grey;
 }
