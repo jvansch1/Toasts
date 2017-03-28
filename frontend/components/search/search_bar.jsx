@@ -8,7 +8,8 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: ''
+      value: '',
+      fetching: false
     }
   }
 
@@ -18,8 +19,8 @@ class SearchBar extends React.Component {
 
   updateValue(e) {
     e.preventDefault();
-    this.setState({value: e.target.value}, () => this.props.fetchResults(this.state.value))
-
+    this.setState({fetching: true})
+    this.setState({value: e.target.value, fetching: true}, () => this.props.fetchResults(this.state.value).then(results => this.setState({fetching: false})))
   }
 
   redirect(id) {
@@ -52,7 +53,7 @@ class SearchBar extends React.Component {
         </ul>
       )
     }
-    else if (this.state.value.length !== 0 && this.props.search.length === 0) {
+    else if (this.state.value.length !== 0 && this.props.search.length === 0 && this.state.fetching === false) {
       return (
       <ul id='dropdown'>
         <li id='no-search-result'>
