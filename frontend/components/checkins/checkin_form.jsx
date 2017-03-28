@@ -69,18 +69,14 @@ class CheckinForm extends React.Component {
           </section>
           <form id='checkin-form' onSubmit={this.handleSubmit.bind(this)}>
           <p>Description: </p>
-            <input className='checkin-input' placeholder='What did you think?' onChange={this.update('description')}type='text'></input>
+            <input className='checkin-input' placeholder='What did you think?' onChange={this.update('description')}type='text'/>
             <br />
             <p>
               Rating
             </p>
-          <select className='checkin-input' onChange={this.update('rating')}>
-              {
-                RATING_SCALE.map(rating => {
-                  return <option  value={rating} key={rating}>{rating}</option>
-                })
-              }
-            </select>
+            <input type='range' min='0' max='5' step='0.25' onChange={this.update('rating')} value={this.state.rating}/>
+            {this.state.rating}
+
             <br />
             <input onChange={this.addFile.bind(this)} type='file'/>
             <input onSubmit={this.handleSubmit.bind(this)} className='checkin-button' type='submit' value="Confirm"/>
