@@ -70,7 +70,9 @@ class BeerShow extends React.Component {
                     <img id='beer-show-image' src={this.props.beer.image_url} />
                     <div id='beer-name-flex'>
                       <span id='beer-show-name'>{this.props.beer.name}</span>
-                      <span id='beer-show-name-brewery'>{this.props.beer.brewery.name}</span>
+                      <Link to={`breweries/${this.props.beer.brewery_id}`}>
+                        <span id='beer-show-name-brewery'>{this.props.beer.brewery.name}</span>
+                      </Link>
 
                     </div>
                     <i onClick={this.openCheckin.bind(this)} className="fa fa-plus-square" aria-hidden="true"></i>

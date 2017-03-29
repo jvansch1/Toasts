@@ -449,9 +449,13 @@ span {
 
 #beer-show-name-brewery {
   position: absolute;
-  top: 33px;
+  top: 35px;
   left: 100px;
+  color: #c60;
+}
 
+#beer-show-name-brewery:hover {
+  color: #f93;
 }
 
 #beer-container ul {
