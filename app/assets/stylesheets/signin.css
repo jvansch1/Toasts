@@ -1285,6 +1285,7 @@ font-weight: normal;
   height: auto;
   background: white;
   margin-right: 30px;
+  margin-bottom: 40px;
   box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
 }
 
@@ -1495,6 +1496,7 @@ font-weight: normal;
   text-align: center;
   overflow: hidden;
   height: 400px;
+  width: 502px;
   margin-bottom: 10px;
   margin-top: 10px;
 }

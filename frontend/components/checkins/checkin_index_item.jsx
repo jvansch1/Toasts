@@ -94,7 +94,7 @@
              </div>
              <div id='checkin-index-stats'>
                <span>
-                 {this.props.checkin.created_at}
+                 {this.props.checkin.created_at} ago
                </span>
                <span id='likes'>
                  {this.props.checkin.likes.length} Likes

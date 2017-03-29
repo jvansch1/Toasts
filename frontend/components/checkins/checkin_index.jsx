@@ -17,12 +17,24 @@ class CheckinIndex extends React.Component {
     this.props.fetchCheckins(this.state.limit, this.state.offset);
   }
 
+  renderImage(src) {
+    if (src === "default_beer_Image.png") {
+      return <img className='top-beer-image' src='https://s3.amazonaws.com/untappd-dev/beers/default_beer_Image.png'/>
+    }
+    else {
+      return <img className='top-beer-image' src={src} />
+    }
+  }
+
+
   topBeers() {
     return window.top_beers.top_beers.map(beerArray => {
       return (
         <Link to={`beers/${beerArray[0].id}`} key={beerArray[0].id}>
           <li className='top-beer-index-item' key={beerArray[0].id}>
-            <img className='top-beer-image' src={beerArray[1]} />
+            {
+              this.renderImage(beerArray[1])
+            }
             <ul className='top-beer-name'>
               <li>
                 <h2>{beerArray[0].name}</h2>
@@ -50,7 +62,7 @@ class CheckinIndex extends React.Component {
       $(e.currentTarget).addClass('grey')
     }
     if (this.state.offset + 4 >= window.checkin_count.checkins) {
-      return;// this.setState({offset: this.state.offset}, () => this.props.fetchCheckins(this.state.limit, this.state.offset));
+      return;
     }
     else {
       this.setState({offset: this.state.offset + 4}, () => {
