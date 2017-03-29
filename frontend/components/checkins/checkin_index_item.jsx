@@ -93,7 +93,7 @@
                </div>
              </div>
              <div id='checkin-index-stats'>
-               <span>
+               <span id='checkin-creation-time'>
                  {this.props.checkin.created_at} ago
                </span>
                <span id='likes'>

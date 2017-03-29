@@ -1836,6 +1836,11 @@ button:focus {
 
 #likes {
   margin-left: 20px;
+  color: grey;
+}
+
+#checkin-creation-time {
+  color: grey;
 }
 
 #comment-content {
