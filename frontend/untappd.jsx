@@ -18,12 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   else {
     store = configureStore();
   }
-  window.fetchBeers = fetchBeers;
-  window.createBeer = createBeer;
-  window.fetchBreweries = fetchBreweries;
-  window.createBrewery = createBrewery;
-  window.fetchResults = fetchResults;
-  window.topBeers = topBeers;
+
   window.store = store;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
