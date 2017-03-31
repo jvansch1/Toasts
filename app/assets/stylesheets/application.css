@@ -175,3 +175,12 @@ color: grey;
 .footer-name a:hover {
   text-decoration: underline;
 }
+
+#profile-link a {
+  color: white;
+  text-decoration: none;
+}
+
+#profile-link a:hover {
+  text-decoration: underline;
+}

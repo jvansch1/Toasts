@@ -14,3 +14,10 @@ export const receiveTopBeers = () => {
       .then(beers => dispatch(topBeers(beers)))
   }
 }
+
+export const topUserBeers = (userId) => {
+  return dispatch => {
+    return QueryApiUtil.topUserBeers(userId)
+      .then(beers => dispatch(topBeers(beers)))
+  }
+}

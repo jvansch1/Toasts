@@ -67,6 +67,7 @@
 
 #user-checkin-container {
   width: 1025px;
+  display: flex;
   margin: 0 auto;
   position: relative;
   top: 70px;
@@ -74,4 +75,18 @@
 
 #user-checkin-list {
   width: 700px;
+}
+
+.user-show-top-beer {
+  display: flex;
+}
+
+.user-show-top-beer img {
+  width: 64px;
+  height: 64px;
+}
+
+#user-top-beer-list {
+  margin-top: 15px;
+  margin-left: 20px;
 }

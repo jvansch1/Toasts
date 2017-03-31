@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :beers, only: [:index, :create, :destroy, :show, :top] do
       get 'search', on: :collection
       get 'top', on: :collection
+      get 'user_top', on: :collection
     end
     resources :breweries, only: [:index, :create, :destroy, :show]
     resources :checkins, only: [:index, :show, :create, :destroy, :update, :checkins_by_user]

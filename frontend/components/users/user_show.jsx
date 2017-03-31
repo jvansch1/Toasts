@@ -11,10 +11,12 @@ class UserShow extends React.Component {
   componentDidMount() {
     this.props.fetchUser(this.props.routeParams.userId);
     this.props.fetchUserCheckins(this.props.routeParams.userId);
+    this.props.topUserBeers(this.props.routeParams.userId);
   }
 
   render() {
-    if (!this.props.user && this.props.checkins) return null;
+    if (!this.props.user && this.props.checkins && this.props.query) return null;
+    debugger
     return (
       <div id='user-show-container'>
 
@@ -51,6 +53,23 @@ class UserShow extends React.Component {
               checkin.beer['brewery'] = checkin.brewery;
               return <CheckinListItem checkin={checkin} beer={checkin.beer} brewery={checkin.brewery}/>
             })}
+          </div>
+          <div id='top-user-beers'>
+            <ul id='user-top-beer-list'>
+              {
+                this.props.query.map(beer => {
+                  return (
+                    <li className='user-show-top-beer'>
+                      <img src={beer.image_url} />
+                      <span id='user-show-beer-and-brewery'>
+                        <h1>{beer.name}</h1>
+                        <h1>{beer.brewery.name}</h1>
+                      </span>
+                    </li>
+                  )
+                })
+              }
+            </ul>
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
  class Api::BeersController < ApplicationController
   def index
     @beers = Beer.all.includes(:brewery)
-
   end
 
   def create
@@ -14,8 +13,16 @@
     end
   end
 
-  def show
+  def user_top
+    user_top = Checkin.joins(:beer).group("beers.id").where("checkins.user_id = ?", params[:user_id]).order("count(checkins.id) desc").count("checkins.id")
+    @beers = []
+    user_top.each do |k,v|
+      @beers.push(Beer.find(k))
+    end
+    render 'api/beers/index'
+  end
 
+  def show
     @beer = Beer.where(id: params[:id]).includes(brewery: [:checkins], checkins: [:user]).first
   end
 
