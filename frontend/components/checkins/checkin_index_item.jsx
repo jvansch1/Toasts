@@ -64,7 +64,7 @@
 
            <div id='checkin-content'>
              <p>
-                 {this.props.checkin.user.username} is drinking a <Link to={`beers/${this.props.checkin.beer.id}`}>{this.props.checkin.beer.name}</Link> by <Link to={`breweries/${this.props.checkin.brewery.id}`}>{this.props.checkin.brewery.name}</Link>
+                 <Link to={`users/${this.props.checkin.user.id}`}>{this.props.checkin.user.username}</Link> is drinking a <Link to={`beers/${this.props.checkin.beer.id}`}>{this.props.checkin.beer.name}</Link> by <Link to={`breweries/${this.props.checkin.brewery.id}`}>{this.props.checkin.brewery.name}</Link>
              </p>
              <div id='r-and-d'>
                <p>{this.props.checkin.description}</p>
