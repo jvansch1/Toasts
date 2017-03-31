@@ -3,9 +3,9 @@ import UserShow from './user_show';
 import { fetchUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  return {
-    user: state.user[ownProps.params.userId]
-  }
+    return {
+      user: state.user[ownProps.params.userId]
+    }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
