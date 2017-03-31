@@ -27,7 +27,9 @@
   flex-direction: column;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding-right: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-right: 1px solid lightgrey;
   opacity: 1.0
 }
 
@@ -40,6 +42,10 @@
 
 .user-show-stat-item:first-child {
   padding-left: 150px;
+}
+
+.user-show-stat-item:last-child {
+  border: none;
 }
 
 #user-show-username {

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get 'top', on: :collection
     end
     resources :breweries, only: [:index, :create, :destroy, :show]
-    resources :checkins, only: [:index, :show, :create, :destroy, :update]
+    resources :checkins, only: [:index, :show, :create, :destroy, :update, :checkins_by_user]
     resources :likes, only: [:index, :create, :destroy, :show] do
     end
     resources :comments, only: [:index, :create, :destroy, :update, :show]

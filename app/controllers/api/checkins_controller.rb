@@ -1,7 +1,12 @@
 class Api::CheckinsController < ApplicationController
   def index
-    @checkins = Checkin.order("created_at DESC").limit(params[:limit]).offset(params[:offset])
+    if params[:userId]
+      @checkins = Checkin.order("created_at DESC").where("user_id = ?", params[:userId])
+    else
+      @checkins = Checkin.order("created_at DESC").limit(params[:limit]).offset(params[:offset])
+    end
   end
+
 
   def show
     @checkin = Checkin.where(id: params[:id]).includes(:likes).first

@@ -14,6 +14,14 @@ export const fetchCheckins = (limit, offset) => {
   })
 }
 
+export const fetchUserCheckins = (userId) => {
+  return $.ajax({
+    type: 'GET',
+    url: 'api/checkins',
+    data: { userId: userId }
+  })
+}
+
 // export const fetchSomeCheckins = (limit, offset) => {
 //   $.ajax({
 //     type: 'GET',

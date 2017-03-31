@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import HeaderContainer from '../header/header_container';
+import CheckinListItem from '../checkins/checkin_list_item';
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -9,10 +10,11 @@ class UserShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.routeParams.userId);
+    this.props.fetchUserCheckins(this.props.routeParams.userId);
   }
 
   render() {
-    if (!this.props.user) return null;
+    if (!this.props.user && this.props.checkins) return null;
     return (
       <div id='user-show-container'>
 
@@ -41,6 +43,12 @@ class UserShow extends React.Component {
               </span>
             </li>
           </ul>
+          </div>
+          <div id='user-checkin-list'>
+            {this.props.checkins.map(checkin => {
+              checkin.beer['brewery'] = checkin.brewery;
+              return <CheckinListItem checkin={checkin} beer={checkin.beer} brewery={checkin.brewery}/>
+            })}
           </div>
         </div>
       </div>
