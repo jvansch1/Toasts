@@ -1,0 +1,9 @@
+#user-show-info {
+  background-image: url('https://untappd.akamaized.net/site/assets/v3/images/cover_default.jpg');
+  height: 500px;
+  width: 1025px;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  position: relative;
+  top: 70px;
+}
