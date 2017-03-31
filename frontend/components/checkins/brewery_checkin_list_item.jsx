@@ -14,7 +14,7 @@ const BreweryCheckinListItem = (props) => {
           <img src={props.checkin.user.image_url} />
 
           <section>
-            <span>{props.checkin.user.username}</span> is drinking a <span><Link to={`beers/${props.checkin.beer.id}`}>{props.checkin.beer.name}</Link></span> by <span><Link to={`breweries/${props.brewery.id}`}>{props.brewery.name}</Link></span>
+            <Link to={`users/${props.checkin.user.id}`}><span>{props.checkin.user.username}</span></Link> is drinking a <span><Link to={`beers/${props.checkin.beer.id}`}>{props.checkin.beer.name}</Link></span> by <span><Link to={`breweries/${props.brewery.id}`}>{props.brewery.name}</Link></span>
           </section>
         </li>
 
