@@ -77,7 +77,7 @@ class CheckinShow extends React.Component {
                 <div className='user-bar'>
                   <img id='checkin-user-image' src={this.props.checkin.user.image_url} />
                   <span className='name'>
-                    {this.props.checkin.user.username}
+                    <Link to={`users/${this.props.checkin.user.id}`}>{this.props.checkin.user.username}</Link>
                   </span>
                   <span className='date'>
                     {this.props.checkin.created_at} ago

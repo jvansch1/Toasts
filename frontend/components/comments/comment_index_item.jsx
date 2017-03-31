@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router'
 
 const CommentIndexItem = (props) => {
   return (
@@ -6,8 +7,7 @@ const CommentIndexItem = (props) => {
       <img id='comment-user-image' src={props.comment.user_image_url} />
       <ul id='content-and-time'>
         <p id='comment-content'>
-          <span id='comment-username'>{props.comment.user.username}</span>: {props.comment.content}
-
+          <Link to={`users/${props.comment.user.id}`}><span id='comment-username'>{props.comment.user.username}</span></Link>: {props.comment.content}
         </p>
         <p className='comment-time'>
           {props.comment.created_at} ago

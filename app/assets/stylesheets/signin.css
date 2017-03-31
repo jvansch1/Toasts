@@ -176,7 +176,7 @@ span {
   widht: 70px;
 }
 
-.beername {
+.beer {
   position: absolute;
   font-size: 24px;
   padding-left: 20px;
@@ -385,7 +385,6 @@ span {
 
 #name {
   font-size: 24px;
-
 }
 
 .brewery-index-name:hover {
@@ -1159,7 +1158,7 @@ span {
 }
 
 .checkin-show-beer-name:hover {
-  color: #c60;
+  color: #f93;
 }
 
 .checkin-show-brewery-name {
@@ -1168,12 +1167,17 @@ span {
 }
 
 .checkin-show-brewery-name:hover {
-  color: #c60;
+  color: #f93;
 }
 
 .checkin-show-container a {
   text-decoration: none;
-  color: black;
+  color: #c60;
+}
+
+.checkin-show-container a:hover {
+  text-decoration: none;
+  color: #f93;
 }
 
 .toast-button {
