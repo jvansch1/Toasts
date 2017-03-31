@@ -79,14 +79,55 @@
 
 .user-show-top-beer {
   display: flex;
+  padding-top: 10px;
+  padding-left: 10px;
+  background: white;
+}
+
+.user-show-top-beer:last-child {
+  padding-bottom: 10px;
 }
 
 .user-show-top-beer img {
-  width: 64px;
-  height: 64px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid lightgrey;
 }
 
 #user-top-beer-list {
+  margin-left: 20px;
+  width: 305px;
+}
+
+#list-title {
+  width: 295px;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 10px;
   margin-top: 15px;
   margin-left: 20px;
+  background: white;
+}
+
+#user-show-beer-and-brewery {
+  padding-left: 15px;
+}
+
+#user-show-beer-and-brewery a {
+  color: #c60;
+}
+
+#user-show-beer-and-brewery a:hover {
+  color: #f93;
+}
+
+#user-show-top-brewery {
+  position: relative;
+  bottom: 5px;
+  font-size: 0.8em;
+  color: grey !important;
+}
+
+#user-show-top-brewery:hover {
+  color: #f93;
 }

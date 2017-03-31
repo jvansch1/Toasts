@@ -55,6 +55,9 @@ class UserShow extends React.Component {
             })}
           </div>
           <div id='top-user-beers'>
+            <div id='list-title'>
+              {this.props.user.username}&#39;s favorites
+            </div>
             <ul id='user-top-beer-list'>
               {
                 this.props.query.map(beer => {
@@ -62,8 +65,8 @@ class UserShow extends React.Component {
                     <li className='user-show-top-beer'>
                       <img src={beer.image_url} />
                       <span id='user-show-beer-and-brewery'>
-                        <h1>{beer.name}</h1>
-                        <h1>{beer.brewery.name}</h1>
+                        <Link to={`beers/${beer.id}`}><h1>{beer.name}</h1></Link>
+                        <Link to={`breweries/${beer.brewery.id}`} id='user-show-top-brewery'><h1>{beer.brewery.name}</h1></Link>
                       </span>
                     </li>
                   )
