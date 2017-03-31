@@ -1,6 +1,6 @@
 #user-show-info {
   background-image: url('https://untappd.akamaized.net/site/assets/v3/images/cover_default.jpg');
-  height: 500px;
+  height: 260px;
   width: 1025px;
   background-repeat: no-repeat;
   margin: 0 auto;
@@ -63,4 +63,15 @@
   margin-left: 20px;
   top: 85px;
   z-index: 5;
+}
+
+#user-checkin-container {
+  width: 1025px;
+  margin: 0 auto;
+  position: relative;
+  top: 70px;
+}
+
+#user-checkin-list {
+  width: 700px;
 }

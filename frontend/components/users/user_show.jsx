@@ -44,6 +44,8 @@ class UserShow extends React.Component {
             </li>
           </ul>
           </div>
+        </div>
+        <div id='user-checkin-container'>
           <div id='user-checkin-list'>
             {this.props.checkins.map(checkin => {
               checkin.beer['brewery'] = checkin.brewery;
