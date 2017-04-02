@@ -8,6 +8,7 @@ import SearchReducer from './search_reducer';
 import CommentReducer from './comment_reducer';
 import QueryReducer from './query_reducer';
 import UserReducer from './user_reducer';
+import FriendshipReducer from './friendship_reducer';
 
 export default combineReducers({
   session: SessionReducer,
@@ -18,5 +19,6 @@ export default combineReducers({
   search: SearchReducer,
   comments: CommentReducer,
   query: QueryReducer,
-  user: UserReducer
+  user: UserReducer,
+  friendship: FriendshipReducer
 });
