@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   has_many :checkins
-  has_many :checkins
+  has_many :friendships
 
   attr_reader :password
 

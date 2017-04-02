@@ -25,6 +25,7 @@ class UserShow extends React.Component {
             <div id='username-and-pic'>
               <img id='user-profile-pic' src={this.props.user.image_url} />
               <h3 id='user-show-username'>{this.props.user.username}</h3>
+              <button>Add Friend</button>
             </div>
             <ul id='user-show-stats'>
             <li className='user-show-stat-item'>
@@ -50,7 +51,7 @@ class UserShow extends React.Component {
           <div id='user-checkin-list'>
             {this.props.checkins.map(checkin => {
               checkin.beer['brewery'] = checkin.brewery;
-              return <CheckinListItem checkin={checkin} beer={checkin.beer} brewery={checkin.brewery}/>
+              return <CheckinListItem checkin={checkin} beer={checkin.beer} brewery={checkin.brewery} key={checkin.id}/>
             })}
           </div>
           <div id='top-user-beers'>
@@ -61,7 +62,7 @@ class UserShow extends React.Component {
               {
                 this.props.query.map(beer => {
                   return (
-                    <li className='user-show-top-beer'>
+                    <li className='user-show-top-beer' key={beer.id}>
                       <img src={beer.image_url} />
                       <span id='user-show-beer-and-brewery'>
                         <Link to={`beers/${beer.id}`}><h1>{beer.name}</h1></Link>
