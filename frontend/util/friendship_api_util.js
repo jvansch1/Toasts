@@ -1,8 +1,8 @@
 
-export const createFriendRequest = (requester_id, requested_id) => {
+export const createFriendRequest = (requester_id, requested_id, accepted = false) => {
   return $.ajax({
     type: 'POST',
     url: 'api/friendships',
-    data: { requester_id, requested_id }
+    data: { friendship: { requester_id, requested_id, accepted } }
   })
 }
