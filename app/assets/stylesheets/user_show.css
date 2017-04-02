@@ -129,5 +129,5 @@
 }
 
 #user-show-top-brewery:hover {
-  color: #f93;
+  color: #f93 !important;
 }
