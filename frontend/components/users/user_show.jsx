@@ -16,7 +16,6 @@ class UserShow extends React.Component {
 
   render() {
     if (!this.props.user && this.props.checkins && this.props.query) return null;
-    debugger
     return (
       <div id='user-show-container'>
 

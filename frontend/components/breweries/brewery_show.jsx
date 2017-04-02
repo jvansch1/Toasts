@@ -5,7 +5,6 @@ import { Link } from 'react-router'
 
 class BreweryShow extends React.Component {
   constructor(props) {
-    console.log(props)
     super(props)
     this.state = {
       name: ""
