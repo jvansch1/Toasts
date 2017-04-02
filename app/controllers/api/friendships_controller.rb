@@ -1,7 +1,7 @@
-class FriendshipsController < ApplicationController
+class Api::FriendshipsController < ApplicationController
 
   def index
-
+    @friendships = Friendship.all
   end
 
   def create
