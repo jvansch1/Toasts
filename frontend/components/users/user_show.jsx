@@ -17,20 +17,36 @@ class UserShow extends React.Component {
 
   sendFriendRequest() {
     this.props.createFriendRequest(window.currentUser.id, this.props.routeParams.userId)
+    this.props.fetchUser(this.props.routeParams.userId);
+  }
+
+  deleteFriendRequest() {
+    this.props.deleteFriendRequest(window.currentUser.id, this.props.routeParams.userId);
+    this.props.fetchUser(this.props.routeParams.userId);
+  }
+
+  renderFriendButton() {
+    if (this.props.friendships && Object.keys(this.props.friendships).length === 0) {
+      return <span id='friend-button' onClick={this.sendFriendRequest.bind(this)}>Add Friend</span>
+    }
+    else {
+      return <span id='friend-button' onClick={this.deleteFriendRequest.bind(this)}>Delete Friend</span>
+    }
   }
 
   render() {
     if (!this.props.user && this.props.checkins && this.props.query) return null;
     return (
       <div id='user-show-container'>
-
         <HeaderContainer />
         <div id='user-show-info'>
           <div id='user-show-flex-container'>
             <div id='username-and-pic'>
               <img id='user-profile-pic' src={this.props.user.image_url} />
               <h3 id='user-show-username'>{this.props.user.username}</h3>
-              <span onClick={this.sendFriendRequest.bind(this)}>Add Friend</span>
+            </div>
+            <div id='friend-button-container'>
+
             </div>
             <ul id='user-show-stats'>
             <li className='user-show-stat-item'>
@@ -49,6 +65,7 @@ class UserShow extends React.Component {
                 Unique
               </span>
             </li>
+
           </ul>
           </div>
         </div>

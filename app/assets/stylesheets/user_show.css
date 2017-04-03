@@ -131,3 +131,24 @@
 #user-show-top-brewery:hover {
   color: #f93 !important;
 }
+
+#friend-button {
+  background: lightgrey;
+  position: absolute;
+  color: white;
+  font-weight: 600;
+  right: 20px;
+  top: 150px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 4px;
+  z-index: 10000000000
+}
+
+#friend-button:hover {
+  cursor: pointer;
+}
+
+#friend-button-container {
+  width: 1025px;
+  justify-content: flex-end;
+}

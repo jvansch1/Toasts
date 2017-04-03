@@ -15,3 +15,11 @@ export const fetchFriendRequest = (requester_id, requested_id, accepted = false)
     dataType: 'json'
   })
 }
+
+export const deleteFriendRequest = (requester_id, requested_id, accepted = false) => {
+  return $.ajax({
+    type: 'DELETE',
+    url: `api/friendships/delete`,
+    data: { friendship: { requester_id, requested_id, accepted } }
+  })
+}

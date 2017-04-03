@@ -1,6 +1,7 @@
 # json.extract! user, :username, :email, :errors
 json.username user.username
 json.checkins user.checkins
+json.friendships user.friendships
 json.unique_checkins user.unique_checkins.length
 json.errors user.errors
 json.image_url asset_path(user.image.url)

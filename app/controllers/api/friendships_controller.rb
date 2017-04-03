@@ -5,7 +5,6 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def find
-    debugger
     @friendship = Friendship.find_by(requester_id: params[:friendship][:requester_id], requested_id: params[:friendship][:requested_id])
     if @friendship
       render 'api/friendships/show'
@@ -23,8 +22,10 @@ class Api::FriendshipsController < ApplicationController
     end
   end
 
-  def destroy
-
+  def delete
+    @friendship = Friendship.find_by(requester_id: params[:friendship][:requester_id], requested_id: params[:friendship][:requested_id])
+    @friendship.destroy!
+    render 'api/friendships/show'
   end
 
   private

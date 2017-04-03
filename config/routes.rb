@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :friendships, only: [:index, :create, :destroy, :show] do
       get 'find', on: :collection
+      delete 'delete', on: :collection
     end
     resources :beers, only: [:index, :create, :destroy, :show, :top] do
       get 'search', on: :collection
