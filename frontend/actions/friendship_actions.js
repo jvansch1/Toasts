@@ -13,3 +13,10 @@ export const createFriendRequest = (requester_id, requested_id) => {
       .then(request => dispatch(receiveRequest(request)))
   }
 }
+
+export const fetchFriendRequest = (requester_id, requested_id) => {
+  return dispatch => {
+    return friendshipApiUtil.fetchFriendRequest(requester_id, requested_id)
+      .then(request => dispatch(receiveRequest(request)))
+  }
+}
