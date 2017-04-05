@@ -39,7 +39,7 @@ class Header extends React.Component {
         </ul>
         <ul className='username'>
           <li id='profile-link'>
-            <Link to={`users/${this.props.currentUser.id}`}>Profile</Link>
+            <Link to={`users/${window.store.getState.currentUser.id}`}>Profile</Link>
           </li>
           <li>
             <button id='logout-button' onClick={this.handleLogout.bind(this)}>Logout</button>
