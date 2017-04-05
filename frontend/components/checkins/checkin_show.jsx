@@ -14,7 +14,7 @@ class CheckinShow extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.params) {
+    if (this.props.params.checkinId) {
       this.props.fetchCheckin(this.props.params.checkinId)
     }
     this.props.fetchLikes()
@@ -38,7 +38,7 @@ class CheckinShow extends React.Component {
 
   createLike() {
     const like = {
-      user_id: window.currentUser.id,
+      user_id: window.store.getState().session.currentUser.id,
       checkin_id: this.props.checkin.id
     }
     this.props.createLike(like)
@@ -46,7 +46,7 @@ class CheckinShow extends React.Component {
   }
 
   deleteLike() {
-    const like = this.props.checkin.likes.filter(like => like.user_id === this.props.currentUser.id)
+    const like = this.props.checkin.likes.filter(like => like.user_id === window.store.getState().session.currentUser.id)
     this.props.deleteLike(like[0])
     this.props.fetchCheckin(this.props.checkin.id)
   }
@@ -54,9 +54,11 @@ class CheckinShow extends React.Component {
 
   renderButton() {
     const currentUser = this.props.currentUser
-    return this.props.checkin.likes.some(like => {
-      return like.user_id === currentUser.id
-    })
+    if (currentUser) {
+      return this.props.checkin.likes.some(like => {
+        return like.user_id === currentUser.id
+      })
+    }
   }
 
   render() {

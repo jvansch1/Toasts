@@ -14,10 +14,17 @@ class Home extends React.Component {
     }
   }
 
+  // componentDidMount() {
+  //   if (this.props.currentUser) {
+  //     debugger
+  //     this.props.login(window.store.getState(currentUser));
+  //     window.currentUser = this.props.currentUser;
+  //   }
+  // }
+
   handleLogout(e) {
     e.preventDefault();
-    this.props.logout();
-    hashHistory.push('/');
+    this.props.logout().then(() => hashHistory.push('/'));
   }
 
 

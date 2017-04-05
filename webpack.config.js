@@ -1,8 +1,11 @@
 var path = require('path');
 
 module.exports = {
+  devtool: "source-map",
   entry: './frontend/untappd.jsx',
   output: {
+    devtoolLineToLine: true,
+    sourceMapFilename: "./bundle.js.map",
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: 'bundle.js',
   },
