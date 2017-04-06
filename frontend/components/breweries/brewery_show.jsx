@@ -104,7 +104,6 @@ class BreweryShow extends React.Component {
               {
                 this.props.brewery.top_beers.map(beerArray => {
                 return (
-                  <Link to={`beers/${beerArray[0].id}`}>
                     <li id='brewery-show-top-beer-item'>
                       <img id='brewery-show-top-beer-image' src={this.renderDefault(beerArray[1])} />
                       <ul id='brewery-show-top-beer-info'>
@@ -120,7 +119,6 @@ class BreweryShow extends React.Component {
                         </Link>
                       </ul>
                     </li>
-                  </Link>
                   )
               })
             }
