@@ -1429,6 +1429,7 @@ font-weight: normal;
 
 #checkin-user-header {
   display: flex;
+  margin-bottom: 40px;
 }
 
 #user-home-name {
