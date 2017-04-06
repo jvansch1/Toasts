@@ -78,9 +78,6 @@ class BeerShow extends React.Component {
                     <i onClick={this.openCheckin.bind(this)} className="fa fa-plus-square" aria-hidden="true"></i>
                   </div>
 
-
-
-
                   <div className='checkin-count-container'>
                     <span className='checkin-count'>
                       <p className='first'>
@@ -133,19 +130,23 @@ class BeerShow extends React.Component {
               {
                 window.top_beers.top_beers.map((beerArray,idx) => {
                   return (
-                    <Link to={`beers/${beerArray[0].id}`} key={idx}>
+
                       <li className='top-beer-index-item'>
                         <img className='top-beer-image' src={this.renderDefault(beerArray[1])} />
                         <ul>
+                          <Link to={`beers/${beerArray[0].id}`}>
                           <li id='top-beer-beer-name'>
                             {beerArray[0].name}
                           </li>
+                        </Link>
+                        <Link to={`breweries/${beerArray[2].id}`}>
                           <li id='top-beer-brewery-name'>
                             {beerArray[2].name}
                           </li>
+                        </Link>
                         </ul>
                       </li>
-                    </Link>
+
                   )
                 })
               }
