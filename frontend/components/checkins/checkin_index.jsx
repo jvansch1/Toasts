@@ -110,13 +110,11 @@ class CheckinIndex extends React.Component {
                 Recent Global Activity
               </h2>
               <ul>
-                <Infinite containerHeight={document.body.scrollHeight} elementHeight={651} useWindowAsScrollContainer={true}>
                   {
                     this.props.checkins.map(checkin => {
                       return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike} key={checkin.id}/>
                     })
                   }
-                </Infinite>
               </ul>
             </div>
 
