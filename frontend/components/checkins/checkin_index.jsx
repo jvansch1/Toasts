@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderContainer from '../header/header_container';
 import CheckinIndexItem from './checkin_index_item';
 import { Link } from 'react-router';
+import Infinite from 'react-infinite'
 
 class CheckinIndex extends React.Component {
   constructor(props) {
@@ -59,7 +60,7 @@ class CheckinIndex extends React.Component {
 
   getNextCheckins(e) {
     if (window.checkin_count.checkins - this.state.offset <= 7) {
-      $(e.currentTarget).addClass('grey')
+      $('#next-button').addClass('grey')
     }
     if (this.state.offset + 4 >= window.checkin_count.checkins) {
       return;
@@ -67,10 +68,22 @@ class CheckinIndex extends React.Component {
     else {
       this.setState({offset: this.state.offset + 4}, () => {
         $('#previous-button').removeClass('grey');
-        this.props.fetchCheckins(this.state.limit, this.state.offset)
-    });
+        this.props.fetchSomeCheckins(this.state.limit, this.state.offset)
+      });
+      return;
+    }
   }
-}
+
+
+  checkIfBottom() {
+    // console.log(window.innerHeight)
+    // console.log(window.pageYOffset)
+    // console.log(document.body.offsetHeight)
+    if ((window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) {
+      console.log("bottom")
+      this.getNextCheckins();
+    }
+  }
 
   getPrevCheckins(e) {
     if (this.state.offset <= 4) {
@@ -97,11 +110,13 @@ class CheckinIndex extends React.Component {
                 Recent Global Activity
               </h2>
               <ul>
-                {
-                  this.props.checkins.map(checkin => {
-                    return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike} key={checkin.id}/>
-                  })
-                }
+                <Infinite containerHeight={2646} elementHeight={651} useWindowAsScrollContainer={true}>
+                  {
+                    this.props.checkins.map(checkin => {
+                      return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike} key={checkin.id}/>
+                    })
+                  }
+                </Infinite>
               </ul>
             </div>
 
@@ -128,6 +143,7 @@ class CheckinIndex extends React.Component {
                 </section>
               </div>
               <div id='pagination-buttons'>
+                {setInterval(this.checkIfBottom.bind(this), 500)}
                 <button id='previous-button' onClick={this.getPrevCheckins.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
                 <button id='next-button' onClick={this.getNextCheckins.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
               </div>
