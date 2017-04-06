@@ -1814,6 +1814,11 @@ button {
   position: relative;
   bottom: 3px;
 }
+
+#top-brewery-name:hover {
+  color: #f93;
+}
+
 #brewery-beer-header {
   padding-left: 10px;
   font-weight: 600;

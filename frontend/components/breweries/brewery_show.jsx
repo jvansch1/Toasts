@@ -108,12 +108,16 @@ class BreweryShow extends React.Component {
                     <li id='brewery-show-top-beer-item'>
                       <img id='brewery-show-top-beer-image' src={this.renderDefault(beerArray[1])} />
                       <ul id='brewery-show-top-beer-info'>
-                        <li id='top-name'>
-                          {beerArray[0].name}
-                        </li>
-                        <li id='top-brewery-name'>
-                          {this.props.brewery.name}
-                        </li>
+                        <Link to={`beers/${beerArray[0].id}`}>
+                          <li id='top-name'>
+                            {beerArray[0].name}
+                          </li>
+                        </Link>
+                        <Link to={`breweries/${this.props.brewery.id}`}>
+                          <li id='top-brewery-name'>
+                            {this.props.brewery.name}
+                          </li>
+                        </Link>
                       </ul>
                     </li>
                   </Link>
