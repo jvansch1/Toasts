@@ -32,21 +32,25 @@ class CheckinIndex extends React.Component {
   topBeers() {
     return window.top_beers.top_beers.map(beerArray => {
       return (
-        <Link to={`beers/${beerArray[0].id}`} key={beerArray[0].id}>
+
           <li className='top-beer-index-item' key={beerArray[0].id}>
             {
               this.renderImage(beerArray[1])
             }
             <ul className='top-beer-name'>
-              <li>
-                <h2>{beerArray[0].name}</h2>
-              </li>
-              <li id='top-beer-brewery-name'>
-                <h4>{beerArray[2].name}</h4>
-              </li>
+              <Link to={`beers/${beerArray[0].id}`}>
+                <li>
+                  <h2 id='new-name'>{beerArray[0].name}</h2>
+                </li>
+              </Link>
+              <Link to={`breweries/${beerArray[2].id}`}>
+                <li id='top-beer-brewery-name'>
+                  <h4 id='new-brewery'>{beerArray[2].name}</h4>
+                </li>
+              </Link>
             </ul>
           </li>
-        </Link>
+
       )
     })
   }

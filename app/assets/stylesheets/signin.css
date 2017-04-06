@@ -1900,3 +1900,15 @@ button {
 #checkin-rating {
   margin-left: 35px;
 }
+
+#new-name {
+  color: #c60;
+}
+
+#new-name:hover {
+  color: #f93;
+}
+
+#new-brewery:hover {
+  color: #f93;
+}
