@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom'
 import HeaderContainer from '../header/header_container';
 import CheckinIndexItem from './checkin_index_item';
 import { Link } from 'react-router';
@@ -80,7 +81,6 @@ class CheckinIndex extends React.Component {
     // console.log(window.pageYOffset)
     // console.log(document.body.offsetHeight)
     if ((window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) {
-      console.log("bottom")
       this.getNextCheckins();
     }
   }
@@ -110,7 +110,7 @@ class CheckinIndex extends React.Component {
                 Recent Global Activity
               </h2>
               <ul>
-                <Infinite containerHeight={2646} elementHeight={651} useWindowAsScrollContainer={true}>
+                <Infinite containerHeight={document.body.scrollHeight} elementHeight={651} useWindowAsScrollContainer={true}>
                   {
                     this.props.checkins.map(checkin => {
                       return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike} key={checkin.id}/>
@@ -144,7 +144,7 @@ class CheckinIndex extends React.Component {
               </div>
               <div id='pagination-buttons'>
                 <p hidden>
-                  {setInterval(this.checkIfBottom.bind(this), 500)}
+                  {setInterval(this.checkIfBottom.bind(this), 1000)}
                 </p>
                 <button id='previous-button' onClick={this.getPrevCheckins.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
                 <button id='next-button' onClick={this.getNextCheckins.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>

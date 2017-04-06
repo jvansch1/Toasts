@@ -36,7 +36,7 @@ const Root = ({store}) => {
 
   return (
     <Provider store={store}>
-      <Router  onUpdate={() => window.scrollTo(0, 0)} history={hashHistory}>
+      <Router onUpdate={() => window.scrollTo(0, 0)} history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={LandingContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='login' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
