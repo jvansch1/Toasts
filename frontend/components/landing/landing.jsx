@@ -16,7 +16,7 @@ const Landing = (props) => {
 
   const logInGuest = (e) => {
     props.login({username: 'Guest', password: 'password'}).then(() => hashHistory.push('home'))
-}
+  }
 
 
   return (

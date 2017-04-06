@@ -29,6 +29,7 @@ class Header extends React.Component {
 
 
   render() {
+    if (!window.store.getState().session.currentUser) return null;
     return (
       <div className="navbar clearfix">
         <ul className='navbar-link'>
@@ -39,7 +40,7 @@ class Header extends React.Component {
         </ul>
         <ul className='username'>
           <li id='profile-link'>
-            <Link to={`users/${window.store.getState.currentUser.id}`}>Profile</Link>
+            <Link to={`users/${window.store.getState().session.currentUser.id}`}>Profile</Link>
           </li>
           <li>
             <button id='logout-button' onClick={this.handleLogout.bind(this)}>Logout</button>
