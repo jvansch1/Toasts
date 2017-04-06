@@ -143,7 +143,9 @@ class CheckinIndex extends React.Component {
                 </section>
               </div>
               <div id='pagination-buttons'>
-                {setInterval(this.checkIfBottom.bind(this), 500)}
+                <p hidden>
+                  {setInterval(this.checkIfBottom.bind(this), 500)}
+                </p>
                 <button id='previous-button' onClick={this.getPrevCheckins.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
                 <button id='next-button' onClick={this.getNextCheckins.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
               </div>
