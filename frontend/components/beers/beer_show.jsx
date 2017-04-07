@@ -7,7 +7,8 @@ class BeerShow extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: ""
+      name: "",
+      mounted: false
     }
   }
 
@@ -17,14 +18,19 @@ class BeerShow extends React.Component {
 
 
   componentDidMount() {
-
     if (this.props.params) {
       this.props.fetchBeer(this.props.params.beerId)
+    }
+    this.setState({mounted: true})
+  }
+
+  componentWillUnmount() {
+    if (this.state.mounted) {
+      this.setState({mounted: false})
     }
   }
 
   componentWillReceiveProps(newProps) {
-
     if (this.props.params.beerId !== newProps.params.beerId) {
       this.props.fetchBeer(newProps.params.beerId);
     }

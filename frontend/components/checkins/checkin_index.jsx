@@ -11,11 +11,15 @@ class CheckinIndex extends React.Component {
     this.state = {
       limit: 4,
       offset: 0,
-      mounted: true
+      mounted: false
     }
+    this.checkIfBottom = this.checkIfBottom.bind(this)
+    this.getPrevCheckins = this.getPrevCheckins.bind(this)
+    this.getNextCheckins = this.getNextCheckins.bind(this)
   }
 
   componentDidMount() {
+    this.interval = setInterval(this.checkIfBottom, 1000)
     this.setState({mounted: true})
     $('#previous-button').addClass('grey');
     this.props.fetchCheckins(this.state.limit, this.state.offset);
@@ -57,8 +61,10 @@ class CheckinIndex extends React.Component {
   }
 
   componentWillUnmount() {
-    if(this.state.mounted === true) {
+    if(this.state.mounted) {
+      clearInterval(this.interval)
       this.setState({mounted: false})
+
     }
   }
 
@@ -93,7 +99,7 @@ class CheckinIndex extends React.Component {
   }
 
   getPrevCheckins(e) {
-    if (this.state.mounted) return null;
+    if (!this.state.mounted) return null;
     if (this.state.offset <= 4) {
       $('#previous-button').addClass('grey');
       this.setState({offset: 0}, () => this.props.fetchCheckins(this.state.limit, this.state.offset))
@@ -151,10 +157,10 @@ class CheckinIndex extends React.Component {
               </div>
               <div id='pagination-buttons'>
                 <p hidden>
-                  {setInterval(this.checkIfBottom.bind(this), 1000)}
+
                 </p>
-                <button hidden id='previous-button' onClick={this.getPrevCheckins.bind(this)}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
-                <button hidden id='next-button' onClick={this.getNextCheckins.bind(this)}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
+                <button hidden id='previous-button' onClick={this.getPrevCheckins}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
+                <button hidden id='next-button' onClick={this.getNextCheckins}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
               </div>
               <div id='beer-list-container'>
                 <h1 id='beer-list-header'>Top Beers</h1>

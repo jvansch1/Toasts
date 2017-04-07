@@ -7,16 +7,24 @@ class BreweryShow extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: ""
+      name: "",
+      mounted: false
     }
   }
 
   componentDidMount() {
+    this.setState({mounted: true})
     this.state = this.props.fetchBrewery(this.props.params.breweryId)
   }
 
   componentWillReceiveProps(newProps) {
     this.state = newProps.brewery
+  }
+
+  componentWillUnmount() {
+    if (this.state.mounted) {
+      this.setState({mounted: false})
+    }
   }
 
   averageRating() {
