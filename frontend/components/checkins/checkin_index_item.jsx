@@ -19,13 +19,13 @@
    }
 
    like() {
-     let like = { user_id: store.getState().session.currentUser.id, checkin_id: this.props.checkin.id }
-     store.dispatch(createLike(like))
+     let like = { user_id: this.props.currentUser.id, checkin_id: this.props.checkin.id }
+     this.props.createLike(like)
    }
 
    unlike() {
-     let like = this.props.checkin.likes.filter(like => like.user_id === store.getState().session.currentUser.id)
-     store.dispatch(deleteLike(like[0]))
+     let like = this.props.checkin.likes.filter(like => like.user_id === this.props.currentUser.id)
+     this.props.deleteLike(like[0])
    }
 
    componentDidMount() {
@@ -33,7 +33,7 @@
    }
 
    shouldComponentUpdate() {
-     if (!store.getState().session.currentUser) {
+     if (!this.props.currentUser) {
        return false;
      }
      return true;
@@ -46,7 +46,7 @@
    renderButton() {
      if (this.props.checkin) {
        return this.props.checkin.likes.some(like => {
-         return like.user_id === store.getState().session.currentUser.id
+         return like.user_id === this.props.currentUser.id
        })
      }
    }

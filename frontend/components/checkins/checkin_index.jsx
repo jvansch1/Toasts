@@ -61,7 +61,7 @@ class CheckinIndex extends React.Component {
   }
 
   shouldComponentUpdate() {
-    if (!store.getState().session.currentUser) {
+    if (!this.props.currentUser) {
       return false;
     }
     return true;
@@ -117,7 +117,7 @@ class CheckinIndex extends React.Component {
               <ul>
                   {
                     this.props.checkins.map(checkin => {
-                      return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike} key={checkin.id}/>
+                      return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike} deleteLike={this.props.deleteLike} key={checkin.id} currentUser={this.props.currentUser}/>
                     })
                   }
               </ul>
@@ -136,13 +136,13 @@ class CheckinIndex extends React.Component {
               <div id='user-stat-list'>
                 <section className='individual-stat'>
                   <span className='number'>
-                    {store.getState().session.currentUser.checkins.length}
+                    {this.props.currentUser.checkins.length}
                   </span>
                   <p className='title' >Total</p>
                 </section>
                 <section className='individual-stat'>
                   <span className='number'>
-                    {store.getState().session.currentUser.unique_checkins}
+                    {this.props.currentUser.unique_checkins}
                   </span>
                   <p className='title' >Unique</p>
                 </section>
