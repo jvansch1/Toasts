@@ -8,7 +8,8 @@ class CheckinShow extends React.Component {
     super(props)
     if (props.checkins) {
       this.state = {
-        likes: props.checkin
+        likes: props.checkin,
+        mounted: false
       }
     }
   }
@@ -16,15 +17,20 @@ class CheckinShow extends React.Component {
   componentDidMount() {
     if (this.props.params.checkinId) {
       this.props.fetchCheckin(this.props.params.checkinId)
+      this.setState({mounted: true})
     }
     this.props.fetchLikes()
   }
 
   componentWillReceiveProps(newProps) {
     this.state = newProps.checkin
-    if (newProps.checkin) {
-      this.setState(newProps.checkin)
+    if (newProps.checkin && this.state.mounted) {
+      this.setState({likes: newProps.checkin})
     }
+  }
+
+  componentWillUnmount() {
+    this.setState({mounted: false})
   }
 
   handleLike(e) {

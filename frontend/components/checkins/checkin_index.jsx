@@ -10,11 +10,13 @@ class CheckinIndex extends React.Component {
     super(props)
     this.state = {
       limit: 4,
-      offset: 0
+      offset: 0,
+      mounted: true
     }
   }
 
   componentDidMount() {
+    this.setState({mounted: true})
     $('#previous-button').addClass('grey');
     this.props.fetchCheckins(this.state.limit, this.state.offset);
   }
@@ -55,6 +57,10 @@ class CheckinIndex extends React.Component {
     })
   }
 
+  componentWillUnmount() {
+    this.setState({mounted: false})
+  }
+
 
   shouldComponentUpdate() {
     if (!store.getState().session.currentUser) {
@@ -64,6 +70,7 @@ class CheckinIndex extends React.Component {
   }
 
   getNextCheckins(e) {
+    if (this.state.mounted) return null;
     if (window.checkin_count.checkins - this.state.offset <= 7) {
       $('#next-button').addClass('grey')
     }
@@ -81,15 +88,13 @@ class CheckinIndex extends React.Component {
 
 
   checkIfBottom() {
-    // console.log(window.innerHeight)
-    // console.log(window.pageYOffset)
-    // console.log(document.body.offsetHeight)
     if ((window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) {
       this.getNextCheckins();
     }
   }
 
   getPrevCheckins(e) {
+    if (this.state.mounted) return null;
     if (this.state.offset <= 4) {
       $('#previous-button').addClass('grey');
       this.setState({offset: 0}, () => this.props.fetchCheckins(this.state.limit, this.state.offset))
