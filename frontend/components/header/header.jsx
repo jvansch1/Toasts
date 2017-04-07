@@ -30,7 +30,6 @@ class Header extends React.Component {
 
   render() {
     if (!this.props.currentUser) return null;
-    console.log(this.props)
     return (
       <div className="navbar clearfix">
         <ul className='navbar-link'>
@@ -40,9 +39,6 @@ class Header extends React.Component {
           <li className='link'><SearchBarContainer /><i className="fa fa-search" aria-hidden="true"></i></li>
         </ul>
         <ul className='username'>
-          <li id='profile-link'>
-            <Link to={`users/${this.props.currentUser.id}`}>Profile</Link>
-          </li>
           <li>
             <button id='logout-button' onClick={this.handleLogout.bind(this)}>Logout</button>
           </li>

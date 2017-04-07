@@ -1433,11 +1433,17 @@ font-weight: normal;
 }
 
 #user-home-name {
+  color: black;
   margin-top: 25px;
   margin-left: 10px;
   font-size: 1.4em;
   font-weight: 600;
   line-height: 1.125em;
+}
+
+#user-home-name:hover {
+  color: #f93;
+  cursor: pointer;
 }
 
 #user-stats {

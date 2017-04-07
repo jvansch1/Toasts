@@ -33,7 +33,7 @@ class UserShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.props.fetchUser(newProps.params.userId);
+    // this.props.fetchUser(newProps.params.userId);
     // this.props.fetchUserCheckins(newProps.params.userId);
     // this.props.topUserBeers(newProps.params.userId);
   }
@@ -48,7 +48,6 @@ class UserShow extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     if (!this.props.user && this.props.checkins && this.props.query) return null;
     return (
       <div id='user-show-container'>

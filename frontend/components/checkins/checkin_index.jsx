@@ -32,7 +32,6 @@ class CheckinIndex extends React.Component {
 
 
   topBeers() {
-    console.log(this.props)
     return window.top_beers.top_beers.map(beerArray => {
       return (
 
@@ -127,9 +126,11 @@ class CheckinIndex extends React.Component {
             <div id='checkin-index-right'>
               <div id='checkin-user-header'>
                 <img id='user-home-image' src={this.props.currentUser.image_url} />
-                <p id='user-home-name'>
-                  {store.getState().session.currentUser.username}
-                </p>
+                <Link to={`users/${this.props.currentUser.id}`}>
+                  <p id='user-home-name'>
+                    {this.props.currentUser.username}
+                  </p>
+                </Link>
               </div>
 
               <div id='user-stat-list'>
