@@ -92,8 +92,8 @@ class BreweryShow extends React.Component {
               </section>
 
               <div id='brewery-checkin-list-wrapper'>
-                {this.props.brewery.checkins.map(checkin => {
-                  return <BreweryCheckinListItem checkin={checkin} brewery={this.props.brewery}/>
+                {this.props.brewery.checkins.map((checkin) => {
+                  return <BreweryCheckinListItem checkin={checkin} brewery={this.props.brewery} key={checkin.id}/>
                 })
               }
             </div>
@@ -102,9 +102,9 @@ class BreweryShow extends React.Component {
             <h1 id='brewery-beer-header'>Beers by {this.props.brewery.name}</h1>
             <ul>
               {
-                this.props.brewery.top_beers.map(beerArray => {
+                this.props.brewery.top_beers.map((beerArray, idx) => {
                 return (
-                    <li id='brewery-show-top-beer-item'>
+                    <li id='brewery-show-top-beer-item' key={idx}>
                       <img id='brewery-show-top-beer-image' src={this.renderDefault(beerArray[1])} />
                       <ul id='brewery-show-top-beer-info'>
                         <Link to={`beers/${beerArray[0].id}`}>
