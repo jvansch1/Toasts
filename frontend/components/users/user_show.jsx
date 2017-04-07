@@ -12,7 +12,7 @@ class UserShow extends React.Component {
     this.props.fetchUser(this.props.routeParams.userId);
     this.props.fetchUserCheckins(this.props.routeParams.userId);
     this.props.topUserBeers(this.props.routeParams.userId);
-    this.props.fetchFriendRequest(window.store.getState().session.currentUser.id, this.props.routeParams.userId)
+    this.props.fetchFriendRequest(this.props.currentUser, this.props.routeParams.userId)
   }
 
   sendFriendRequest() {

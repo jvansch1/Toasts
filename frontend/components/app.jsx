@@ -4,8 +4,6 @@ import { Link } from 'react-router'
 
 
 const App = (props) => {
-
-
   return (
     <div id="app-root">
       {props.children}

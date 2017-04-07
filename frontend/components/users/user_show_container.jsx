@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
       user: state.user[ownProps.params.userId],
       checkins: Object.keys(state.checkins).map(key => state.checkins[key]),
       query: Object.keys(state.query).map(key => state.query[key]),
-      friendships: state.friendship
+      friendships: state.friendship,
+      currentUser: state.session.currentUser
     }
 }
 

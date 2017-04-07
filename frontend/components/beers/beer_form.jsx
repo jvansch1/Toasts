@@ -81,7 +81,7 @@ class BeerForm extends React.Component {
               Style
             </p>
             <select className='beer-input' onChange={this.update('style')}>
-            
+
               {
                 window.styles.styles.map((style, idx) => {
                   return <option value={style} key={idx}>{style}</option>;
@@ -100,7 +100,6 @@ class BeerForm extends React.Component {
                 })
               }
             </select>
-
 
             <p>
               ABV

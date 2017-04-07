@@ -32,6 +32,7 @@ class CheckinIndex extends React.Component {
 
 
   topBeers() {
+    console.log(this.props)
     return window.top_beers.top_beers.map(beerArray => {
       return (
 
@@ -52,7 +53,6 @@ class CheckinIndex extends React.Component {
               </Link>
             </ul>
           </li>
-
       )
     })
   }
@@ -60,7 +60,6 @@ class CheckinIndex extends React.Component {
   componentWillUnmount() {
     this.setState({mounted: false})
   }
-
 
   shouldComponentUpdate() {
     if (!store.getState().session.currentUser) {
@@ -86,7 +85,6 @@ class CheckinIndex extends React.Component {
     }
   }
 
-
   checkIfBottom() {
     if ((window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) {
       this.getNextCheckins();
@@ -106,7 +104,6 @@ class CheckinIndex extends React.Component {
       this.setState({offset: this.state.offset - 4}, () => this.props.fetchCheckins(this.state.limit, this.state.offset))
     }
   }
-
 
   render() {
     return (
@@ -129,7 +126,7 @@ class CheckinIndex extends React.Component {
 
             <div id='checkin-index-right'>
               <div id='checkin-user-header'>
-                <img id='user-home-image' src={store.getState().session.currentUser.image_url} />
+                <img id='user-home-image' src={this.props.currentUser.image_url} />
                 <p id='user-home-name'>
                   {store.getState().session.currentUser.username}
                 </p>
