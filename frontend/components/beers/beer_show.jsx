@@ -131,7 +131,7 @@ class BeerShow extends React.Component {
                 window.top_beers.top_beers.map((beerArray,idx) => {
                   return (
 
-                      <li className='top-beer-index-item'>
+                      <li className='top-beer-index-item' key={idx}>
                         <img className='top-beer-image' src={this.renderDefault(beerArray[1])} />
                         <ul>
                           <Link to={`beers/${beerArray[0].id}`}>

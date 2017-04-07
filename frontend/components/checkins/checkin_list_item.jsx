@@ -34,7 +34,7 @@
                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                    </div>
                  </div>
-                 <li id='review'>{props.checkin.description}</li>
+                 <div id='review'>{props.checkin.description}</div>
                </span>
 
              </li>
