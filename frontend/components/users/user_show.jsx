@@ -6,13 +6,23 @@ import CheckinListItem from '../checkins/checkin_list_item';
 class UserShow extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      mounted: false
+    }
   }
 
   componentDidMount() {
     this.props.fetchUser(this.props.routeParams.userId);
     this.props.fetchUserCheckins(this.props.routeParams.userId);
     this.props.topUserBeers(this.props.routeParams.userId);
+    this.setState({mounted: true})
     // this.props.fetchFriendRequest(this.props.currentUser, this.props.routeParams.userId)
+  }
+
+  componentWillUnmount() {
+    if (this.state.mounted === true) {
+      this.setState({mounted: false})
+    }
   }
 
   sendFriendRequest() {
@@ -30,12 +40,6 @@ class UserShow extends React.Component {
        return true;
      }
      return false;
-  }
-
-  componentWillReceiveProps(newProps) {
-    // this.props.fetchUser(newProps.params.userId);
-    // this.props.fetchUserCheckins(newProps.params.userId);
-    // this.props.topUserBeers(newProps.params.userId);
   }
 
   renderFriendButton() {

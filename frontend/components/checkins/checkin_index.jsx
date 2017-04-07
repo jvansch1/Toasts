@@ -57,7 +57,9 @@ class CheckinIndex extends React.Component {
   }
 
   componentWillUnmount() {
-    this.setState({mounted: false})
+    if(this.state.mounted === true) {
+      this.setState({mounted: false})
+    }
   }
 
   shouldComponentUpdate() {
