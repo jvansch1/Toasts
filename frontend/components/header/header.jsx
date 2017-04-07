@@ -12,7 +12,7 @@ class Header extends React.Component {
   }
 
   shouldComponentUpdate() {
-    if (!store.getState().session.currentUser) {
+    if (!this.props.currentUser) {
       return false;
     }
     return true;
@@ -29,7 +29,7 @@ class Header extends React.Component {
 
 
   render() {
-    if (!window.store.getState().session.currentUser) return null;
+    if (!this.props.currentUser) return null;
     console.log(this.props)
     return (
       <div className="navbar clearfix">

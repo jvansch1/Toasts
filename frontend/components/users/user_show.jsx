@@ -12,17 +12,30 @@ class UserShow extends React.Component {
     this.props.fetchUser(this.props.routeParams.userId);
     this.props.fetchUserCheckins(this.props.routeParams.userId);
     this.props.topUserBeers(this.props.routeParams.userId);
-    this.props.fetchFriendRequest(this.props.currentUser, this.props.routeParams.userId)
+    // this.props.fetchFriendRequest(this.props.currentUser, this.props.routeParams.userId)
   }
 
   sendFriendRequest() {
-    this.props.createFriendRequest(window.currentUser.id, this.props.routeParams.userId)
+    // this.props.createFriendRequest(window.currentUser.id, this.props.routeParams.userId)
     this.props.fetchUser(this.props.routeParams.userId);
   }
 
   deleteFriendRequest() {
-    this.props.deleteFriendRequest(window.currentUser.id, this.props.routeParams.userId);
+    // this.props.deleteFriendRequest(window.currentUser.id, this.props.routeParams.userId);
     this.props.fetchUser(this.props.routeParams.userId);
+  }
+
+  shouldComponentUpdate(newProps) {
+     if (newProps.params.userId === this.props.routeParams.userId) {
+       return true;
+     }
+     return false;
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.props.fetchUser(newProps.params.userId);
+    // this.props.fetchUserCheckins(newProps.params.userId);
+    // this.props.topUserBeers(newProps.params.userId);
   }
 
   renderFriendButton() {
@@ -35,6 +48,7 @@ class UserShow extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     if (!this.props.user && this.props.checkins && this.props.query) return null;
     return (
       <div id='user-show-container'>

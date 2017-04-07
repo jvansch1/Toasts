@@ -69,7 +69,7 @@ class CheckinIndex extends React.Component {
   }
 
   getNextCheckins(e) {
-    if (this.state.mounted) return null;
+    if (!this.state.mounted) return null;
     if (window.checkin_count.checkins - this.state.offset <= 7) {
       $('#next-button').addClass('grey')
     }
