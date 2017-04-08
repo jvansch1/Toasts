@@ -125,9 +125,9 @@
                </div>
              </div>
              <div id={this.props.checkin.id} hidden>
-                 <textarea id='comment-box' onChange={this.updateContent.bind(this)} placeholder='Leave a Comment...'/>
+                 <textarea maxLength='140' id='comment-box' onChange={this.updateContent.bind(this)} placeholder='Leave a Comment...'/>
                  <div id='post-button-container'>
-
+                   <p id='comment-length-count'>{this.state.content.length}/140</p>
                    <div id='post-button-2' onClick={this.handleSubmit.bind(this)}><i className="fa fa-sticky-note-o" aria-hidden="true"></i>Post</div>
                  </div>
              </div>
