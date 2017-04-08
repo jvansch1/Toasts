@@ -1,11 +1,11 @@
 class Api::CommentsController < ApplicationController
   def index
-    @index = Comment.all(order: "created_at DESC")
+    debugger
+    @index = Comment.order("created_at DESC")
   end
 
   def create
     @comment = Comment.new(comment_params)
-
     if @comment.save
       render 'api/comments/show'
     else

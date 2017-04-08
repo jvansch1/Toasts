@@ -127,7 +127,7 @@
              <div id={this.props.checkin.id} hidden>
                  <textarea id='comment-box' onChange={this.updateContent.bind(this)} placeholder='Leave a Comment...'/>
                  <div id='post-button-container'>
-                   <div id='post-button' onClick={this.handleSubmit.bind(this)}>Post</div>
+                   <div id='post-button-2' onClick={this.handleSubmit.bind(this)}>Post</div>
                  </div>
              </div>
 
