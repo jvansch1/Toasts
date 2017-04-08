@@ -12,7 +12,7 @@
      <div id='checkin-list-item-container'>
 
          <li className='checkin-list-item'>
-           <img src={props.checkin.user.image_url} />
+           <Link to={`users/${props.checkin.user.id}`}><img src={props.checkin.user.image_url} /></Link>
 
            <section>
              <Link to={`users/${props.checkin.user.id}`}><span>{props.checkin.user.username}</span></Link> is drinking a <Link to={`beers/${props.beer.id}`}><span>{props.beer.name}</span></Link> by <span><Link to={`breweries/${props.beer.brewery.id}`} id='brewery-link'>{props.beer.brewery.name}</Link></span>

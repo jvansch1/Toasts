@@ -11,7 +11,7 @@ const BreweryCheckinListItem = (props) => {
     <div id='brewery-checkin-list-item-container'>
 
         <li className='checkin-list-item'>
-          <img src={props.checkin.user.image_url} />
+          <Link to={`users/${props.checkin.user.id}`}><img src={props.checkin.user.image_url} /></Link>
 
           <section>
             <Link to={`users/${props.checkin.user.id}`}><span>{props.checkin.user.username}</span></Link> is drinking a <span><Link to={`beers/${props.checkin.beer.id}`}>{props.checkin.beer.name}</Link></span> by <span><Link to={`breweries/${props.brewery.id}`}>{props.brewery.name}</Link></span>
