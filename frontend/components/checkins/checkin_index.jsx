@@ -126,7 +126,7 @@ class CheckinIndex extends React.Component {
               <ul>
                   {
                     this.props.checkins.map(checkin => {
-                      return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike} deleteLike={this.props.deleteLike} key={checkin.id} currentUser={this.props.currentUser}/>
+                      return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike} deleteLike={this.props.deleteLike} createComment={this.props.createComment} key={checkin.id} currentUser={this.props.currentUser}/>
                     })
                   }
               </ul>
