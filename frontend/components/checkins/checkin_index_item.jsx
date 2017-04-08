@@ -59,7 +59,7 @@
        <li id='checkin-index-item'>
          <div id='user-info'>
            <div id='image-container'>
-             <img className='checkin-index-user-image' src={this.props.checkin.user.image_url} />
+             <Link to={`users/${this.props.checkin.user.id}`}><img className='checkin-index-user-image' src={this.props.checkin.user.image_url} /></Link>
            </div>
 
            <div id='checkin-content'>
@@ -104,7 +104,7 @@
                </span>
              </div>
            </div>
-           <img id='index-beer-image' src={this.props.checkin.beer_image_url} />
+           <Link to={`beers/${this.props.checkin.beer.id}`}><img id='index-beer-image' src={this.props.checkin.beer_image_url} /></Link>
          </div>
        </li>
      )
