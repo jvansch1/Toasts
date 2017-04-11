@@ -12,10 +12,9 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.routeParams.userId);
-    this.props.fetchUserCheckins(this.props.routeParams.userId);
-    this.props.topUserBeers(this.props.routeParams.userId).then(() => this.setState({mounted: true}));
-
+    this.props.fetchUser(this.props.routeParams.userId)
+      .then(() => this.props.fetchUserCheckins(this.props.routeParams.userId))
+      .then(() => this.props.topUserBeers(this.props.routeParams.userId).then(() => this.setState({mounted: true})))
     // this.props.fetchFriendRequest(this.props.currentUser, this.props.routeParams.userId)
   }
 
