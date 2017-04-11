@@ -57,11 +57,15 @@
 
    openCommentBox() {
      if (!this.state.open) {
-       $('#' + this.props.checkin.id).attr('hidden', false)
+      //  $('#' + this.props.checkin.id).attr('hidden', false)
+       $('#' + this.props.checkin.id).removeClass('closed')
+       $('#' + this.props.checkin.id).addClass('open')
        this.setState({open: true})
      }
      else {
-       $('#' + this.props.checkin.id).attr('hidden', true)
+       $('#' + this.props.checkin.id).addClass('closed')
+       $('#' + this.props.checkin.id).removeClass('open')
+      //  $('#' + this.props.checkin.id).attr('hidden', true)
        this.setState({open: false})
      }
    }
@@ -124,7 +128,7 @@
                  <span >{button}</span>
                </div>
              </div>
-             <div id={this.props.checkin.id} hidden>
+             <div id={this.props.checkin.id} className='closed'>
                  <textarea maxLength='140' id='comment-box' onChange={this.updateContent.bind(this)} placeholder='Leave a Comment...'/>
                  <div id='post-button-container'>
                    <p id='comment-length-count'>{this.state.content.length}/140</p>

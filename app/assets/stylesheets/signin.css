@@ -1936,6 +1936,18 @@ textarea {
   border-radius: 4px;
 }
 
+.closed {
+  visibility: hidden;
+  height: 0;
+  transition: height 1s;
+}
+
+.open {
+  visibility: visible;
+  height: 109px;
+  transition: height 1s, visibility 2s;
+}
+
 #post-button-2 {
   background-color: #ffc600;
   width: 100px;
