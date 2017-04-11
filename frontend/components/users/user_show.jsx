@@ -14,8 +14,8 @@ class UserShow extends React.Component {
   componentDidMount() {
     this.props.fetchUser(this.props.routeParams.userId);
     this.props.fetchUserCheckins(this.props.routeParams.userId);
-    this.props.topUserBeers(this.props.routeParams.userId);
-    this.setState({mounted: true})
+    this.props.topUserBeers(this.props.routeParams.userId).then(() => this.setState({mounted: true}));
+
     // this.props.fetchFriendRequest(this.props.currentUser, this.props.routeParams.userId)
   }
 
@@ -52,6 +52,7 @@ class UserShow extends React.Component {
   }
 
   render() {
+    if (!this.state.mounted) return null;
     if (!this.props.user && this.props.checkins && this.props.query) return null;
     return (
       <div id='user-show-container'>
