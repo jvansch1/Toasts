@@ -1939,13 +1939,13 @@ textarea {
 .closed {
   visibility: hidden;
   height: 0;
-  transition: height 1s;
+  transition: height 50ms linear 50ms;
 }
 
 .open {
   visibility: visible;
   height: 109px;
-  transition: height 1s, visibility 2s;
+  transition: height 300s, visibility 50ms, linear 300ms;
 }
 
 #post-button-2 {
