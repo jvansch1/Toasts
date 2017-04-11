@@ -19,7 +19,7 @@ class CheckinIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(this.checkIfBottom, 1000)
+    this.interval = setInterval(this.checkIfBottom, 500)
     $('#previous-button').addClass('grey');
     this.props.fetchCheckins(this.state.limit, this.state.offset).then(() => this.setState({mounted: true}));
   }
