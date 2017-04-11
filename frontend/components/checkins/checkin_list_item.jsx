@@ -5,7 +5,7 @@
 
 
  const CheckinListItem = (props) => {
-
+   
    if (!props.checkin.user) return null;
    const rating = `${25 * props.checkin.rating}px`
    return (
