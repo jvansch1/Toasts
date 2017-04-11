@@ -16,6 +16,7 @@
 }
 
 #user-show-stats {
+  width: 1024px;
   color: white;
   display: flex;
   background: black;
