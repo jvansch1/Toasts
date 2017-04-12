@@ -63,7 +63,6 @@ class UserShow extends React.Component {
               <h3 id='user-show-username'>{this.props.user.username}</h3>
             </div>
             <div id='friend-button-container'>
-
             </div>
             <ul id='user-show-stats'>
             <li className='user-show-stat-item'>

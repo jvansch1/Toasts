@@ -7,7 +7,7 @@ class BeerForm extends React.Component {
     super(props);
     this.state = {
       name: "",
-      style: "",
+      style: "Altbier",
       brewery_id: null,
       ABV: "",
       IBU: null,
@@ -62,7 +62,6 @@ class BeerForm extends React.Component {
     return (
       <div>
         <HeaderContainer />
-
         <div className='form-container'>
           <div className='success-popup' hidden='true'>
             Successfully created!
@@ -76,12 +75,10 @@ class BeerForm extends React.Component {
                 Beer Name
               </p>
               <input className='beer-input' placeholder='Beer Name' onChange={this.update('name')}type="text"/>
-
             <p>
               Style
             </p>
-            <select className='beer-input' onChange={this.update('style')}>
-
+            <select className='beer-input' onChange={this.update('style')} defaultValue={this.state.style}>
               {
                 window.styles.styles.map((style, idx) => {
                   return <option value={style} key={idx}>{style}</option>;
@@ -92,7 +89,7 @@ class BeerForm extends React.Component {
             <p>
               Brewery
             </p>
-            <select className='beer-input' onChange={this.update('brewery_id')}>
+            <select className='beer-input' onChange={this.update('brewery_id')} value={this.state.brewery_id || 'Pick a brewery'}>
               <option disabled>Pick a Brewery</option>
               {
                 this.props.breweries.map((brewery, idx) => {
