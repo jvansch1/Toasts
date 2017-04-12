@@ -48,7 +48,6 @@ class BeerShow extends React.Component {
   openCheckin(e) {
     e.preventDefault();
     hashHistory.push(`/beers/${this.props.beer.id}/checkin`)
-
   }
 
   renderDefault(url) {
@@ -59,7 +58,6 @@ class BeerShow extends React.Component {
   }
 
   render() {
-
     if (this.props.beer === undefined || this.props.beer.checkins === undefined) return null;
     const ratingLength = `${this.averageRating() * 25}px`
       return (
