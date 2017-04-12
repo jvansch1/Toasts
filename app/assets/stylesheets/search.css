@@ -1,0 +1,79 @@
+.result-container {
+  width: 900px;
+  background: white;
+  margin: 0 auto;
+  position: relative;
+  top: 150px;
+}
+
+.search-result-item {
+  margin-left: 15px;
+  padding-top: 15px;
+}
+
+#search-result:hover {
+  cursor: pointer;
+}
+
+#post-button {
+  cursor: pointer;
+}
+
+#dropdown {
+  background: white;
+  position: absolute;
+  top: 50px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgrey;
+}
+
+
+#dropdown li {
+padding-left: 5px;
+padding-right: 5px;
+border-bottom: 1px solid lightgrey;
+}
+
+#dropdown li:hover {
+  /*background: lightgrey;*/
+  background: linear-gradient(to bottom right, white, lightgrey);
+}
+
+#dropdown li:first-child {
+  border-bottom: 1px solid lightgrey;
+}
+#dropdown li:last-child {
+  border: none;
+}
+
+#dropdown li h4 {
+font-size: 0.7em;
+font-weight: normal;
+}
+
+#dropdown li h3 {
+  margin-right: 10px;
+}
+
+#result-beer-and-brewery {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+}
+#result-img {
+  width: 70px;
+  height: 70px;
+}
+
+#search-result {
+  display: flex;
+}
+
+#search-bar {
+  border-radius: 4px;
+  border-style: none;
+  height: 25px;
+  padding-left: 10px;
+}

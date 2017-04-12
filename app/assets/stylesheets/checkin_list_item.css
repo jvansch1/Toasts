@@ -1,0 +1,119 @@
+.checkin-list-item {
+  text-align: center;
+  background-color: white;
+  display: flex;
+}
+
+#brewery-checkin-list-item-wrapper {
+  margin-bottom: 20px;
+}
+
+.checkin-list-item img {
+  /*border: 1px solid lightgrey;*/
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.checkin-list-item section {
+
+  margin-left: 15px;
+  margin-top: 15px;
+  font-size: 1.1em;
+  font-weight: 600;
+  word-wrap: break-word;
+  padding-right: 200px;
+}
+
+.checkin-list-item section span {
+  color: #c60;
+}
+
+.checkin-list-item section span a{
+  color: #c60;
+  text-decoration: none;
+}
+
+.checkin-list-item section span:hover {
+  color: #f93;
+}
+
+.checkin-list-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 700px;
+}
+
+#checkin-list-wrapper {
+  margin-bottom: 40px;
+}
+
+.date-list {
+  display: flex;
+  vertical-align: bottom;
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  padding-left: 20px;
+  padding-bottom: 15px;
+  /*border-left: 1px solid black;
+  border-right: 1px solid black;*/
+}
+.date-list li {
+  margin-right: 20px;
+  font-size: 0.6em;
+  color: grey;
+}
+
+.date-list li a{
+  text-decoration: none;
+  color: #c60;
+}
+
+.img-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-input img {
+  width: 70px;
+  height: 70px;
+  border-color: white;
+  margin: 0 auto;
+}
+
+.img-input span {
+  margin: 0 auto;
+}
+
+.img-input img:not([src]) {
+  visibility: hidden;
+}
+
+#redirect {
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+}
+
+#redirect a {
+  text-decoration: underline;
+  color: black;
+}
+
+#checkin-user-image {
+  border-radius: 50%;
+  border: none;
+}
+
+#redirect a:hover {
+  font-weight: 800;
+  color: grey;
+}
+
+#brewery-link:hover {
+  color: #f93;
+}
