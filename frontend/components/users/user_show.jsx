@@ -82,7 +82,6 @@ class UserShow extends React.Component {
                 Unique
               </span>
             </li>
-
           </ul>
           </div>
         </div>

@@ -1,6 +1,5 @@
 class Api::CommentsController < ApplicationController
   def index
-    debugger
     @index = Comment.order("created_at DESC")
   end
 
@@ -16,16 +15,6 @@ class Api::CommentsController < ApplicationController
   def show
     @comment = Comment.find_by(id: params[:id])
   end
-
-  def destroy
-
-  end
-
-  def update
-
-  end
-
-
 
   private
 
