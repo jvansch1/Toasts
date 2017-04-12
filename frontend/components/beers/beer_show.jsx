@@ -64,11 +64,8 @@ class BeerShow extends React.Component {
         <div id='beer-container-container'>
           <HeaderContainer />
           <div id='beer-show-holder'>
-
-
             <div id='beer-show-left'>
               <div id='beer-container'>
-
                 <div id="beer-background">
                   <div id='beer-header-flex'>
                     <img id='beer-show-image' src={this.props.beer.image_url} />
@@ -77,11 +74,9 @@ class BeerShow extends React.Component {
                       <Link to={`breweries/${this.props.beer.brewery_id}`}>
                         <span id='beer-show-name-brewery'>{this.props.beer.brewery.name}</span>
                       </Link>
-
                     </div>
                     <i onClick={this.openCheckin.bind(this)} className="fa fa-plus-square" aria-hidden="true"></i>
                   </div>
-
                   <div className='checkin-count-container'>
                     <span className='checkin-count'>
                       <p className='first'>
@@ -92,18 +87,14 @@ class BeerShow extends React.Component {
                       </p>
                     </span>
                   </div>
-
                   <div className='brewery-show-star-ratings-css'>
-
                     <div className='brewery-show-star-ratings-css-top' style={{width: ratingLength}} >
                       <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
-
                     <div className='brewery-show-star-ratings-css-bottom'>
                       <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
                   </div>
-
                   <ul className='stat-list'>
                     <li>ABV - {this.props.beer.ABV}</li>
                     <li>IBU - {this.props.beer.IBU}</li>
@@ -111,9 +102,6 @@ class BeerShow extends React.Component {
                     <li>Date Added - {this.props.beer.created_at} ago</li>
                   </ul>
                 </div>
-
-
-
               </div>
               <div id='checkin-list-wrapper'>
                 <ul className='checkin-list-container'>
@@ -124,7 +112,6 @@ class BeerShow extends React.Component {
                   }
                 </ul>
               </div>
-
             </div>
             <div id='beer-list-container' className='beer-beer-list-container'>
               <span id='beer-show-top-beers-header'>
@@ -134,7 +121,6 @@ class BeerShow extends React.Component {
               {
                 window.top_beers.top_beers.map((beerArray,idx) => {
                   return (
-
                       <li className='top-beer-index-item' key={idx}>
                         <img className='top-beer-image' src={this.renderDefault(beerArray[1])} />
                         <ul>
@@ -150,15 +136,12 @@ class BeerShow extends React.Component {
                         </Link>
                         </ul>
                       </li>
-
                   )
                 })
               }
             </ul>
           </div>
-
           </div>
-
           {this.props.children}
         </div>
     )
