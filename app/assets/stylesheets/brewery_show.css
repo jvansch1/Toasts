@@ -1,0 +1,58 @@
+#brewery-page-container {
+  width: 1000px;
+  display: flex;
+  margin: 0 auto;
+}
+
+#brewery-show-right {
+  background: white;
+  height: 100%;
+  position: relative;
+  top: 100px;
+  margin-left: 20px;
+  width: 285px;
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.1);
+}
+
+#brewery-show-right a{
+  text-decoration: none;
+}
+
+#brewery-show-top-beer-image {
+  height: 44px;
+  width: 44px;
+  padding: 10px;
+}
+
+#brewery-show-top-beer-item {
+  display: flex;
+}
+
+#brewery-show-top-beer-info {
+  padding-top: 10px;
+}
+
+#top-name {
+  color: #c60;
+  text-decoration: none;
+}
+
+#top-name:hover {
+  color: #f93;
+}
+
+#top-brewery-name {
+  color: grey;
+  font-size: 0.8em;
+  position: relative;
+  bottom: 3px;
+}
+
+#top-brewery-name:hover {
+  color: #f93;
+}
+
+#brewery-beer-header {
+  padding-left: 10px;
+  font-weight: 600;
+}
