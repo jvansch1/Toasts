@@ -51,10 +51,7 @@ class BeerShow extends React.Component {
   }
 
   renderDefault(url) {
-    if (url === "default_beer_Image.png") {
-      return "/assets/default_beer_Image-d8dd9df1ee45f3e09adcebba7e936cc54c9ad5cfc3981630a80143bb7f1b9ba4.png"
-    }
-    return url
+    return (url === "default_beer_Image.png") ? "/assets/default_beer_Image-d8dd9df1ee45f3e09adcebba7e936cc54c9ad5cfc3981630a80143bb7f1b9ba4.png" : url
   }
 
   render() {
