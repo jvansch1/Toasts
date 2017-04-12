@@ -7,7 +7,7 @@ class BeerForm extends React.Component {
     super(props);
     this.state = {
       name: "",
-      style: "Altbier",
+      style: null,
       brewery_id: null,
       ABV: "",
       IBU: null,
@@ -78,7 +78,8 @@ class BeerForm extends React.Component {
             <p>
               Style
             </p>
-            <select className='beer-input' onChange={this.update('style')} defaultValue={this.state.style}>
+            <select className='beer-input' onChange={this.update('style')} value={this.state.style || "Choose a style"}>
+              <option disabled>Choose a style</option>
               {
                 window.styles.styles.map((style, idx) => {
                   return <option value={style} key={idx}>{style}</option>;
@@ -89,7 +90,7 @@ class BeerForm extends React.Component {
             <p>
               Brewery
             </p>
-            <select className='beer-input' onChange={this.update('brewery_id')} value={this.state.brewery_id || 'Pick a brewery'}>
+            <select className='beer-input' onChange={this.update('brewery_id')} value={this.state.brewery_id || 'Choose a brewery'}>
               <option disabled>Pick a Brewery</option>
               {
                 this.props.breweries.map((brewery, idx) => {
