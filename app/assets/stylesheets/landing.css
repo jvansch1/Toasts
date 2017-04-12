@@ -1,0 +1,133 @@
+#landing-background {
+  height: 100%;
+  /*background-image: url('http://pineislandbeer.com/wp-content/uploads/2015/07/craft-beers.jpg');*/
+}
+
+video {
+  position: absolute;
+  z-index: -20;
+  width: 100%;
+}
+
+#transparent {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: rgba(0, 0, 0, .5)
+}
+
+#login-content {
+  position: relative;
+  top: 100px;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1000000000
+}
+
+#login-box {
+  text-align: center;
+  vertical-align: middle;
+  z-index: 1000;
+}
+
+#signup-button {
+  background-color: #0074ab;
+  border-radius: 6px;
+  height: 50px;
+  border-style: none;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#signup:hover {
+  cursor: pointer;
+}
+
+
+#signup-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 18px;
+  font-family: ProximaNova, Helvetica Neue,Helvetica;
+  font-size: 2em;
+  vertical-align: top;
+}
+
+#signup-link:hover {
+  cursor: pointer;
+}
+
+#login-link {
+  font-size: 1.6em;
+  font-family: inherit;
+  color: white;
+}
+
+#login-link a{
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+#page-title {
+  text-align: center;
+}
+
+#user-form {
+  padding-left: 10px;
+  text-align: center;
+}
+
+#submit-button {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: #ffdd00;
+  width: 175px;
+  border-radius: 5px;
+  border-style: none;
+  border-radius: 6px;
+  height: 40px;
+}
+
+#form-background {
+  /*left: 500px;*/
+  background-color: white;
+  height: 663.84px;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+span {
+  text-align: left;
+  font-family: inherit;
+}
+
+#logo {
+  /*position: relative;*/
+  left: 28%;
+  cursor: pointer;
+}
+
+#landing-logo {
+  z-index: 1000;
+  margin: 0 auto;
+}
+
+#landing-logo a {
+  padding-bottom: 0px;
+}
+
+.text-input {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  width: 175px;
+  height: 30px;
+}
