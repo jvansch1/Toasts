@@ -74,62 +74,66 @@ class BreweryShow extends React.Component {
     )
   }
 
+  breweryShowLeft() {
+    const ratingLength = `${this.averageRating() * 25}px`
+    return (
+      <div id='brewery-show-left'>
+        <section className='breweryShow'>
+          <div id='brewery-name-flex'>
+            <img className='brewery-image' src={this.props.brewery.image_url} />
+            <span className='brewery-show-name'>
+              {this.props.brewery.name}
+            </span>
+            <span className='brewery-show-location'>
+              {this.props.brewery.city}, {this.props.brewery.state}
+            </span>
+          </div>
+          <div className='beer-show-star-ratings-css'>
+            <div className='beer-show-star-ratings-css-top' style={{width: ratingLength}} >
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+
+            <div className='beer-show-star-ratings-css-bottom'>
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+          </div>
+          <div className='brewery-checkin-stats'>
+            <span className='checkin-count'>
+              <p className='first'>
+                Checkins: {this.props.brewery.checkins.length}
+              </p>
+              <p className='second'>
+                &nbsp;Unique: {this.props.brewery.unique_checkins}
+              </p>
+            </span>
+          </div>
+          <ul id='brewery-stats'>
+            <li>{this.props.brewery.checkins.length} Ratings</li>
+            <li>{this.props.brewery.beers} beers</li>
+            <li>Date Added - {this.props.brewery.created_at} ago</li>
+          </ul>
+        </section>
+        <div id='brewery-checkin-list-wrapper'>
+          {this.props.brewery.checkins.map((checkin) => {
+            return <BreweryCheckinListItem checkin={checkin} brewery={this.props.brewery} key={checkin.id}/>
+          })
+        }
+      </div>
+    </div>
+    )
+  }
+
   render() {
     if (this.props.brewery === undefined || this.props.brewery.checkins === undefined) return null;
-    const ratingLength = `${this.averageRating() * 25}px`
+
       return (
         <div>
           <HeaderContainer />
           <div id='brewery-page-container'>
-            <div id='brewery-show-left'>
-              <section className='breweryShow'>
-                <div id='brewery-name-flex'>
-                  <img className='brewery-image' src={this.props.brewery.image_url} />
-                  <span className='brewery-show-name'>
-                    {this.props.brewery.name}
-                  </span>
-                  <span className='brewery-show-location'>
-                    {this.props.brewery.city}, {this.props.brewery.state}
-                  </span>
-                </div>
-                <div className='beer-show-star-ratings-css'>
-                  <div className='beer-show-star-ratings-css-top' style={{width: ratingLength}} >
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                  </div>
-
-                  <div className='beer-show-star-ratings-css-bottom'>
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                  </div>
-                </div>
-                <div className='brewery-checkin-stats'>
-                  <span className='checkin-count'>
-                    <p className='first'>
-                      Checkins: {this.props.brewery.checkins.length}
-                    </p>
-                    <p className='second'>
-                      &nbsp;Unique: {this.props.brewery.unique_checkins}
-                    </p>
-                  </span>
-                </div>
-                <ul id='brewery-stats'>
-                  <li>{this.props.brewery.checkins.length} Ratings</li>
-                  <li>{this.props.brewery.beers} beers</li>
-                  <li>Date Added - {this.props.brewery.created_at} ago</li>
-                </ul>
-              </section>
-              <div id='brewery-checkin-list-wrapper'>
-                {this.props.brewery.checkins.map((checkin) => {
-                  return <BreweryCheckinListItem checkin={checkin} brewery={this.props.brewery} key={checkin.id}/>
-                })
-              }
-            </div>
+            {this.breweryShowLeft()}
+            {this.breweryShowRight()}
           </div>
-
-          {this.breweryShowRight()}
-
         </div>
-
-          </div>
       )
     }
 }
