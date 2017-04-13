@@ -33,7 +33,6 @@ const Landing = (props) => {
     )
   }
 
-
   return (
     <div id='landing-background'>
       <video autoPlay='true' loop>
