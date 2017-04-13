@@ -18,14 +18,8 @@ const Landing = (props) => {
     props.login({username: 'Guest', password: 'password'}).then(() => hashHistory.push('home'))
   }
 
-
-  return (
-
-    <div id='landing-background'>
-      <video autoPlay='true' loop>
-        <source src='https://s3.amazonaws.com/untappd-dev/video.webm' type='video/webm'/>
-        <source src='https://s3.amazonaws.com/untappd-dev/343637909.mp4' type='video/mp4'/>
-      </video>
+  const renderLoginContent = () => {
+    return (
       <div id='login-content'>
         <span>
           <img src={window.images.logo} id="landing-logo"/>
@@ -36,6 +30,17 @@ const Landing = (props) => {
           <p id='login-link'>Already a member? <Link to='login'>Sign in!</Link></p>
         </section>
       </div>
+    )
+  }
+
+
+  return (
+    <div id='landing-background'>
+      <video autoPlay='true' loop>
+        <source src='https://s3.amazonaws.com/untappd-dev/video.webm' type='video/webm'/>
+        <source src='https://s3.amazonaws.com/untappd-dev/343637909.mp4' type='video/mp4'/>
+      </video>
+      {renderLoginContent()}
       <div id="transparent"></div>
       <ul>
         {renderErrors()}
