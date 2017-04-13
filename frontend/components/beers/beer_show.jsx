@@ -54,9 +54,81 @@ class BeerShow extends React.Component {
     return (url === "default_beer_Image.png") ? "/assets/default_beer_Image-d8dd9df1ee45f3e09adcebba7e936cc54c9ad5cfc3981630a80143bb7f1b9ba4.png" : url
   }
 
+  topBeerList() {
+    return (
+      <div id='beer-list-container' className='beer-beer-list-container'>
+        <span id='beer-show-top-beers-header'>
+          Top Beers
+        </span>
+      <ul id='beer-show-top-beer-list'>
+        {
+          window.top_beers.top_beers.map((beerArray,idx) => {
+            return (
+                <li className='top-beer-index-item' key={idx}>
+                  <img className='top-beer-image' src={this.renderDefault(beerArray[1])} />
+                  <ul>
+                    <Link to={`beers/${beerArray[0].id}`}>
+                    <li id='top-beer-beer-name'>
+                      {beerArray[0].name}
+                    </li>
+                  </Link>
+                  <Link to={`breweries/${beerArray[2].id}`}>
+                    <li id='top-beer-brewery-name'>
+                      {beerArray[2].name}
+                    </li>
+                  </Link>
+                  </ul>
+                </li>
+            )
+          })
+        }
+      </ul>
+    </div>
+    )
+  }
+
+  checkinList() {
+    return (
+      <div id='checkin-list-wrapper'>
+        <ul className='checkin-list-container'>
+          {
+            this.props.beer.checkins.map((checkin, idx) => {
+              return <CheckinListItem checkin={checkin} beer={this.props.beer} brewery={this.props.brewery} key={idx}/>
+            })
+          }
+        </ul>
+      </div>
+    )
+  }
+
+  ratings() {
+    const ratingLength = `${this.averageRating() * 25}px`
+    return (
+      <div className='brewery-show-star-ratings-css'>
+        <div className='brewery-show-star-ratings-css-top' style={{width: ratingLength}} >
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div className='brewery-show-star-ratings-css-bottom'>
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+      </div>
+    )
+  }
+
+  statList() {
+    return (
+      <ul className='stat-list'>
+        <li>ABV - {this.props.beer.ABV}</li>
+        <li>IBU - {this.props.beer.IBU}</li>
+        <li>{this.props.beer.checkins.length} Ratings</li>
+        <li>Date Added - {this.props.beer.created_at} ago</li>
+      </ul>
+    )
+  }
+
   render() {
     if (this.props.beer === undefined || this.props.beer.checkins === undefined) return null;
-    const ratingLength = `${this.averageRating() * 25}px`
+
       return (
         <div id='beer-container-container'>
           <HeaderContainer />
@@ -84,60 +156,13 @@ class BeerShow extends React.Component {
                       </p>
                     </span>
                   </div>
-                  <div className='brewery-show-star-ratings-css'>
-                    <div className='brewery-show-star-ratings-css-top' style={{width: ratingLength}} >
-                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <div className='brewery-show-star-ratings-css-bottom'>
-                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                  </div>
-                  <ul className='stat-list'>
-                    <li>ABV - {this.props.beer.ABV}</li>
-                    <li>IBU - {this.props.beer.IBU}</li>
-                    <li>{this.props.beer.checkins.length} Ratings</li>
-                    <li>Date Added - {this.props.beer.created_at} ago</li>
-                  </ul>
+                  {this.ratings()}
+                  {this.statList()}
                 </div>
               </div>
-              <div id='checkin-list-wrapper'>
-                <ul className='checkin-list-container'>
-                  {
-                    this.props.beer.checkins.map((checkin, idx) => {
-                      return <CheckinListItem checkin={checkin} beer={this.props.beer} brewery={this.props.brewery} key={idx}/>
-                    })
-                  }
-                </ul>
-              </div>
+              {this.checkinList()}
             </div>
-            <div id='beer-list-container' className='beer-beer-list-container'>
-              <span id='beer-show-top-beers-header'>
-                Top Beers
-              </span>
-            <ul id='beer-show-top-beer-list'>
-              {
-                window.top_beers.top_beers.map((beerArray,idx) => {
-                  return (
-                      <li className='top-beer-index-item' key={idx}>
-                        <img className='top-beer-image' src={this.renderDefault(beerArray[1])} />
-                        <ul>
-                          <Link to={`beers/${beerArray[0].id}`}>
-                          <li id='top-beer-beer-name'>
-                            {beerArray[0].name}
-                          </li>
-                        </Link>
-                        <Link to={`breweries/${beerArray[2].id}`}>
-                          <li id='top-beer-brewery-name'>
-                            {beerArray[2].name}
-                          </li>
-                        </Link>
-                        </ul>
-                      </li>
-                  )
-                })
-              }
-            </ul>
-          </div>
+            {this.topBeerList()}
           </div>
           {this.props.children}
         </div>
