@@ -53,51 +53,49 @@ class BreweryForm extends React.Component {
     }
   }
 
-  render() {
+  beerForm() {
     return (
-      <div>
-        <HeaderContainer />
-
-        <div className='form-container'>
-          <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
-            <div className='success-popup' hidden='true'>Successfully created Brewery!</div>
-            <span id='beer-form-title'>
-              Add A Brewery
-            </span>
-            <br />
-              <p>
-                Name
-              </p>
-              <input className='beer-input' onChange={this.update('name')}type="text"/>
-
+      <div className='form-container'>
+        <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
+          <div className='success-popup' hidden='true'>Successfully created Brewery!</div>
+          <span id='beer-form-title'>
+            Add A Brewery
+          </span>
+          <br />
+            <p>
+              Name
+            </p>
+            <input className='beer-input' onChange={this.update('name')}type="text"/>
             <p>
               City
             </p>
             <input className='beer-input' onChange={this.update('city')}type="text" />
-
-
             <p>
               State
             </p>
             <input className='beer-input' onChange={this.update('state')} type='text'/>
-
-
             <p>
               Country
             </p>
             <input className='beer-input' onChange={this.update('country')} type='text' />
-
-
             <p>
               Upload Picture
             </p>
-              <div id='beer-image-field'>
-                <input type='file' id='brewery-picture-input' onChange={this.addFile.bind(this)}/>
-                <img src={this.state.imageUrl} id='pending-beer-image'/>
-              </div>
-              <input id='beer-form-button' type="submit" value="Add Brewery" />
-            </form>
-        </div>
+            <div id='beer-image-field'>
+              <input type='file' id='brewery-picture-input' onChange={this.addFile.bind(this)}/>
+              <img src={this.state.imageUrl} id='pending-beer-image'/>
+            </div>
+            <input id='beer-form-button' type="submit" value="Add Brewery" />
+          </form>
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div>
+        <HeaderContainer />
+        {this.beerForm()}
       </div>
     );
   }
