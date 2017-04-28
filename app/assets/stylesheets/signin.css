@@ -106,8 +106,10 @@ body {
   top: 100px;
   background: white;
   height: 727px;
-  margin-left: 25%;
-  margin-right: 25%;
+  width: 50%;
+  margin: 0 auto;
+  /*margin-left: 10%;
+  margin-right: 25%;*/
 }
 
 .form-container form {
