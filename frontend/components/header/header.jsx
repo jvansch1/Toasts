@@ -36,7 +36,7 @@ class Header extends React.Component {
           <li><Link to='/home'><img src={window.images.logoWhite} id="navbar-logo"/></Link></li>
           <li className='link'><Link to='/newBeer/'>Create Beer</Link></li>
           <li className='link'><Link to="/newBrewery">Create Brewery</Link></li>
-          <li className='link'><SearchBarContainer /><i className="fa fa-search" aria-hidden="true"></i></li>
+          <li className='link'><SearchBarContainer /></li>
         </ul>
         <ul className='username'>
           <li>

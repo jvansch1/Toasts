@@ -73,6 +73,7 @@ class SearchBar extends React.Component {
           <input type='submit' hidden/>
         </form>
         {this.renderDropdown()}
+        <i className="fa fa-search" aria-hidden="true"></i>
       </div>
     )
   }
