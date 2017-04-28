@@ -42,9 +42,11 @@
 
 .fa-search {
   position: relative;
-  bottom: 29px;
+  /*bottom: 29px;*/
+  top: 8px;
   color: black;
-  left: 115px;
+  right: 20px;
+  /*padding-right: 20px;*/
 }
 
 .fa-beer {

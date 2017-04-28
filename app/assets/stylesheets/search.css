@@ -77,3 +77,8 @@ font-weight: normal;
   height: 25px;
   padding-left: 10px;
 }
+
+#search-div {
+  display: flex;
+  justify-content: space-between;
+}
