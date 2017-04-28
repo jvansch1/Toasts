@@ -58,22 +58,36 @@ class BreweryForm extends React.Component {
       <div className='form-container'>
         <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
           <div className='success-popup' hidden='true'>Successfully created Brewery!</div>
+          <br />
+          <br />
+          <br />
           <span id='beer-form-title'>Add A Brewery</span>
           <br />
+
+          <div className='beer-input-container'>
             <p>Name</p>
             <input className='beer-input' onChange={this.update('name')}type="text"/>
+          </div>
+          <div className='beer-input-container'>
             <p>City</p>
             <input className='beer-input' onChange={this.update('city')}type="text" />
+          </div>
+          <div className='beer-input-container'>
             <p>State</p>
             <input className='beer-input' onChange={this.update('state')} type='text'/>
+          </div>
+          <div className='beer-input-container'>
             <p>Country</p>
             <input className='beer-input' onChange={this.update('country')} type='text' />
+          </div>
+          <div className='beer-input-container'>
             <p>Upload Picture</p>
             <div id='beer-image-field'>
               <input type='file' id='brewery-picture-input' onChange={this.addFile.bind(this)}/>
               <img src={this.state.imageUrl} id='pending-beer-image'/>
             </div>
             <input id='beer-form-button' type="submit" value="Add Brewery" />
+          </div>
           </form>
       </div>
     )

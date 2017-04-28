@@ -67,58 +67,74 @@ class BeerForm extends React.Component {
             Successfully created!
           </div>
           <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
+            <br />
+            <br />
+            <br />
             <span id='beer-form-title'>
               Add A Beer
             </span>
             <br />
+            <div className='beer-input-container'>
               <p>
                 Beer Name
               </p>
               <input className='beer-input' placeholder='Beer Name' onChange={this.update('name')}type="text"/>
-            <p>
-              Style
-            </p>
-            <select className='beer-input' onChange={this.update('style')} value={this.state.style || "Choose a style"}>
-              <option disabled>Choose a style</option>
-              {
-                window.styles.styles.map((style, idx) => {
-                  return <option value={style} key={idx}>{style}</option>;
-                  })
-                }
-              </select>
+            </div>
+            <div className='beer-input-container'>
 
-            <p>
-              Brewery
-            </p>
-            <select className='beer-input' onChange={this.update('brewery_id')} value={this.state.brewery_id || 'Choose a brewery'}>
-              <option disabled>Pick a Brewery</option>
-              {
-                this.props.breweries.map((brewery, idx) => {
-                  return <option value={brewery.id} key={idx}>{brewery.name}</option>;
-                })
-              }
-            </select>
+              <p>
+                Style
+              </p>
+              <select className='beer-input' onChange={this.update('style')} value={this.state.style || "Choose a style"}>
+                <option disabled>Choose a style</option>
+                {
+                  window.styles.styles.map((style, idx) => {
+                    return <option value={style} key={idx}>{style}</option>;
+                    })
+                  }
+                </select>
+            </div>
+            <div className='beer-input-container'>
+              <p>
+                Brewery
+              </p>
+              <select className='beer-input' onChange={this.update('brewery_id')} value={this.state.brewery_id || 'Choose a brewery'}>
+                <option disabled>Pick a Brewery</option>
+                {
+                  this.props.breweries.map((brewery, idx) => {
+                    return <option value={brewery.id} key={idx}>{brewery.name}</option>;
+                    })
+                  }
+                </select>
+            </div>
+            <div className='beer-input-container'>
+              <p>
+                ABV
+              </p>
+              <input className='beer-input' placeholder='ABV'onChange={this.update('ABV')} type='text'/>
+            </div>
 
-            <p>
-              ABV
-            </p>
-            <input className='beer-input' placeholder='ABV'onChange={this.update('ABV')} type='text'/>
 
+            <div className='beer-input-container'>
+              <p>
+                IBU
+              </p>
+              <input className='beer-input' placeholder='IBU' onChange={this.update('IBU')} type='number'/>
+            </div>
 
+            <div className='beer-input-container'>
 
-            <p>
-              IBU
-            </p>
-            <input className='beer-input' placeholder='IBU' onChange={this.update('IBU')} type='number'/>
-
+            </div>
+            <div className='beer-input-container'>
               <p>
                 Upload Picture
               </p>
-                <div id='beer-image-field'>
-                  <input type='file' id='brewery-picture-input' onChange={this.addFile.bind(this)}/>
-                  <img src={this.state.imageUrl} id='pending-beer-image'/>
-                </div>
+              <div id='beer-image-field'>
+                <input type='file' id='brewery-picture-input' onChange={this.addFile.bind(this)}/>
+                <img src={this.state.imageUrl} id='pending-beer-image'/>
+              </div>
               <input id='beer-form-button' type="submit" value="Add New Beer" />
+            </div>
             </form>
         </div>
       </div>
