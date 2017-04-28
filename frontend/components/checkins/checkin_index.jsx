@@ -91,7 +91,7 @@ class CheckinIndex extends React.Component {
   }
 
   checkIfBottom() {
-    if ((window.innerHeight + window.pageYOffset) >= document.body.scrollHeight) {
+    if ((window.innerHeight + window.pageYOffset) >= document.body.scrollHeight - 20) {
       this.getNextCheckins();
     }
   }
