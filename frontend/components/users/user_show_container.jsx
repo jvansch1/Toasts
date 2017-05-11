@@ -23,9 +23,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchUserCheckins: (userId) => dispatch(fetchUserCheckins(userId)),
     topUserBeers: (userId) => dispatch(topUserBeers(userId)),
     fetchBeer: (id) => dispatch(fetchBeer(id)),
-    createFriendRequest: (requesterId, requestedId) => dispatch(createFriendRequest(requesterId, requestedId)),
-    fetchFriendRequest: (requesterId, requestedId) => dispatch(fetchFriendRequest(requesterId, requestedId)),
-    deleteFriendRequest: (requesterId, requestedId) => dispatch(deleteFriendRequest(requesterId, requestedId))
+    // createFriendRequest: (requesterId, requestedId) => dispatch(createFriendRequest(requesterId, requestedId)),
+    // fetchFriendRequest: (requesterId, requestedId) => dispatch(fetchFriendRequest(requesterId, requestedId)),
+    // deleteFriendRequest: (requesterId, requestedId) => dispatch(deleteFriendRequest(requesterId, requestedId))
   }
 }
 

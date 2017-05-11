@@ -1,5 +1,6 @@
 
 export const topBeers = () => {
+  debugger
   return $.ajax({
     type: 'GET',
     url: 'api/beers/top',
