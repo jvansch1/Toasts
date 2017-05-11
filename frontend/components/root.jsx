@@ -7,8 +7,6 @@ import HomeContainer from './home/home_container';
 import AuthFormContainer from './auth/auth_form_container';
 import BeerFormContainer from './beers/beer_form_container';
 import BreweryFormContainer from './breweries/brewery_form_container';
-import BeerIndexContainer from './beers/beer_index_container';
-import BreweryIndexContainer from './breweries/brewery_index_container';
 import BreweryShowContainer from './breweries/brewery_show_container';
 import BeerShowContainer from './beers/beer_show_container';
 import CheckinContainer from './checkins/checkin_container';

@@ -24,10 +24,6 @@ class CommentIndex extends React.Component {
     this.setState({content: e.target.value})
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-  }
-
   render() {
     return (
       <div >

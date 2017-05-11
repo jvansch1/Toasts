@@ -57,7 +57,6 @@
 
    openCommentBox() {
      if (!this.state.open) {
-      //  $('#' + this.props.checkin.id).attr('hidden', false)
        $('#' + this.props.checkin.id).removeClass('closed')
        $('#' + this.props.checkin.id).addClass('open')
        this.setState({open: true})
@@ -65,7 +64,6 @@
      else {
        $('#' + this.props.checkin.id).addClass('closed')
        $('#' + this.props.checkin.id).removeClass('open')
-      //  $('#' + this.props.checkin.id).attr('hidden', true)
        this.setState({open: false})
      }
    }
