@@ -13,10 +13,6 @@ class Api::BreweriesController < ApplicationController
     end
   end
 
-  def destroy
-
-  end
-
   def show
     @brewery = Brewery.find(params[:id]);
   end

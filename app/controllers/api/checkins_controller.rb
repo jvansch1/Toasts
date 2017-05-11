@@ -7,7 +7,6 @@ class Api::CheckinsController < ApplicationController
     end
   end
 
-
   def show
     @checkin = Checkin.where(id: params[:id]).includes(:likes).first
   end
@@ -22,14 +21,6 @@ class Api::CheckinsController < ApplicationController
     else
       render json: @checkin.errors, status: 422
     end
-  end
-
-  def destroy
-
-  end
-
-  def update
-
   end
 
   private
