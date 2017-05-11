@@ -34,6 +34,10 @@ const Root = ({store}) => {
     }
   }
 
+  const _redirectToHome = (nextState, replace) => {
+    replace('/')
+  }
+
   return (
     <Provider store={store}>
       <Router onUpdate={() => window.scrollTo(0, 0)} history={hashHistory}>
@@ -42,7 +46,6 @@ const Root = ({store}) => {
           <Route path='login' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='signup' component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path='home' component={CheckinIndexContainer} onEnter={_ensureLoggedIn}/>
-          <Route path='breweries' component={BreweryIndexContainer} />
           <Route path='newBeer' component={BeerFormContainer} />
           <Route path='results' component={SearchResultsContainer} />
           <Route path='newBrewery' component={BreweryFormContainer} />
@@ -53,6 +56,7 @@ const Root = ({store}) => {
             <Route path='checkin' component={CheckinContainer}/>
           </Route>
         </Route>
+        <Route path="*" onEnter={_redirectToHome}/>
       </Router>
     </Provider>
 
