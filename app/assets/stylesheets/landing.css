@@ -96,10 +96,14 @@ video {
   height: 40px;
 }
 
+#auth-background {
+  height: 100%;
+}
+
 #form-background {
   /*left: 500px;*/
   background-color: white;
-  height: 663.84px;
+  height: 100%;
   width: 600px;
   margin: 0 auto;
   text-align: center;
