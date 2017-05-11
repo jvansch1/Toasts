@@ -26,14 +26,10 @@
     @beer = Beer.where(id: params[:id]).includes(brewery: [:checkins], checkins: [:user]).first
   end
 
-  def top
-    top_beers = Beer.joins(:checkins).group("beers.id, breweries.id").order("COUNT(checkins.id) desc").limit(10)
-    render 'api/beers/index'
-  end
-
-  def destroy
-
-  end
+  # def top
+  #   top_beers = Beer.joins(:checkins).group("beers.id, breweries.id").order("COUNT(checkins.id) desc").limit(10)
+  #   render 'api/beers/index'
+  # end
 
   def search
     if params[:query].present?
