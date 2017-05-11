@@ -34,7 +34,7 @@ class AuthForm extends React.Component {
 
   redirectIfLoggedIn() {
     if (this.props.loggedIn) {
-      this.props.router.push('/');
+      this.props.router.push('home');
     }
   }
 
@@ -102,8 +102,6 @@ class AuthForm extends React.Component {
             </span>
               <input className='text-input' type="text" onChange={this.update('username')}/>
             <br />
-
-
             <span>
               password
               <br />
