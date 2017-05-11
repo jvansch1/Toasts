@@ -26,12 +26,12 @@ class UserShow extends React.Component {
 
   sendFriendRequest() {
     // this.props.createFriendRequest(window.currentUser.id, this.props.routeParams.userId)
-    this.props.fetchUser(this.props.routeParams.userId);
+    // this.props.fetchUser(this.props.routeParams.userId);
   }
 
   deleteFriendRequest() {
     // this.props.deleteFriendRequest(window.currentUser.id, this.props.routeParams.userId);
-    this.props.fetchUser(this.props.routeParams.userId);
+    // this.props.fetchUser(this.props.routeParams.userId);
   }
 
   shouldComponentUpdate(newProps) {

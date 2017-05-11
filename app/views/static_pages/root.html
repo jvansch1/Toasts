@@ -14,9 +14,9 @@
       window.checkin_count = {
          checkins: <%= (Checkin.count.to_json).html_safe %>
        }
-      window.breweries = {
-        breweries: <%= (Brewery::BREWERIES.to_json).html_safe %>
-      }
+      // window.breweries = {
+      //   breweries: <%= (Brewery::BREWERIES.to_json).html_safe %>
+      // }
       window.top_beers = {
         top_beers: <%= (Beer.top_beers.to_json).html_safe %>
       }
