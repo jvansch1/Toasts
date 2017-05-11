@@ -32,10 +32,6 @@
      this.props.deleteLike(like[0])
    }
 
-   componentDidMount() {
-
-   }
-
    shouldComponentUpdate() {
      if (!this.props.currentUser) {
        return false;

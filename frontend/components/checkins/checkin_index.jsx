@@ -113,6 +113,7 @@ class CheckinIndex extends React.Component {
   render() {
     if (!this.state.mounted) return null;
     if (!this.props.currentUser) return null;
+    debugger
     return (
         <div>
           <HeaderContainer />

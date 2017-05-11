@@ -50,6 +50,7 @@ class BreweryShow extends React.Component {
         <ul>
           {
             this.props.brewery.top_beers.map((beerArray, idx) => {
+              debugger
             return (
                 <li id='brewery-show-top-beer-item' key={idx}>
                   <img id='brewery-show-top-beer-image' src={this.renderDefault(beerArray[1])} />
