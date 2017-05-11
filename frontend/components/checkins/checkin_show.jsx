@@ -47,14 +47,12 @@ class CheckinShow extends React.Component {
       user_id: this.props.currentUser.id,
       checkin_id: this.props.checkin.id
     }
-    this.props.createLike(like)
-    this.props.fetchCheckin(this.props.checkin.id)
+    this.props.createLike(like).then(() => this.props.fetchCheckin(this.props.checkin.id))
   }
 
   deleteLike() {
     const like = this.props.checkin.likes.filter(like => like.user_id === this.props.currentUser.id)
-    this.props.deleteLike(like[0])
-    this.props.fetchCheckin(this.props.checkin.id)
+    this.props.deleteLike(like[0]).then(() => this.props.fetchCheckin(this.props.checkin.id))
   }
 
 

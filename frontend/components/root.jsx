@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import LandingContainer from './landing/landing_container';
-import HomeContainer from './home/home_container';
 import AuthFormContainer from './auth/auth_form_container';
 import BeerFormContainer from './beers/beer_form_container';
 import BreweryFormContainer from './breweries/brewery_form_container';
