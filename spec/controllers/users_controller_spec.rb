@@ -17,9 +17,18 @@ describe Api::UsersController do
     end
 
     describe "GET #show" do
+
       it "renders the :show view" do
         user = User.create(username: 'abcd', password: '456789')
         get :show, format: :json, id: user.id
+      end
+
+      it "returns the correct user" do
+        user = User.create(username: 'abcd', password: '456789')
+        get :show, format: :json, id: user.id
+        expect(assigns(:user)).to eq(user)
+
+
       end
     end
 
