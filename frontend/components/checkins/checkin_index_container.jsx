@@ -20,7 +20,6 @@ const mapDispatchToProps = (dispatch) => {
     createLike: (like) => dispatch(createLike(like)),
     deleteLike: (like) => dispatch(deleteLike(like)),
     fetchSomeCheckins: (limit, offset) => dispatch(fetchSomeCheckins(limit, offset)),
-    topBeers: () => dispatch(topBeers()),
     createComment: (comment) => dispatch(createComment(comment))
   }
 }

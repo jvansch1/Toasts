@@ -29,4 +29,16 @@ describe Api::BeersController do
       expect(assigns(:beer)).to eq(beer)
     end
   end
+
+  describe "post #create" do
+    it "with valid attributes" do
+      brewery = Brewery.create(name: 'abcd', city: 'New York', state: 'NY', country: 'USA')
+      beer = Beer.create!(name: 'abc', style: 'Bitter', brewery: brewery, ABV: 5.6, IBU: 70)
+      expect(Beer.count).to eq(1)
+    end
+
+    it "with invalid attributes" do
+
+    end
+  end
 end

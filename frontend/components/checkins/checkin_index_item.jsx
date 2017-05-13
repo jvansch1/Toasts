@@ -119,7 +119,7 @@
 
                <div onClick={this.handleLike.bind(this)}>
                  <i className="fa fa-beer" aria-hidden="true"></i>
-                 <span >{button}</span>
+                 <span>{button}</span>
                </div>
              </div>
              <div id={this.props.checkin.id} className='closed'>
