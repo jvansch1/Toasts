@@ -43,9 +43,6 @@ class Header extends React.Component {
             <button id='logout-button' onClick={this.handleLogout.bind(this)}>Logout</button>
           </li>
         </ul>
-
-
-
       </div>
     )
   }

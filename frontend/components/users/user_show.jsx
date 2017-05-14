@@ -24,22 +24,22 @@ class UserShow extends React.Component {
     }
   }
 
-  sendFriendRequest() {
-    // this.props.createFriendRequest(window.currentUser.id, this.props.routeParams.userId)
-    // this.props.fetchUser(this.props.routeParams.userId);
-  }
+  // sendFriendRequest() {
+  //   this.props.createFriendRequest(window.currentUser.id, this.props.routeParams.userId)
+  //   this.props.fetchUser(this.props.routeParams.userId);
+  // }
 
-  deleteFriendRequest() {
-    // this.props.deleteFriendRequest(window.currentUser.id, this.props.routeParams.userId);
-    // this.props.fetchUser(this.props.routeParams.userId);
-  }
+  // deleteFriendRequest() {
+  //   this.props.deleteFriendRequest(window.currentUser.id, this.props.routeParams.userId);
+  //   this.props.fetchUser(this.props.routeParams.userId);
+  // }
 
-  shouldComponentUpdate(newProps) {
-     if (newProps.params.userId === this.props.routeParams.userId) {
-       return true;
-     }
-     return false;
-  }
+  // shouldComponentUpdate(newProps) {
+  //    if (newProps.params.userId === this.props.routeParams.userId) {
+  //      return true;
+  //    }
+  //    return false;
+  // }
 
   renderFriendButton() {
     if (this.props.friendships && Object.keys(this.props.friendships).length === 0) {
