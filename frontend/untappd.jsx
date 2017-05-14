@@ -2,11 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import { fetchBeers, createBeer } from './actions/beer_actions';
-import { fetchBreweries, createBrewery } from './actions/brewery_actions';
-import { receiveErrors } from './actions/session_actions';
-import { fetchResults } from './actions/search_actions'
-import { topBeers } from './actions/query_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
