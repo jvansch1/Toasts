@@ -90,19 +90,16 @@
            <div id='image-container'>
              <Link to={`users/${this.props.checkin.user.id}`}><img className='checkin-index-user-image' src={this.props.checkin.user.image_url} /></Link>
            </div>
-
            <div id='checkin-content'>
              <p>
-                 <Link to={`users/${this.props.checkin.user.id}`}>{this.props.checkin.user.username}</Link> is drinking a <Link to={`beers/${this.props.checkin.beer.id}`}>{this.props.checkin.beer.name}</Link> by <Link to={`breweries/${this.props.checkin.brewery.id}`}>{this.props.checkin.brewery.name}</Link>
+               <Link to={`users/${this.props.checkin.user.id}`}>{this.props.checkin.user.username}</Link> is drinking a <Link to={`beers/${this.props.checkin.beer.id}`}>{this.props.checkin.beer.name}</Link> by <Link to={`breweries/${this.props.checkin.brewery.id}`}>{this.props.checkin.brewery.name}</Link>
              </p>
              <div id='r-and-d'>
                <p>{this.props.checkin.description}</p>
                 <div className='checkin-index-star-ratings-css'>
-
                   <div className='checkin-index-star-ratings-css-top' style={{width: ratingLength}} >
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                   </div>
-
                   <div className='checkin-index-star-ratings-css-bottom'>
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                   </div>

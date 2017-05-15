@@ -38,7 +38,9 @@ describe Api::BeersController do
     end
 
     it "with invalid attributes" do
-
+      brewery = Brewery.create(name: 'abcd', city: 'New York', state: 'NY', country: 'USA')
+      beer = Beer.new(name: 100, style: 'Bitter', brewery: brewery, ABV: 5.6, IBU: '')
+      expect(beer).to be_invalid
     end
   end
 end
