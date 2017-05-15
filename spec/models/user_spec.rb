@@ -65,4 +65,11 @@ describe User do
     end
   end
 
+  describe "ensure_session_token" do
+    it "adds session token to user" do
+      user = User.create!(username: 'abcdef', password: 'password')
+      expect(user.session_token).not_to eq(nil)
+    end
+  end
+
 end
