@@ -3,6 +3,10 @@ require 'rails_helper'
 
 describe Api::UsersController do
 
+  before(:each) do
+    User.destroy_all
+  end
+
     describe "GET #Index" do
       it "renders the :index view" do
         get :index, format: :json

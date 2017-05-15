@@ -2,6 +2,11 @@ require 'spec_helper'
 require 'rails_helper'
 
 describe User do
+
+  before(:each) do
+    User.destroy_all
+  end
+
   describe "checks validations" do
     it "has a username" do
       user = User.new(username: '', password: 'password')
@@ -34,6 +39,20 @@ describe User do
     it "returns null when invalid" do
       found_user = User.find_by_credentials('password', 'password')
       expect(found_user).to eq(nil)
+    end
+  end
+
+  describe "password = " do
+    it "correctly sets password variable" do
+      user = User.new(username: 'abcdef', password: '')
+      user.password = 'password'
+      expect(user.password).to eq('password')
+    end
+
+    it "creates password digest" do
+      user = User.new(username: 'abcdef', password: '')
+      user.password = 'password'
+      expect(user.password_digest).not_to eq('')
     end
   end
 end
