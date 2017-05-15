@@ -14,4 +14,17 @@ describe Api::BreweriesController do
       get :index, format: :json
     end
   end
+
+  describe "get #show" do
+    it "renders the show index" do
+      brewery = Brewery.create!(name: 'abcd', city: 'New York', state: 'NY', country: 'USA')
+      get :show, format: :json, id: brewery.id
+    end
+
+    it "returns the correct brewery" do
+      brewery = Brewery.create(name: 'abcd', city: 'New York', state: 'NY', country: 'USA')
+      get :show, format: :json, id: brewery.id
+      expect(assigns(:brewery)).to eq(brewery)
+    end
+  end
 end
