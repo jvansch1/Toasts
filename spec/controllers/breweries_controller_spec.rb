@@ -27,4 +27,16 @@ describe Api::BreweriesController do
       expect(assigns(:brewery)).to eq(brewery)
     end
   end
+
+  describe "post #create" do
+    it "with valid attributes" do
+      brewery = Brewery.create(name: 'abcd', city: 'New York', state: 'NY', country: 'USA')
+      expect(Brewery.count).to eq(1)
+    end
+
+    it "with invalid attributes" do
+      brewery = Brewery.new(name: '', city: 'New York', state: 'NY', country: 'USA')
+      expect(brewery).to be_invalid
+    end
+  end
 end
