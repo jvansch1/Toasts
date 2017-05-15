@@ -30,5 +30,10 @@ describe User do
       found_user = User.find_by_credentials(user.username, user.password)
       expect(found_user).to eq(user)
     end
+
+    it "returns null when invalid" do
+      found_user = User.find_by_credentials('password', 'password')
+      expect(found_user).to eq(nil)
+    end
   end
 end
