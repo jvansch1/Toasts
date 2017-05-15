@@ -55,4 +55,14 @@ describe User do
       expect(user.password_digest).not_to eq('')
     end
   end
+
+  describe "reset_session_token" do
+    it "resets the user session token" do
+      user = User.create!(username: 'abcdef', password: 'password')
+      session_token_one = user.session_token
+      user.reset_session_token!
+      expect(session_token_one).not_to eq(user.session_token)
+    end
+  end
+
 end
