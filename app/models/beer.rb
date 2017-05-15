@@ -18,7 +18,8 @@ class Beer < ActiveRecord::Base
       .count("checkins.id")
     beer_array = []
     top_beers.each do |k,v|
-      beer_array.push([Beer.find(k), Beer.find(k).image.url, Beer.find(k).brewery])
+      beer = Beer.find(k)
+      beer_array.push([beer, beer.image.url, beer.brewery])
     end
     beer_array
   end
