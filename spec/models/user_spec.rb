@@ -23,4 +23,12 @@ describe User do
       expect(User.count).to eq(1)
     end
   end
+
+  describe "find by credentials" do
+    it "returns user" do
+      user = User.create!(username: 'abcdef', password: 'password')
+      found_user = User.find_by_credentials(user.username, user.password)
+      expect(found_user).to eq(user)
+    end
+  end
 end
