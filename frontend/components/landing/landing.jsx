@@ -5,27 +5,29 @@ import { Link, hashHistory } from 'react-router';
 
 
 
-const Landing = (props) => {
+class Landing extends React.Component {
 
-  let playing = false;
+  constructor(props) {
+    super(props)
+  }
 
-  const renderErrors = () => {
-    if (props.errors) {
-      props.errors.map((error,i) => {
+  renderErrors() {
+    if (this.props.errors) {
+      this.props.errors.map((error,i) => {
         return <li>{error}</li>;
       });
     }
   };
 
-  const playVideo = (e) => {
+  playVideo(){
 
   }
 
-  const logInGuest = (e) => {
-    props.login({username: 'Guest', password: 'password'}).then(() => hashHistory.push('home'))
+  logInGuest() {
+    this.props.login({username: 'Guest', password: 'password'}).then(() => hashHistory.push('home'))
   }
 
-  const renderLoginContent = () => {
+  renderLoginContent() {
     return (
       <div id='login-content'>
         <span>
@@ -33,27 +35,30 @@ const Landing = (props) => {
         </span>
         <section id="login-box">
           <button id='signup-button'><Link to='signup' id="signup-link">Sign Up</Link></button>
-          <button id='signup-button' onClick={logInGuest}><span id='signup-link'>Guest</span></button>
+          <button id='signup-button' onClick={this.logInGuest.bind(this)}><span id='signup-link'>Guest</span></button>
           <p id='login-link'>Already a member? <Link to='login'>Sign in!</Link></p>
         </section>
       </div>
     )
   }
 
-  return (
-    <div id='landing-background'>
-      <video id='video' autoPlay='true' playsInline>
-        <source src='https://s3.amazonaws.com/untappd-dev/video.webm' type='video/webm'/>
-        <source src='https://s3.amazonaws.com/untappd-dev/343637909.mp4' type='video/mp4'/>
-      </video>
-      {renderLoginContent()}
-      <div id="transparent"></div>
-      <ul>
-        {renderErrors()}
-      </ul>
-        {props.children}
-    </div>
-  );
+  render() {
+    return (
+      <div id='landing-background'>
+        <video id='video' autoPlay='true' playsInline>
+          <source src='https://s3.amazonaws.com/untappd-dev/video.webm' type='video/webm'/>
+          <source src='https://s3.amazonaws.com/untappd-dev/343637909.mp4' type='video/mp4'/>
+        </video>
+        {this.renderLoginContent()}
+        <div id="transparent"></div>
+        <ul>
+          {this.renderErrors()}
+          {this.playVideo()}
+        </ul>
+        {this.props.children}
+      </div>
+    );
+  }
 
 };
 
