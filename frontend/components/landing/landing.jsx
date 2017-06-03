@@ -6,6 +6,9 @@ import { Link, hashHistory } from 'react-router';
 
 
 const Landing = (props) => {
+
+  let playing = false;
+
   const renderErrors = () => {
     if (props.errors) {
       props.errors.map((error,i) => {
@@ -13,6 +16,10 @@ const Landing = (props) => {
       });
     }
   };
+
+  const playVideo = (e) => {
+
+  }
 
   const logInGuest = (e) => {
     props.login({username: 'Guest', password: 'password'}).then(() => hashHistory.push('home'))
@@ -35,7 +42,7 @@ const Landing = (props) => {
 
   return (
     <div id='landing-background'>
-      <video autoPlay='true' loop>
+      <video id='video' autoPlay='true' playsInline>
         <source src='https://s3.amazonaws.com/untappd-dev/video.webm' type='video/webm'/>
         <source src='https://s3.amazonaws.com/untappd-dev/343637909.mp4' type='video/mp4'/>
       </video>
