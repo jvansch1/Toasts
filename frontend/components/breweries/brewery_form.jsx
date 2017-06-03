@@ -58,12 +58,7 @@ class BreweryForm extends React.Component {
       <div className='form-container'>
         <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
           <div className='success-popup' hidden='true'>Successfully created Brewery!</div>
-          <br />
-          <br />
-          <br />
           <span id='beer-form-title'>Add A Brewery</span>
-          <br />
-
           <div className='beer-input-container'>
             <p>Name</p>
             <input className='beer-input' onChange={this.update('name')}type="text"/>

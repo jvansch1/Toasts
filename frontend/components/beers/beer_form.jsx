@@ -67,13 +67,9 @@ class BeerForm extends React.Component {
             Successfully created!
           </div>
           <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
-            <br />
-            <br />
-            <br />
             <span id='beer-form-title'>
               Add A Beer
             </span>
-            <br />
             <div className='beer-input-container'>
               <p>
                 Beer Name

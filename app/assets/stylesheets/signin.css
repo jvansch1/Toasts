@@ -1,25 +1,9 @@
-
-
-
-
-
-
-/*#auth-background {
-  height: 100%;
-  background-image: url('http://pineislandbeer.com/wp-content/uploads/2015/07/craft-beers.jpg');
-}*/
-
 body {
   background-color: #F5F2E8;
 }
 
-
-
-
-
 #app-root {
   height: 100%;
-
 }
 
 #root {
@@ -1115,4 +1099,11 @@ button {
 
 #new-brewery:hover {
   color: #f93;
+}
+
+@media (max-device-width: 500px) {
+  .form-container {
+    width: 100%;
+    height: 100%;
+  }
 }

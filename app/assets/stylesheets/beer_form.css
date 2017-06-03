@@ -18,6 +18,7 @@
 }
 
 .beer-input {
+  box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.1);
   height: 20px;
   border-radius: 4px;
   margin-bottom: 10px;
@@ -44,4 +45,14 @@
 }
 .beer-input-container input, .beer-input-container select {
   width: 100%;
+}
+
+@media (max-width: 500px) {
+  #beer-form {
+    width: 70%;
+  }
+
+  .beer-input-container {
+    width: 70%;
+  }
 }
