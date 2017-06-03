@@ -48,7 +48,7 @@ class Landing extends React.Component {
   render() {
     return (
       <div id='landing-background'>
-        <video id='video' autoPlay='true' playsInline>
+        <video id='video' autoPlay='true' loop playsInline>
           <source src='https://s3.amazonaws.com/untappd-dev/video.webm' type='video/webm'/>
           <source src='https://s3.amazonaws.com/untappd-dev/343637909.mp4' type='video/mp4'/>
         </video>
