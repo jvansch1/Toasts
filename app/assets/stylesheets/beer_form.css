@@ -47,13 +47,10 @@
   width: 100%;
 }
 
-@media (max-width: 500px) {
+@media (max-device-width: 500px) {
   #beer-form {
+    padding-top: 100px;
     width: 70%;
-    height: 50px;
-  }
-
-  .beer-input-container {
-    width: 70%;
+    height: 100%;
   }
 }
