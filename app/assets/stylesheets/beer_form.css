@@ -50,6 +50,7 @@
 @media (max-width: 500px) {
   #beer-form {
     width: 70%;
+    height: 50px;
   }
 
   .beer-input-container {
