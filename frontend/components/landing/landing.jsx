@@ -21,7 +21,9 @@ class Landing extends React.Component {
 
   componentDidMount() {
     let video = document.getElementById('video');
-    video.play();
+    document.addEventListener("DOMContentLoaded", () => {
+      video.play();
+    })
   }
 
   logInGuest() {
