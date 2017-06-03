@@ -146,6 +146,7 @@ span {
 
 @media (min-device-width: 1500px) {
   video {
+    position: absolute;
     min-width: 100%;
   }
 }
