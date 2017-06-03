@@ -19,8 +19,9 @@ class Landing extends React.Component {
     }
   };
 
-  playVideo(){
-
+  componentDidMount() {
+    let video = document.getElementById('video');
+    video.play();
   }
 
   logInGuest() {
@@ -53,7 +54,6 @@ class Landing extends React.Component {
         <div id="transparent"></div>
         <ul>
           {this.renderErrors()}
-          {this.playVideo()}
         </ul>
         {this.props.children}
       </div>
