@@ -9,14 +9,14 @@ class CheckinShow extends React.Component {
     if (props.checkins) {
       this.state = {
         likes: props.checkin,
-        mounted: false
+        mounted: false,
       }
     }
   }
 
   componentDidMount() {
     if (this.props.params.checkinId) {
-      this.props.fetchCheckin(this.props.params.checkinId)
+      this.props.fetchCheckin(this.props.params.checkinId).then(() => this.loaded = true)
       this.setState({mounted: true})
     }
     this.props.fetchLikes()
@@ -65,9 +65,25 @@ class CheckinShow extends React.Component {
     }
   }
 
+  renderSpinner() {
+    // if (!this.state || !this.state.loaded) {
+      return (
+        <div>
+          <HeaderContainer />
+          <div className='loader'></div>
+          <div className='spinner-background'></div>
+        </div>
+      )
+    // }
+  }
+
   render() {
     if (this.props.checkin === undefined) {
-      return null;
+      return(
+        <div>
+          {this.renderSpinner()}
+        </div>
+      )
     }
     else {
       const rating = `${this.props.checkin.rating * 25}px`

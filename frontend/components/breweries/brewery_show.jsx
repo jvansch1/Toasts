@@ -8,7 +8,8 @@ class BreweryShow extends React.Component {
     super(props)
     this.state = {
       name: "",
-      mounted: false
+      mounted: false,
+      loaded: false
     }
   }
 
@@ -123,8 +124,26 @@ class BreweryShow extends React.Component {
     )
   }
 
+  renderSpinner() {
+    if (!this.state.loaded) {
+      return (
+        <div>
+          <HeaderContainer />
+          <div className='loader'></div>
+          <div className='spinner-background'></div>
+        </div>
+      )
+    }
+  }
+
   render() {
-    if (this.props.brewery === undefined || this.props.brewery.checkins === undefined) return null;
+    if (this.props.brewery === undefined || this.props.brewery.checkins === undefined) {
+      return (
+        <div>
+          {this.renderSpinner()}
+        </div>
+      )
+    } else {
       return (
         <div>
           <HeaderContainer />
@@ -135,6 +154,7 @@ class BreweryShow extends React.Component {
         </div>
       )
     }
+  }
 }
 
 export default BreweryShow;
