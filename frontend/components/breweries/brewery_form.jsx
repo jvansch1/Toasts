@@ -53,6 +53,8 @@ class BreweryForm extends React.Component {
     }
   }
 
+  //spinner
+
   breweryForm() {
     return (
       <div className='form-container'>
