@@ -12,7 +12,8 @@ class BreweryForm extends React.Component {
       state: "",
       country: "",
       imageUrl: '',
-      imageFile: ''
+      imageFile: '',
+      loaded: false
     }
   }
 
@@ -52,8 +53,6 @@ class BreweryForm extends React.Component {
       fileReader.readAsDataURL(file);
     }
   }
-
-  //spinner
 
   breweryForm() {
     return (

@@ -11,7 +11,8 @@ class CheckinIndex extends React.Component {
     this.state = {
       limit: 4,
       offset: 0,
-      mounted: false
+      mounted: false,
+      loaded: false
     }
     this.checkIfBottom = this.checkIfBottom.bind(this)
     this.getPrevCheckins = this.getPrevCheckins.bind(this)
@@ -21,7 +22,7 @@ class CheckinIndex extends React.Component {
   componentDidMount() {
     this.interval = setInterval(this.checkIfBottom, 500)
     $('#previous-button').addClass('grey');
-    this.props.fetchCheckins(this.state.limit, this.state.offset).then(() => this.setState({mounted: true}));
+    this.props.fetchCheckins(this.state.limit, this.state.offset).then(() => this.setState({mounted: true, loaded: true}));
   }
 
   renderImage(src) {
@@ -110,70 +111,87 @@ class CheckinIndex extends React.Component {
     }
   }
 
+  renderSpinner() {
+    if (!this.state.loaded) {
+      return (
+        <div className="loader">Loading...</div>
+      )
+    }
+  }
+
   render() {
-    if (!this.state.mounted) return null;
-    if (!this.props.currentUser) return null;
-    return (
+    if (!this.state.mounted || !this.props.currentUser) {
+      return (
         <div>
           <HeaderContainer />
-
-          <div id='checkin-index-container'>
-            <div id='checkin-index-left'>
-              <h2 id='feed-header'>
-                Recent Global Activity
-              </h2>
-              <ul>
+          <div className='spinner-background'></div>
+          {this.renderSpinner()}
+        </div>
+      )
+    }
+      else {
+        return (
+          <div>
+            <HeaderContainer />
+            <div id='checkin-index-container'>
+              <div id='checkin-index-left'>
+                <h2 id='feed-header'>
+                  Recent Global Activity
+                </h2>
+                <ul>
                   {
                     this.props.checkins.map(checkin => {
                       return <CheckinIndexItem checkin={checkin} createLike={this.props.createLike} deleteLike={this.props.deleteLike} createComment={this.props.createComment} key={checkin.id} currentUser={this.props.currentUser}/>
                     })
                   }
-              </ul>
-            </div>
-
-            <div id='checkin-index-right'>
-              <div id='checkin-user-header'>
-                <img id='user-home-image' src={this.props.currentUser.image_url} />
-                <Link to={`users/${this.props.currentUser.id}`}>
-                  <p id='user-home-name'>
-                    {this.props.currentUser.username}
-                  </p>
-                </Link>
-              </div>
-
-              <div id='user-stat-list'>
-                <section className='individual-stat'>
-                  <span className='number'>
-                    {this.props.currentUser.checkins.length}
-                  </span>
-                  <p className='title' >Total</p>
-                </section>
-                <section className='individual-stat'>
-                  <span className='number'>
-                    {this.props.currentUser.unique_checkins}
-                  </span>
-                  <p className='title' >Unique</p>
-                </section>
-              </div>
-              <div id='pagination-buttons'>
-                <p hidden>
-
-                </p>
-                <button hidden id='previous-button' onClick={this.getPrevCheckins}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
-                <button hidden id='next-button' onClick={this.getNextCheckins}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
-              </div>
-              <div id='beer-list-container'>
-                <h1 id='beer-list-header'>Top Beers</h1>
-                <ul id='top-beer-list'>
-                  {this.topBeers()}
                 </ul>
               </div>
+
+              <div id='checkin-index-right'>
+                <div id='checkin-user-header'>
+                  <img id='user-home-image' src={this.props.currentUser.image_url} />
+                  <Link to={`users/${this.props.currentUser.id}`}>
+                    <p id='user-home-name'>
+                      {this.props.currentUser.username}
+                    </p>
+                  </Link>
+                </div>
+
+                <div id='user-stat-list'>
+                  <section className='individual-stat'>
+                    <span className='number'>
+                      {this.props.currentUser.checkins.length}
+                    </span>
+                    <p className='title' >Total</p>
+                  </section>
+                  <section className='individual-stat'>
+                    <span className='number'>
+                      {this.props.currentUser.unique_checkins}
+                    </span>
+                    <p className='title' >Unique</p>
+                  </section>
+                </div>
+                <div id='pagination-buttons'>
+                  <p hidden>
+
+                  </p>
+                  <button hidden id='previous-button' onClick={this.getPrevCheckins}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
+                  <button hidden id='next-button' onClick={this.getNextCheckins}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+                <div id='beer-list-container'>
+                  <h1 id='beer-list-header'>Top Beers</h1>
+                  <ul id='top-beer-list'>
+                    {this.topBeers()}
+                  </ul>
+                </div>
+              </div>
             </div>
+            <ul>
+            </ul>
           </div>
-          <ul>
-          </ul>
-        </div>
-      )
+        )
+
+      }
   }
 }
 
