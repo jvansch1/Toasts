@@ -78,6 +78,16 @@
   box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.1);
 }
 
+#file-select {
+  visibility: hidden;
+  z-index: -1;
+  position: relative;
+}
+
+#file-select-container {
+  position: relative;
+}
+
 .checkin-input:hover {
   box-shadow: none;
   border: 1px solid grey;

@@ -11,6 +11,18 @@
   color: #FFCC00;
 }
 
+.fa-camera {
+  border-radius: 4px;
+  color: white;
+  font-size: 40px;
+  padding: 10px;
+  background: #ffc600;
+}
+
+.fa-camera:hover {
+  cursor: pointer;
+}
+
 .fa-plus-square:hover {
   cursor: pointer;
 }
@@ -66,4 +78,8 @@
 .fa-check-circle-o {
   color: green;
   margin-left: 20px;
+}
+
+#image-check {
+  font-size: 35px;
 }

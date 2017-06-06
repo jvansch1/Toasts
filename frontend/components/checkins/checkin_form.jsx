@@ -49,10 +49,21 @@ class CheckinForm extends React.Component {
     }
   }
 
+  clickFile() {
+    document.getElementById('file-select').click()
+  }
 
   resetSliderValue(e) {
     e.preventDefault()
     this.setState({rating: e.target.value})
+  }
+
+  renderImageUploadCheck() {
+    if (this.state.imageUrl.length > 0) {
+      return (
+        <i id='image-check' className="fa fa-check-circle-o" aria-hidden="true"></i>
+      )
+    }
   }
 
   render() {
@@ -79,7 +90,11 @@ class CheckinForm extends React.Component {
                 {this.state.rating}
               </p>
             </section>
-            <input onChange={this.addFile.bind(this)} type='file'/>
+            <div id='file-select-container'>
+              <i onClick={this.clickFile.bind(this)}className="fa fa-camera" aria-hidden="true"></i>
+              {this.renderImageUploadCheck()}
+              <input id='file-select' onChange={this.addFile.bind(this)} type='file'/>
+            </div>
             <input onSubmit={this.handleSubmit.bind(this)} className='checkin-button' type='submit' value="Confirm"/>
         </form>
         </div>
