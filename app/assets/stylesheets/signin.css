@@ -52,6 +52,14 @@ body {
   text-decoration: none;
 }
 
+#profile-link {
+  color: white;
+}
+
+#profile-link:hover {
+  text-decoration: underline;
+}
+
 .breweryname a:hover {
   text-decoration: none;
   color: #f93;

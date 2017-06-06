@@ -39,11 +39,11 @@ class Header extends React.Component {
           <li className='link'><SearchBarContainer /></li>
         </ul>
         <ul className='username'>
-          <li>
-            <Link to={`/users/${this.props.currentUser.id}`}>
+          <Link to={`/users/${this.props.currentUser.id}`}>
+            <li id='profile-link'>
               My Profile
-            </Link>
-          </li>
+            </li>
+          </Link>
           <li>
             <button id='logout-button' onClick={this.handleLogout.bind(this)}>Logout</button>
           </li>
