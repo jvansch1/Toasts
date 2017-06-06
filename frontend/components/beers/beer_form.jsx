@@ -100,90 +100,94 @@ class BeerForm extends React.Component {
 
   render() {
     return (
-      <div id='form-div'>
+      <div>
         <HeaderContainer />
-        <div className='form-container'>
-          <div className='success-popup' hidden='true'>
-            Successfully created!
-          </div>
-          <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
-            <span id='beer-form-title'>
-              Add A Beer
-            </span>
-            <div className='beer-input-container'>
-              <p>
-                Beer Name
-              </p>
-              <span className='input-check-container'>
-                <input className='beer-input' placeholder='Beer Name' onChange={this.update('name')}type="text"/>
-                {this.renderNameCheck()}
+        <div id='form-div'>
+          <div className='form-container'>
+            <div className='success-popup' hidden='true'>
+              Successfully created!
+            </div>
+            <form id='beer-form' onSubmit={this.handleSubmit.bind(this)}>
+              <span id='beer-form-title'>
+                Add A Beer
               </span>
-            </div>
-            <div className='beer-input-container'>
-              <p>
-                Style
-              </p>
-              <span className='input-check-container'>
-                <select className='beer-input' onChange={this.update('style')} value={this.state.style || "Choose a style"}>
-                  <option disabled>Choose a style</option>
-                  {
-                    window.styles.styles.map((style, idx) => {
-                      return <option value={style} key={idx}>{style}</option>;
-                      })
-                    }
-                  </select>
-                  {this.renderStyleCheck()}
-              </span>
-            </div>
-            <div className='beer-input-container'>
-              <p>
-                Brewery
-              </p>
-              <span className='input-check-container'>
-                <select className='beer-input' onChange={this.update('brewery_id')} value={this.state.brewery_id || 'Choose a brewery'}>
-                  <option disabled>Pick a Brewery</option>
-                  {
-                    this.props.breweries.map((brewery, idx) => {
-                      return <option value={brewery.id} key={idx}>{brewery.name}</option>;
-                      })
-                    }
-                  </select>
-                  {this.renderBreweryCheck()}
-              </span>
-            </div>
-            <div className='beer-input-container'>
-              <p>
-                ABV
-              </p>
-              <span className='input-check-container'>
-                <input className='beer-input' placeholder='ABV'onChange={this.update('ABV')} type='text'/>
-                {this.renderABVCheck()}
-              </span>
-            </div>
-
-            <div className='beer-input-container'>
-              <p>
-                IBU
-              </p>
-              <span className='input-check-container'>
-                <input className='beer-input' placeholder='IBU' onChange={this.update('IBU')} type='number'/>
-                {this.renderIBUCheck()}
-              </span>
-            </div>
-            <div className='beer-input-container'>
-            </div>
-            <div className='beer-input-container'>
-              <p>
-                Upload Picture
-              </p>
-              <div id='beer-image-field'>
-                <input type='file' id='brewery-picture-input' onChange={this.addFile.bind(this)}/>
-                <img src={this.state.imageUrl} id='pending-beer-image'/>
+              <div className='beer-input-container'>
+                <p>
+                  Beer Name
+                </p>
+                <span className='input-check-container'>
+                  <input className='beer-input' placeholder='Beer Name' onChange={this.update('name')}type="text"/>
+                  {this.renderNameCheck()}
+                </span>
               </div>
-              <input id='beer-form-button' type="submit" value="Add New Beer" />
+              <div className='beer-input-container'>
+                <p>
+                  Style
+                </p>
+                <span className='input-check-container'>
+                  <select className='beer-input' onChange={this.update('style')} value={this.state.style || "Choose a style"}>
+                    <option disabled>Choose a style</option>
+                    {
+                      window.styles.styles.map((style, idx) => {
+                        return <option value={style} key={idx}>{style}</option>;
+                        })
+                      }
+                    </select>
+                    {this.renderStyleCheck()}
+                  </span>
+                </div>
+                <div className='beer-input-container'>
+                  <p>
+                    Brewery
+                  </p>
+                  <span className='input-check-container'>
+                    <select className='beer-input' onChange={this.update('brewery_id')} value={this.state.brewery_id || 'Choose a brewery'}>
+                      <option disabled>Pick a Brewery</option>
+                      {
+                        this.props.breweries.map((brewery, idx) => {
+                          return <option value={brewery.id} key={idx}>{brewery.name}</option>;
+                          })
+                        }
+                      </select>
+                      {this.renderBreweryCheck()}
+                    </span>
+                  </div>
+                  <div id='abv-ibu-container'>
+                    <div className='beer-input-container'>
+                      <p>
+                        ABV
+                      </p>
+                      <span className='input-check-container'>
+                        <input className='beer-input' placeholder='ABV'onChange={this.update('ABV')} type='text'/>
+                        {this.renderABVCheck()}
+                      </span>
+                    </div>
+
+                    <div className='beer-input-container'>
+                      <p>
+                        IBU
+                      </p>
+                      <span className='input-check-container'>
+                        <input className='beer-input' placeholder='IBU' onChange={this.update('IBU')} type='number'/>
+                        {this.renderIBUCheck()}
+                      </span>
+                    </div>
+                  </div>
+                  <div className='beer-input-container'>
+                  </div>
+                  <div className='beer-input-container'>
+                    <p>
+                      Upload Picture
+                    </p>
+                    <div id='beer-image-field'>
+                      <input type='file' id='brewery-picture-input' onChange={this.addFile.bind(this)}/>
+                      <img src={this.state.imageUrl} id='pending-beer-image'/>
+                    </div>
+                    <input id='beer-form-button' type="submit" value="Add New Beer" />
+                  </div>
+                </form>
+              </div>
             </div>
-            </form>
-        </div>
       </div>
     );
   }
