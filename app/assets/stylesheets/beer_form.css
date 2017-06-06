@@ -52,6 +52,10 @@
   background-color: none;
 }
 
+.input-check-container {
+  display: flex;
+}
+
 /*.form-div {
   position: relative;
   height: 100%;

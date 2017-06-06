@@ -12,7 +12,7 @@ class BeerForm extends React.Component {
       ABV: "",
       IBU: null,
       imageUrl: '',
-      imageFile:''
+      imageFile:'',
     };
   }
 
@@ -58,6 +58,46 @@ class BeerForm extends React.Component {
     }
   }
 
+  renderNameCheck() {
+    if (this.state.name.length > 0) {
+      return (
+        <i className="fa fa-check-circle-o" aria-hidden="true"></i>
+      )
+    }
+  }
+
+  renderABVCheck() {
+    if (this.state.ABV.length > 0) {
+      return (
+        <i className="fa fa-check-circle-o" aria-hidden="true"></i>
+      )
+    }
+  }
+
+  renderIBUCheck() {
+    if (this.state.IBU) {
+      return (
+        <i className="fa fa-check-circle-o" aria-hidden="true"></i>
+      )
+    }
+  }
+
+  renderStyleCheck() {
+    if (this.state.style) {
+      return (
+        <i className="fa fa-check-circle-o" aria-hidden="true"></i>
+      )
+    }
+  }
+
+  renderBreweryCheck() {
+    if (this.state.brewery_id) {
+      return (
+        <i className="fa fa-check-circle-o" aria-hidden="true"></i>
+      )
+    }
+  }
+
   render() {
     return (
       <div id='form-div'>
@@ -74,48 +114,62 @@ class BeerForm extends React.Component {
               <p>
                 Beer Name
               </p>
-              <input className='beer-input' placeholder='Beer Name' onChange={this.update('name')}type="text"/>
+              <span className='input-check-container'>
+                <input className='beer-input' placeholder='Beer Name' onChange={this.update('name')}type="text"/>
+                {this.renderNameCheck()}
+              </span>
             </div>
             <div className='beer-input-container'>
 
               <p>
                 Style
               </p>
-              <select className='beer-input' onChange={this.update('style')} value={this.state.style || "Choose a style"}>
-                <option disabled>Choose a style</option>
-                {
-                  window.styles.styles.map((style, idx) => {
-                    return <option value={style} key={idx}>{style}</option>;
-                    })
-                  }
-                </select>
+              <span className='input-check-container'>
+                <select className='beer-input' onChange={this.update('style')} value={this.state.style || "Choose a style"}>
+                  <option disabled>Choose a style</option>
+                  {
+                    window.styles.styles.map((style, idx) => {
+                      return <option value={style} key={idx}>{style}</option>;
+                      })
+                    }
+                  </select>
+                  {this.renderStyleCheck()}
+              </span>
             </div>
             <div className='beer-input-container'>
               <p>
                 Brewery
               </p>
-              <select className='beer-input' onChange={this.update('brewery_id')} value={this.state.brewery_id || 'Choose a brewery'}>
-                <option disabled>Pick a Brewery</option>
-                {
-                  this.props.breweries.map((brewery, idx) => {
-                    return <option value={brewery.id} key={idx}>{brewery.name}</option>;
-                    })
-                  }
-                </select>
+              <span className='input-check-container'>
+                <select className='beer-input' onChange={this.update('brewery_id')} value={this.state.brewery_id || 'Choose a brewery'}>
+                  <option disabled>Pick a Brewery</option>
+                  {
+                    this.props.breweries.map((brewery, idx) => {
+                      return <option value={brewery.id} key={idx}>{brewery.name}</option>;
+                      })
+                    }
+                  </select>
+                  {this.renderBreweryCheck()}
+              </span>
             </div>
             <div className='beer-input-container'>
               <p>
                 ABV
               </p>
-              <input className='beer-input' placeholder='ABV'onChange={this.update('ABV')} type='text'/>
+              <span className='input-check-container'>
+                <input className='beer-input' placeholder='ABV'onChange={this.update('ABV')} type='text'/>
+                {this.renderABVCheck()}
+              </span>
             </div>
-
 
             <div className='beer-input-container'>
               <p>
                 IBU
               </p>
-              <input className='beer-input' placeholder='IBU' onChange={this.update('IBU')} type='number'/>
+              <span className='input-check-container'>
+                <input className='beer-input' placeholder='IBU' onChange={this.update('IBU')} type='number'/>
+                {this.renderIBUCheck()}
+              </span>
             </div>
 
             <div className='beer-input-container'>
