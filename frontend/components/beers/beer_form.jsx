@@ -60,7 +60,7 @@ class BeerForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id='form-div'>
         <HeaderContainer />
         <div className='form-container'>
           <div className='success-popup' hidden='true'>
