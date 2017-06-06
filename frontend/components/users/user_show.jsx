@@ -21,7 +21,7 @@ class UserShow extends React.Component {
 
   componentWillUnmount() {
     if (this.state.mounted === true) {
-      this.setState({mounted: false})
+      this.setState({mounted: false, loaded: false})
     }
   }
 
@@ -35,12 +35,21 @@ class UserShow extends React.Component {
   //   this.props.fetchUser(this.props.routeParams.userId);
   // }
 
-  // shouldComponentUpdate(newProps) {
-  //    if (newProps.params.userId === this.props.routeParams.userId) {
+  // shouldComponentUpdate(nextProps, nextState) {
+  //    if (nextProps.params.userId === this.props.routeParams.userId) {
   //      return true;
   //    }
   //    return false;
   // }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({mounted: false, loaded: false})
+    if (nextProps.routeParams.userId !== this.props.params.userId) {
+      this.props.fetchUser(nextProps.routeParams.userId)
+        .then(() => this.props.fetchUserCheckins(nextProps.routeParams.userId))
+        .then(() => this.props.topUserBeers(nextProps.routeParams.userId).then(() => this.setState({mounted: true, loaded: true})))
+    }
+  }
 
   renderFriendButton() {
     if (this.props.friendships && Object.keys(this.props.friendships).length === 0) {
