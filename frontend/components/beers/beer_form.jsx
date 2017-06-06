@@ -120,7 +120,6 @@ class BeerForm extends React.Component {
               </span>
             </div>
             <div className='beer-input-container'>
-
               <p>
                 Style
               </p>
@@ -171,9 +170,7 @@ class BeerForm extends React.Component {
                 {this.renderIBUCheck()}
               </span>
             </div>
-
             <div className='beer-input-container'>
-
             </div>
             <div className='beer-input-container'>
               <p>

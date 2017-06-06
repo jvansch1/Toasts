@@ -54,6 +54,38 @@ class BreweryForm extends React.Component {
     }
   }
 
+  renderNameCheck() {
+    if (this.state.name.length > 0) {
+      return (
+        <i className="fa fa-check-circle-o" aria-hidden="true"></i>
+      )
+    }
+  }
+
+  renderCityCheck() {
+    if (this.state.city.length > 0) {
+      return (
+        <i className="fa fa-check-circle-o" aria-hidden="true"></i>
+      )
+    }
+  }
+
+  renderStateCheck() {
+    if (this.state.state.length > 0) {
+      return (
+        <i className="fa fa-check-circle-o" aria-hidden="true"></i>
+      )
+    }
+  }
+
+  renderCountryCheck() {
+    if (this.state.country.length > 0) {
+      return (
+        <i className="fa fa-check-circle-o" aria-hidden="true"></i>
+      )
+    }
+  }
+
   breweryForm() {
     return (
       <div className='form-container'>
@@ -62,19 +94,31 @@ class BreweryForm extends React.Component {
           <span id='beer-form-title'>Add A Brewery</span>
           <div className='beer-input-container'>
             <p>Name</p>
-            <input className='beer-input' onChange={this.update('name')}type="text"/>
+            <span className='input-check-container'>
+              <input className='beer-input' onChange={this.update('name')}type="text"/>
+              {this.renderNameCheck()}
+            </span>
           </div>
           <div className='beer-input-container'>
             <p>City</p>
-            <input className='beer-input' onChange={this.update('city')}type="text" />
+            <span className='input-check-container'>
+              <input className='beer-input' onChange={this.update('city')}type="text" />
+              {this.renderCityCheck()}
+            </span>
           </div>
           <div className='beer-input-container'>
             <p>State</p>
-            <input className='beer-input' onChange={this.update('state')} type='text'/>
+            <span className='input-check-container'>
+              <input className='beer-input' onChange={this.update('state')} type='text'/>
+              {this.renderStateCheck()}
+            </span>
           </div>
           <div className='beer-input-container'>
             <p>Country</p>
-            <input className='beer-input' onChange={this.update('country')} type='text' />
+            <span className='input-check-container'>
+              <input className='beer-input' onChange={this.update('country')} type='text' />
+              {this.renderCountryCheck()}
+            </span>
           </div>
           <div className='beer-input-container'>
             <p>Upload Picture</p>
