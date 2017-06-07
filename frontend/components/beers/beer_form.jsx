@@ -13,6 +13,7 @@ class BeerForm extends React.Component {
       IBU: null,
       imageUrl: '',
       imageFile:'',
+      loaded: false
     };
   }
 
@@ -43,7 +44,7 @@ class BeerForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBreweries();
+    this.props.fetchBreweries().then(() => this.setState({loaded: true}));
   }
 
   addFile(e) {
@@ -98,7 +99,12 @@ class BeerForm extends React.Component {
     }
   }
 
+  clickFile() {
+      document.getElementById('brewery-picture-input').click();
+  }
+
   render() {
+    if (!this.state.loaded) return null;
     return (
       <div>
         <HeaderContainer />
@@ -180,6 +186,7 @@ class BeerForm extends React.Component {
                       Upload Picture
                     </p>
                     <div id='beer-image-field'>
+                      <i onClick={this.clickFile.bind(this)}className="fa fa-camera" aria-hidden="true" id='beer-form-pic-input'></i>
                       <input type='file' id='brewery-picture-input' onChange={this.addFile.bind(this)}/>
                       <img src={this.state.imageUrl} id='pending-beer-image'/>
                     </div>

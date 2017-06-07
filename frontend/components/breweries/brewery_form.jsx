@@ -86,6 +86,10 @@ class BreweryForm extends React.Component {
     }
   }
 
+  clickFile() {
+    document.getElementById('brewery-picture-input').click();
+  }
+
   breweryForm() {
     return (
       <div className='form-container'>
@@ -123,6 +127,7 @@ class BreweryForm extends React.Component {
           <div className='beer-input-container'>
             <p>Upload Picture</p>
             <div id='beer-image-field'>
+              <i onClick={this.clickFile.bind(this)}className="fa fa-camera" aria-hidden="true" id='beer-form-pic-input'></i>
               <input type='file' id='brewery-picture-input' onChange={this.addFile.bind(this)}/>
               <img src={this.state.imageUrl} id='pending-beer-image'/>
             </div>

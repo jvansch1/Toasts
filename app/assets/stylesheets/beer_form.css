@@ -78,6 +78,17 @@
   padding-left: 10px;
 }
 
+#brewery-picture-input {
+  visibility: hidden;
+}
+
+#beer-form-pic-input {
+  margin-bottom: 20px;
+}
+
+#pending-beer-image {
+  margin-top: 20px;
+}
 @media (max-device-width: 500px) {
   #beer-form {
     padding-top: 100px;
