@@ -68,9 +68,18 @@ class AuthForm extends React.Component {
     })
   }
 
+  clickFile() {
+    document.getElementById('file-select').click();
+  }
+
   renderImgInput() {
     if (this.props.formType !== "login") {
-      return <input type='file' onChange={this.addFile.bind(this)}/>
+      return (
+        <div id='auth-file-container'>
+          <i onClick={this.clickFile.bind(this)} className="fa fa-camera" aria-hidden="true" id='auth-file-input'></i>
+          <input id='file-select' type='file' onChange={this.addFile.bind(this)}/>
+        </div>
+      )
     }
   }
 
@@ -108,11 +117,11 @@ class AuthForm extends React.Component {
               <br />
               <ul className='img-input'>
                 <span>
-                  <div>
+                  <div id='image-flex'>
                     {this.renderImgInput()}
+                    <img src={this.state.imageUrl} />
                   </div>
                 </span>
-                <img src={this.state.imageUrl} />
               </ul>
             <br />
             <input id='submit-button' type="submit" value={title} />

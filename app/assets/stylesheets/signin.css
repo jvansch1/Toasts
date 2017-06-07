@@ -1109,6 +1109,20 @@ button {
   color: #f93;
 }
 
+#auth-file-container {
+  display: flex;
+}
+
+#image-flex {
+  margin-top: 10px;
+  display: flex;
+}
+
+#auth-file-input {
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
 @media (max-device-width: 500px) {
   .form-container {
     width: 100%;
