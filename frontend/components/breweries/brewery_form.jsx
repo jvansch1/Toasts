@@ -99,28 +99,28 @@ class BreweryForm extends React.Component {
           <div className='beer-input-container'>
             <p>Name</p>
             <span className='input-check-container'>
-              <input className='beer-input' onChange={this.update('name')}type="text"/>
+              <input className='beer-input' onChange={this.update('name')} type="text" placeholder='Brewery Name'/>
               {this.renderNameCheck()}
             </span>
           </div>
           <div className='beer-input-container'>
             <p>City</p>
             <span className='input-check-container'>
-              <input className='beer-input' onChange={this.update('city')}type="text" />
+              <input className='beer-input' onChange={this.update('city')}type="text" placeholder='City'/>
               {this.renderCityCheck()}
             </span>
           </div>
           <div className='beer-input-container'>
             <p>State</p>
             <span className='input-check-container'>
-              <input className='beer-input' onChange={this.update('state')} type='text'/>
+              <input className='beer-input' onChange={this.update('state')} type='text'placeholder='State'/>
               {this.renderStateCheck()}
             </span>
           </div>
           <div className='beer-input-container'>
             <p>Country</p>
             <span className='input-check-container'>
-              <input className='beer-input' onChange={this.update('country')} type='text' />
+              <input className='beer-input' onChange={this.update('country')} type='text' placeholder='Country'/>
               {this.renderCountryCheck()}
             </span>
           </div>

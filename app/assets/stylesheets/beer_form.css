@@ -52,6 +52,10 @@
   width: 100%;
 }
 
+.beer-input-container input {
+  padding-left: 5px;
+}
+
 .form-container {
   /*height: 100vh;*/
   background-color: none;
