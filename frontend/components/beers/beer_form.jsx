@@ -68,7 +68,8 @@ class BeerForm extends React.Component {
   }
 
   renderABVCheck() {
-    if (this.state.ABV.length > 0) {
+    let regex = /\d+\.\d+/
+    if (this.state.ABV.match(regex)) {
       return (
         <i className="fa fa-check-circle-o" aria-hidden="true"></i>
       )
